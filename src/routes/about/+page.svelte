@@ -1,26 +1,40 @@
-<svelte:head>
-	<title>About</title>
-	<meta name="description" content="About this app" />
-</svelte:head>
+<!-- src/routes/about/+page.svelte -->
+<script>
+	// You can fetch additional data if needed
+</script>
 
-<div class="text-column">
-	<h1>About this app</h1>
-
+<div class="container">
+	<h2>About Starphone</h2>
 	<p>
-		This is a <a href="https://kit.svelte.dev">SvelteKit</a> app. You can make your own by typing the
-		following into your command line and following the prompts:
+		The Starphone project aims to reintroduce public telephone booths with a modern twist.
+		Combining retro aesthetics with cutting-edge technology, we envision a world where
+		connectivity is accessible to all.
 	</p>
-
-	<pre>npm create svelte@latest</pre>
-
-	<p>
-		The page you're looking at is purely static HTML, with no client-side interactivity needed.
-		Because of that, we don't need to load any JavaScript. Try viewing the page's source, or opening
-		the devtools network panel and reloading.
-	</p>
-
-	<p>
-		The <a href="/sverdle">Sverdle</a> page illustrates SvelteKit's data loading and form handling. Try
-		using it with JavaScript disabled!
-	</p>
+	<h3>Our Vision</h3>
+	<ul>
+		<li>Innovative Design</li>
+		<li>Seamless Connectivity</li>
+		<li>Community Engagement</li>
+	</ul>
 </div>
+
+<style>
+	.container {
+		padding: 60px 0;
+	}
+
+	h2 {
+		margin-bottom: 20px;
+	}
+
+	p {
+		font-size: 1.15rem;
+		line-height: 1.6;
+		margin-bottom: 20px;
+	}
+
+	ul {
+		list-style-type: disc;
+		padding-left: 20px;
+	}
+</style>

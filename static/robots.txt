@@ -1,3 +1,4 @@
-# https://www.robotstxt.org/robotstxt.html
+# static/robots.txt
+
 User-agent: *
-Disallow:
+Allow: /

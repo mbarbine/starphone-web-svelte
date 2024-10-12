@@ -1,10 +1,13 @@
+// svelte.config.js
 import adapter from '@sveltejs/adapter-vercel';
+import preprocess from 'svelte-preprocess';
 
-/** @type {import('@sveltejs/kit').Config} */
-const config = {
+export default {
+	preprocess: preprocess(),
 	kit: {
-		adapter: adapter()
+		adapter: adapter(),
+		alias: {
+			$lib: 'src/lib',
+		}
 	}
 };
-
-export default config;
