@@ -1,6 +1,6 @@
 <script>
 	import { onMount, onDestroy } from 'svelte';
-	import { Chart } from 'chart.js/auto'; // Auto imports controllers, elements, etc.
+	import { Chart } from 'chart.js/auto';
 	import 'chartjs-adapter-date-fns'; // For time-based formatting
 
 	let chart;
@@ -35,7 +35,7 @@
 				labels,
 				datasets: [{
 					label: 'History & Future of Telephones',
-					data: labels.map((_, i) => i), // Sequential values for the timeline
+					data: labels.map((_, i) => i),
 					fill: false,
 					borderColor: '#2a9fd6',
 					pointBackgroundColor: '#f39c12',
@@ -84,7 +84,7 @@
 		<p>Explore the timeline of the telephone, from its invention to the future of public communication with Starphone on Earth, the Moon, Mars, and beyond!</p>
 
 		<!-- Timeline Chart -->
-		<canvas id="timelineChart" width="600" height="400"></canvas>
+		<canvas id="timelineChart" width="800" height="400"></canvas>
 
 		<!-- Descriptive Milestones -->
 		<div class="timeline-events">
@@ -106,41 +106,50 @@
 	}
 
 	.history-page h1 {
-		font-size: 2.5rem;
+		font-size: 3rem;
 		color: #2a9fd6;
 		text-align: center;
-		margin-bottom: 20px;
+		margin-bottom: 40px;
 	}
 
 	.history-page p {
-		font-size: 1.2rem;
+		font-size: 1.5rem;
 		text-align: center;
-		margin-bottom: 40px;
-		color: #666;
+		margin-bottom: 50px;
+		color: #444;
 	}
 
 	canvas {
 		display: block;
 		margin: 0 auto;
+		background-color: #fff; /* Ensure chart canvas stands out */
+		border-radius: 8px;
+		padding: 10px;
 	}
 
 	.timeline-events {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-		gap: 20px;
-		margin-top: 40px;
+		gap: 30px;
+		margin-top: 60px;
 	}
 
 	.timeline-event {
 		background-color: white;
-		border-radius: 8px;
-		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-		padding: 20px;
+		border-radius: 12px;
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+		padding: 30px;
 		text-align: center;
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+	}
+
+	.timeline-event:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 	}
 
 	.timeline-event h3 {
-		font-size: 1.5rem;
+		font-size: 1.75rem;
 		color: #2a9fd6;
 		margin-bottom: 10px;
 	}
@@ -148,5 +157,35 @@
 	.timeline-event p {
 		font-size: 1.1rem;
 		color: #666;
+	}
+
+	/* Add media queries for better responsiveness */
+	@media (max-width: 768px) {
+		.history-page h1 {
+			font-size: 2.5rem;
+		}
+
+		.history-page p {
+			font-size: 1.3rem;
+		}
+
+		canvas {
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.history-page h1 {
+			font-size: 2rem;
+		}
+
+		.history-page p {
+			font-size: 1.2rem;
+		}
+
+		.timeline-event h3 {
+			font-size: 1.5rem;
+		}
 	}
 </style>
