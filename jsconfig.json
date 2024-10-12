@@ -1,21 +1,26 @@
+// jsconfig.json
 {
-	"extends": "./.svelte-kit/tsconfig.json",
-	"compilerOptions": {
-		"allowJs": true,
-		"checkJs": true,
-		"esModuleInterop": true,
-		"forceConsistentCasingInFileNames": true,
-		"resolveJsonModule": true,
-		"skipLibCheck": true,
-		"sourceMap": true,
-		"strict": true,
-		"baseUrl": ".",
-		"paths": {
-			"$lib/*": ["src/lib/*"],
-			"$components/*": ["src/lib/components/*"],
-			"$styles/*": ["src/lib/styles/*"],
-			"$images/*": ["static/images/*"],
-			"$videos/*": ["static/videos/*"]
-		}
-	}
+    "compilerOptions": {
+        "target": "ES2020",
+        "module": "ESNext",
+        "moduleResolution": "Node",
+        "allowJs": true,
+        "checkJs": true,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "resolveJsonModule": true,
+        "skipLibCheck": true,
+        "sourceMap": true,
+        "strict": true,
+        "baseUrl": ".",
+        "paths": {
+            "$lib/*": ["src/lib/*"],
+            "$components/*": ["src/lib/components/*"],
+            "$styles/*": ["src/lib/styles/*"],
+            "$images/*": ["static/images/*"],
+            "$videos/*": ["static/videos/*"]
+        }
+    },
+    "include": ["src/**/*", "static/**/*"],
+    "exclude": ["node_modules"]
 }

@@ -1,14 +1,12 @@
-<script>
+<script lang="ts">
 	import { confetti } from '@neoconfetti/svelte';
 	import { enhance } from '$app/forms';
 
 	import { reduced_motion } from './reduced-motion';
 
-	/** @type {import('./$types').PageData} */
-	export let data;
+	export let data: import('./$types').PageData;
 
-	/** @type {import('./$types').ActionData} */
-	export let form;
+	export let form: import('./$types').ActionData;
 
 	/** Whether or not the user has won */
 	$: won = data.answers.at(-1) === 'xxxxx';
@@ -26,18 +24,13 @@
 	 */
 	let classnames;
 
-	/**
-	 * A map of descriptions for all letters that have been guessed,
-	 * used for adding text for assistive technology (e.g. screen readers)
-	 * @type {Record<string, string>}
-	 */
-	let description;
+	let classnames: Record<string, 'exact' | 'close' | 'missing'>;
 
-	$: {
+	let description: Record<string, string>;
 		classnames = {};
 		description = {};
 
-		data.answers.forEach((answer, i) => {
+		data.answers.forEach((answer: string, i: number) => {
 			const guess = data.guesses[i];
 
 			for (let i = 0; i < 5; i += 1) {
@@ -66,7 +59,7 @@
 		if (key === 'backspace') {
 			data.guesses[i] = guess.slice(0, -1);
 			if (form?.badGuess) form.badGuess = false;
-		} else if (guess.length < 5) {
+	function update(event: MouseEvent) {
 			data.guesses[i] += key;
 		}
 	}
@@ -83,7 +76,7 @@
 			.querySelector(`[data-key="${event.key}" i]`)
 			?.dispatchEvent(new MouseEvent('click', { cancelable: true }));
 	}
-</script>
+	function keydown(event: KeyboardEvent) {
 
 <svelte:window on:keydown={keydown} />
 
