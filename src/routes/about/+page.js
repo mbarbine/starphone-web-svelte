@@ -1,9 +1,11 @@
-import { dev } from '$app/environment';
+// src/routes/about/+page.js
 
-// we don't need any JS on this page, though we'll load
-// it in dev so that we get hot module replacement
-export const csr = dev;
-
-// since there's no dynamic data here, we can prerender
-// it so that it gets served as a static asset in production
-export const prerender = true;
+/** @type {import('./$types').PageLoad} */
+export function load() {
+	return {
+		pageData: {
+			vision: "To revolutionize public communication through innovative, space-grade technologies.",
+			mission: "Developing the Starphone to provide secure and reliable communication in the most extreme environments on Earth and in space."
+		}
+	};
+}
