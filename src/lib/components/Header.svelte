@@ -10,6 +10,8 @@
             <a href="/about">About</a>
             <a href="/support">Support</a>
             <a href="/contact">Contact</a>
+            <a href="/history">History</a>
+            <a href="/press">Press</a>
         </nav>
     </div>
 </header>

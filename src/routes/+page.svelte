@@ -62,6 +62,14 @@
 	</div>
 </section>
 
+<section class="section section-press">
+	<div class="container">
+		<h2>In the News</h2>
+		<p>Check out the latest media coverage of Starphone.</p>
+		<a href="/press" class="button">View Press Articles</a>
+	</div>
+</section>
+
 <section class="section section-media">
 	<div class="container">
 		<h2>Follow Us</h2>
@@ -116,7 +124,6 @@
 		font-family: 'Montserrat', sans-serif;
 	}
 
-	/* Hero Section */
 	.hero {
 		background: var(--lcars-blue);
 		padding: 120px 0;
@@ -155,7 +162,6 @@
 		background-color: var(--button-hover);
 	}
 
-	/* General Section Styles */
 	.section {
 		padding: 80px 0;
 	}
@@ -190,6 +196,26 @@
 		color: var(--lcars-blue);
 	}
 
+	/* Press Section */
+	.section-press {
+		background-color: var(--lcars-grey);
+		padding: 80px 20px;
+		text-align: center;
+	}
+
+	.section-press h2 {
+		font-size: 2.5rem;
+		color: var(--lcars-blue);
+		margin-bottom: 20px;
+	}
+
+	.section-press p {
+		font-size: 1.2rem;
+		color: var(--primary-color);
+		margin-bottom: 40px;
+	}
+
+	/* Media Section */
 	.social-icons {
 		display: flex;
 		justify-content: center;

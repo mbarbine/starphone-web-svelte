@@ -11,8 +11,8 @@
             <a href="https://slack.com/yourworkspace" target="_blank" rel="noopener noreferrer">
                 <img src="/images/slack.svg" alt="Slack" />
             </a>
-            <a href="https://arkime.io" target="_blank" rel="noopener noreferrer">
-                <img src="/images/arkime.svg" alt="Arkime" />
+            <a href="https://www.ph3ar.com" target="_blank" rel="noopener noreferrer">
+                <img src="/images/arkime.svg" alt="PH3AR" />
             </a>
             <a href="https://yourwebsite.com" target="_blank" rel="noopener noreferrer">
                 <img src="/images/your-website.svg" alt="Website" />
