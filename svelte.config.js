@@ -1,22 +1,38 @@
-// svelte.config.js
+// Import necessary modules
 import adapter from '@sveltejs/adapter-vercel';
 import preprocess from 'svelte-preprocess';
 
 const config = {
-    preprocess: preprocess({
-        postcss: true,   // Enable PostCSS if necessary
-        typescript: false // Explicitly disable TypeScript preprocessing
-    }),
-    kit: {
-        adapter: adapter(),
-        alias: {
-            $lib: 'src/lib',
-            $components: 'src/lib/components',
-            $styles: 'src/lib/styles',
-            $images: 'static/images',
-            $videos: 'static/videos'
-        }
-    }
+  // Preprocess settings for TypeScript, PostCSS, SCSS, and others
+  preprocess: preprocess({
+    typescript: true,  // Enable TypeScript support
+    postcss: true,     // Enable PostCSS for CSS transformations
+    scss: {
+      prependData: `@import 'src/lib/styles/variables.scss';` // Use global SCSS variables
+    },
+    // Enable other preprocessors as needed
+  }),
+
+  kit: {
+    // Adapter for deployment (Vercel in this case)
+    adapter: adapter(),
+
+    // Path aliases for easier imports
+    alias: {
+      $lib: 'src/lib',
+      $components: 'src/lib/components',
+      $styles: 'src/lib/styles',
+      $images: 'static/images',
+      $videos: 'static/videos',
+      $utils: 'src/lib/utils',
+    },
+
+    // Updated prerendering configuration
+    prerender: {
+      entries: ['*'], // Prerender all routes by default
+    },
+  }
 };
 
+// Export the configuration
 export default config;

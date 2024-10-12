@@ -1,9 +1,9 @@
-<script>
+<script lang="ts">
 	import { onMount, onDestroy } from 'svelte';
 	import { Chart } from 'chart.js/auto';
 	import 'chartjs-adapter-date-fns'; // For time-based formatting
 
-	let chart;
+	let chart: Chart | null = null;
 
 	// Extended Timeline Data: History + Future Projections
 	const timelineData = [
@@ -26,48 +26,52 @@
 	const events = timelineData.map(d => d.event);
 
 	onMount(() => {
-		const ctx = document.getElementById('timelineChart').getContext('2d');
-
-		// Initialize the chart
-		chart = new Chart(ctx, {
-			type: 'line',
-			data: {
-				labels,
-				datasets: [{
-					label: 'History & Future of Telephones',
-					data: labels.map((_, i) => i),
-					fill: false,
-					borderColor: '#2a9fd6',
-					pointBackgroundColor: '#f39c12',
-					pointBorderColor: '#e74c3c',
-					tension: 0.4 // Smoothens the line
-				}]
-			},
-			options: {
-				scales: {
-					x: {
-						type: 'time',
-						time: {
-							unit: 'year',
-							displayFormats: {
-								year: 'YYYY'
+		const canvas = document.getElementById('timelineChart') as HTMLCanvasElement;
+		if (canvas) {
+			const ctx = canvas.getContext('2d');
+			if (ctx) {
+				// Initialize the chart
+				chart = new Chart(ctx, {
+					type: 'line',
+					data: {
+						labels,
+						datasets: [{
+							label: 'History & Future of Telephones',
+							data: labels.map((_, i) => i),
+							fill: false,
+							borderColor: '#2a9fd6',
+							pointBackgroundColor: '#f39c12',
+							pointBorderColor: '#e74c3c',
+							tension: 0.4 // Smoothens the line
+						}]
+					},
+					options: {
+						scales: {
+							x: {
+								type: 'time',
+								time: {
+									unit: 'year',
+									displayFormats: {
+										year: 'YYYY'
+									}
+								}
+							},
+							y: {
+								beginAtZero: true,
+								display: false // Hide y-axis since it's just for placement
+							}
+						},
+						plugins: {
+							tooltip: {
+								callbacks: {
+									label: (tooltipItem) => `${events[tooltipItem.dataIndex]} (${labels[tooltipItem.dataIndex]})`
+								}
 							}
 						}
-					},
-					y: {
-						beginAtZero: true,
-						display: false // Hide y-axis since it's just for placement
 					}
-				},
-				plugins: {
-					tooltip: {
-						callbacks: {
-							label: (tooltipItem) => `${events[tooltipItem.dataIndex]} (${labels[tooltipItem.dataIndex]})`
-						}
-					}
-				}
+				});
 			}
-		});
+		}
 	});
 
 	// Cleanup when component is destroyed
