@@ -1,9 +1,7 @@
 <script>
-	import { onMount } from 'svelte';
-	import { Chart, TimeScale, LineController, LineElement, PointElement, Tooltip, Legend, Title } from 'chart.js';
-	import 'chartjs-adapter-date-fns'; // For parsing dates
-
-	Chart.register(TimeScale, LineController, LineElement, PointElement, Tooltip, Legend, Title);
+	import { onMount, onDestroy } from 'svelte';
+	import { Chart } from 'chart.js/auto'; // Auto imports controllers, elements, etc.
+	import 'chartjs-adapter-date-fns'; // For time-based formatting
 
 	let chart;
 
@@ -29,18 +27,20 @@
 
 	onMount(() => {
 		const ctx = document.getElementById('timelineChart').getContext('2d');
+
+		// Initialize the chart
 		chart = new Chart(ctx, {
 			type: 'line',
 			data: {
 				labels,
 				datasets: [{
 					label: 'History & Future of Telephones',
-					data: labels.map((_, i) => i), // Just sequential values
+					data: labels.map((_, i) => i), // Sequential values for the timeline
 					fill: false,
 					borderColor: '#2a9fd6',
 					pointBackgroundColor: '#f39c12',
 					pointBorderColor: '#e74c3c',
-					tension: 0.4 // Curves the line a bit
+					tension: 0.4 // Smoothens the line
 				}]
 			},
 			options: {
@@ -53,6 +53,10 @@
 								year: 'YYYY'
 							}
 						}
+					},
+					y: {
+						beginAtZero: true,
+						display: false // Hide y-axis since it's just for placement
 					}
 				},
 				plugins: {
@@ -66,8 +70,11 @@
 		});
 	});
 
+	// Cleanup when component is destroyed
 	onDestroy(() => {
-		if (chart) chart.destroy();
+		if (chart) {
+			chart.destroy();
+		}
 	});
 </script>
 
