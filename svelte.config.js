@@ -4,9 +4,8 @@ import preprocess from 'svelte-preprocess';
 
 const config = {
     preprocess: preprocess({
-        postcss: true,  // Only enable PostCSS if you need it
-        scss: true,     // Enable SCSS if you're using it
-        typescript: false // Ensure TypeScript is disabled
+        postcss: true,   // Enable PostCSS if necessary
+        typescript: false // Explicitly disable TypeScript preprocessing
     }),
     kit: {
         adapter: adapter(),

@@ -15,7 +15,6 @@
 <MetaTags
     title="Starphone - Public Communication"
     description="Starphone provides public communication solutions in extreme environments."
-    keywords="Starphone, public communication, hybrid networks, faraday cage"
 />
 
 <!-- App layout with smooth transitions -->
