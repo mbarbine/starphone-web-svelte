@@ -98,7 +98,7 @@
     <div class="container">
         <h2>Join the Movement</h2>
         <p>Be a part of something bigger. Whether you're an engineer, designer, or visionary, PH3AR and Starphone are looking for talented people to help shape the future of communication.</p>
-        <a href="/contact" class="button">Get Involved</a>
+        <a href="/support" class="button">Support Us</a>
     </div>
 </section>
 
