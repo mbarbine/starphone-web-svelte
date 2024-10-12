@@ -24,7 +24,7 @@
 <section class="hero">
 	<div class="hero-content">
 		<h1>Starphone</h1>
-		<p>The future of public communication is here. Space-grade, Faraday-protected, and powered by hybrid networks. Join us on this journey to revolutionize how the world connects.</p>
+		<p class="hero-text">The future of public communication is here. Space-grade, Faraday-protected, and powered by hybrid networks. Join us on this journey to revolutionize how the world connects.</p>
 		<a href="/about" class="cta-button">Learn More</a>
 	</div>
 </section>
@@ -62,7 +62,6 @@
 	</div>
 </section>
 
-<!-- Media Section -->
 <section class="section section-media">
 	<div class="container">
 		<h2>Follow Us</h2>
@@ -78,7 +77,6 @@
 	</div>
 </section>
 
-<!-- Request Support Section -->
 <section class="section section-support">
 	<div class="container">
 		<h2>Support Starphone</h2>
@@ -89,8 +87,13 @@
 	</div>
 </section>
 
+<footer>
+	<div class="footer-content">
+		<p>&copy; 2024 Starphone. All rights reserved.</p>
+	</div>
+</footer>
+
 <style>
-	/* LCARS-inspired colors */
 	:root {
 		--lcars-blue: #2a9fd6;
 		--lcars-orange: #f39c12;
@@ -98,13 +101,14 @@
 		--lcars-accent: #e74c3c;
 		--background-dark: #2c3e50;
 		--text-light: #ecf0f1;
+		--primary-color: #ffffff;
+		--button-hover: #ff6e40;
 	}
 
 	body {
 		margin: 0;
-		padding: 0;
 		background-color: var(--background-dark);
-		color: var(--text-light);
+		color: var(--primary-color);
 		font-family: 'Roboto', sans-serif;
 	}
 
@@ -112,139 +116,106 @@
 		font-family: 'Montserrat', sans-serif;
 	}
 
+	/* Hero Section */
 	.hero {
 		background: var(--lcars-blue);
-		padding: 100px 0;
+		padding: 120px 0;
 		text-align: center;
+	}
+
+	.hero-content {
+		max-width: 800px;
+		margin: 0 auto;
 	}
 
 	.hero h1 {
 		font-size: 4rem;
 		margin-bottom: 20px;
-		color: var(--text-light);
+		color: var(--primary-color);
 	}
 
-	.hero p {
-		font-size: 1.25rem;
-		margin-bottom: 30px;
-		color: var(--text-light);
+	.hero-text {
+		font-size: 1.4rem;
+		margin-bottom: 40px;
+		color: var(--primary-color);
 	}
 
 	.cta-button {
 		background-color: var(--lcars-accent);
 		color: white;
-		border: none;
-		padding: 12px 24px;
-		font-size: 1.2rem;
-		cursor: pointer;
-		border-radius: 4px;
+		padding: 14px 30px;
+		font-size: 1.3rem;
+		border-radius: 8px;
 		transition: background-color 0.3s;
+		border: none;
+		cursor: pointer;
 	}
 
 	.cta-button:hover {
-		background-color: var(--lcars-orange);
+		background-color: var(--button-hover);
 	}
 
+	/* General Section Styles */
 	.section {
 		padding: 80px 0;
-		opacity: 0;
-		transform: translateY(50px);
-		transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 	}
 
-	.section.active {
-		opacity: 1;
-		transform: translateY(0);
-	}
-
-	.section h2 {
+	.section-about, .section-features, .section-media, .section-support {
 		text-align: center;
-		font-size: 2.5rem;
-		margin-bottom: 20px;
-		color: var(--lcars-blue);
 	}
 
-	.section p {
-		text-align: center;
-		font-size: 1.2rem;
-		max-width: 800px;
-		margin: 0 auto;
-		color: var(--lcars-grey);
-	}
-
-	.button {
-		display: inline-block;
-		background-color: var(--lcars-orange);
-		color: white;
-		padding: 12px 24px;
-		border-radius: 4px;
-		text-decoration: none;
-		transition: background-color 0.3s;
-		margin-top: 20px;
-	}
-
-	.button:hover {
-		background-color: var(--lcars-accent);
-	}
-
-	/* Features Grid */
 	.features-grid {
 		display: flex;
 		justify-content: space-between;
-		gap: 20px;
-		margin-top: 40px;
+		flex-wrap: wrap;
+		gap: 30px;
+		margin-top: 30px;
 	}
 
 	.feature {
 		flex: 1;
 		text-align: center;
+		background-color: var(--lcars-grey);
+		border-radius: 8px;
+		padding: 20px;
+		transition: transform 0.3s, box-shadow 0.3s;
 	}
 
-	.feature img {
-		width: 80px;
-		margin-bottom: 20px;
+	.feature:hover {
+		transform: translateY(-10px);
+		box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 	}
 
 	.feature h3 {
 		color: var(--lcars-blue);
-		font-size: 1.5rem;
-	}
-
-	.feature p {
-		color: var(--lcars-grey);
-		font-size: 1rem;
-	}
-
-	/* Media Section */
-	.section-media {
-		background-color: var(--lcars-grey);
 	}
 
 	.social-icons {
 		display: flex;
 		justify-content: center;
-		gap: 30px;
+		gap: 40px;
 		margin-top: 20px;
 	}
 
 	.social-icons img {
-		width: 40px;
+		width: 50px;
+		transition: transform 0.3s;
 	}
 
-	/* Support Section */
-	.section-support {
-		background-color: var(--lcars-accent);
+	.social-icons img:hover {
+		transform: scale(1.2);
+	}
+
+	/* Footer Styles */
+	footer {
+		background-color: var(--background-dark);
+		padding: 40px 0;
 		color: var(--text-light);
+		text-align: center;
 	}
 
-	.section-support p {
-		color: var(--text-light);
-	}
-
-	.donation-buttons {
-		display: flex;
-		justify-content: center;
-		gap: 20px;
-		margin-top: 20px;
+	.footer-content {
+		max-width: 1000px;
+		margin: 0 auto;
 	}
 </style>

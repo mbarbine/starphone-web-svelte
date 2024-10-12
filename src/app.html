@@ -3,17 +3,32 @@
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="description" content="Starphone: Revolutionizing public communication with space-grade technology and hybrid networks." />
+		
+		<!-- Open Graph Meta Tags for Social Media -->
+		<meta property="og:title" content="Starphone: The Future of Public Communication" />
+		<meta property="og:description" content="Discover Starphone, the open-source project that’s revolutionizing public communication. Built with space-grade materials and Faraday protection." />
+		<meta property="og:image" content="%sveltekit.assets%/cover.jpg" />
+		<meta property="og:url" content="https://your-site-url.com" />
+		<meta property="og:type" content="website" />
+
+		<!-- Twitter Card Meta Tags -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="Starphone: The Future of Public Communication" />
+		<meta name="twitter:description" content="Discover the open-source Starphone project, combining Faraday protection and hybrid network systems for reliable public communication." />
+		<meta name="twitter:image" content="%sveltekit.assets%/cover.jpg" />
+
+		<!-- Preload fonts for performance optimization -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+		
+		<!-- SvelteKit Head -->
 		%sveltekit.head%
 	</head>
-	<!-- src/app.html -->
-<head>
-	<!-- Existing head content -->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-  </head>
-  
+
 	<body data-sveltekit-preload-data="hover">
 		<div style="display: contents">%sveltekit.body%</div>
 	</body>
