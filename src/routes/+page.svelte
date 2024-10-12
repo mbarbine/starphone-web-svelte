@@ -24,18 +24,18 @@
 <section class="hero">
 	<div class="hero-content">
 		<h1>Starphone</h1>
-		<p>The future of public communication is here. Space-grade, Faraday-protected, and powered by hybrid networks. Starphone is a revolution in communication.</p>
+		<p>The future of public communication is here. Space-grade, Faraday-protected, and powered by hybrid networks. Join us on this journey to revolutionize how the world connects.</p>
 		<a href="/about" class="cta-button">Learn More</a>
 	</div>
 </section>
 
 <section class="section section-about">
 	<div class="container">
-		<h2>Join the Open-Source Revolution</h2>
+		<h2>About Starphone</h2>
 		<p>
-			Starphone is more than a device—it’s a vision for reliable, secure public communication in the harshest environments. Developed by the brilliant minds at PH3AR, Starphone combines cutting-edge technology with a commitment to improving public access to communication. Our project is open source, and you’re invited to join us!
+			Starphone is an open-source initiative aimed at revolutionizing public communication. We’re creating a device that will stand the test of time, combining cutting-edge technology with a bold vision for the future of secure, reliable communication.
 		</p>
-		<a href="/support" class="button">Support Starphone</a>
+		<a href="/about" class="button">Discover More</a>
 	</div>
 </section>
 
@@ -62,24 +62,29 @@
 	</div>
 </section>
 
+<!-- Media Section -->
 <section class="section section-media">
 	<div class="container">
 		<h2>Follow Us</h2>
-		<p>Stay updated with Starphone's journey. Follow us on social media!</p>
-		<div class="social-media-icons">
-			<a href="https://x.com/Starphone" target="_blank"><img src="/icons/x-logo.svg" alt="X (formerly Twitter)"></a>
-			<a href="https://instagram.com/Starphone" target="_blank"><img src="/icons/instagram-logo.svg" alt="Instagram"></a>
+		<p>Stay updated with the latest from Starphone by following us on social media.</p>
+		<div class="social-icons">
+			<a href="https://x.com/Starphone" target="_blank">
+				<img src="/icons/x.svg" alt="X">
+			</a>
+			<a href="https://instagram.com/Starphone" target="_blank">
+				<img src="/icons/instagram.svg" alt="Instagram">
+			</a>
 		</div>
 	</div>
 </section>
 
-<section class="section section-donate">
+<!-- Request Support Section -->
+<section class="section section-support">
 	<div class="container">
-		<h2>Support the Starphone Project</h2>
-		<p>Your support helps us bring this revolutionary technology to life. Join us by donating or contributing your skills to the project. Together, we can change the future of public communication.</p>
+		<h2>Support Starphone</h2>
+		<p>Be part of something revolutionary. By supporting Starphone, you’re helping us create a new future for public communication. Your contributions make a real difference.</p>
 		<div class="donation-buttons">
-			<a href="https://www.patreon.com/ph3ar" target="_blank" class="button">Support via Patreon</a>
-			<a href="https://github.com/ph3ar/starphone" target="_blank" class="button">Donate via GitHub</a>
+			<a href="/support" class="button">How to Support Us</a>
 		</div>
 	</div>
 </section>
@@ -134,14 +139,12 @@
 		cursor: pointer;
 		border-radius: 4px;
 		transition: background-color 0.3s;
-		text-decoration: none;
 	}
 
 	.cta-button:hover {
 		background-color: var(--lcars-orange);
 	}
 
-	/* Sections */
 	.section {
 		padding: 80px 0;
 		opacity: 0;
@@ -212,34 +215,29 @@
 		font-size: 1rem;
 	}
 
-	/* Social Media Section */
+	/* Media Section */
 	.section-media {
 		background-color: var(--lcars-grey);
-		text-align: center;
 	}
 
-	.social-media-icons {
+	.social-icons {
 		display: flex;
 		justify-content: center;
-		gap: 20px;
+		gap: 30px;
 		margin-top: 20px;
 	}
 
-	.social-media-icons a img {
+	.social-icons img {
 		width: 40px;
-		transition: transform 0.3s ease;
 	}
 
-	.social-media-icons a:hover img {
-		transform: scale(1.1);
-	}
-
-	/* Donation Section */
-	.section-donate {
+	/* Support Section */
+	.section-support {
 		background-color: var(--lcars-accent);
+		color: var(--text-light);
 	}
 
-	.section-donate p {
+	.section-support p {
 		color: var(--text-light);
 	}
 
