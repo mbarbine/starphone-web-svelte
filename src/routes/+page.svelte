@@ -1,5 +1,5 @@
 <script>
-	import { onMount } from 'svelte'; // Import onMount for proper mounting behavior
+	import { onMount } from 'svelte';
 
 	let sections;
 
@@ -25,17 +25,17 @@
 	<div class="hero-content">
 		<h1>Starphone</h1>
 		<p>The future of public communication is here. Space-grade, Faraday-protected, and powered by hybrid networks. Starphone is a revolution in communication.</p>
-		<button class="cta-button">Learn More</button>
+		<a href="/about" class="cta-button">Learn More</a>
 	</div>
 </section>
 
 <section class="section section-about">
 	<div class="container">
-		<h2>About Starphone</h2>
+		<h2>Join the Open-Source Revolution</h2>
 		<p>
-			Starphone is more than a device—it’s a vision for reliable, secure public communication in the harshest environments. Developed by the brilliant minds at PH3AR, it combines cutting-edge technology with a commitment to improving public access to communication.
+			Starphone is more than a device—it’s a vision for reliable, secure public communication in the harshest environments. Developed by the brilliant minds at PH3AR, Starphone combines cutting-edge technology with a commitment to improving public access to communication. Our project is open source, and you’re invited to join us!
 		</p>
-		<a href="/about" class="button">Read More</a>
+		<a href="/support" class="button">Support Starphone</a>
 	</div>
 </section>
 
@@ -62,10 +62,21 @@
 	</div>
 </section>
 
+<section class="section section-media">
+	<div class="container">
+		<h2>Follow Us</h2>
+		<p>Stay updated with Starphone's journey. Follow us on social media!</p>
+		<div class="social-media-icons">
+			<a href="https://x.com/Starphone" target="_blank"><img src="/icons/x-logo.svg" alt="X (formerly Twitter)"></a>
+			<a href="https://instagram.com/Starphone" target="_blank"><img src="/icons/instagram-logo.svg" alt="Instagram"></a>
+		</div>
+	</div>
+</section>
+
 <section class="section section-donate">
 	<div class="container">
 		<h2>Support the Starphone Project</h2>
-		<p>Your support helps us bring this revolutionary technology to life. Join us by donating and helping spread the message of secure public communication.</p>
+		<p>Your support helps us bring this revolutionary technology to life. Join us by donating or contributing your skills to the project. Together, we can change the future of public communication.</p>
 		<div class="donation-buttons">
 			<a href="https://www.patreon.com/ph3ar" target="_blank" class="button">Support via Patreon</a>
 			<a href="https://github.com/ph3ar/starphone" target="_blank" class="button">Donate via GitHub</a>
@@ -123,6 +134,7 @@
 		cursor: pointer;
 		border-radius: 4px;
 		transition: background-color 0.3s;
+		text-decoration: none;
 	}
 
 	.cta-button:hover {
@@ -200,13 +212,35 @@
 		font-size: 1rem;
 	}
 
+	/* Social Media Section */
+	.section-media {
+		background-color: var(--lcars-grey);
+		text-align: center;
+	}
+
+	.social-media-icons {
+		display: flex;
+		justify-content: center;
+		gap: 20px;
+		margin-top: 20px;
+	}
+
+	.social-media-icons a img {
+		width: 40px;
+		transition: transform 0.3s ease;
+	}
+
+	.social-media-icons a:hover img {
+		transform: scale(1.1);
+	}
+
 	/* Donation Section */
 	.section-donate {
 		background-color: var(--lcars-accent);
 	}
 
 	.section-donate p {
-		color: var (--text-light);
+		color: var(--text-light);
 	}
 
 	.donation-buttons {
