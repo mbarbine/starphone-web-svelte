@@ -1,4 +1,3 @@
-// Import necessary modules
 import adapter from '@sveltejs/adapter-vercel';
 import preprocess from 'svelte-preprocess';
 
@@ -8,9 +7,9 @@ const config = {
     typescript: true,  // Enable TypeScript support
     postcss: true,     // Enable PostCSS for CSS transformations
     scss: {
-      prependData: `@import 'src/lib/styles/variables.scss';` // Use global SCSS variables
+      prependData: `@import 'src/lib/styles/variables.scss';` // SCSS global variables, if needed
     },
-    // Enable other preprocessors as needed
+    sourceMap: true,   // Enable source maps for easier debugging
   }),
 
   kit: {
@@ -30,9 +29,9 @@ const config = {
     // Updated prerendering configuration
     prerender: {
       entries: ['*'], // Prerender all routes by default
-    },
+      concurrency: 5, // Limit concurrency for better performance on large builds
+    }
   }
 };
 
-// Export the configuration
 export default config;
