@@ -2,6 +2,7 @@
 	import { onMount, onDestroy } from 'svelte';
 	import { Chart } from 'chart.js/auto';
 	import 'chartjs-adapter-date-fns'; // For time-based formatting
+	import '../../lib/styles/global.css';  // Ensure correct path to globals
 
 	let chart: Chart | null = null;
 
@@ -39,9 +40,9 @@
 							label: 'History & Future of Telephones',
 							data: labels.map((_, i) => i),
 							fill: false,
-							borderColor: '#2a9fd6',
-							pointBackgroundColor: '#f39c12',
-							pointBorderColor: '#e74c3c',
+							borderColor: 'var(--color-primary)',
+							pointBackgroundColor: 'var(--color-secondary)',
+							pointBorderColor: 'var(--color-accent)',
 							tension: 0.4 // Smoothens the line
 						}]
 					},
@@ -82,6 +83,7 @@
 	});
 </script>
 
+<!-- Page structure -->
 <section class="history-page">
 	<div class="container">
 		<h1>History & Future of the Telephone</h1>
@@ -103,32 +105,34 @@
 </section>
 
 <style>
+	/* Use global color scheme and enhance responsiveness */
 	.history-page {
 		padding: 60px 20px;
-		background-color: #f5f5f5;
-		color: #333;
+		background-color: var(--color-background);
+		color: var(--color-text);
+		text-align: center;
 	}
 
 	.history-page h1 {
 		font-size: 3rem;
-		color: #2a9fd6;
-		text-align: center;
+		color: var(--color-primary);
 		margin-bottom: 40px;
+		font-family: 'Montserrat', sans-serif;
 	}
 
 	.history-page p {
 		font-size: 1.5rem;
-		text-align: center;
+		color: var(--color-text-light);
 		margin-bottom: 50px;
-		color: #444;
 	}
 
 	canvas {
 		display: block;
 		margin: 0 auto;
-		background-color: #fff; /* Ensure chart canvas stands out */
-		border-radius: 8px;
+		background-color: white;
+		border-radius: var(--border-radius);
 		padding: 10px;
+		box-shadow: var(--box-shadow);
 	}
 
 	.timeline-events {
@@ -139,12 +143,12 @@
 	}
 
 	.timeline-event {
-		background-color: white;
-		border-radius: 12px;
-		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+		background-color: var(--color-light);
+		border-radius: var(--border-radius);
+		box-shadow: var(--box-shadow);
 		padding: 30px;
 		text-align: center;
-		transition: transform 0.3s ease, box-shadow 0.3s ease;
+		transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
 	}
 
 	.timeline-event:hover {
@@ -154,13 +158,13 @@
 
 	.timeline-event h3 {
 		font-size: 1.75rem;
-		color: #2a9fd6;
+		color: var(--color-primary);
 		margin-bottom: 10px;
 	}
 
 	.timeline-event p {
 		font-size: 1.1rem;
-		color: #666;
+		color: var(--color-text-light);
 	}
 
 	/* Add media queries for better responsiveness */

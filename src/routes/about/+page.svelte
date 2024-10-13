@@ -1,9 +1,11 @@
 <script>
     import VideoEmbed from '$lib/components/VideoEmbed.svelte';
     import TeamMemberCard from '$lib/components/TeamMemberCard.svelte';
+    import '../../lib/styles/global.css';  // Ensure this path is correct based on your folder structure
     export let pageData;
 </script>
 
+<!-- Enhanced Hero Section -->
 <section class="about-hero">
     <div class="hero-content">
         <h1>Welcome to the Future of Communication</h1>
@@ -11,7 +13,8 @@
     </div>
 </section>
 
-<section class="about-origin">
+<!-- Enhanced Origin Section -->
+<section class="about-origin section">
     <div class="container">
         <h2>Our Journey: From PH3AR to Starphone</h2>
         <p>
@@ -34,7 +37,8 @@
     </div>
 </section>
 
-<section class="about-technology">
+<!-- Enhanced Technology Section -->
+<section class="about-technology section">
     <div class="container">
         <h2>The Technology Behind Starphone</h2>
         <div class="tech-features">
@@ -57,7 +61,8 @@
     </div>
 </section>
 
-<section class="about-community">
+<!-- Enhanced Community Section -->
+<section class="about-community section">
     <div class="container">
         <h2>PH3AR: Community & Collaboration</h2>
         <p>
@@ -81,7 +86,8 @@
     </div>
 </section>
 
-<section class="about-team">
+<!-- Enhanced Team Section -->
+<section class="about-team section">
     <div class="container">
         <h2>The Team Behind Starphone</h2>
         <div class="team-grid">
@@ -94,7 +100,8 @@
     </div>
 </section>
 
-<section class="call-to-action">
+<!-- Call to Action Section -->
+<section class="call-to-action section">
     <div class="container">
         <h2>Join the Movement</h2>
         <p>Be a part of something bigger. Whether you're an engineer, designer, or visionary, PH3AR and Starphone are looking for talented people to help shape the future of communication.</p>
@@ -103,18 +110,16 @@
 </section>
 
 <style>
-    /* Hero Section */
+    /* Enhance the overall design, leveraging global CSS where possible */
+
     .about-hero {
-        background-image: url('/images/starphone-hero-bg.jpg');
-        background-size: cover;
-        background-position: center;
-        color: white;
+        background-color: var(--color-primary-dark); /* Dark blue background */
+        color: var(--color-button-text);
         text-align: center;
         padding: 100px 0;
-        position: relative;
     }
 
-    .about-hero .hero-content {
+    .hero-content {
         max-width: 800px;
         margin: 0 auto;
         background: rgba(0, 0, 0, 0.6);
@@ -122,19 +127,40 @@
         border-radius: 8px;
     }
 
-    .about-hero h1 {
-        font-size: 3rem;
+    .hero-content h1 {
+        font-size: 3.5rem;
         margin-bottom: 20px;
     }
 
-    .about-hero p {
-        font-size: 1.2rem;
+    .hero-content p {
+        font-size: 1.4rem;
     }
 
-    /* Timeline */
-    .about-origin {
-        padding: 60px 0;
-        background-color: #f9f9f9;
+    .section {
+        padding: 80px 0;
+    }
+
+    .about-origin, .about-technology, .about-community, .about-team {
+        background-color: var(--color-background);
+        color: var(--color-text);
+    }
+
+    .about-technology .tech-features {
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+    }
+
+    .tech-item {
+        flex: 1;
+        text-align: center;
+        background-color: var(--color-secondary);
+        padding: 20px;
+        border-radius: var(--border-radius);
+    }
+
+    .tech-item h3 {
+        color: var(--color-primary-dark);
     }
 
     .timeline {
@@ -145,99 +171,26 @@
 
     .timeline-item {
         flex: 1;
+        text-align: center;
+        background-color: var(--color-secondary);
         padding: 20px;
-        background-color: #fff;
         border-radius: 8px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        text-align: center;
-    }
-
-    .timeline-item h3 {
-        font-size: 1.5rem;
-        margin-bottom: 10px;
-        color: #0070f3;
-    }
-
-    .timeline-item p {
-        font-size: 1rem;
-        color: #555;
-    }
-
-    /* Technology Section */
-    .about-technology {
-        background-color: #fff;
-        padding: 60px 0;
-    }
-
-    .tech-features {
-        display: flex;
-        justify-content: space-between;
-        gap: 20px;
-    }
-
-    .tech-item {
-        flex: 1;
-        text-align: center;
-    }
-
-    .tech-item img {
-        width: 80px;
-        margin-bottom: 20px;
-    }
-
-    .tech-item h3 {
-        font-size: 1.5rem;
-        color: #0070f3;
-    }
-
-    .tech-item p {
-        font-size: 1rem;
-        color: #555;
-    }
-
-    /* Community Section */
-    .about-community {
-        background-color: #f0f0f5;
-        padding: 60px 0;
+        box-shadow: var(--box-shadow);
     }
 
     .community-grid {
         display: flex;
-        justify-content: space-between;
         gap: 20px;
+        margin-top: 40px;
     }
 
     .community-quote {
         flex: 2;
     }
 
-    .community-quote blockquote {
-        font-size: 1.2rem;
-        font-style: italic;
-        color: #333;
-        margin: 0 0 10px;
-    }
-
-    .community-quote cite {
-        display: block;
-        font-size: 0.9rem;
-        color: #555;
-    }
-
     .community-logo {
         flex: 1;
         text-align: center;
-    }
-
-    .community-logo img {
-        width: 150px;
-        margin-bottom: 10px;
-    }
-
-    /* Team Section */
-    .about-team {
-        background-color: #fff;
-        padding: 60px 0;
     }
 
     .team-grid {
@@ -247,16 +200,14 @@
         justify-content: center;
     }
 
-    /* Call to Action */
     .call-to-action {
+        background-color: var(--color-primary);
         text-align: center;
-        padding: 60px 0;
-        background-color: #0070f3;
-        color: white;
+        color: var(--color-button-text);
     }
 
     .call-to-action h2 {
-        font-size: 2rem;
+        font-size: 2.5rem;
         margin-bottom: 20px;
     }
 
@@ -265,16 +216,16 @@
         margin-bottom: 30px;
     }
 
-    .call-to-action a.button {
-        background-color: #fff;
-        color: #0070f3;
+    .call-to-action .button {
+        background-color: var(--color-secondary);
+        color: var(--color-button-text);
         padding: 12px 24px;
-        border-radius: 4px;
+        border-radius: 8px;
         text-decoration: none;
-        font-weight: bold;
+        transition: background-color var(--transition-speed) ease;
     }
 
-    .call-to-action a.button:hover {
-        background-color: #f0f0f5;
+    .call-to-action .button:hover {
+        background-color: var(--color-secondary-dark);
     }
 </style>

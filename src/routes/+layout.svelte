@@ -8,6 +8,9 @@
     import { MetaTags } from 'svelte-meta-tags';
     import { fade, slide } from 'svelte/transition';
 
+    // Import global CSS
+    import '/src/lib/styles/global.css';  // Adjust path if necessary
+
     // Inject Vercel Analytics only in the browser
     if (browser) inject();
 </script>

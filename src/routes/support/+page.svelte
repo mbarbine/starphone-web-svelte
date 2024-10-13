@@ -6,7 +6,7 @@
     <div class="container">
         <h1>Support the Revolution in Public Communication</h1>
         <p>
-            Starphone isn’t just another gadget—it’s the future of secure, public communication for everyone, everywhere. From bustling cities to the farthest reaches of space, we’re working hard to make communication accessible to all. 
+            Starphone isn’t just another gadget—it’s the future of secure, public communication for everyone, everywhere. From bustling cities to the farthest reaches of space, we’re working hard to make communication accessible to all.
             But we need your help to make it a reality!
         </p>
 
@@ -76,19 +76,19 @@
 </section>
 
 <style>
-    /* General Styling */
+    /* Support Page Styling */
     .support-page {
         padding: 60px 20px;
-        background-color: #121212;
-        color: #f0f0f5;
+        background-color: var(--color-background);
+        color: var(--color-text);
         text-align: center;
     }
 
     h1, h2 {
-        color: #ff3e00;
+        color: var(--color-primary);
         font-size: 2.8rem;
         margin-bottom: 20px;
-        font-family: 'Montserrat', sans-serif;
+        font-family: var(--font-secondary);
     }
 
     p {
@@ -96,8 +96,8 @@
         max-width: 800px;
         margin: 0 auto 40px;
         line-height: 1.6;
-        color: #f0f0f5;
-        font-family: 'Roboto', sans-serif;
+        color: var(--color-text-light);
+        font-family: var(--font-primary);
     }
 
     /* Testimonials */
@@ -107,7 +107,7 @@
 
     .testimonials h2 {
         font-size: 2rem;
-        color: #ff3e00;
+        color: var(--color-primary);
         margin-bottom: 30px;
     }
 
@@ -119,18 +119,19 @@
     }
 
     .testimonial {
-        background-color: #f0f0f5;
-        color: #333;
+        background-color: var(--color-light);
+        color: var(--color-text);
         padding: 20px;
-        border-radius: 10px;
+        border-radius: var(--border-radius);
         width: 300px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        box-shadow: var(--box-shadow);
         text-align: left;
-        transition: transform 0.3s ease;
+        transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
     }
 
     .testimonial:hover {
-        transform: scale(1.05);
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     }
 
     .testimonial p {
@@ -140,7 +141,7 @@
 
     .testimonial cite {
         font-size: 0.9rem;
-        color: #666;
+        color: var(--color-text-light);
     }
 
     /* Donation Buttons */
@@ -153,20 +154,20 @@
 
     .button {
         padding: 12px 24px;
-        border-radius: 6px;
+        border-radius: var(--border-radius);
         font-size: 1.1rem;
         color: white;
         text-decoration: none;
-        transition: background-color 0.3s ease;
-        font-family: 'Montserrat', sans-serif;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        font-family: var(--font-secondary);
     }
 
     .button.primary {
-        background-color: #ff3e00;
+        background-color: var(--color-primary);
     }
 
     .button.secondary {
-        background-color: #4075a6;
+        background-color: var(--color-secondary);
     }
 
     .button:hover {
@@ -181,11 +182,11 @@
 
     /* Final Call to Action */
     .final-appeal {
-        background-color: #f0a500;
-        color: #121212;
+        background-color: var(--color-secondary);
+        color: var(--color-text);
         padding: 40px;
-        border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
         margin-top: 60px;
     }
 
@@ -198,20 +199,20 @@
         font-size: 1.2rem;
         max-width: 800px;
         margin: 0 auto 30px;
-        color: #121212;
     }
 
     .final-cta {
-        background-color: #121212;
-        color: #f0f0f5;
+        background-color: var(--color-primary);
+        color: var(--color-button-text);
         padding: 14px 28px;
-        border-radius: 4px;
+        border-radius: var(--border-radius);
         text-decoration: none;
         font-weight: bold;
+        transition: background-color 0.3s ease, transform 0.3s ease;
     }
 
     .final-cta:hover {
-        background-color: #333;
+        background-color: var(--color-primary-dark);
         transform: scale(1.05);
     }
 

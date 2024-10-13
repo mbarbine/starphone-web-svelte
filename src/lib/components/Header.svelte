@@ -17,18 +17,26 @@
             <a href="/">Starphone</a>
             <a href="/about">About</a>
             <a href="/support">Support</a>
-            <a href="/contact">Contact</a>
             <a href="/history">History</a>
-            <a href="/press">Press</a>
+            <a href="/resources">Open Source</a>
         </nav>
     </div>
 </header>
 
 <style>
+    /* Global integration and color scheme */
+    :root {
+        --color-primary: #006494; /* Medium Blue */
+        --color-secondary: #FFB30F; /* Gold */
+        --color-text-light: #f0f0f5;
+        --color-header-footer-bg: #000494; /* Dark Blue */
+        --color-header-footer-text: #ffffff;
+    }
+
     header {
-        background-color: #1c1c1e;
+        background-color: var(--color-header-footer-bg);
         padding: 15px 20px;
-        color: #f0f0f5;
+        color: var(--color-header-footer-text);
         position: sticky;
         top: 0;
         z-index: 1000;
@@ -45,20 +53,27 @@
     }
 
     header h1 a {
-        color: #f0f0f5;
+        color: var(--color-header-footer-text);
         font-size: 2rem;
+        font-family: 'Montserrat', sans-serif;
         text-transform: uppercase;
         letter-spacing: 2px;
         text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    header h1 a:hover {
+        color: var(--color-secondary); /* Hover color change */
     }
 
     header nav {
         display: flex;
         gap: 20px;
+        font-family: 'Roboto', sans-serif;
     }
 
     header nav a {
-        color: #f0f0f5;
+        color: var(--color-header-footer-text);
         font-weight: bold;
         font-size: 1.1rem;
         text-transform: uppercase;
@@ -67,10 +82,24 @@
     }
 
     header nav a:hover {
-        color: #f0a500;
+        color: var(--color-secondary); /* Hover on links */
     }
 
-    /* Hide navigation on small screens */
+    .menu-toggle {
+        background: none;
+        border: none;
+        color: var(--color-header-footer-text);
+        font-size: 1.1rem;
+        cursor: pointer;
+        padding: 10px;
+        transition: color 0.3s ease;
+    }
+
+    .menu-toggle:hover {
+        color: var(--color-secondary); /* Menu button hover effect */
+    }
+
+    /* Mobile View: Initially hide navigation */
     nav {
         display: none;
     }
@@ -83,21 +112,12 @@
         top: 100%;
         left: 0;
         width: 100%;
-        background-color: #1c1c1e;
+        background-color: var(--color-header-footer-bg);
         padding: 20px;
         text-align: center;
     }
 
-    .menu-toggle {
-        background: none;
-        border: none;
-        color: #f0f0f5;
-        font-size: 1.1rem;
-        cursor: pointer;
-        padding: 10px;
-    }
-
-    /* Mobile view */
+    /* Mobile view adjustments */
     @media (max-width: 768px) {
         header nav {
             display: none;
@@ -109,6 +129,21 @@
 
         header h1 a {
             font-size: 1.8rem;
+        }
+    }
+
+    /* Responsive Menu */
+    @media (max-width: 480px) {
+        header h1 a {
+            font-size: 1.6rem;
+        }
+
+        .menu-toggle {
+            font-size: 1rem;
+        }
+
+        nav.open {
+            padding: 15px;
         }
     }
 </style>

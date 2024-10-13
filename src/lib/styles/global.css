@@ -19,21 +19,21 @@
     --font-size-heading6: 1rem;
 
     /* Colors */
-    --color-background: #f5f6fa;
+    --color-background: #f5f6fa;  /* Light background */
     --color-text: #333333;
     --color-text-light: #5a5a5a;
 
     /* Updated Primary Palette */
     --color-primary: #006494; /* Medium Blue */
     --color-primary-dark: #000494; /* Dark Blue */
-    --color-secondary: #FFB30F; /* Gold/Yellow */
+    --color-secondary: #FFB30F; /* Yellow/Gold */
     --color-secondary-dark: #d88b00;
 
     /* Header and Footer Colors */
     --color-header-footer-bg: #000494; /* Dark Blue */
-    --color-header-footer-text: #ffffff;
+    --color-header-footer-text: #ffffff; /* White text */
     --color-link: #006494; /* Medium Blue */
-    --color-link-hover: #FFB30F; /* Gold/Yellow for contrast */
+    --color-link-hover: #FFB30F; /* Yellow/Gold for contrast */
     --color-footer-border: #006494;
 
     /* Additional Colors */
@@ -216,142 +216,82 @@ footer a:hover, footer a:focus {
     outline: none;
 }
 
-/* Gallery Section */
-.gallery-section, .video-section {
-    padding: 3.75rem 1rem;
-    background-color: var(--color-background);
-}
-
-.gallery-section h3, .video-section h3 {
-    font-size: var(--font-size-heading2);
-    margin-bottom: 1.875rem;
-    color: #2a2a2a;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.gallery {
+/* Features Section */
+.features-grid {
     display: flex;
+    justify-content: space-between;
     flex-wrap: wrap;
-    gap: 1.25rem;
-    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
 }
 
-.gallery img {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-    border-radius: var(--border-radius);
-    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
-}
-
-.gallery img:hover, .gallery img:focus {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px var(--color-gallery-hover);
-    outline: none;
-}
-
-/* Video Gallery */
-.video-gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.25rem;
-}
-
-.video-gallery video {
-    width: 100%;
-    max-width: 500px;
-    border-radius: var(--border-radius);
-    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
-}
-
-.video-gallery video:hover, .video-gallery video:focus {
-    transform: scale(1.03);
-    box-shadow: 0 8px 16px var(--color-gallery-hover);
-    outline: none;
-}
-
-/* Plan Section - Educational & Engaging */
-.plan {
-    background-color: #f0f0f5;
-    padding: 5rem 1rem;
+.feature {
+    flex: 1;
     text-align: center;
+    background-color: var(--color-secondary);
+    border-radius: 8px;
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    color: var(--color-header-footer-text);
 }
 
-.plan h3 {
+.feature:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.feature h3 {
+    color: var(--color-primary-dark); /* Dark blue for feature titles */
+}
+
+/* Press Section */
+.section-press {
+    background-color: var(--color-primary);
+    padding: 80px 20px;
+    text-align: center;
+    color: var(--color-header-footer-text); /* White text */
+}
+
+.section-press h2 {
     font-size: 2.5rem;
-    color: #2a2a2a;
-    margin-bottom: 2.5rem;
+    color: var(--color-secondary); /* Yellow heading */
+    margin-bottom: 20px;
 }
 
-.plan p {
+.section-press p {
     font-size: 1.2rem;
-    color: var(--color-text-light);
-    margin-bottom: 1.875rem;
+    color: var(--color-header-footer-text); /* White */
+    margin-bottom: 40px;
 }
 
-.plan .week {
-    background-color: #ffffff;
-    border-radius: 10px;
-    padding: 1.25rem;
-    box-shadow: var(--box-shadow);
-    margin-bottom: 1.875rem;
-    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+/* Media Section */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 20px;
 }
 
-.plan .week:hover, .plan .week:focus {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    outline: none;
+.social-icons img {
+    width: 50px;
+    transition: transform 0.3s;
 }
 
-.plan .week h4 {
-    font-size: 1.8rem;
-    color: var(--color-primary);
-    margin-bottom: 1.25rem;
-    transition: transform var(--transition-speed) ease;
+.social-icons img:hover {
+    transform: scale(1.2);
 }
 
-.plan .week h4:hover, .plan .week h4:focus {
-    animation: bounce 1s;
-    color: var(--color-secondary);
-    outline: none;
+/* Footer Styles */
+footer {
+    background-color: var(--color-header-footer-bg); /* Dark blue background */
+    padding: 40px 0;
+    color: var(--color-header-footer-text); /* White text */
+    text-align: center;
 }
 
-.plan .week ul {
-    list-style: none;
-    padding-left: 0;
-    text-align: left;
-}
-
-.plan .week ul li {
-    position: relative;
-    font-size: 1.1rem;
-    margin-bottom: 0.625rem;
-    color: var(--color-text);
-}
-
-.plan .week ul li::before {
-    content: '•';
-    color: var(--color-secondary);
-    font-size: 1.5rem;
-    position: absolute;
-    left: -1.25rem;
-}
-
-/* Fun Animations */
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-15px);
-    }
-    60% {
-        transform: translateY(-7px);
-    }
+.footer-content {
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 /* Responsive Design */
@@ -363,14 +303,6 @@ footer a:hover, footer a:focus {
 
     header h1 a {
         font-size: 2rem;
-    }
-
-    .plan h3 {
-        font-size: 2rem;
-    }
-
-    .plan .week h4 {
-        font-size: 1.6rem;
     }
 }
 
@@ -392,11 +324,7 @@ footer a:hover, footer a:focus {
         padding: 0.75rem 1.5rem;
     }
 
-    .plan {
-        padding: 4rem 1rem;
-    }
-
-    .gallery, .video-gallery {
+    .features-grid {
         gap: 1rem;
     }
 }
@@ -407,12 +335,8 @@ footer a:hover, footer a:focus {
         font-size: 0.9rem;
     }
 
-    .gallery img, .video-gallery video {
-        max-width: 100%;
-    }
-
-    .plan .week {
-        padding: 1rem;
+    .features-grid {
+        flex-direction: column;
     }
 }
 
@@ -423,11 +347,6 @@ footer a:hover, footer a:focus {
 
     header h1 a {
         font-size: 1.75rem;
-    }
-
-    header nav a {
-        display: block;
-        margin: 0.5rem 0;
     }
 
     .hero {
@@ -445,22 +364,5 @@ footer a:hover, footer a:focus {
     .hero button {
         width: 100%;
         padding: 0.75rem;
-    }
-
-    .plan h3 {
-        font-size: 1.8rem;
-    }
-
-    .plan p {
-        font-size: 1rem;
-    }
-
-    .plan .week h4 {
-        font-size: 1.4rem;
-    }
-
-    .gallery, .video-gallery {
-        flex-direction: column;
-        align-items: center;
     }
 }

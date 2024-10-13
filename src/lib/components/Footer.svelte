@@ -1,4 +1,3 @@
-<!-- src/lib/components/Footer.svelte -->
 <footer>
     <div class="container">
         <p>&copy; {new Date().getFullYear()} Starphone Project</p>
@@ -22,26 +21,38 @@
 </footer>
 
 <style>
+    /* Use global variables from globals.css for consistent styling */
+    :root {
+        --color-primary: #006494; /* Medium Blue */
+        --color-secondary: #FFB30F; /* Gold */
+        --color-text-light: #f0f0f5;
+        --color-header-footer-bg: #000494; /* Dark Blue */
+        --color-header-footer-text: #ffffff;
+        --color-footer-border: var(--color-primary);
+    }
+
     footer {
-        background-color: #1c1c1e;
-        color: #f0f0f5;
+        background-color: var(--color-header-footer-bg);
+        color: var(--color-header-footer-text);
         padding: 20px;
         text-align: center;
-        border-top: 3px solid #0070f3;
+        border-top: 3px solid var(--color-footer-border);
     }
 
     footer a {
-        color: #f0f0f5;
+        color: var(--color-header-footer-text);
         font-weight: bold;
         margin: 0 10px;
+        text-decoration: none;
+        transition: color 0.3s ease;
     }
 
     footer a:hover {
-        color: #f0a500;
+        color: var(--color-secondary); /* Hover to Gold */
     }
 
     .lcars {
-        color: #f0a500;
+        color: var(--color-secondary); /* Gold for LCARS reference */
         font-weight: bold;
     }
 
@@ -66,6 +77,17 @@
         .social-icons img {
             width: 20px;
             height: 20px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        footer p {
+            font-size: 0.9rem;
+        }
+
+        .social-icons img {
+            width: 18px;
+            height: 18px;
         }
     }
 </style>
