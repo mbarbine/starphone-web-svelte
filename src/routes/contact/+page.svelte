@@ -13,7 +13,7 @@
         loading = true;
 
         // Send form data to Formspree
-        const response = await fetch('https://formspree.io/f/{YOUR_FORM_ID}', {
+        const response = await fetch('https://formspree.io/f/xovqqekl', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -68,27 +68,34 @@
 </section>
 
 <style>
+    /* Contact Section */
     .contact-section {
         padding: 60px 20px;
         text-align: center;
-        background-color: #f9f9f9;
+        background-color: var(--color-light-bg);
+        color: var(--color-text);
     }
 
     .contact-section h1 {
-        font-size: 2.5rem;
+        font-size: var(--font-size-heading1);
         margin-bottom: 20px;
-        color: #0070f3;
+        color: var(--color-primary);
     }
 
     .contact-section p {
-        font-size: 1.2rem;
-        color: #555;
+        font-size: var(--font-size-large);
         margin-bottom: 40px;
+        color: var(--color-text-light);
     }
 
+    /* Form Styling */
     .contact-form {
         max-width: 600px;
         margin: 0 auto;
+        background-color: var(--color-background);
+        padding: 20px;
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
     }
 
     .form-group {
@@ -100,39 +107,55 @@
         display: block;
         font-weight: bold;
         margin-bottom: 5px;
-        color: #333;
+        color: var(--color-text);
     }
 
     .form-group input, .form-group textarea {
         width: 100%;
         padding: 10px;
         border: 1px solid #ddd;
-        border-radius: 5px;
+        border-radius: var(--border-radius);
         font-size: 1rem;
+        font-family: var(--font-primary);
+        color: var(--color-text);
+        background-color: var(--color-light-bg);
+    }
+
+    .form-group input:focus, .form-group textarea:focus {
+        outline: none;
+        border-color: var(--color-primary);
+        box-shadow: 0 0 0 3px rgba(0, 100, 148, 0.2);
     }
 
     .form-group textarea {
         resize: vertical;
     }
 
+    /* Button Styling */
     button {
-        background-color: #0070f3;
-        color: white;
-        border: none;
+        background-color: var(--color-primary);
+        color: var(--color-button-text);
         padding: 12px 20px;
-        font-size: 1.2rem;
+        border: none;
+        font-size: var(--font-size-large);
         cursor: pointer;
-        border-radius: 5px;
-        transition: background-color 0.3s ease;
+        border-radius: var(--border-radius);
+        transition: background-color var(--transition-speed) ease;
+        font-family: var(--font-secondary);
     }
 
-    button:hover {
-        background-color: #005bb5;
+    button:disabled {
+        background-color: var(--color-primary-dark);
+        cursor: not-allowed;
+    }
+
+    button:hover:not([disabled]) {
+        background-color: var(--color-primary-dark);
     }
 
     .success-message {
+        font-size: var(--font-size-large);
         color: #28a745;
-        font-size: 1.2rem;
         font-weight: bold;
     }
 </style>

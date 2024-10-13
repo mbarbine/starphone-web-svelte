@@ -18,7 +18,7 @@
             <a href="/about">About</a>
             <a href="/support">Support</a>
             <a href="/history">History</a>
-            <a href="/resources">Open Source</a>
+            <a href="/contact">Contact</a>
         </nav>
     </div>
 </header>
