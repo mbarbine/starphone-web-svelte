@@ -1,3 +1,4 @@
+import '/src/lib/styles/global.css';
 export function load() {
     return {
         title: 'Starphone: The Future of Public Communication',
