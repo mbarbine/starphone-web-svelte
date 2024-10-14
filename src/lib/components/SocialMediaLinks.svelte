@@ -1,8 +1,8 @@
 <script>
     // You can add more social media platforms as needed
     const socialMedia = [
-      { name: 'X', url: 'https://x.com/Starphone', icon: '/icons/x-icon.svg' },
-      { name: 'Instagram', url: 'https://instagram.com/Starphone', icon: '/icons/instagram-icon.svg' },
+      { name: 'X', url: 'https://x.com/Starphone', icon: '/icons/x.png' },
+      { name: 'Instagram', url: 'https://instagram.com/Starphone', icon: '/icons/instagram.png' },
       // Add more social media links here
     ];
   </script>

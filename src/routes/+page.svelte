@@ -44,17 +44,17 @@
 		<h2>Why Starphone?</h2>
 		<div class="features-grid">
 			<div class="feature">
-				<img src="/icons/faraday-cage.svg" alt="Faraday Cage Protection">
+				<img src="/icons/faraday-cage.png" alt="Faraday Cage Protection">
 				<h3>Faraday Cage Protection</h3>
 				<p>Ensuring your calls stay secure, even in high-electromagnetic environments.</p>
 			</div>
 			<div class="feature">
-				<img src="/icons/hybrid-network.svg" alt="Hybrid Network">
+				<img src="/icons/hybrid-network.png" alt="Hybrid Network">
 				<h3>Hybrid Network</h3>
 				<p>Seamlessly switching between satellite, cellular, and VoIP for constant connectivity.</p>
 			</div>
 			<div class="feature">
-				<img src="/icons/space-grade.svg" alt="Space-Grade Engineering">
+				<img src="/icons/space-grade.png" alt="Space-Grade Engineering">
 				<h3>Space-Grade Engineering</h3>
 				<p>Built for durability in extreme conditions, from disaster zones to space missions.</p>
 			</div>
@@ -76,10 +76,10 @@
 		<p>Stay updated with the latest from Starphone by following us on social media.</p>
 		<div class="social-icons">
 			<a href="https://x.com/Starphone" target="_blank">
-				<img src="/icons/x.svg" alt="X">
+				<img src="/icons/x.png" alt="X">
 			</a>
 			<a href="https://instagram.com/Starphone" target="_blank">
-				<img src="/icons/instagram.svg" alt="Instagram">
+				<img src="/icons/instagram.png" alt="Instagram">
 			</a>
 		</div>
 	</div>

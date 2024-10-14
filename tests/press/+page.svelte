@@ -5,7 +5,7 @@
 			date: "November 9, 2023",
 			publication: "Port Isabel South Padre",
 			link: "https://www.portisabelsouthpadre.com/2023/11/09/prototype-public-phone-exhibited-at-starbase/",
-			image: "/images/press-image.jpg"
+			image: "/images/press-image.png"
 		}
 	];
 </script>

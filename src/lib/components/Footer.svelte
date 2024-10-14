@@ -5,16 +5,16 @@
         <p>Designed with <span class="lcars">LCARS</span> inspiration</p>
         <div class="social-icons">
             <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
-                <img src="/images/github.svg" alt="GitHub" />
+                <img src="/images/github.png" alt="GitHub" />
             </a>
             <a href="https://slack.com/yourworkspace" target="_blank" rel="noopener noreferrer">
-                <img src="/images/slack.svg" alt="Slack" />
+                <img src="/images/slack.png" alt="Slack" />
             </a>
             <a href="https://www.ph3ar.com" target="_blank" rel="noopener noreferrer">
-                <img src="/images/arkime.svg" alt="PH3AR" />
+                <img src="/images/image2.png" alt="PH3AR" />
             </a>
             <a href="https://yourwebsite.com" target="_blank" rel="noopener noreferrer">
-                <img src="/images/your-website.svg" alt="Website" />
+                <img src="/images/image1.png" alt="Website" />
             </a>
         </div>
     </div>

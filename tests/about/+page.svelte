@@ -43,17 +43,17 @@
         <h2>The Technology Behind Starphone</h2>
         <div class="tech-features">
             <div class="tech-item">
-                <img src="/icons/faraday-cage.svg" alt="Faraday Cage" />
+                <img src="/icons/faraday-cage.png" alt="Faraday Cage" />
                 <h3>Faraday Cage Protection</h3>
                 <p>Starphone's outer shell blocks electromagnetic interference, ensuring secure communication in high-EMI environments.</p>
             </div>
             <div class="tech-item">
-                <img src="/icons/hybrid-network.svg" alt="Hybrid Network" />
+                <img src="/icons/hybrid-network.png" alt="Hybrid Network" />
                 <h3>Hybrid Network System</h3>
                 <p>Switch between satellite, cellular, and VoIP networks for constant connectivity.</p>
             </div>
             <div class="tech-item">
-                <img src="/icons/space-grade.svg" alt="Space-Grade Engineering" />
+                <img src="/icons/space-grade.png" alt="Space-Grade Engineering" />
                 <h3>Space-Grade Engineering</h3>
                 <p>Radiation-resistant components and solar-powered autonomy allow Starphone to operate in the most extreme environments.</p>
             </div>
