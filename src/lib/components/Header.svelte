@@ -15,9 +15,7 @@
         </button>
         <nav class:open={menuOpen}>
             <a href="/">Starphone</a>
-            <a href="/about">About</a>
             <a href="/support">Support</a>
-            <a href="/history">History</a>
             <a href="/contact">Contact</a>
         </nav>
     </div>

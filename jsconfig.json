@@ -21,6 +21,6 @@
             "$videos/*": ["static/videos/*"]
         }
     },
-    "include": ["src/**/*", "static/**/*"],
+    "include": ["src/**/*", "static/**/*", "tests/Counter.svelte"],
     "exclude": ["node_modules"]
 }
