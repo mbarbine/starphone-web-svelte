@@ -17,11 +17,12 @@
         </button>
         <nav class:open={menuOpen} in:fade={{ duration: 200 }} out:fade={{ duration: 200 }}>
             <a href="/">Home</a>
-            <a href="/history">Roadmap</a>
             <a href="/gallery">Gallery</a>
             <a href="/support">Support</a>
+            <a href="/history">Roadmap</a>
             <a href="/contact">Contact</a>
             <a href="/press">Press</a>
+            
         </nav>
     </div>
 </header>

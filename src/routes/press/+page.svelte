@@ -6,6 +6,13 @@
             publication: "Port Isabel South Padre",
             link: "https://www.portisabelsouthpadre.com/2023/11/09/prototype-public-phone-exhibited-at-starbase/",
             image: "/images/MoneyShot.jpg"
+        },
+        {
+            title: "Tech and Gadget-Focused MakerFaire Coming to Alexandria City High School",
+            date: "October 16, 2024",
+            publication: "ALXnow",
+            link: "https://www.alxnow.com/2024/10/16/tech-and-gadget-focused-makerfaire-coming-to-alexandria-city-high-school-this-weekend/",
+            image: "/images/makerfaire.png"  // You can replace this with a relevant image
         }
     ];
 </script>
@@ -66,7 +73,7 @@
         border-radius: 8px;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         transition: transform 0.3s, box-shadow 0.3s;
-        overflow: hidden; /* Ensure the card retains its shape */
+        overflow: hidden;
     }
 
     .press-card:hover {
@@ -76,7 +83,8 @@
 
     .press-image {
         width: 100%;
-        height: auto;
+        height: 180px; /* Adjusted image height for better presentation */
+        object-fit: cover; /* Ensure the image fills the area */
         display: block;
     }
 
@@ -95,6 +103,7 @@
         color: #666;
     }
 
+    /* Responsive Design */
     @media (max-width: 768px) {
         .press-page h1 {
             font-size: 2rem;
@@ -110,6 +119,10 @@
 
         .press-details p {
             font-size: 0.9rem;
+        }
+
+        .press-image {
+            height: 150px; /* Adjusted for smaller screens */
         }
     }
 
@@ -128,6 +141,10 @@
 
         .press-details p {
             font-size: 0.85rem;
+        }
+
+        .press-image {
+            height: 120px; /* Further adjust for mobile */
         }
     }
 </style>

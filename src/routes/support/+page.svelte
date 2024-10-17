@@ -29,17 +29,12 @@
                     <a href="https://github.com/sponsors/ph3ar" target="_blank" class="button secondary">Sponsor on GitHub</a>
                 </div>
                 <!-- Givebutter Donation for Starphone -->
-                
-                <div class="support-item">
+                <div class="support-item givebutter">
                     <h3>Make a Donation</h3>
                     <p>One-time or recurring donations can be made via Givebutter to help fund Starphone’s development.</p>
                     <givebutter-widget id="LxxMGL"></givebutter-widget>
-                    <givebutter-widget id="jb63Pj"></givebutter-widget>
+                    <script async src="https://widgets.givebutter.com/latest.umd.cjs?acct=dOQ0XbCHnxsv4qWo&p=other"></script>
                     <a href="https://givebutter.com/PH3AR" class="button final-cta">Donate Now</a>
-                    <div class="givebutter-donate">
-                        <givebutter-widget id="LYxbKj"></givebutter-widget>
-                        <script async src="https://widgets.givebutter.com/latest.umd.cjs?acct=dOQ0XbCHnxsv4qWo&p=other"></script>
-                    </div>
                 </div>
             </div>
         </div>
@@ -59,7 +54,7 @@
     /* General Styling */
     .support-page {
         padding: 60px 20px;
-        background-color: #f9f9f9;
+        background-color: #f4f7fb;
         text-align: center;
     }
 
@@ -75,7 +70,7 @@
         max-width: 800px;
         margin: 0 auto 40px;
         line-height: 1.6;
-        color: #333; /* Adjusted to ensure readability */
+        color: #333; /* Adjusted for readability */
         font-family: 'Roboto', sans-serif;
     }
 
@@ -104,6 +99,9 @@
         max-width: 300px;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         text-align: left;
+        flex: 1;
+        min-width: 250px;
+        margin-bottom: 30px;
     }
 
     .support-item h3 {
@@ -116,6 +114,12 @@
         font-size: 1rem;
         margin-bottom: 20px;
         color: #555;
+    }
+
+    /* Givebutter donation item */
+    .givebutter {
+        text-align: center;
+        padding: 30px;
     }
 
     /* Buttons */
@@ -137,6 +141,11 @@
 
     .button.secondary {
         background-color: #ffb30f;
+    }
+
+    .button.final-cta {
+        background-color: #0070f3;
+        color: white;
     }
 
     .button:hover {

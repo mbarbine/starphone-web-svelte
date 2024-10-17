@@ -1,225 +1,262 @@
-<script lang="ts">
-  import { onMount, onDestroy } from 'svelte';
-  import { Chart } from 'chart.js/auto';
-  import 'chartjs-adapter-date-fns'; // For time-based formatting
-  import '../../lib/styles/global.css';  // Ensure correct path to global styles
-
-  let chart: Chart | null = null;
-
-  const timelineData = [
-    { date: '1876', event: 'Invention of the Telephone' },
-    { date: '1889', event: 'First Public Telephone Installed in Connecticut' },
-    { date: '1900s', event: 'Expansion of Telephone Networks Worldwide' },
-    { date: '1960s', event: 'Public Telephones Become Common in Cities' },
-    { date: '1980s', event: 'Peak of Public Telephone Usage' },
-    { date: '2000s', event: 'Decline of Public Telephones with Mobile Phones' },
-    { date: '2020s', event: 'Public Telephones Phased Out in Many Cities' },
-    { date: '2024', event: 'Introduction of Starphone: The Next Evolution' },
-    { date: '2025', event: 'Starphone Prototype Finalized' },
-    { date: '2026', event: 'Starphone Expands to Major Cities and Rural Areas' },
-    { date: '2027', event: 'Starphone on the Moon' },
-    { date: '2028', event: 'Space Stations Equipped with Starphones' },
-    { date: '2030', event: 'Interplanetary Communication Powered by Starphone' }
-  ];
-
-  const labels = timelineData.map(d => d.date);
-  const events = timelineData.map(d => d.event);
-
-  onMount(() => {
-    const canvas = document.getElementById('timelineChart') as HTMLCanvasElement | null;
-
-    if (canvas) {
-      const ctx = canvas.getContext('2d');
-      if (ctx) {
-        // Initialize the chart
-        chart = new Chart(ctx, {
-          type: 'line',
-          data: {
-            labels,
-            datasets: [{
-              label: 'History & Future of Public Phones',
-              data: labels.map((_, i) => i),
-              fill: false,
-              borderColor: 'var(--color-primary)',
-              pointBackgroundColor: 'var(--color-secondary)',
-              pointBorderColor: '#e74c3c',
-              tension: 0.4 // Smoothens the line
-            }]
-          },
-          options: {
-            scales: {
-              x: {
-                type: 'time',
-                time: {
-                  unit: 'year',
-                  displayFormats: {
-                    year: 'YYYY'
-                  }
-                }
-              },
-              y: {
-                beginAtZero: true,
-                display: false // Hide y-axis since it's just for placement
-              }
-            },
-            plugins: {
-              tooltip: {
-                callbacks: {
-                  label: (tooltipItem) => `${events[tooltipItem.dataIndex]} (${labels[tooltipItem.dataIndex]})`
-                }
-              }
-            }
-          }
-        });
-      }
-    }
-  });
-
-  // Cleanup when the component is destroyed
-  onDestroy(() => {
-    if (chart) {
-      chart.destroy();
-      chart = null; // Ensure we nullify the chart reference
-    }
-  });
+<script>
+    import VideoEmbed from '$lib/components/VideoEmbed.svelte';
+    import '../../lib/styles/global.css';
 </script>
 
-<!-- Page structure -->
-<section class="history-page">
-  <div class="container">
-    <h1>History & Future of the Telephone</h1>
-    <p>Explore the timeline of the telephone, from its invention to the future of public communication with Starphone on Earth, the Moon, Mars, and beyond!</p>
-
-    <!-- Timeline Chart -->
-    <canvas id="timelineChart" width="800" height="400"></canvas>
-
-    <!-- Descriptive Milestones -->
-    <div class="timeline-events">
-      {#each timelineData as event}
-        <div class="timeline-event">
-          <h3>{event.date}</h3>
-          <p>{event.event}</p>
-        </div>
-      {/each}
+<!-- Enhanced Hero Section -->
+<section class="history-hero">
+    <div class="hero-content">
+        <h1>History & Future of the Telephone</h1>
+        <p>Explore the evolution of public communication from the invention of the telephone to the next leap with Starphone.</p>
     </div>
-  </div>
+    <div class="givebutter-donate">
+        <givebutter-widget id="LYxbKj"></givebutter-widget>
+        <script async src="https://widgets.givebutter.com/latest.umd.cjs?acct=dOQ0XbCHnxsv4qWo&p=other"></script>
+    </div>
+</section>
+
+<!-- Enhanced Timeline Section -->
+<section class="history-timeline section">
+    <div class="container">
+        <h2>The Journey of Public Phone and Starphone</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <h3>1876</h3>
+                <p>Invention of the Telephone</p>
+            </div>
+            <div class="timeline-item">
+                <h3>1889</h3>
+                <p>First Public Telephone Installed in Connecticut</p>
+            </div>
+            <div class="timeline-item">
+                <h3>1900s</h3>
+                <p>Expansion of Telephone Networks Worldwide</p>
+            </div>
+            <div class="timeline-item">
+                <h3>1960s</h3>
+                <p>Public Telephones Become Common in Cities</p>
+            </div>
+            <div class="timeline-item">
+                <h3>1980s</h3>
+                <p>Peak of Public Telephone Usage</p>
+            </div>
+            <div class="timeline-item">
+                <h3>2000s</h3>
+                <p>Decline of Public Telephones with Mobile Phones</p>
+            </div>
+            <div class="timeline-item">
+                <h3>2024</h3>
+                <p>Introduction of Starphone: The Next Evolution</p>
+            </div>
+            <div class="timeline-item">
+                <h3>2025</h3>
+                <p>Starphone Prototype Finalized</p>
+            </div>
+            <div class="timeline-item">
+                <h3>2026</h3>
+                <p>Starphone Expands to Major Cities and Rural Areas</p>
+            </div>
+            <div class="timeline-item">
+                <h3>2027</h3>
+                <p>Starphone on the Moon</p>
+            </div>
+            <div class="timeline-item">
+                <h3>2028</h3>
+                <p>Space Stations Equipped with Starphones</p>
+            </div>
+            <div class="timeline-item">
+                <h3>2030</h3>
+                <p>Interplanetary Communication Powered by Starphone</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Enhanced Technology Section -->
+<section class="technology-section section">
+    <div class="container">
+        <h2>The Technology Behind Starphone</h2>
+        <div class="tech-features">
+            <div class="tech-item">
+                <h3>Faraday Cage Protection</h3>
+                <p>Starphone's outer shell blocks electromagnetic interference, ensuring secure communication in high-EMI environments.</p>
+            </div>
+            <div class="tech-item">
+                <h3>Hybrid Network System</h3>
+                <p>Switch between satellite, cellular, and VoIP networks for constant connectivity.</p>
+            </div>
+            <div class="tech-item">
+                <h3>Space-Grade Engineering</h3>
+                <p>Radiation-resistant components and solar-powered autonomy allow Starphone to operate in the most extreme environments.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Video Embed Section -->
+<section class="video-section section">
+    <div class="container">
+        <h2>PH3AR: Community & Collaboration</h2>
+        <p>Discover the community behind Starphone and how collaboration fuels innovation at PH3AR.</p>
+        <VideoEmbed videoUrl="https://www.youtube.com/embed/Srobkj3P7EQ" />
+    </div>
+</section>
+
+<!-- Call to Action Section -->
+<section class="call-to-action section">
+    <div class="container">
+        <h2>Join the Movement</h2>
+        <p>Be a part of something bigger. Whether you're an engineer, designer, or visionary, PH3AR and Starphone are looking for talented people to help shape the future of communication.</p>
+        <a href="/support" class="button">Support Us</a>
+    </div>
 </section>
 
 <style>
-  /* Use global color scheme and enhance responsiveness */
-  .history-page {
-    padding: 60px 20px;
-    background-color: var(--color-background);
-    color: var(--color-text);
-  }
-
-  .history-page h1 {
-    font-size: 3rem;
-    color: var(--color-primary);
-    text-align: center;
-    margin-bottom: 40px;
-  }
-
-  .history-page p {
-    font-size: 1.5rem;
-    text-align: center;
-    margin-bottom: 50px;
-    color: var(--color-text-light);
-  }
-
-  canvas {
-    display: block;
-    margin: 0 auto;
-    background-color: white;
-    border-radius: var(--border-radius);
-    padding: 10px;
-    box-shadow: var(--box-shadow);
-    pointer-events: none;
-  }
-
-  .timeline-events {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    margin-top: 60px;
-  }
-
-  .timeline-event {
-    background-color: white;
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-    padding: 30px;
-    text-align: center;
-    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
-  }
-
-  .timeline-event:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  }
-
-  .timeline-event h3 {
-    font-size: 1.75rem;
-    color: var(--color-primary);
-    margin-bottom: 10px;
-  }
-
-  .timeline-event p {
-    font-size: 1.1rem;
-    color: var(--color-text-light);
-  }
-
-  @media (max-width: 768px) {
-    .history-page h1 {
-      font-size: 2.5rem;
+    /* Enhanced Hero Section */
+    .history-hero {
+        background-color: var(--color-primary-dark);
+        color: var(--color-button-text);
+        text-align: center;
+        padding: 80px 0;
     }
 
-    .history-page p {
-      font-size: 1.3rem;
+    .hero-content {
+        max-width: 800px;
+        margin: 0 auto;
+        background: rgba(0, 0, 0, 0.6);
+        padding: 20px;
+        border-radius: 8px;
     }
 
-    canvas {
-      width: 100%;
-      height: auto;
+    .hero-content h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
     }
 
-    .timeline-events {
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
+    .hero-content p {
+        font-size: 1.2rem;
     }
 
-    .timeline-event {
-      padding: 20px;
+    /* Section Spacing */
+    .section {
+        padding: 60px 0;
     }
 
-    .timeline-event h3 {
-      font-size: 1.5rem;
+    /* Timeline Section */
+    .history-timeline {
+        background-color: var(--color-background);
+        color: var(--color-text);
     }
 
-    .timeline-event p {
-      font-size: 1rem;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .history-page h1 {
-      font-size: 2rem;
+    .timeline {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
     }
 
-    .history-page p {
-      font-size: 1.2rem;
+    .timeline-item {
+        background-color: var(--color-secondary);
+        padding: 20px;
+        text-align: center;
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
     }
 
-    canvas {
-      height: auto;
+    .timeline-item h3 {
+        color: var(--color-primary-dark);
+        margin-bottom: 10px;
     }
 
-    .timeline-event h3 {
-      font-size: 1.3rem;
+    .timeline-item p {
+        font-size: 1.1rem;
+        color: var(--color-text-light);
     }
 
-    .timeline-event p {
-      font-size: 0.9rem;
+    /* Technology Section */
+    .technology-section .tech-features {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        flex-wrap: wrap;
     }
-  }
+
+    .tech-item {
+        flex: 1;
+        text-align: center;
+        background-color: var(--color-secondary);
+        padding: 20px;
+        border-radius: var(--border-radius);
+        min-width: 220px;
+    }
+
+    .tech-item h3 {
+        color: var(--color-primary-dark);
+    }
+
+    /* Call to Action Section */
+    .call-to-action {
+        background-color: var(--color-primary);
+        text-align: center;
+        color: var(--color-button-text);
+    }
+
+    .call-to-action h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .call-to-action p {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+
+    .call-to-action .button {
+        background-color: var(--color-secondary);
+        color: var(--color-button-text);
+        padding: 12px 24px;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: background-color var(--transition-speed) ease;
+    }
+
+    .call-to-action .button:hover {
+        background-color: var(--color-secondary-dark);
+    }
+
+    /* Media Queries */
+    @media (max-width: 768px) {
+        .hero-content h1 {
+            font-size: 2rem;
+        }
+
+        .hero-content p {
+            font-size: 1rem;
+        }
+
+        .timeline {
+            grid-template-columns: 1fr;
+        }
+
+        .tech-features {
+            flex-direction: column;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .hero-content h1 {
+            font-size: 1.8rem;
+        }
+
+        .hero-content p {
+            font-size: 0.9rem;
+        }
+
+        .call-to-action h2 {
+            font-size: 1.8rem;
+        }
+
+        .call-to-action p {
+            font-size: 0.9rem;
+        }
+    }
 </style>
