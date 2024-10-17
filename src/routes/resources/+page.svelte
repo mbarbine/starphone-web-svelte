@@ -2,7 +2,8 @@
     let formData = {
         name: '',
         email: '',
-        message: ''
+        message: '',
+        location: '' // New field for "Where would you like to see a Starphone"
     };
 
     let submitted = false;
@@ -21,14 +22,15 @@
             body: JSON.stringify({
                 name: formData.name,
                 email: formData.email,
-                message: formData.message
+                message: formData.message,
+                location: formData.location // Including location in form submission
             })
         });
 
         loading = false;
         if (response.ok) {
             submitted = true;
-            formData = { name: '', email: '', message: '' };
+            formData = { name: '', email: '', message: '', location: '' };
         } else {
             alert("There was an issue submitting the form. Please try again.");
         }
@@ -37,6 +39,9 @@
 
 <section class="contact-section">
     <div class="container">
+        <!-- Add Color Logo -->
+        <img src="/images/starphone-main-logo-color.png" alt="Starphone Logo" class="logo" />
+
         <h1>Contact Us</h1>
         <p>If you have any questions, ideas, or want to get involved with Starphone, feel free to reach out to us!</p>
 
@@ -59,11 +64,27 @@
                     <textarea id="message" rows="6" bind:value={formData.message} required></textarea>
                 </div>
 
+                <div class="form-group">
+                    <label for="location">Where would you like to see a Starphone?</label>
+                    <input type="text" id="location" bind:value={formData.location} required />
+                </div>
+
                 <button type="submit" disabled={loading}>
                     {#if loading}Sending...{:else}Send Message{/if}
                 </button>
             </form>
         {/if}
+
+        <!-- Donation Widget Section -->
+        <div class="donation-section">
+            <h2>Support Starphone</h2>
+            <p>Your contribution helps us bring Starphone to life in more locations!</p>
+
+            <div class="givebutter-donate">
+                <givebutter-widget id="LYxbKj"></givebutter-widget>
+                <script async src="https://widgets.givebutter.com/latest.umd.cjs?acct=dOQ0XbCHnxsv4qWo&p=other"></script>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -72,6 +93,11 @@
         padding: 60px 20px;
         text-align: center;
         background-color: #f9f9f9;
+    }
+
+    .contact-section .logo {
+        max-width: 200px;
+        margin-bottom: 20px;
     }
 
     .contact-section h1 {
@@ -134,5 +160,26 @@
         color: #28a745;
         font-size: 1.2rem;
         font-weight: bold;
+    }
+
+    /* Donation Section */
+    .donation-section {
+        margin-top: 60px;
+    }
+
+    .donation-section h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        color: #0070f3;
+    }
+
+    .donation-section p {
+        font-size: 1.2rem;
+        margin-bottom: 40px;
+        color: #555;
+    }
+
+    .givebutter-donate {
+        margin-top: 20px;
     }
 </style>
