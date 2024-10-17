@@ -16,11 +16,11 @@
 		{ date: '2000s', event: 'Decline of Public Telephones with Mobile Phones' },
 		{ date: '2020s', event: 'Public Telephones Phased Out in Many Cities' },
 		{ date: '2024', event: 'Introduction of Starphone: The Next Evolution' },
-		{ date: '2026', event: 'Starphone Network Expanded Across Major Cities' },
-		{ date: '2030', event: 'Starphones Installed on the Moon (Lunar Base)' },
-		{ date: '2035', event: 'First Starphone Launched to Mars Colonies' },
-		{ date: '2040', event: 'Space Stations Equipped with Starphones' },
-		{ date: '2050', event: 'Interplanetary Communication Powered by Starphone' }
+		{ date: '2025', event: 'Starphone Prototype Finalized' },
+		{ date: '2026', event: 'Starphone Expands to Major Cities and Rural Areas' },
+		{ date: '2027', event: 'Starphone on the Moon' },
+		{ date: '2028', event: 'Space Stations Equipped with Starphones' },
+		{ date: '2030', event: 'Interplanetary Communication Powered by Starphone' }
 	];
 
 	const labels = timelineData.map(d => d.date);
@@ -37,7 +37,7 @@
 					data: {
 						labels,
 						datasets: [{
-							label: 'History & Future of Telephones',
+							label: 'History & Future of Public Phones',
 							data: labels.map((_, i) => i),
 							fill: false,
 							borderColor: 'var(--color-primary)',
