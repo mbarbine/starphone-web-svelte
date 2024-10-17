@@ -1,15 +1,15 @@
 <footer>
     <div class="container">
         <p>&copy; {new Date().getFullYear()} Starphone Project</p>
-        <p>Visit <a href="https://ph3ar.io" target="_blank" rel="noopener noreferrer">PH3AR</a> to explore more</p>
+        <p>Visit <a href="https://ph3ar.com" target="_blank" rel="noopener noreferrer">PH3AR</a> to explore more</p>
         <div class="social-icons">
-            <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/ph3ar" target="_blank" rel="noopener noreferrer">
                 <img src="/icons/github.png" alt="GitHub" />
             </a>
-            <a href="https://slack.com/yourworkspace" target="_blank" rel="noopener noreferrer">
+            <a href="https://slack.com/ph3ar" target="_blank" rel="noopener noreferrer">
                 <img src="/icons/slack.png" alt="Slack" />
             </a>
-            <a href="https://ph3ar.io" target="_blank" rel="noopener noreferrer">
+            <a href="https://ph3ar.com" target="_blank" rel="noopener noreferrer">
                 <img src="/icons/ph3ar-logo.png" alt="PH3AR" />
             </a>
             <a href="https://yourwebsite.com" target="_blank" rel="noopener noreferrer">

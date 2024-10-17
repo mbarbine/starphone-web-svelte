@@ -10,7 +10,7 @@
 <header>
     <div class="container">
         <a href="/" class="logo">
-            <img src="/images/starphone-main-logo-color.png" alt="Starphone Logo" class="header-logo" />
+            <img src="/icons/starphone-black-small.png" alt="Starphone Logo" class="header-logo" />
         </a>
         <button class="menu-toggle" on:click={toggleMenu}>
             <span>{menuOpen ? 'Close' : 'Menu'}</span>
