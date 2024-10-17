@@ -75,11 +75,11 @@
     }
   });
 
-  // Cleanup when the component is destroyed or navigating away
+  // Cleanup when the component is destroyed
   onDestroy(() => {
     if (chart) {
       chart.destroy();
-      chart = null; // Ensure we nullify the chart reference to prevent memory leaks
+      chart = null; // Ensure we nullify the chart reference
     }
   });
 </script>
