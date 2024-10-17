@@ -6,7 +6,6 @@
 
     let chart: Chart | null = null;
 
-    // Extended Timeline Data: History + Future Projections
     const timelineData = [
         { date: '1876', event: 'Invention of the Telephone' },
         { date: '1889', event: 'First Public Telephone Installed in Connecticut' },
@@ -80,6 +79,7 @@
     onDestroy(() => {
         if (chart) {
             chart.destroy();
+            chart = null; // Ensure we nullify the chart reference
         }
     });
 </script>
