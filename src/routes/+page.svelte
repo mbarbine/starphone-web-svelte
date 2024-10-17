@@ -1,9 +1,9 @@
-<!-- src/routes/about/+page.svelte -->
+<!-- src/routes/+page.svelte -->
 
 <script>
     import VideoEmbed from '$lib/components/VideoEmbed.svelte';
     import TeamMemberCard from '$lib/components/TeamMemberCard.svelte';
-    import '../../lib/styles/global.css';  // Ensure this path is correct based on your folder structure
+    import '../lib/styles/global.css';  // Ensure this path is correct based on your folder structure
     export let pageData;
 </script>
 
