@@ -2,7 +2,8 @@
     let formData = {
         name: '',
         email: '',
-        message: ''
+        message: '',
+        location: '' // New field for "Where would you like to see a Starphone"
     };
 
     let submitted = false;
@@ -13,7 +14,7 @@
         loading = true;
 
         // Send form data to Formspree
-        const response = await fetch('https://formspree.io/f/xovqqekl', {
+        const response = await fetch('https://formspree.io/f/{YOUR_FORM_ID}', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -21,14 +22,15 @@
             body: JSON.stringify({
                 name: formData.name,
                 email: formData.email,
-                message: formData.message
+                message: formData.message,
+                location: formData.location // Including location in form submission
             })
         });
 
         loading = false;
         if (response.ok) {
             submitted = true;
-            formData = { name: '', email: '', message: '' };
+            formData = { name: '', email: '', message: '', location: '' };
         } else {
             alert("There was an issue submitting the form. Please try again.");
         }
@@ -37,6 +39,9 @@
 
 <section class="contact-section">
     <div class="container">
+        <!-- Add Color Logo -->
+        <img src="/images/starphone-main-logo-color.png" alt="Starphone Logo" class="logo" />
+
         <h1>Contact Us</h1>
         <p>If you have any questions, ideas, or want to get involved with Starphone, feel free to reach out to us!</p>
 
@@ -59,43 +64,61 @@
                     <textarea id="message" rows="6" bind:value={formData.message} required></textarea>
                 </div>
 
-                <button type="submit" disabled={loading}>
+                <div class="form-group">
+                    <label for="location">Where would you like to see a Starphone?</label>
+                    <input type="text" id="location" bind:value={formData.location} required />
+                </div>
+
+                <button type="submit" disabled={loading} class="submit-button">
                     {#if loading}Sending...{:else}Send Message{/if}
                 </button>
             </form>
         {/if}
+
+        <!-- Donation Widget Section -->
+        <div class="donation-section">
+            <h2>Support Starphone</h2>
+            <p>Your contribution helps us bring Starphone to life in more locations!</p>
+
+            <div class="givebutter-donate">
+                <givebutter-widget id="LYxbKj"></givebutter-widget>
+                <script async src="https://widgets.givebutter.com/latest.umd.cjs?acct=dOQ0XbCHnxsv4qWo&p=other"></script>
+            </div>
+        </div>
     </div>
 </section>
 
 <style>
-    /* Contact Section */
     .contact-section {
         padding: 60px 20px;
         text-align: center;
-        background-color: var(--color-light-bg);
-        color: var(--color-text);
+        background-color: #f9f9f9;
+    }
+
+    .contact-section .logo {
+        max-width: 180px;
+        margin-bottom: 20px;
     }
 
     .contact-section h1 {
-        font-size: var(--font-size-heading1);
+        font-size: 2.5rem;
         margin-bottom: 20px;
-        color: var(--color-primary);
+        color: #0070f3;
     }
 
     .contact-section p {
-        font-size: var(--font-size-large);
+        font-size: 1.2rem;
+        color: #555;
         margin-bottom: 40px;
-        color: var(--color-text-light);
     }
 
-    /* Form Styling */
     .contact-form {
         max-width: 600px;
         margin: 0 auto;
-        background-color: var(--color-background);
-        padding: 20px;
-        border-radius: var(--border-radius);
-        box-shadow: var(--box-shadow);
+        background-color: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
 
     .form-group {
@@ -107,55 +130,86 @@
         display: block;
         font-weight: bold;
         margin-bottom: 5px;
-        color: var(--color-text);
+        color: #333;
     }
 
     .form-group input, .form-group textarea {
         width: 100%;
         padding: 10px;
         border: 1px solid #ddd;
-        border-radius: var(--border-radius);
+        border-radius: 5px;
         font-size: 1rem;
-        font-family: var(--font-primary);
-        color: var(--color-text);
-        background-color: var(--color-light-bg);
-    }
-
-    .form-group input:focus, .form-group textarea:focus {
-        outline: none;
-        border-color: var(--color-primary);
-        box-shadow: 0 0 0 3px rgba(0, 100, 148, 0.2);
     }
 
     .form-group textarea {
         resize: vertical;
     }
 
-    /* Button Styling */
-    button {
-        background-color: var(--color-primary);
-        color: var(--color-button-text);
-        padding: 12px 20px;
+    .submit-button {
+        background-color: #0070f3;
+        color: white;
         border: none;
-        font-size: var(--font-size-large);
+        padding: 12px 20px;
+        font-size: 1.2rem;
         cursor: pointer;
-        border-radius: var(--border-radius);
-        transition: background-color var(--transition-speed) ease;
-        font-family: var(--font-secondary);
+        border-radius: 5px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
     }
 
-    button:disabled {
-        background-color: var(--color-primary-dark);
-        cursor: not-allowed;
-    }
-
-    button:hover:not([disabled]) {
-        background-color: var(--color-primary-dark);
+    .submit-button:hover {
+        background-color: #005bb5;
+        transform: scale(1.05);
     }
 
     .success-message {
-        font-size: var(--font-size-large);
         color: #28a745;
+        font-size: 1.2rem;
         font-weight: bold;
+    }
+
+    /* Donation Section */
+    .donation-section {
+        margin-top: 60px;
+    }
+
+    .donation-section h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        color: #0070f3;
+    }
+
+    .donation-section p {
+        font-size: 1.2rem;
+        margin-bottom: 40px;
+        color: #555;
+    }
+
+    .givebutter-donate {
+        margin-top: 20px;
+    }
+
+    /* Responsive design adjustments */
+    @media (max-width: 768px) {
+        .contact-form {
+            padding: 20px;
+        }
+
+        .submit-button {
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .contact-section h1 {
+            font-size: 2rem;
+        }
+
+        .form-group input, .form-group textarea {
+            font-size: 0.9rem;
+        }
+
+        .submit-button {
+            font-size: 1rem;
+        }
     }
 </style>
