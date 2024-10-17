@@ -21,7 +21,7 @@
     <div class="container">
         <!-- Starphone Logo -->
         <div class="logo-container">
-            <img src="/images/starphone-color-logo.png" alt="Starphone Logo" class="starphone-logo">
+            <img src="/images/starphone-bg-color.png" alt="Starphone Logo" class="starphone-logo">
         </div>
 
         <h1>In the News</h1>

@@ -90,7 +90,7 @@
     </div>
 </section>
 
-<!-- Video Embed -->
+<!-- Video Embed Section -->
 <section class="video-section">
     <div class="container">
         <h2>Explore More About Starphone</h2>
@@ -137,7 +137,7 @@
         padding: 60px 0;
     }
 
-    .about-origin, .about-technology, .about-team, .call-to-action {
+    .about-origin, .about-technology, .about-team, .call-to-action, .video-section {
         background-color: var(--color-background);
         color: var(--color-text);
     }
@@ -145,7 +145,7 @@
     .tech-features, .team-grid {
         display: flex;
         justify-content: space-between;
-        gap: 20px;
+        gap: 30px;
         flex-wrap: wrap;
     }
 
@@ -156,6 +156,7 @@
         border-radius: 8px;
         text-align: center;
         box-shadow: var(--box-shadow);
+        margin-bottom: 20px;
     }
 
     .call-to-action {
@@ -189,7 +190,6 @@
 
     .video-section {
         text-align: center;
-        background-color: var(--color-background);
         padding: 60px 0;
     }
 
@@ -203,24 +203,30 @@
             font-size: 1rem;
         }
 
-        .team-grid {
-            grid-template-columns: 1fr;
-        }
-
-        .tech-features {
+        .team-grid, .tech-features, .timeline {
             flex-direction: column;
-        }
-
-        .timeline {
-            flex-direction: column;
-        }
-
-        .timeline-item, .tech-item {
-            margin-bottom: 20px;
         }
 
         .call-to-action, .video-section {
             padding: 40px 0;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .hero-content h1 {
+            font-size: 1.8rem;
+        }
+
+        .hero-content p {
+            font-size: 0.9rem;
+        }
+
+        .call-to-action h2 {
+            font-size: 1.8rem;
+        }
+
+        .call-to-action p {
+            font-size: 0.9rem;
         }
     }
 </style>
