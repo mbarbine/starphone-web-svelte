@@ -2,46 +2,57 @@
     // PDF and images in the gallery
     const pdfFile = "/making-of-starphone/Starphone-Design-Drawings.pdf";
 
-    // Media (images and videos) to display in the gallery
-    const mediaFiles = [
-        { type: 'image', file: "Public-Phone-First-Calls-October-23.JPG" },
-        { type: 'image', file: "Public-Phone-Standing-Oct-2023.JPG" },
-        { type: 'image', file: "Public-phone-day-5.JPG" },
-        { type: 'image', file: "Starphone-Original-Booth-Drawing2.JPG" },
-        { type: 'image', file: "Starphone-Original-Drawing.JPG" },
-        { type: 'image', file: "Starphone-Sensors.PNG" },
-        { type: 'image', file: "Starphone-Sensors.jpg" },
-        { type: 'image', file: "public-phone-end-of-day-2.JPG" },
-        { type: 'image', file: "And-they-kept-coming-october2023.JPG" },
-        { type: 'image', file: "Booth-Design-Sketches(1).jpg" },
-        { type: 'image', file: "Cardboard-Assembly-12.JPG" },
-        { type: 'image', file: "Cardboard-Assembly1.JPG" },
-        { type: 'image', file: "Cardboard-Build-22(1).JPG" },
-        { type: 'image', file: "Cardboard-Build-22.JPG" },
-        { type: 'image', file: "Completed-Prototype-Michael-Phone-June2024.jpg" },
-        { type: 'image', file: "Completed-Prototype-Michael-Phone.jpg" },
-        { type: 'image', file: "FEMA-June-2024.JPG" },
-        { type: 'image', file: "First-day-Darwin-from-canada-public-phone.JPG" },
-        { type: 'image', file: "John-calling-his-son-from-publicphone.PNG" },
-        { type: 'image', file: "Laser-Cut-Panels.JPG" },
-        { type: 'image', file: "Post-IFT3-We-didn_t-think-it-would-survive.JPG" },
-        { type: 'image', file: "Public-Phone-Build-11-October-2023.JPG" },
-        { type: 'image', file: "Public-Phone-as-of-october-2024.JPEG" },
-        { type: 'image', file: "Public-phone-day-5.JPG" },
-        { type: 'image', file: "iot-environment-sensor-for-booth.jpg" },
-        { type: 'image', file: "john-calling-from-publicphone-november-2023.PNG" },
-        { type: 'image', file: "more-people-november-2023.JPG" },
-        { type: 'image', file: "october-2024-publicphone.JPEG" },
-        { type: 'image', file: "october-2024-publicphone(1).JPEG" },
-        { type: 'image', file: "public-phone-end-of-day-2.JPG" },
-        { type: 'image', file: "Starphone-Team-NPS-Shendandoah-Public-Phone.JPG" },
-        { type: 'video', file: "Cardboard-Build-2.MOV" },
-        { type: 'video', file: "Cutting-By-Hand-Nope-Patrick.MOV" },
-        { type: 'video', file: "Public-Phone-1.MP4" },
-        { type: 'video', file: "Windy-at-starbase.MP4" },
-        { type: 'video', file: "First-Piece-Of-Booth.MOV" },
-        { type: 'video', file: "Starphone-Booth-Piece-2.MOV" },
-        { type: 'video', file: "Tmobile-Carrior-Device.MOV" }
+    // Images to display in the gallery
+    const imageFiles = [
+        "Public-Phone-First-Calls-October-23.JPG",
+        "Public-Phone-Standing-Oct-2023.JPG",
+        "Public-phone-day-5.JPG",
+        "Starphone-Original-Booth-Drawing2.JPG",
+        "Starphone-Original-Drawing.JPG",
+        "Starphone-Sensors.PNG",
+        "Starphone-Sensors.jpg",
+        "public-phone-end-of-day-2.JPG",
+        "And-they-kept-coming-october2023.JPG",
+        "Booth-Design-Sketches(1).jpg",
+        "Cardboard-Assembly-12.JPG",
+        "Cardboard-Assembly1.JPG",
+        "Cardboard-Build-22(1).JPG",
+        "Cardboard-Build-22.JPG",
+        "Completed-Prototype-Michael-Phone-June2024.jpg",
+        "Completed-Prototype-Michael-Phone.jpg",
+        "FEMA-June-2024.JPG",
+        "First-day-Darwin-from-canada-public-phone.JPG",
+        "John-calling-his-son-from-publicphone.PNG",
+        "Laser-Cut-Panels.JPG",
+        "Post-IFT3-We-didn_t-think-it-would-survive.JPG",
+        "Public-Phone-Build-11-October-2023.JPG",
+        "Public-Phone-as-of-october-2024.JPEG",
+        "Public-phone-day-5.JPG",
+        "iot-environment-sensor-for-booth.jpg",
+        "john-calling-from-publicphone-november-2023.PNG",
+        "more-people-november-2023.JPG",
+        "october-2024-publicphone.JPEG",
+        "october-2024-publicphone(1).JPEG",
+        "public-phone-end-of-day-2.JPG",
+        "Starphone-Team-NPS-Shendandoah-Public-Phone.JPG",
+        "bus-garden.jpg",
+        "day-2-darwin.JPG",
+        "environment-sensors.JPG",
+        "first-day-Public-Phone.JPG",
+        "first-day-public-phone(1).jpg",
+        "john-calling-from-publicphone-november-2023.PNG"
+    ];
+
+    // Videos to display in the gallery
+    const videoFiles = [
+        "Cardboard-Build-2.MOV",
+        "itsringing.mov",
+        "Public-Phone-1.MP4",
+        "Windy-at-starbase.MP4",
+        "First-Piece-Of-Booth.MOV",
+        "Starphone-Booth-Piece-2.MOV",
+        "Tmobile-Carrior-Device.MOV",
+        "later-on-people-are-fascinated.MP4"
     ];
 
     // Base path for the media files
@@ -54,20 +65,28 @@
     <iframe src={pdfFile} width="100%" height="600px" title="Starphone Design Drawings"></iframe>
 </section>
 
-<!-- Image and Video Gallery Section -->
-<section class="media-gallery">
-    <h2>Gallery Images and Videos</h2>
+<!-- Image Gallery Section -->
+<section class="image-gallery">
+    <h2>Image Gallery</h2>
     <div class="media-grid">
-        {#each mediaFiles as media}
+        {#each imageFiles as image}
             <div class="media-item">
-                {#if media.type === 'image'}
-                    <img src={basePath + media.file} alt={media.file} loading="lazy" />
-                {:else if media.type === 'video'}
-                    <video controls>
-                        <source src={basePath + media.file} type="video/mp4" />
-                        Your browser does not support the video tag.
-                    </video>
-                {/if}
+                <img src={basePath + image} alt={image} loading="lazy" onclick="window.open(this.src, '_blank')" />
+            </div>
+        {/each}
+    </div>
+</section>
+
+<!-- Video Gallery Section -->
+<section class="video-gallery">
+    <h2>Video Gallery</h2>
+    <div class="media-grid">
+        {#each videoFiles as video}
+            <div class="media-item">
+                <video controls onclick="this.requestFullscreen()">
+                    <source src={basePath + video} type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
             </div>
         {/each}
     </div>
@@ -94,12 +113,12 @@
     }
 
     /* Gallery Section Styles */
-    .media-gallery {
+    .image-gallery, .video-gallery {
         margin-top: 40px;
         text-align: center;
     }
 
-    .media-gallery h2 {
+    .image-gallery h2, .video-gallery h2 {
         font-size: 2rem;
         margin-bottom: 20px;
         color: var(--color-primary);
@@ -122,6 +141,7 @@
 
     .media-item img:hover, .media-item video:hover {
         transform: scale(1.05);
+        cursor: pointer;
     }
 
     .media-item video {

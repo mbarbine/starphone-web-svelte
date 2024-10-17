@@ -29,9 +29,13 @@
                     <a href="https://github.com/sponsors/ph3ar" target="_blank" class="button secondary">Sponsor on GitHub</a>
                 </div>
                 <!-- Givebutter Donation for Starphone -->
+                
                 <div class="support-item">
                     <h3>Make a Donation</h3>
                     <p>One-time or recurring donations can be made via Givebutter to help fund Starphone’s development.</p>
+                    <givebutter-widget id="LxxMGL"></givebutter-widget>
+                    <givebutter-widget id="jb63Pj"></givebutter-widget>
+                    <givebutter-widget id="jb63Pj"></givebutter-widget>
                     <a href="https://givebutter.com/PH3AR" class="button final-cta">Donate Now</a>
                     <div class="givebutter-donate">
                         <givebutter-widget id="LYxbKj"></givebutter-widget>

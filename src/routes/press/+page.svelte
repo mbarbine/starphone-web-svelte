@@ -27,6 +27,10 @@
                 </div>
             {/each}
         </div>
+         <div class="givebutter-donate">
+            <givebutter-widget id="LYxbKj"></givebutter-widget>
+            <script async src="https://widgets.givebutter.com/latest.umd.cjs?acct=dOQ0XbCHnxsv4qWo&p=other"></script>
+        </div>
     </div>
 </section>
 
