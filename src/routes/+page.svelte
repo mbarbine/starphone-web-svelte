@@ -1,160 +1,245 @@
+<!-- src/routes/about/+page.svelte -->
+
 <script>
-    import { onMount } from 'svelte';
-    import '../lib/styles/global.css'; // Importing your global CSS here
-    let sections;
-
-    // Scroll animation for sections
-    onMount(() => {
-        sections = document.querySelectorAll(".section");
-        window.addEventListener("scroll", animateOnScroll);
-    });
-
-    function animateOnScroll() {
-        const revealPoint = 150;
-        sections.forEach((section) => {
-            const sectionTop = section.getBoundingClientRect().top;
-            if (sectionTop < window.innerHeight - revealPoint) {
-                section.classList.add("active");
-            } else {
-                section.classList.remove("active");
-            }
-        });
-    }
+    import VideoEmbed from '$lib/components/VideoEmbed.svelte';
+    import TeamMemberCard from '$lib/components/TeamMemberCard.svelte';
+    import '../../lib/styles/global.css';  // Ensure this path is correct based on your folder structure
+    export let pageData;
 </script>
 
-<!-- Hero Section -->
-<section class="hero">
+<!-- Enhanced Hero Section -->
+<section class="about-hero">
     <div class="hero-content">
         <h1>Welcome to Starphone</h1>
-        <p class="hero-text">
-            Revolutionizing public communication with space-grade technology, Faraday protection, and hybrid networks. Join us in reshaping how the world connects.
-        </p>
+        <p>Starphone is designed to provide secure, reliable communication even in the harshest environments. This is more than just a phone—it’s a new era of public communication.</p>
+    </div>
+     <div class="givebutter-donate">
+        <givebutter-widget id="LYxbKj"></givebutter-widget>
+        <script async src="https://widgets.givebutter.com/latest.umd.cjs?acct=dOQ0XbCHnxsv4qWo&p=other"></script>
     </div>
 </section>
 
-<!-- About Starphone Section -->
-<section class="section section-about">
+<!-- Enhanced Origin Section -->
+<section class="about-origin section">
     <div class="container">
-        <h2>About Starphone</h2>
+        <h2>Our Journey: From PH3AR to Starphone</h2>
         <p>
-            Starphone is a visionary, open-source project designed to withstand the harshest conditions while offering secure and reliable communication. Our bold mission blends cutting-edge technology and sustainable design to create the future of public communication.
+            Starphone was born from PH3AR, a community-driven initiative focused on pushing the boundaries of technology. Our mission? To develop solutions that enhance human communication in the most challenging environments.
         </p>
-    </div>
-</section>
-
-<!-- Support Starphone Section with GiveButter Widget -->
-<section class="section section-support">
-    <div class="container">
-        <h2>Support Starphone</h2>
-        <p>
-            Help us bring Starphone to the world. Your contributions will shape the future of secure, public communication and enable us to push the limits of technology. Join us in making a lasting impact.
-        </p>
-        <div class="givebutter-donate">
-            <givebutter-widget id="LYxbKj"></givebutter-widget>
-            <script async src="https://widgets.givebutter.com/latest.umd.cjs?acct=dOQ0XbCHnxsv4qWo&p=other"></script>
+        <div class="timeline">
+            <div class="timeline-item">
+                <h3>2021</h3>
+                <p>PH3AR Visits Starbase for the first time.</p>
+            </div>
+            <div class="timeline-item">
+                <h3>2022</h3>
+                <p>Proof of Concept Public Phone at Starbase, TX. Does not survive Starship launch IFT2</p>
+            </div>
+            <div class="timeline-item">
+                <h3>2023</h3>
+                <p>Proof of Concept Public Phone at Starbase, TX. Does not survive Starship launch IFT2</p>
+            </div>
+            <div class="timeline-item">
+                <h3>2024 Q1</h3>
+                <p>Concept for Starphone begins, focused on developing a public communication device for extreme conditions.</p>
+            </div>
+            <div class="timeline-item">
+                <h3>2024 Q2</h3>
+                <p>Phone booth design and prototyping begins, focused on building a custom enclosure "booth" for extreme conditions.</p>
+            </div>
+             <div class="timeline-item">
+                <h3>2024 Q3</h3>
+                <p>Phone booth design and prototyping begins, focused on building a custom enclosure "booth" for extreme conditions.</p>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- Footer Section -->
-<footer>
-    <div class="footer-content">
-        <p>&copy; 2024 Starphone. All rights reserved.</p>
+<!-- Enhanced Technology Section -->
+<section class="about-technology section">
+    <div class="container">
+        <h2>The Technology Behind Starphone</h2>
+        <div class="tech-features">
+            <div class="tech-item">
+                <h3>Faraday Cage Protection</h3>
+                <p>Starphone's outer shell blocks electromagnetic interference, ensuring secure communication in high-EMI environments.</p>
+            </div>
+            <div class="tech-item">
+                <h3>Hybrid Network System</h3>
+                <p>Switch between satellite, cellular, and VoIP networks for constant connectivity.</p>
+            </div>
+            <div class="tech-item">
+                <h3>Space-Grade Engineering</h3>
+                <p>Radiation-resistant components and solar-powered autonomy allow Starphone to operate in the most extreme environments.</p>
+            </div>
+        </div>
     </div>
-</footer>
+</section>
+
+<!-- Enhanced Community Section -->
+<section class="about-community section">
+    <div class="container">
+        <h2>PH3AR: Community & Collaboration</h2>
+        <p>
+            PH3AR is a growing community of technologists, engineers, and dreamers who work together to build impactful solutions. Starphone is one of our flagship projects, and it represents the spirit of collaboration and innovation that defines PH3AR.
+        </p>
+        <div class="community-grid">
+            <div class="community-quote">
+                <blockquote>
+                    "PH3AR isn’t just a community. It’s a place where ideas come alive, and Starphone is a testament to that innovation."
+                </blockquote>
+                <cite>— PH3AR Member</cite>
+            </div>
+            <div class="community-logo">
+                <img src="/images/PH3AR.png" alt="PH3AR" />
+            </div>
+        </div>
+
+        <!-- PH3AR Video Embed -->
+        <VideoEmbed videoUrl="https://www.youtube.com/embed/Srobkj3P7EQ" />
+    </div>
+</section>
+
+<!-- Enhanced Team Section -->
+<section class="about-team section">
+    <div class="container">
+        <h2>The Team Behind Starphone</h2>
+        <div class="team-grid">
+            <TeamMemberCard name="Aurora Borealis" role="Lead Engineer" description="Visionary behind the Starphone's innovative technology." />
+            <TeamMemberCard name="Thundercat 1" role="Creative Director" description="Crafts the artistic vision of Starphone with a blend of retro and modern aesthetics." />
+            <TeamMemberCard name="Thundercat 2" role="UX Designer" description="Ensures a user-friendly and enjoyable experience for all Starphone users." />
+            <TeamMemberCard name="Grannie May" role="Operations Manager" description="Keeps the project on track with expertise in operations and logistics." />
+            <TeamMemberCard name="Kelly" role="Marketing Lead" description="Spreads the word about Starphone, connecting with communities and investors alike." />
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action Section -->
+<section class="call-to-action section">
+    <div class="container">
+        <h2>Join the Movement</h2>
+        <p>Be a part of something bigger. Whether you're an engineer, designer, or visionary, PH3AR and Starphone are looking for talented people to help shape the future of communication.</p>
+        <a href="/support" class="button">Support Us</a>
+    </div>
+</section>
 
 <style>
-    /* General Styles */
-    .hero {
-        color: #ffffff;
-        padding: 100px 20px;
+    /* Enhance the overall design, leveraging global CSS where possible */
+
+    .about-hero {
+        background-color: var(--color-primary-dark); /* Dark blue background */
+        color: var(--color-button-text);
         text-align: center;
-        position: relative;
+        padding: 100px 0;
     }
 
     .hero-content {
-        max-width: 700px;
+        max-width: 800px;
         margin: 0 auto;
-        background: rgba(0, 0, 0, 0.7); /* Dark overlay for contrast */
-        padding: 40px;
+        background: rgba(0, 0, 0, 0.6);
+        padding: 30px;
         border-radius: 8px;
-        text-align: center;
     }
 
-    .hero-logo {
-        width: 200px;
+    .hero-content h1 {
+        font-size: 3.5rem;
         margin-bottom: 20px;
     }
 
-    h1 {
-        font-size: 2.5rem;
-        margin-bottom: 15px;
-        color: #ffffff; /* White text with high contrast */
-    }
-
-    .hero-text {
-        font-size: 1.3rem;
-        color: #f0f0f0; /* Light gray for readability */
-        margin-bottom: 20px;
+    .hero-content p {
+        font-size: 1.4rem;
     }
 
     .section {
-        padding: 60px 20px;
+        padding: 80px 0;
     }
 
-    .section h2 {
-        font-size: 2rem;
-        margin-bottom: 20px;
-        color: #222222; /* Darker text for better contrast */
+    .about-origin, .about-technology, .about-community, .about-team {
+        background-color: var(--color-background);
+        color: var(--color-text);
     }
 
-    .section p {
-        font-size: 1.1rem;
-        color: #333333; /* Dark gray text for readability on a light background */
-        line-height: 1.6;
-        max-width: 800px;
-        margin: 0 auto;
+    .about-technology .tech-features {
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
     }
 
-    /* GiveButter Donation Section */
-    .givebutter-donate {
-        margin-top: 20px;
-    }
-
-    /* Footer */
-    footer {
-        background-color: #1a1a1a;
-        color: #ffffff;
-        padding: 20px;
+    .tech-item {
+        flex: 1;
         text-align: center;
+        background-color: var(--color-secondary);
+        padding: 20px;
+        border-radius: var(--border-radius);
+    }
+
+    .tech-item h3 {
+        color: var(--color-primary-dark);
+    }
+
+    .timeline {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .timeline-item {
+        flex: 1;
+        text-align: center;
+        background-color: var(--color-secondary);
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: var(--box-shadow);
+    }
+
+    .community-grid {
+        display: flex;
+        gap: 20px;
         margin-top: 40px;
     }
 
-    footer p {
-        margin: 0;
-        font-size: 1rem;
+    .community-quote {
+        flex: 2;
     }
 
-    /* Responsive Styling */
-    @media (max-width: 768px) {
-        .hero-content {
-            padding: 30px;
-        }
+    .community-logo {
+        flex: 1;
+        text-align: center;
+    }
 
-        h1 {
-            font-size: 2rem;
-        }
+    .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        justify-content: center;
+    }
 
-        .hero-text {
-            font-size: 1.1rem;
-        }
+    .call-to-action {
+        background-color: var(--color-primary);
+        text-align: center;
+        color: var(--color-button-text);
+    }
 
-        .section h2 {
-            font-size: 1.8rem;
-        }
+    .call-to-action h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
 
-        .section p {
-            font-size: 1rem;
-        }
+    .call-to-action p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+    }
+
+    .call-to-action .button {
+        background-color: var(--color-secondary);
+        color: var(--color-button-text);
+        padding: 12px 24px;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: background-color var(--transition-speed) ease;
+    }
+
+    .call-to-action .button:hover {
+        background-color: var(--color-secondary-dark);
     }
 </style>

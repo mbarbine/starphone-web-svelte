@@ -17,7 +17,6 @@
         </button>
         <nav class:open={menuOpen}>
             <a href="/">Home</a>
-            <a href="/about">About</a>
             <a href="/history">Roadmap</a>
             <a href="/support">Support</a>
             <a href="/contact">Contact</a>
