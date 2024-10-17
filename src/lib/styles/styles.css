@@ -1,0 +1,600 @@
+/* globals.css */
+
+/* Import Fonts */
+@import '@fontsource/fira-mono';
+
+/* CSS Variables for Consistency and Easy Maintenance */
+:root {
+    /* Font Families */
+    --font-primary: 'Roboto', sans-serif;
+    --font-secondary: 'Montserrat', sans-serif;
+    --font-body: Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+        Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --font-mono: 'Fira Mono', monospace;
+
+    /* Font Sizes */
+    --font-size-base: 1rem;
+    --font-size-small: 0.875rem;
+    --font-size-large: 1.25rem;
+    --font-size-xlarge: 1.5rem;
+    --font-size-heading1: 2.5rem;
+    --font-size-heading2: 2rem;
+    --font-size-heading3: 1.75rem;
+    --font-size-heading4: 1.5rem;
+    --font-size-heading5: 1.25rem;
+    --font-size-heading6: 1rem;
+
+    /* Colors */
+    --color-background: #f5f6fa;
+    --color-text: #333333;
+    --color-text-light: #5a5a5a;
+    --color-primary: #0070f3;
+    --color-primary-dark: #005bb5;
+    --color-secondary: #f0a500;
+    --color-secondary-dark: #d88b00;
+    --color-header-footer-bg: #1c1c1e;
+    --color-header-footer-text: #ffffff;
+    --color-link: #0070f3;
+    --color-link-hover: #005bb5;
+    --color-footer-border: #0070f3;
+    --color-gallery-hover: rgba(0, 0, 0, 0.3);
+    --color-hero-bg-start: #2a2a2a;
+    --color-hero-bg-end: #3b3b3b;
+    --color-button-text: #ffffff;
+
+    /* Additional Custom Colors */
+    --color-bg-0: rgb(202, 216, 228);
+    --color-bg-1: hsl(209, 36%, 86%);
+    --color-bg-2: hsl(224, 44%, 95%);
+    --color-theme-1: #ff3e00;
+    --color-theme-2: #4075a6;
+    --color-theme-3: #f39c12; /* LCARS-inspired accent color */
+    --color-theme-4: #2a9fd6; /* LCARS blue */
+    --color-theme-5: #e74c3c; /* Accent red for CTA */
+    --color-light: #ecf0f1; /* Light text color */
+
+    /* Other Variables */
+    --border-radius: 8px;
+    --transition-speed: 0.3s;
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --line-height-base: 1.6;
+    --column-width: 42rem;
+    --column-margin-top: 4rem;
+}
+
+/* Global Styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-primary);
+    background-color: var(--color-bg-1);
+    background-attachment: fixed;
+    background-size: 100vw 100vh;
+    background-image: radial-gradient(
+            50% 50% at 50% 50%,
+            rgba(255, 255, 255, 0.75) 0%,
+            rgba(255, 255, 255, 0) 100%
+        ),
+        linear-gradient(180deg, var(--color-bg-0) 0%, var(--color-bg-1) 15%, var(--color-bg-2) 50%);
+    color: var(--color-text);
+    line-height: var(--line-height-base);
+    overflow-x: hidden;
+    font-size: var(--font-size-base);
+    min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-secondary);
+    color: #2a2a2a;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+h1 { font-size: var(--font-size-heading1); }
+h2 { font-size: var(--font-size-heading2); }
+h3 { font-size: var(--font-size-heading3); }
+h4 { font-size: var(--font-size-heading4); }
+h5 { font-size: var(--font-size-heading5); }
+h6 { font-size: var(--font-size-heading6); }
+
+p {
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+a {
+    color: var(--color-theme-1);
+    text-decoration: none;
+    transition: color var(--transition-speed) ease;
+}
+
+a:hover, a:focus {
+    color: var(--color-link-hover);
+    text-decoration: underline;
+    outline: none;
+}
+
+pre {
+    font-size: 16px;
+    font-family: var(--font-mono);
+    background-color: rgba(255, 255, 255, 0.45);
+    border-radius: 3px;
+    box-shadow: 2px 2px 6px rgb(255 255 255 / 25%);
+    padding: 0.5em;
+    overflow-x: auto;
+    color: var(--color-text);
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Visually Hidden */
+.visually-hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: auto;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap;
+}
+
+/* Social Media Section */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.social-icons a {
+    display: inline-block;
+}
+
+.social-icons img {
+    width: 40px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.2);
+}
+
+/* Support Section */
+.section-support {
+    text-align: center;
+    background-color: var(--color-theme-5);
+    color: var(--color-light);
+    padding: 40px 20px;
+}
+
+.section-support h2 {
+    font-size: 2rem;
+    color: var(--color-light);
+}
+
+.section-support p {
+    font-size: 1.2rem;
+    color: var(--color-light);
+    margin-bottom: 20px;
+}
+
+.donation-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.donation-buttons a {
+    background-color: var(--color-theme-1); /* Call to action buttons */
+    color: white;
+    padding: 12px 24px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color var(--transition-speed) ease;
+}
+
+.donation-buttons a:hover, .donation-buttons a:focus {
+    background-color: var(--color-theme-3); /* Hover effect */
+    outline: none;
+}
+
+/* Links (Overriding any specific link styles if necessary) */
+/* Already handled above */
+
+/* Buttons */
+button {
+    background-color: var(--color-theme-3);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    font-size: inherit;
+    font-family: inherit;
+}
+
+button:hover, button:focus {
+    background-color: var(--color-theme-5);
+    transform: scale(1.05);
+    outline: none;
+}
+
+button:focus:not(:focus-visible) {
+    outline: none;
+}
+
+button.cta {
+    background-color: var(--color-theme-4); /* LCARS blue */
+    font-size: 1.2rem;
+}
+
+button.cta:hover, button.cta:focus {
+    background-color: var(--color-theme-3); /* LCARS orange */
+    outline: none;
+}
+
+/* Header Styling */
+header {
+    background-color: var(--color-header-footer-bg);
+    padding: 1.5rem 1rem;
+    color: var(--color-header-footer-text);
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header h1 a {
+    color: var(--color-header-footer-text);
+    font-size: var(--font-size-heading1);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+header nav {
+    margin-top: 0.75rem;
+}
+
+header nav a {
+    margin: 0 0.75rem;
+    color: var(--color-header-footer-text);
+    font-weight: bold;
+    font-size: var(--font-size-base);
+    text-transform: uppercase;
+    transition: color var(--transition-speed) ease;
+}
+
+header nav a:hover, header nav a:focus {
+    color: var(--color-secondary);
+    outline: none;
+}
+
+/* Footer Styling */
+footer {
+    background-color: var(--color-header-footer-bg);
+    color: #f0f0f5;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    font-size: var(--font-size-base);
+    border-top: 3px solid var(--color-footer-border);
+}
+
+footer a {
+    color: #f0f0f5;
+    font-weight: bold;
+    transition: color var(--transition-speed) ease;
+}
+
+footer a:hover, footer a:focus {
+    color: var(--color-secondary);
+    text-decoration: underline;
+    outline: none;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, var(--color-hero-bg-start) 0%, var(--color-hero-bg-end) 100%);
+    color: var(--color-header-footer-text);
+    padding: 6rem 1rem;
+    text-align: center;
+    background-image: url('/images/hero-background.svg'); /* Subtle background */
+    background-size: cover;
+    background-position: center;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.25rem;
+    text-transform: uppercase;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    margin-bottom: 2.5rem;
+    color: #e0e0e0;
+}
+
+.hero button {
+    background-color: var(--color-secondary);
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 6px;
+    transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.hero button:hover, .hero button:focus {
+    background-color: var(--color-secondary-dark);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    animation: bounce 1s;
+    outline: none;
+}
+
+/* Gallery Section */
+.gallery-section, .video-section {
+    padding: 3.75rem 1rem;
+    background-color: var(--color-background);
+}
+
+.gallery-section h3, .video-section h3 {
+    font-size: var(--font-size-heading2);
+    margin-bottom: 1.875rem;
+    color: #2a2a2a;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    justify-content: center;
+}
+
+.gallery img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: var(--border-radius);
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.gallery img:hover, .gallery img:focus {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px var(--color-gallery-hover);
+    outline: none;
+}
+
+/* Video Gallery */
+.video-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.25rem;
+}
+
+.video-gallery video {
+    width: 100%;
+    max-width: 500px;
+    border-radius: var(--border-radius);
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.video-gallery video:hover, .video-gallery video:focus {
+    transform: scale(1.03);
+    box-shadow: 0 8px 16px var(--color-gallery-hover);
+    outline: none;
+}
+
+/* Plan Section - Educational & Engaging */
+.plan {
+    background-color: #f0f0f5;
+    padding: 5rem 1rem;
+    text-align: center;
+}
+
+.plan h3 {
+    font-size: 2.5rem;
+    color: #2a2a2a;
+    margin-bottom: 2.5rem;
+}
+
+.plan p {
+    font-size: 1.2rem;
+    color: var(--color-text-light);
+    margin-bottom: 1.875rem;
+}
+
+.plan .week {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 1.25rem;
+    box-shadow: var(--box-shadow);
+    margin-bottom: 1.875rem;
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.plan .week:hover, .plan .week:focus {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    outline: none;
+}
+
+.plan .week h4 {
+    font-size: 1.8rem;
+    color: var(--color-primary);
+    margin-bottom: 1.25rem;
+    transition: transform var(--transition-speed) ease;
+}
+
+.plan .week h4:hover, .plan .week h4:focus {
+    animation: bounce 1s;
+    color: var(--color-secondary);
+    outline: none;
+}
+
+.plan .week ul {
+    list-style: none;
+    padding-left: 0;
+    text-align: left;
+}
+
+.plan .week ul li {
+    position: relative;
+    font-size: 1.1rem;
+    margin-bottom: 0.625rem;
+    color: var(--color-text);
+}
+
+.plan .week ul li::before {
+    content: '•';
+    color: var(--color-secondary);
+    font-size: 1.5rem;
+    position: absolute;
+    left: -1.25rem;
+}
+
+/* Fun Animations */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-15px);
+    }
+    60% {
+        transform: translateY(-7px);
+    }
+}
+
+/* Responsive Design */
+@media (min-width: 720px) {
+    h1 {
+        font-size: 2.4rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    .container {
+        width: 95%;
+        padding: 1.5rem;
+    }
+
+    header h1 a {
+        font-size: 2rem;
+    }
+
+    .plan h3 {
+        font-size: 2rem;
+    }
+
+    .plan .week h4 {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero {
+        padding: 5rem 1rem;
+    }
+
+    .hero h2 {
+        font-size: 2.2rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    .hero button {
+        font-size: 1rem;
+        padding: 0.75rem 1.5rem;
+    }
+
+    .plan {
+        padding: 4rem 1rem;
+    }
+
+    .gallery, .video-gallery {
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    header nav a {
+        margin: 0 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    .gallery img, .video-gallery video {
+        max-width: 100%;
+    }
+
+    .plan .week {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    header {
+        padding: 1rem;
+    }
+
+    header h1 a {
+        font-size: 1.75rem;
+    }
+
+    header nav a {
+        display: block;
+        margin: 0.5rem 0;
+    }
+
+    .hero {
+        padding: 4rem 1rem;
+    }
+
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .hero button {
+        width: 100%;
+        padding: 0.75rem;
+    }
+
+    .plan h3 {
+        font-size: 1.8rem;
+    }
+
+    .plan p {
+        font-size: 1rem;
+    }
+
+    .plan .week h4 {
+        font-size: 1.4rem;
+    }
+
+    .gallery, .video-gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+}
