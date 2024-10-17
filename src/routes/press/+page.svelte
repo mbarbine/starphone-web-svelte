@@ -12,15 +12,21 @@
             date: "October 16, 2024",
             publication: "ALXnow",
             link: "https://www.alxnow.com/2024/10/16/tech-and-gadget-focused-makerfaire-coming-to-alexandria-city-high-school-this-weekend/",
-            image: "/images/makerfaire.png"  // You can replace this with a relevant image
+            image: "/images/makerfaire.png"  
         }
     ];
 </script>
 
 <section class="press-page">
     <div class="container">
+        <!-- Starphone Logo -->
+        <div class="logo-container">
+            <img src="/images/starphone-color-logo.png" alt="Starphone Logo" class="starphone-logo">
+        </div>
+
         <h1>In the News</h1>
         <p>Explore recent articles about Starphone's journey in revolutionizing public communication technology.</p>
+        
         <div class="press-grid">
             {#each pressArticles as article}
                 <div class="press-card">
@@ -34,7 +40,8 @@
                 </div>
             {/each}
         </div>
-         <div class="givebutter-donate">
+
+        <div class="givebutter-donate">
             <givebutter-widget id="LYxbKj"></givebutter-widget>
             <script async src="https://widgets.givebutter.com/latest.umd.cjs?acct=dOQ0XbCHnxsv4qWo&p=other"></script>
         </div>
@@ -46,6 +53,18 @@
         background-color: #f5f5f5;
         padding: 80px 20px;
         color: #333;
+    }
+
+    .logo-container {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .starphone-logo {
+        max-width: 180px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
     }
 
     .press-page h1 {
@@ -83,8 +102,8 @@
 
     .press-image {
         width: 100%;
-        height: 180px; /* Adjusted image height for better presentation */
-        object-fit: cover; /* Ensure the image fills the area */
+        height: 180px; 
+        object-fit: cover; 
         display: block;
     }
 
@@ -103,7 +122,6 @@
         color: #666;
     }
 
-    /* Responsive Design */
     @media (max-width: 768px) {
         .press-page h1 {
             font-size: 2rem;
@@ -122,7 +140,11 @@
         }
 
         .press-image {
-            height: 150px; /* Adjusted for smaller screens */
+            height: 150px; 
+        }
+
+        .starphone-logo {
+            max-width: 150px;
         }
     }
 
@@ -144,7 +166,11 @@
         }
 
         .press-image {
-            height: 120px; /* Further adjust for mobile */
+            height: 120px; 
+        }
+
+        .starphone-logo {
+            max-width: 120px;
         }
     }
 </style>

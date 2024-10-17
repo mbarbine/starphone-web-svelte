@@ -102,13 +102,16 @@
 <section class="about-team section">
     <div class="container">
         <h2>The Team Behind Starphone</h2>
-        <div class="team-grid">
-            <TeamMemberCard name="Aurora Borealis" role="Lead Engineer" description="Visionary behind the Starphone's innovative technology." />
-            <TeamMemberCard name="Thundercat 1" role="Creative Director" description="Crafts the artistic vision of Starphone with a blend of retro and modern aesthetics." />
-            <TeamMemberCard name="Thundercat 2" role="UX Designer" description="Ensures a user-friendly and enjoyable experience for all Starphone users." />
-            <TeamMemberCard name="Grannie May" role="Operations Manager" description="Keeps the project on track with expertise in operations and logistics." />
-            <TeamMemberCard name="Kelly" role="Marketing Lead" description="Spreads the word about Starphone, connecting with communities and investors alike." />
-        </div>
+    <div class="team-grid">
+    <TeamMemberCard name="Michael" role="Lead" description="Drives the development and strategic vision behind the Starphone's cutting-edge technology." />
+    <TeamMemberCard name="Patrick" role="Resident Genius" description="Blends retro charm with modern innovation, shaping the artistic direction of Starphone." />
+    <TeamMemberCard name="Rashid" role="Manufacturing" description="Leads production efforts, ensuring seamless usability and top-tier craftsmanship for every Starphone." />
+    <TeamMemberCard name="Stuart" role="Rapid Prototype Elite" description="Spearheads operations and logistics, keeping prototyping fast and on track for success." />
+    <TeamMemberCard name="John" role="Marketing" description="Strategically builds awareness and cultivates relationships with communities and key stakeholders." />
+    <TeamMemberCard name="Kelly" role="Treasurer" description="Oversees financial planning, ensuring responsible growth and sustainability for Starphone." />
+    <TeamMemberCard name="Darwin" role="Canadian Operations" description="Leads the charge in Canadian operations, expanding Starphone’s reach across the northern frontier." />
+    <TeamMemberCard name="Turk" role="Internetworking Master" description="Architects Starphone's network infrastructure, ensuring secure and reliable global connectivity." />
+    </div>
     </div>
 </section>
 
