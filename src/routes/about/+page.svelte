@@ -24,16 +24,28 @@
         </p>
         <div class="timeline">
             <div class="timeline-item">
-                <h3>2019</h3>
-                <p>PH3AR founded as a space for innovators and creators to collaborate.</p>
+                <h3>2021</h3>
+                <p>PH3AR Visits Starbase for the first time.</p>
             </div>
             <div class="timeline-item">
-                <h3>2021</h3>
-                <p>Concept for Starphone begins, focused on developing a public communication device for extreme conditions.</p>
+                <h3>2022</h3>
+                <p>Proof of Concept Public Phone at Starbase, TX. Does not survive Starship launch IFT2</p>
             </div>
             <div class="timeline-item">
                 <h3>2023</h3>
-                <p>First prototype tested with successful Faraday cage integration and hybrid network capabilities.</p>
+                <p>Proof of Concept Public Phone at Starbase, TX. Does not survive Starship launch IFT2</p>
+            </div>
+            <div class="timeline-item">
+                <h3>2024 Q1</h3>
+                <p>Concept for Starphone begins, focused on developing a public communication device for extreme conditions.</p>
+            </div>
+            <div class="timeline-item">
+                <h3>2024 Q2</h3>
+                <p>Phone booth design and prototyping begins, focused on building a custom enclosure "booth" for extreme conditions.</p>
+            </div>
+             <div class="timeline-item">
+                <h3>2024 Q3</h3>
+                <p>Phone booth design and prototyping begins, focused on building a custom enclosure "booth" for extreme conditions.</p>
             </div>
         </div>
     </div>
