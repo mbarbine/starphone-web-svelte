@@ -1,9 +1,7 @@
-<!-- src/routes/+page.svelte -->
-
 <script>
     import VideoEmbed from '$lib/components/VideoEmbed.svelte';
     import TeamMemberCard from '$lib/components/TeamMemberCard.svelte';
-    import '../lib/styles/global.css';  // Ensure this path is correct based on your folder structure
+    import '../lib/styles/global.css';
     export let pageData;
 </script>
 
@@ -13,7 +11,7 @@
         <h1>Welcome to Starphone</h1>
         <p>Starphone is designed to provide secure, reliable communication even in the harshest environments. This is more than just a phone—it’s a new era of public communication.</p>
     </div>
-     <div class="givebutter-donate">
+    <div class="givebutter-donate">
         <givebutter-widget id="LYxbKj"></givebutter-widget>
         <script async src="https://widgets.givebutter.com/latest.umd.cjs?acct=dOQ0XbCHnxsv4qWo&p=other"></script>
     </div>
@@ -130,28 +128,28 @@
         background-color: var(--color-primary-dark); /* Dark blue background */
         color: var(--color-button-text);
         text-align: center;
-        padding: 100px 0;
+        padding: 80px 0;
     }
 
     .hero-content {
         max-width: 800px;
         margin: 0 auto;
         background: rgba(0, 0, 0, 0.6);
-        padding: 30px;
+        padding: 20px;
         border-radius: 8px;
     }
 
     .hero-content h1 {
-        font-size: 3.5rem;
+        font-size: 2.5rem;
         margin-bottom: 20px;
     }
 
     .hero-content p {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
     }
 
     .section {
-        padding: 80px 0;
+        padding: 60px 0;
     }
 
     .about-origin, .about-technology, .about-community, .about-team {
@@ -162,7 +160,8 @@
     .about-technology .tech-features {
         display: flex;
         justify-content: space-between;
-        gap: 30px;
+        gap: 20px;
+        flex-wrap: wrap;
     }
 
     .tech-item {
@@ -171,6 +170,7 @@
         background-color: var(--color-secondary);
         padding: 20px;
         border-radius: var(--border-radius);
+        min-width: 220px;
     }
 
     .tech-item h3 {
@@ -179,12 +179,14 @@
 
     .timeline {
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
         gap: 20px;
     }
 
     .timeline-item {
         flex: 1;
+        min-width: 220px;
         text-align: center;
         background-color: var(--color-secondary);
         padding: 20px;
@@ -194,6 +196,7 @@
 
     .community-grid {
         display: flex;
+        flex-wrap: wrap;
         gap: 20px;
         margin-top: 40px;
     }
@@ -221,12 +224,12 @@
     }
 
     .call-to-action h2 {
-        font-size: 2.5rem;
+        font-size: 2rem;
         margin-bottom: 20px;
     }
 
     .call-to-action p {
-        font-size: 1.2rem;
+        font-size: 1rem;
         margin-bottom: 30px;
     }
 
@@ -241,5 +244,54 @@
 
     .call-to-action .button:hover {
         background-color: var(--color-secondary-dark);
+    }
+
+    /* Media Queries for smaller screens */
+    @media (max-width: 768px) {
+        .hero-content h1 {
+            font-size: 2rem;
+        }
+
+        .hero-content p {
+            font-size: 1rem;
+        }
+
+        .section {
+            padding: 40px 0;
+        }
+
+        .timeline {
+            flex-direction: column;
+        }
+
+        .timeline-item {
+            margin-bottom: 20px;
+        }
+
+        .tech-features {
+            flex-direction: column;
+        }
+
+        .community-grid {
+            flex-direction: column;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .hero-content h1 {
+            font-size: 1.8rem;
+        }
+
+        .hero-content p {
+            font-size: 0.9rem;
+        }
+
+        .call-to-action h2 {
+            font-size: 1.8rem;
+        }
+
+        .call-to-action p {
+            font-size: 0.9rem;
+        }
     }
 </style>

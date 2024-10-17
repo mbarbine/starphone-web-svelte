@@ -15,11 +15,13 @@
         <button class="menu-toggle" on:click={toggleMenu}>
             <span>{menuOpen ? 'Close' : 'Menu'}</span>
         </button>
-        <nav class:open={menuOpen}>
+        <nav class:open={menuOpen} in:fade={{ duration: 200 }} out:fade={{ duration: 200 }}>
             <a href="/">Home</a>
             <a href="/history">Roadmap</a>
+            <a href="/gallery">Gallery</a>
             <a href="/support">Support</a>
             <a href="/contact">Contact</a>
+            <a href="/press">Press</a>
         </nav>
     </div>
 </header>
@@ -56,20 +58,6 @@
     .logo img {
         height: 50px;
         width: auto;
-    }
-
-    header h1 a {
-        color: var(--color-header-footer-text);
-        font-size: 2rem;
-        font-family: 'Montserrat', sans-serif;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        text-decoration: none;
-        transition: color 0.3s ease;
-    }
-
-    header h1 a:hover {
-        color: var(--color-secondary); /* Hover color change */
     }
 
     header nav {
@@ -121,6 +109,8 @@
         background-color: var(--color-header-footer-bg);
         padding: 20px;
         text-align: center;
+        z-index: 999; /* Ensure it's on top */
+        transition: transform 0.3s ease, opacity 0.3s ease;
     }
 
     /* Mobile view adjustments */
@@ -131,6 +121,7 @@
 
         nav.open {
             display: block;
+            animation: slideDown 0.3s ease forwards;
         }
 
         header h1 a {
@@ -156,5 +147,17 @@
     .header-logo {
         height: 50px;
         width: auto;
+    }
+
+    /* Smooth animation for mobile menu */
+    @keyframes slideDown {
+        from {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
     }
 </style>

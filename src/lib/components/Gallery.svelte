@@ -1,31 +1,31 @@
-<!-- src/lib/components/Gallery.svelte -->
 <script>
-	export let images = [];
+    import Gallery from '$lib/components/Gallery.svelte';
 </script>
 
-<div class="gallery">
-	{#each images as image}
-		<div class="gallery-item">
-			<img src={image.src} alt={image.alt} />
-		</div>
-	{/each}
-</div>
+<section class="gallery-page">
+    <h1>Making of Starphone Gallery</h1>
+    <p>Explore the design process and journey of Starphone.</p>
+
+    <!-- Include the Gallery component to display PDF and images -->
+    <Gallery />
+</section>
 
 <style>
-	.gallery {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 10px;
-	}
+    .gallery-page {
+        padding: 40px;
+        text-align: center;
+        background-color: var(--color-background);
+        color: var(--color-text);
+    }
 
-	.gallery-item {
-		flex: 1 1 calc(33% - 10px);
-		box-sizing: border-box;
-	}
+    .gallery-page h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        color: var(--color-primary);
+    }
 
-	.gallery-item img {
-		width: 100%;
-		height: auto;
-		display: block;
-	}
+    .gallery-page p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+    }
 </style>
