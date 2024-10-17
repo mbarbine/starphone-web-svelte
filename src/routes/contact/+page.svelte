@@ -79,7 +79,7 @@
         <div class="donation-section">
             <h2>Support Starphone</h2>
             <p>Your contribution helps us bring Starphone to life in more locations!</p>
-
+            <a href="https://givebutter.com/PH3AR" class="button final-cta">Donate</a>
             <div class="givebutter-donate">
                 <givebutter-widget id="LYxbKj"></givebutter-widget>
                 <script async src="https://widgets.givebutter.com/latest.umd.cjs?acct=dOQ0XbCHnxsv4qWo&p=other"></script>

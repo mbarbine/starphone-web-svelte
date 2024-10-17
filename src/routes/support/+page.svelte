@@ -18,13 +18,13 @@
             <div class="support-list">
                 <!-- Patreon Support -->
                 <div class="support-item">
-                    <h3>Become a Patron</h3>
-                    <p>Get exclusive content and behind-the-scenes updates by joining our Patreon community.</p>
+                    <h3>Become a PH3AR Patron</h3>
+                    <p>Help us run more events, more projects and have more fun!</p>
                     <a href="https://www.patreon.com/bePatron?u=25616382" class="button primary">Join on Patreon</a>
                 </div>
                 <!-- GitHub Sponsor -->
                 <div class="support-item">
-                    <h3>Sponsor on GitHub</h3>
+                    <h3>Sponsor PH3AR Project Development</h3>
                     <p>Directly support PH3AR's development by sponsoring us on GitHub.</p>
                     <a href="https://github.com/sponsors/ph3ar" target="_blank" class="button secondary">Sponsor on GitHub</a>
                 </div>
@@ -32,6 +32,7 @@
                 <div class="support-item">
                     <h3>Make a Donation</h3>
                     <p>One-time or recurring donations can be made via Givebutter to help fund Starphone’s development.</p>
+                    <a href="https://givebutter.com/PH3AR" class="button final-cta">Donate Now</a>
                     <div class="givebutter-donate">
                         <givebutter-widget id="LYxbKj"></givebutter-widget>
                         <script async src="https://widgets.givebutter.com/latest.umd.cjs?acct=dOQ0XbCHnxsv4qWo&p=other"></script>
@@ -46,7 +47,7 @@
             <p>
                 Your support is crucial in building a future where public phones are not relics of the past, but essential tools for global communication. Every contribution brings us closer to achieving this vision.
             </p>
-            <a href="https://www.patreon.com/bePatron?u=25616382" class="button final-cta">Donate Now</a>
+            <a href="https://givebutter.com/PH3AR" class="button final-cta">Donate Now</a>
         </div>
     </div>
 </section>

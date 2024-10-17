@@ -15,11 +15,15 @@
     if (browser) inject();
 </script>
 
-<!-- SEO Meta Tags -->
-<MetaTags
-    title="Starphone - Public Communication"
-    description="Starphone provides public communication solutions in extreme environments."
-/>
+<head>
+    <!-- SEO Meta Tags -->
+    <MetaTags
+        title="Starphone - Public Communication"
+        description="Starphone provides public communication solutions in extreme environments."
+    />
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" type="image/png" />
+</head>
 
 <!-- App layout with smooth transitions -->
 <div class="app">

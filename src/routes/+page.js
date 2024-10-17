@@ -8,8 +8,6 @@ export function load() {
         slug: '+page',
         tags: ['starphone', 'public communication', 'open source'],
         type: 'page',
-        cover: '/images/image1.png',
-        image: '/images/image3.png',
         imageAlt: 'Starphone Project Cover'
     };
 }
