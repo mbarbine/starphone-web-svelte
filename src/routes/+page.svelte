@@ -1,5 +1,6 @@
 <script>
-    import { onMount } from 'svelte';
+    import VideoEmbed from '../lib/components/VideoEmbed.svelte';
+    import MediaGallery from '../lib/components/MediaSection.svelte'; // Assuming this component displays the gallery/media
     import '../lib/styles/global.css'; // Importing your global CSS here
     let sections;
 
@@ -21,19 +22,19 @@
     }
 </script>
 
-<!-- Enhanced Hero Section -->
+<!-- Hero Section -->
 <section class="hero">
-    <div class="hero-overlay">
-        <div class="hero-content">
-            <img src="/images/starphone-logo-bg-yellow.png" alt="Starphone Logo" class="hero-logo">
-            <h1 class="hero-title">Starphone</h1>
-            <p class="hero-text">The future of public communication is here. Space-grade, Faraday-protected, and powered by hybrid networks. Join us on this journey to revolutionize how the world connects.</p>
-            <a href="/about" class="cta-button">Learn More</a>
-        </div>
+    <div class="hero-content">
+        <img src="/images/starphone-main-logo-color.png" alt="Starphone Logo" class="hero-logo">
+        <h1>Starphone</h1>
+        <p class="hero-text">
+            The future of public communication is here. Space-grade, Faraday-protected, and powered by hybrid networks. Join us on this journey to revolutionize how the world connects.
+        </p>
+        <a href="/about" class="cta-button">Learn More</a>
     </div>
 </section>
 
-<!-- About Section -->
+<!-- About Starphone Section -->
 <section class="section section-about">
     <div class="container">
         <h2>About Starphone</h2>
@@ -44,10 +45,21 @@
     </div>
 </section>
 
-<!-- Media Section using the MediaSection component -->
-<MediaSection />
+<!-- Support Starphone Section with GiveButter Widget -->
+<section class="section section-support">
+    <div class="container">
+        <h2>Support Starphone</h2>
+        <p>
+            Be part of something revolutionary. By supporting Starphone, you’re helping us create a new future for public communication. Your contributions make a real difference.
+        </p>
+        <div class="givebutter-donate">
+            <givebutter-widget id="LYxbKj"></givebutter-widget>
+            <script async src="https://widgets.givebutter.com/latest.umd.cjs?acct=dOQ0XbCHnxsv4qWo&p=other"></script>
+        </div>
+    </div>
+</section>
 
-<!-- Press Section -->
+<!-- In the News Section -->
 <section class="section section-press">
     <div class="container">
         <h2>In the News</h2>
@@ -56,7 +68,7 @@
     </div>
 </section>
 
-<!-- Follow Us Section -->
+<!-- Follow Us Section with Social Media Links -->
 <section class="section section-media">
     <div class="container">
         <h2>Follow Us</h2>
@@ -66,7 +78,7 @@
                 <img src="/icons/x.png" alt="X">
             </a>
             <a href="https://instagram.com/starphoneofficial" target="_blank">
-                <img src="/icons/instagram.png" alt="Instagram">
+                <img src="/icons/instragram.png" alt="Instagram">
             </a>
             <a href="https://github.com/Starphone" target="_blank">
                 <img src="/icons/github.png" alt="GitHub">
@@ -78,14 +90,12 @@
     </div>
 </section>
 
-<!-- Support Section -->
-<section class="section section-support">
+<!-- Making of Starphone Section using MediaGallery Component -->
+<section class="section section-making-of">
     <div class="container">
-        <h2>Support Starphone</h2>
-        <p>Be part of something revolutionary. By supporting Starphone, you’re helping us create a new future for public communication. Your contributions make a real difference.</p>
-        <div class="donation-buttons">
-            <a href="/support" class="button">How to Support Us</a>
-        </div>
+        <h2>Making of Starphone</h2>
+        <p>Explore the journey and behind-the-scenes moments in building Starphone. From design sketches to the first prototypes, here’s how it all came together.</p>
+        <MediaGallery mediaFolder="/making-of-starphone" />
     </div>
 </section>
 
@@ -99,39 +109,24 @@
 <style>
     /* General Styles */
     .hero {
-        background: url('/images/starphone-hero-bg.png') center/cover no-repeat;
+        background: url('/images/starphone-bw-hero-bg.png') center/cover no-repeat;
         color: #fff;
         padding: 100px 20px;
-        position: relative;
         text-align: center;
-    }
-
-    .hero-overlay {
-        background: rgba(0, 0, 0, 0.6); /* Add a dark overlay for contrast */
-        padding: 80px 20px;
-        border-radius: 15px;
+        position: relative;
     }
 
     .hero-content {
-        max-width: 900px;
+        max-width: 800px;
         margin: 0 auto;
+        background: rgba(0, 0, 0, 0.6); /* Dark overlay for better text contrast */
+        padding: 40px;
+        border-radius: 8px;
     }
 
     .hero-logo {
-        width: 220px;
+        width: 250px;
         margin-bottom: 30px;
-    }
-
-    .hero-title {
-        font-size: 3rem;
-        margin-bottom: 20px;
-        font-weight: 700;
-    }
-
-    .hero-text {
-        font-size: 1.4rem;
-        line-height: 1.8;
-        margin-bottom: 40px;
     }
 
     .cta-button {
@@ -139,8 +134,8 @@
         color: #000;
         padding: 16px 32px;
         border-radius: 8px;
-        text-decoration: none;
         font-weight: bold;
+        text-decoration: none;
         transition: background-color 0.3s;
     }
 
@@ -148,7 +143,7 @@
         background-color: #ff9a00;
     }
 
-    /* About Section */
+    /* Section Styles */
     .section {
         padding: 80px 20px;
     }
@@ -165,6 +160,7 @@
         padding: 12px 24px;
         border-radius: 5px;
         text-decoration: none;
+        font-weight: bold;
     }
 
     .button:hover {
@@ -184,7 +180,12 @@
     }
 
     .social-icons img:hover {
-        transform: scale(1.2);
+        transform: scale(1.1);
+    }
+
+    /* Support Section */
+    .givebutter-donate {
+        margin-top: 20px;
     }
 
     /* Footer */
