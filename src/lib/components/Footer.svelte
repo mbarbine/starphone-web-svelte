@@ -6,13 +6,13 @@
             <a href="https://github.com/ph3ar" target="_blank" rel="noopener noreferrer">
                 <img src="/icons/github.png" alt="GitHub" />
             </a>
-            <a href="https://slack.com/ph3ar" target="_blank" rel="noopener noreferrer">
-                <img src="/icons/slack.png" alt="Slack" />
+            <a href="https://instagram.com/bignerdlolz" target="_blank" rel="noopener noreferrer">
+                <img src="/icons/instagram.png" alt="Slack" />
             </a>
-            <a href="https://ph3ar.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.thestarphone.com/contact" target="_blank" rel="noopener noreferrer">
                 <img src="/icons/ph3ar-logo.png" alt="PH3AR" />
             </a>
-            <a href="https://yourwebsite.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.ph3ar.com" target="_blank" rel="noopener noreferrer">
                 <img src="/icons/starphone-icon.png" alt="Starphone" />
             </a>
         </div>
