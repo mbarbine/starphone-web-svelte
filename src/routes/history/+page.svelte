@@ -93,6 +93,20 @@
     </div>
 </section>
 
+<!-- Enhanced Community Section -->
+<section class="about-community section">
+    <div class="container">
+        <h2>PH3AR: Community & Collaboration</h2>
+        <p>PH3AR is a growing community of technologists, engineers, and dreamers who work together to build impactful solutions. Starphone is one of our flagship projects, and it represents the spirit of collaboration and innovation that defines PH3AR.</p>
+        <div class="community-grid">
+            <div class="community-quote">
+                <blockquote>"PH3AR isn’t just a community. It’s a place where ideas come alive, and Starphone is a testament to that innovation."</blockquote>
+                <cite>— PH3AR Member</cite>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- Call to Action Section -->
 <section class="call-to-action section">
     <div class="container">
@@ -101,21 +115,6 @@
         <a href="/support" class="button">Support Us</a>
     </div>
 </section>
-<!-- Enhanced Community Section -->
-<section class="about-community section">
-    <div class="container">
-        <h2>PH3AR: Community & Collaboration</h2>
-        <p>
-            PH3AR is a growing community of technologists, engineers, and dreamers who work together to build impactful solutions. Starphone is one of our flagship projects, and it represents the spirit of collaboration and innovation that defines PH3AR.
-        </p>
-        <div class="community-grid">
-            <div class="community-quote">
-                <blockquote>
-                    "PH3AR isn’t just a community. It’s a place where ideas come alive, and Starphone is a testament to that innovation."
-                </blockquote>
-                <cite>— PH3AR Member</cite>
-            </div>
-        </div>
 
 <style>
     /* Enhanced Hero Section */
@@ -197,6 +196,31 @@
 
     .tech-item h3 {
         color: var(--color-primary-dark);
+    }
+
+    /* Community Section */
+    .about-community .community-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 40px;
+    }
+
+    .community-quote {
+        text-align: center;
+        font-size: 1.3rem;
+    }
+
+    .community-quote blockquote {
+        font-style: italic;
+        color: var(--color-text);
+    }
+
+    .community-quote cite {
+        display: block;
+        margin-top: 10px;
+        font-size: 1rem;
+        color: var(--color-text-light);
     }
 
     /* Call to Action Section */

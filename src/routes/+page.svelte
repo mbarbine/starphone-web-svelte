@@ -21,9 +21,7 @@
 <section class="about-origin section">
     <div class="container">
         <h2>Our Journey: From PH3AR to Starphone</h2>
-        <p>
-            Starphone was born from PH3AR, a community-driven initiative focused on pushing the boundaries of technology. Our mission? To develop solutions that enhance human communication in the most challenging environments.
-        </p>
+        <p>Starphone was born from PH3AR, a community-driven initiative focused on pushing the boundaries of technology. Our mission? To develop solutions that enhance human communication in the most challenging environments.</p>
         <div class="timeline">
             <div class="timeline-item">
                 <h3>2021</h3>
@@ -31,11 +29,11 @@
             </div>
             <div class="timeline-item">
                 <h3>2022</h3>
-                <p>Proof of Concept Public Phone at Starbase, TX. Does not survive Starship launch IFT2</p>
+                <p>Proof of Concept Public Phone at Starbase, TX. Does not survive Starship launch IFT2.</p>
             </div>
             <div class="timeline-item">
                 <h3>2023</h3>
-                <p>Proof of Concept Public Phone at Starbase, TX. Does not survive Starship launch IFT2</p>
+                <p>Proof of Concept Public Phone at Starbase, TX. Does not survive Starship launch IFT2.</p>
             </div>
             <div class="timeline-item">
                 <h3>2024 Q1</h3>
@@ -45,9 +43,9 @@
                 <h3>2024 Q2</h3>
                 <p>Phone booth design and prototyping begins, focused on building a custom enclosure "booth" for extreme conditions.</p>
             </div>
-             <div class="timeline-item">
+            <div class="timeline-item">
                 <h3>2024 Q3</h3>
-                <p>Phone booth design and prototyping begins, focused on building a custom enclosure "booth" for extreme conditions.</p>
+                <p>Prototyping continues, improving the Starphone design.</p>
             </div>
         </div>
     </div>
@@ -78,22 +76,28 @@
 <section class="about-team section">
     <div class="container">
         <h2>The Team Behind Starphone</h2>
-    <div class="team-grid">
-    <TeamMemberCard name="Michael" role="Lead" description="Drives the development and strategic vision behind the Starphone's cutting-edge technology." />
-    <TeamMemberCard name="Patrick" role="Resident Genius" description="Blends retro charm with modern innovation, shaping the artistic direction of Starphone." />
-    <TeamMemberCard name="Rashid" role="Manufacturing" description="Leads production efforts, ensuring seamless usability and top-tier craftsmanship for every Starphone." />
-    <TeamMemberCard name="Stuart" role="Rapid Prototype Elite" description="Spearheads operations and logistics, keeping prototyping fast and on track for success." />
-    <TeamMemberCard name="John" role="Marketing" description="Strategically builds awareness and cultivates relationships with communities and key stakeholders." />
-    <TeamMemberCard name="Kelly" role="Treasurer" description="Oversees financial planning, ensuring responsible growth and sustainability for Starphone." />
-    <TeamMemberCard name="Darwin" role="Canadian Operations" description="Leads the charge in Canadian operations, expanding Starphone’s reach across the northern frontier." />
-    <TeamMemberCard name="Turk" role="Internetworking Master" description="Architects Starphone's network infrastructure, ensuring secure and reliable global connectivity." />
-    </div>
+        <div class="team-grid">
+            <TeamMemberCard name="Michael" role="Lead Engineer" description="Drives the development and strategic vision behind the Starphone's cutting-edge technology." />
+            <TeamMemberCard name="Patrick" role="Resident Genius" description="Blends retro charm with modern innovation, shaping the artistic direction of Starphone." />
+            <TeamMemberCard name="Rashid" role="Manufacturing" description="Leads production efforts, ensuring seamless usability and top-tier craftsmanship for every Starphone." />
+            <TeamMemberCard name="Stuart" role="Rapid Prototype Elite" description="Spearheads operations and logistics, keeping prototyping fast and on track for success." />
+            <TeamMemberCard name="John" role="Marketing" description="Strategically builds awareness and cultivates relationships with communities and key stakeholders." />
+            <TeamMemberCard name="Kelly" role="Treasurer" description="Oversees financial planning, ensuring responsible growth and sustainability for Starphone." />
+            <TeamMemberCard name="Darwin" role="Canadian Operations" description="Leads the charge in Canadian operations, expanding Starphone’s reach across the northern frontier." />
+            <TeamMemberCard name="Turk" role="Internetworking Master" description="Architects Starphone's network infrastructure, ensuring secure and reliable global connectivity." />
+            <TeamMemberCard name="Kent" role="Quality Assurance" description="" />
+        </div>
     </div>
 </section>
-      <!-- PH3AR Video Embed -->
+
+<!-- Video Embed -->
+<section class="video-section">
+    <div class="container">
+        <h2>Explore More About Starphone</h2>
         <VideoEmbed videoUrl="https://www.youtube.com/embed/Srobkj3P7EQ" />
     </div>
 </section>
+
 <!-- Call to Action Section -->
 <section class="call-to-action section">
     <div class="container">
@@ -104,10 +108,9 @@
 </section>
 
 <style>
-    /* Enhance the overall design, leveraging global CSS where possible */
-
+    /* General Styling */
     .about-hero {
-        background-color: var(--color-primary-dark); /* Dark blue background */
+        background-color: var(--color-primary-dark);
         color: var(--color-button-text);
         text-align: center;
         padding: 80px 0;
@@ -134,101 +137,63 @@
         padding: 60px 0;
     }
 
-    .about-origin, .about-technology, .about-community, .about-team {
+    .about-origin, .about-technology, .about-team, .call-to-action {
         background-color: var(--color-background);
         color: var(--color-text);
     }
 
-    .about-technology .tech-features {
+    .tech-features, .team-grid {
         display: flex;
         justify-content: space-between;
         gap: 20px;
         flex-wrap: wrap;
     }
 
-    .tech-item {
+    .tech-item, .timeline-item {
         flex: 1;
-        text-align: center;
-        background-color: var(--color-secondary);
-        padding: 20px;
-        border-radius: var(--border-radius);
-        min-width: 220px;
-    }
-
-    .tech-item h3 {
-        color: var(--color-primary-dark);
-    }
-
-    .timeline {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        gap: 20px;
-    }
-
-    .timeline-item {
-        flex: 1;
-        min-width: 220px;
-        text-align: center;
         background-color: var(--color-secondary);
         padding: 20px;
         border-radius: 8px;
+        text-align: center;
         box-shadow: var(--box-shadow);
     }
 
-    .community-grid {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        margin-top: 40px;
-    }
-
-    .community-quote {
-        flex: 2;
-    }
-
-    .community-logo {
-        flex: 1;
-        text-align: center;
-    }
-
-    .team-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 20px;
-        justify-content: center;
-    }
-
     .call-to-action {
-        background-color: var(--color-primary);
         text-align: center;
-        color: var(--color-button-text);
+        background-color: var(--color-primary);
+        color: white;
     }
 
-    .call-to-action h2 {
+    .call-to-action h2, .video-section h2 {
         font-size: 2rem;
         margin-bottom: 20px;
     }
 
     .call-to-action p {
-        font-size: 1rem;
+        font-size: 1.1rem;
         margin-bottom: 30px;
     }
 
     .call-to-action .button {
         background-color: var(--color-secondary);
-        color: var(--color-button-text);
+        color: white;
         padding: 12px 24px;
         border-radius: 8px;
         text-decoration: none;
-        transition: background-color var(--transition-speed) ease;
+        transition: background-color 0.3s ease;
     }
 
     .call-to-action .button:hover {
         background-color: var(--color-secondary-dark);
     }
 
-    /* Media Queries for smaller screens */
+    .video-section {
+        text-align: center;
+        background-color: var(--color-background);
+        padding: 60px 0;
+    }
+
+    /* Media Queries */
     @media (max-width: 768px) {
         .hero-content h1 {
             font-size: 2rem;
@@ -238,42 +203,24 @@
             font-size: 1rem;
         }
 
-        .section {
-            padding: 40px 0;
-        }
-
-        .timeline {
-            flex-direction: column;
-        }
-
-        .timeline-item {
-            margin-bottom: 20px;
+        .team-grid {
+            grid-template-columns: 1fr;
         }
 
         .tech-features {
             flex-direction: column;
         }
 
-        .community-grid {
+        .timeline {
             flex-direction: column;
         }
-    }
 
-    @media (max-width: 480px) {
-        .hero-content h1 {
-            font-size: 1.8rem;
+        .timeline-item, .tech-item {
+            margin-bottom: 20px;
         }
 
-        .hero-content p {
-            font-size: 0.9rem;
-        }
-
-        .call-to-action h2 {
-            font-size: 1.8rem;
-        }
-
-        .call-to-action p {
-            font-size: 0.9rem;
+        .call-to-action, .video-section {
+            padding: 40px 0;
         }
     }
 </style>
