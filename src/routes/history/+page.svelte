@@ -93,15 +93,6 @@
     </div>
 </section>
 
-<!-- Video Embed Section -->
-<section class="video-section section">
-    <div class="container">
-        <h2>PH3AR: Community & Collaboration</h2>
-        <p>Discover the community behind Starphone and how collaboration fuels innovation at PH3AR.</p>
-        <VideoEmbed videoUrl="https://www.youtube.com/embed/Srobkj3P7EQ" />
-    </div>
-</section>
-
 <!-- Call to Action Section -->
 <section class="call-to-action section">
     <div class="container">

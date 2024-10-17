@@ -88,15 +88,7 @@
                 </blockquote>
                 <cite>— PH3AR Member</cite>
             </div>
-            <div class="community-logo">
-                <img src="/images/PH3AR.png" alt="PH3AR" />
-            </div>
         </div>
-
-        <!-- PH3AR Video Embed -->
-        <VideoEmbed videoUrl="https://www.youtube.com/embed/Srobkj3P7EQ" />
-    </div>
-</section>
 
 <!-- Enhanced Team Section -->
 <section class="about-team section">
@@ -114,7 +106,10 @@
     </div>
     </div>
 </section>
-
+      <!-- PH3AR Video Embed -->
+        <VideoEmbed videoUrl="https://www.youtube.com/embed/Srobkj3P7EQ" />
+    </div>
+</section>
 <!-- Call to Action Section -->
 <section class="call-to-action section">
     <div class="container">
