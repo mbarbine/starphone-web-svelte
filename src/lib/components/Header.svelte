@@ -9,14 +9,17 @@
 
 <header>
     <div class="container">
-        <h1><a href="/">{title}</a></h1>
+        <a href="/" class="logo">
+            <img src="/images/starphone-main-logo-color.png" alt="Starphone Logo" class="header-logo" />
+        </a>
         <button class="menu-toggle" on:click={toggleMenu}>
             <span>{menuOpen ? 'Close' : 'Menu'}</span>
         </button>
         <nav class:open={menuOpen}>
-            <a href="/">Starphone</a>
+            <a href="/">Home</a>
             <a href="/support">Support</a>
             <a href="/contact">Contact</a>
+            <a href="/about">About</a>
         </nav>
     </div>
 </header>
@@ -48,6 +51,11 @@
         max-width: 1200px;
         margin: 0 auto;
         width: 100%;
+    }
+
+    .logo img {
+        height: 50px;
+        width: auto;
     }
 
     header h1 a {
@@ -143,5 +151,10 @@
         nav.open {
             padding: 15px;
         }
+    }
+
+    .header-logo {
+        height: 50px;
+        width: auto;
     }
 </style>

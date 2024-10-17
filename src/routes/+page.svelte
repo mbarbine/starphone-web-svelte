@@ -23,6 +23,7 @@
 
 <section class="hero">
 	<div class="hero-content">
+		<img src="/images/starphone-logo-bg-yellow.png" alt="Starphone Logo" class="hero-logo">
 		<h1>Starphone</h1>
 		<p class="hero-text">The future of public communication is here. Space-grade, Faraday-protected, and powered by hybrid networks. Join us on this journey to revolutionize how the world connects.</p>
 		<a href="/about" class="cta-button">Learn More</a>
@@ -44,17 +45,17 @@
 		<h2>Why Starphone?</h2>
 		<div class="features-grid">
 			<div class="feature">
-				<img src="/icons/faraday-cage.png" alt="Faraday Cage Protection">
+				<img src="/images/starphone-bw.png" alt="Faraday Cage Protection">
 				<h3>Faraday Cage Protection</h3>
 				<p>Ensuring your calls stay secure, even in high-electromagnetic environments.</p>
 			</div>
 			<div class="feature">
-				<img src="/icons/hybrid-network.png" alt="Hybrid Network">
+				<img src="/images/starphone-icon.png" alt="Hybrid Network">
 				<h3>Hybrid Network</h3>
 				<p>Seamlessly switching between satellite, cellular, and VoIP for constant connectivity.</p>
 			</div>
 			<div class="feature">
-				<img src="/icons/space-grade.png" alt="Space-Grade Engineering">
+				<img src="/images/starphone-color.png" alt="Space-Grade Engineering">
 				<h3>Space-Grade Engineering</h3>
 				<p>Built for durability in extreme conditions, from disaster zones to space missions.</p>
 			</div>
@@ -80,6 +81,12 @@
 			</a>
 			<a href="https://instagram.com/Starphone" target="_blank">
 				<img src="/icons/instagram.png" alt="Instagram">
+			</a>
+			<a href="https://github.com/Starphone" target="_blank">
+				<img src="/icons/github.png" alt="GitHub">
+			</a>
+			<a href="https://slack.com/Starphone" target="_blank">
+				<img src="/icons/slack.png" alt="Slack">
 			</a>
 		</div>
 	</div>
