@@ -101,6 +101,21 @@
         <a href="/support" class="button">Support Us</a>
     </div>
 </section>
+<!-- Enhanced Community Section -->
+<section class="about-community section">
+    <div class="container">
+        <h2>PH3AR: Community & Collaboration</h2>
+        <p>
+            PH3AR is a growing community of technologists, engineers, and dreamers who work together to build impactful solutions. Starphone is one of our flagship projects, and it represents the spirit of collaboration and innovation that defines PH3AR.
+        </p>
+        <div class="community-grid">
+            <div class="community-quote">
+                <blockquote>
+                    "PH3AR isn’t just a community. It’s a place where ideas come alive, and Starphone is a testament to that innovation."
+                </blockquote>
+                <cite>— PH3AR Member</cite>
+            </div>
+        </div>
 
 <style>
     /* Enhanced Hero Section */
