@@ -1,6 +1,6 @@
 <script>
     import VideoEmbed from '$lib/components/VideoEmbed.svelte';
-    import '../lib/styles/global.css';
+    import '../../lib/styles/global.css';
 </script>
 
 <!-- How It Works Page -->
