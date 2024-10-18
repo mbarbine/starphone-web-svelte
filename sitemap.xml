@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- Homepage -->
+    <url>
+        <loc>https://www.thestarphone.com/</loc>
+        <lastmod>2024-10-17</lastmod>
+        <priority>1.00</priority>
+    </url>
+    
+    <!-- Support Page -->
+    <url>
+        <loc>https://www.thestarphone.com/support</loc>
+        <lastmod>2024-10-17</lastmod>
+        <priority>0.80</priority>
+    </url>
+    
+    <!-- Press Page -->
+    <url>
+        <loc>https://www.thestarphone.com/press</loc>
+        <lastmod>2024-10-17</lastmod>
+        <priority>0.70</priority>
+    </url>
+
+    <!-- History Page -->
+    <url>
+        <loc>https://www.thestarphone.com/history</loc>
+        <lastmod>2024-10-17</lastmod>
+        <priority>0.75</priority>
+    </url>
+
+    <!-- Team Page -->
+    <url>
+        <loc>https://www.thestarphone.com/about</loc>
+        <lastmod>2024-10-17</lastmod>
+        <priority>0.70</priority>
+    </url>
+
+    <!-- Blog Section (example of dynamic pages) -->
+    <url>
+        <loc>https://www.thestarphone.com/support/</loc>
+        <lastmod>2024-10-17</lastmod>
+        <priority>0.80</priority>
+    </url>
+       <url>
+        <loc>https://www.thestarphone.com/contact</loc>
+        <lastmod>2024-10-17</lastmod>
+        <priority>0.65</priority>
+    </url>
+    
+    <!-- Video Embed Section -->
+    <url>
+        <loc>https://www.thestarphone.com/gallery</loc>
+        <lastmod>2024-10-17</lastmod>
+        <priority>0.65</priority>
+    </url>
+
+</urlset>

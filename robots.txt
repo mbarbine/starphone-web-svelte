@@ -1,0 +1,13 @@
+# Allow all search engines to crawl the entire site
+User-agent: *
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
+Allow: /
+
+# Block specific bots
+User-agent: BadBot
+Disallow: /
+
+# Sitemap location
+Sitemap: https://www.thestarphone.com/sitemap.xml

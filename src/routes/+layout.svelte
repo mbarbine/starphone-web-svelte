@@ -18,11 +18,65 @@
 <head>
     <!-- SEO Meta Tags -->
     <MetaTags
-        title="Starphone - Public Communication"
-        description="Starphone provides public communication solutions in extreme environments."
+        title="Starphone - Secure Public Communication Solutions"
+        description="Starphone provides secure, reliable public communication solutions for extreme environments, from cities to space. Join the future of communication with Starphone."
     />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Starphone - Secure Public Communication Solutions" />
+    <meta property="og:description" content="Explore Starphone's cutting-edge public communication technology designed for extreme environments. Join the future of global communication." />
+    <meta property="og:image" content="/images/starphone-black-small.png" />
+    <meta property="og:url" content="https://www.thestarphone.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Starphone" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Starphone - Secure Public Communication Solutions" />
+    <meta name="twitter:description" content="Join Starphone in revolutionizing public communication with secure, reliable technology for extreme environments." />
+    <meta name="twitter:image" content="/images/x.png" />
+
+    <!-- Canonical Link -->
+    <link rel="canonical" href="https://www.thestarphone.com/" />
+
     <!-- Favicon -->
     <link rel="icon" href="/favicon.ico" type="image/png" />
+
+    <!-- JSON-LD Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Starphone",
+      "url": "https://www.thestarphone.com/",
+      "logo": "https://www.thestarphone.com/images/starphone-bg-color.png",
+      "sameAs": [
+        "https://twitter.com/barbinary",
+        "https://github.com/ph3ar",
+        "https://www.linkedin.com/in/michaelbarbine"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-540-671-1261",
+        "contactType": "Customer Support",
+        "areaServed": "Global",
+        "availableLanguage": ["English"]
+      },
+      "description": "Starphone provides secure public communication solutions for extreme environments, enabling reliable communication in cities, space, and remote locations.",
+      "foundingDate": "2024",
+      "founders": [
+        {
+          "@type": "Person",
+          "name": "Michael Barbine"
+        },
+        {
+          "@type": "Person",
+          "name": "Patrick Modin"
+        }
+      ]
+    }
+    </script>
+
 </head>
 
 <!-- App layout with smooth transitions -->

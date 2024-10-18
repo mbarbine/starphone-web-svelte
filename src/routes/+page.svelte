@@ -159,6 +159,28 @@
         margin-bottom: 20px;
     }
 
+    /* Team Section */
+    .team-grid {
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+
+    .team-grid > * {
+        flex: 1;
+        background-color: var(--color-secondary);
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: var(--box-shadow);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-width: 200px;
+    }
+
+    /* Call to Action Section */
     .call-to-action {
         text-align: center;
         background-color: var(--color-primary);
@@ -205,6 +227,10 @@
 
         .team-grid, .tech-features, .timeline {
             flex-direction: column;
+        }
+
+        .team-grid > * {
+            max-width: 100%;
         }
 
         .call-to-action, .video-section {
