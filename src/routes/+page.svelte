@@ -76,28 +76,28 @@
 <section class="about-team section">
     <div class="container">
         <h2>The Team Behind Starphone</h2>
-        <div class="team-grid">
-            <TeamMemberCard name="Michael" role="Lead Engineer" description="Leads the development and strategic vision of Starphone technology." />
-            <TeamMemberCard name="Patrick" role="Resident Genius" description="Blends retro charm with modern innovation in Starphone's design." />
-            <TeamMemberCard name="Rashid" role="Manufacturing" description="Heads production to ensure top-tier craftsmanship in every Starphone." />
-            <TeamMemberCard name="Stuart" role="Rapid Prototype Elite" description="Spearheads operations to keep prototyping fast and efficient." />
-            <TeamMemberCard name="John" role="Marketing" description="Builds awareness and fosters relationships with key communities." />
-            <TeamMemberCard name="Kelly" role="Treasurer" description="Manages financial planning for sustainable growth and innovation." />
-            <TeamMemberCard name="Darwin" role="Canadian Operations" description="Leads Starphone's expansion into the Canadian market." />
-            <TeamMemberCard name="Turk" role="Internetworking Master" description="Architects Starphone's secure and reliable global network infrastructure." />
-            <TeamMemberCard name="Kacee" role="Quality Assurance" description="Ensures product quality and reliability at every stage of development." />
-            <TeamMemberCard name="John" role="Security" description="" />
-            <TeamMemberCard name="Louis" role="Moral Support" description="" />
-            <TeamMemberCard name="Michelle" role="Moral Support" description="" />
+       <div class="team-grid">
+    <TeamMemberCard name="Michael B." role="Lead Engineer" description="Leads the development and strategic vision of Starphone technology." />
+    <TeamMemberCard name="Patrick M." role="Resident Genius" description="Blends retro charm with modern innovation in Starphone's design." />
+    <TeamMemberCard name="Rashid A." role="Manufacturing" description="Heads production to ensure top-tier craftsmanship in every Starphone." />
+    <TeamMemberCard name="Stuart D." role="Rapid Prototype Elite" description="Spearheads operations to keep prototyping fast and efficient." />
+    <TeamMemberCard name="John M." role="Marketing" description="Builds awareness and fosters relationships with key communities." />
+    <TeamMemberCard name="Kelly S." role="Treasurer" description="Manages financial planning for sustainable growth and innovation." />
+    <TeamMemberCard name="Darwin" role="Canadian Operations" description="Leads Starphone's expansion into the Canadian market." />
+    <TeamMemberCard name="Kyle T." role="Internetworking Master" description="Architects Starphone's secure and reliable global network infrastructure." />
+    <TeamMemberCard name="Kacee" role="Quality Assurance" description="Ensures product quality and reliability at every stage of development." />
+    <TeamMemberCard name="John A." role="Security" description="Oversees security protocols to ensure data protection and system integrity." />
+    <TeamMemberCard name="Amber" role="Artist" description="Creates visually stunning artwork and design elements for Starphone." />
+    <TeamMemberCard name="Michelle" role="Moral Support" description="Provides ongoing encouragement and motivation to the entire team." />
+</div>
 
-        </div>
     </div>
 </section>
 
 <!-- Video Embed Section -->
 <section class="video-section">
     <div class="container">
-        <h2>Explore More About Starphone</h2>
+        <h2>Learn About the PH3AR community</h2>
         <VideoEmbed videoUrl="https://www.youtube.com/embed/Srobkj3P7EQ" />
     </div>
 </section>
