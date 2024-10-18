@@ -7,7 +7,7 @@
                 <img src="/icons/github.png" alt="GitHub" />
             </a>
             <a href="https://instagram.com/bignerdlolz" target="_blank" rel="noopener noreferrer">
-                <img src="/icons/instagram.png" alt="Insteragram" />
+                <img src="/icons/instragram.png" alt="Insteragram" />
             </a>
             <a href="https://www.thestarphone.com/contact" target="_blank" rel="noopener noreferrer">
                 <img src="/icons/ph3ar-logo.png" alt="PH3AR" />
