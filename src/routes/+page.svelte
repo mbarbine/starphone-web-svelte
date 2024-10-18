@@ -85,7 +85,11 @@
             <TeamMemberCard name="Kelly" role="Treasurer" description="Manages financial planning for sustainable growth and innovation." />
             <TeamMemberCard name="Darwin" role="Canadian Operations" description="Leads Starphone's expansion into the Canadian market." />
             <TeamMemberCard name="Turk" role="Internetworking Master" description="Architects Starphone's secure and reliable global network infrastructure." />
-            <TeamMemberCard name="Kent" role="Quality Assurance" description="Ensures product quality and reliability at every stage of development." />
+            <TeamMemberCard name="Kacee" role="Quality Assurance" description="Ensures product quality and reliability at every stage of development." />
+            <TeamMemberCard name="Andy" role="Quality Assurance" description="" />
+            <TeamMemberCard name="Louis" role="Moral Support" description="" />
+            <TeamMemberCard name="Michelle" role="Moral Support" description="" />
+
         </div>
     </div>
 </section>
@@ -161,14 +165,12 @@
 
     /* Team Section */
     .team-grid {
-        display: flex;
-        justify-content: space-between;
-        gap: 30px;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
     }
 
     .team-grid > * {
-        flex: 1;
         background-color: var(--color-secondary);
         padding: 20px;
         border-radius: 8px;
@@ -177,7 +179,6 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        min-width: 200px;
     }
 
     /* Call to Action Section */
