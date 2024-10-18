@@ -86,7 +86,7 @@
             <TeamMemberCard name="Darwin" role="Canadian Operations" description="Leads Starphone's expansion into the Canadian market." />
             <TeamMemberCard name="Turk" role="Internetworking Master" description="Architects Starphone's secure and reliable global network infrastructure." />
             <TeamMemberCard name="Kacee" role="Quality Assurance" description="Ensures product quality and reliability at every stage of development." />
-            <TeamMemberCard name="Andy" role="Quality Assurance" description="" />
+            <TeamMemberCard name="John" role="Security" description="" />
             <TeamMemberCard name="Louis" role="Moral Support" description="" />
             <TeamMemberCard name="Michelle" role="Moral Support" description="" />
 
