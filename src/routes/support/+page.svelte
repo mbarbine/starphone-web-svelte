@@ -19,19 +19,19 @@
                 <!-- Patreon Support -->
                 <div class="support-item">
                     <h3>Become a PH3AR Patron</h3>
-                    <p>Help us run more events, more projects and have more fun!</p>
+                    <p>Help us run more events and projects within the community.</p>
                     <a href="https://www.patreon.com/bePatron?u=25616382" class="button primary">Join on Patreon</a>
                 </div>
                 <!-- GitHub Sponsor -->
                 <div class="support-item">
-                    <h3>Sponsor PH3AR Project Development</h3>
-                    <p>Directly support PH3AR's development by sponsoring us on GitHub.</p>
+                    <h3>Sponsor PH3AR Projects</h3>
+                    <p>Directly support PH3AR's growth by sponsoring development.</p>
                     <a href="https://github.com/sponsors/ph3ar" target="_blank" class="button secondary">Sponsor on GitHub</a>
                 </div>
                 <!-- Givebutter Donation for Starphone -->
                 <div class="support-item givebutter">
                     <h3>Make a Donation</h3>
-                    <p>One-time or recurring donations can be made via Givebutter to help fund Starphone’s development.</p>
+                    <p>Support Starphone’s development with a one-time or recurring donation.</p>
                     <givebutter-widget id="LxxMGL"></givebutter-widget>
                     <script async src="https://widgets.givebutter.com/latest.umd.cjs?acct=dOQ0XbCHnxsv4qWo&p=other"></script>
                     <a href="https://givebutter.com/PH3AR" class="button final-cta">Donate Now</a>
@@ -43,7 +43,7 @@
         <div class="final-appeal">
             <h2>Help Shape the Future</h2>
             <p>
-                Your support is crucial in building a future where public phones are not relics of the past, but essential tools for global communication. Every contribution brings us closer to achieving this vision.
+                Your support is crucial in building a future where public phones are not relics of the past, but essential tools for global communication.
             </p>
             <a href="https://givebutter.com/PH3AR" class="button final-cta">Donate Now</a>
         </div>
@@ -99,9 +99,10 @@
         max-width: 300px;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         text-align: left;
-        flex: 1;
-        min-width: 250px;
-        margin-bottom: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 250px;
     }
 
     .support-item h3 {
@@ -116,7 +117,6 @@
         color: #555;
     }
 
-    /* Givebutter donation item */
     .givebutter {
         text-align: center;
         padding: 30px;
@@ -133,6 +133,7 @@
         text-decoration: none;
         transition: background-color 0.3s ease, transform 0.3s ease;
         font-family: 'Roboto', sans-serif;
+        margin-top: auto;
     }
 
     .button.primary {

@@ -66,7 +66,7 @@
             </div>
             <div class="tech-item">
                 <h3>Space-Grade Engineering</h3>
-                <p>Radiation-resistant components and solar-powered autonomy allow Starphone to operate in the most extreme environments.</p>
+                <p>Radiation-resistant components and solar-powered autonomy allow Starphone to operate in extreme environments.</p>
             </div>
         </div>
     </div>
@@ -77,15 +77,15 @@
     <div class="container">
         <h2>The Team Behind Starphone</h2>
         <div class="team-grid">
-            <TeamMemberCard name="Michael" role="Lead Engineer" description="Drives the development and strategic vision behind the Starphone's cutting-edge technology." />
-            <TeamMemberCard name="Patrick" role="Resident Genius" description="Blends retro charm with modern innovation, shaping the artistic direction of Starphone." />
-            <TeamMemberCard name="Rashid" role="Manufacturing" description="Leads production efforts, ensuring seamless usability and top-tier craftsmanship for every Starphone." />
-            <TeamMemberCard name="Stuart" role="Rapid Prototype Elite" description="Spearheads operations and logistics, keeping prototyping fast and on track for success." />
-            <TeamMemberCard name="John" role="Marketing" description="Strategically builds awareness and cultivates relationships with communities and key stakeholders." />
-            <TeamMemberCard name="Kelly" role="Treasurer" description="Oversees financial planning, ensuring responsible growth and sustainability for Starphone." />
-            <TeamMemberCard name="Darwin" role="Canadian Operations" description="Leads the charge in Canadian operations, expanding Starphone’s reach across the northern frontier." />
-            <TeamMemberCard name="Turk" role="Internetworking Master" description="Architects Starphone's network infrastructure, ensuring secure and reliable global connectivity." />
-            <TeamMemberCard name="Kent" role="Quality Assurance" description="" />
+            <TeamMemberCard name="Michael" role="Lead Engineer" description="Leads the development and strategic vision of Starphone technology." />
+            <TeamMemberCard name="Patrick" role="Resident Genius" description="Blends retro charm with modern innovation in Starphone's design." />
+            <TeamMemberCard name="Rashid" role="Manufacturing" description="Heads production to ensure top-tier craftsmanship in every Starphone." />
+            <TeamMemberCard name="Stuart" role="Rapid Prototype Elite" description="Spearheads operations to keep prototyping fast and efficient." />
+            <TeamMemberCard name="John" role="Marketing" description="Builds awareness and fosters relationships with key communities." />
+            <TeamMemberCard name="Kelly" role="Treasurer" description="Manages financial planning for sustainable growth and innovation." />
+            <TeamMemberCard name="Darwin" role="Canadian Operations" description="Leads Starphone's expansion into the Canadian market." />
+            <TeamMemberCard name="Turk" role="Internetworking Master" description="Architects Starphone's secure and reliable global network infrastructure." />
+            <TeamMemberCard name="Kent" role="Quality Assurance" description="Ensures product quality and reliability at every stage of development." />
         </div>
     </div>
 </section>
