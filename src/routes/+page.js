@@ -59,6 +59,11 @@ export function load() {
                 description: 'The Starphone advances with completed first revision and a full size cardboard prototype.'
             },
             {
+                date: '2024 Q3',
+                title: 'Starphone Copyright Filed',
+                description: 'Starphone’s design is copyrighted.'
+            },
+            {
                 date: '2024 Q4',
                 title: 'Starship Flight Test #5',
                 description: 'Starship’s fifth flight test is a success, booster caught in mid air!'
