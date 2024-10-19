@@ -22,6 +22,17 @@
     </div>
 </section>
 
+<!-- Video Section -->
+<section class="video-section">
+    <div class="container">
+        <h2>Introducing Starphone</h2>
+        <video autoplay muted loop playsinline width="100%" poster="/images/starphone-big-black.png" class="no-border-bg">
+            <source src="/images/starphone-intro.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</section>
+
 <!-- Enhanced Origin Section -->
 <section class="history-timeline section">
     <div class="container">
@@ -89,6 +100,32 @@
 </section>
 
 <style>
+
+    /* Remove background, borders, and padding */
+    .video-section {
+        text-align: center;
+        padding: 60px 0;
+    }
+
+    .video-section video.no-border-bg {
+        border: none;
+        background: none;
+        box-shadow: none;
+    }
+
+    .video-section h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    /* For mobile devices, adjust as necessary */
+    @media (max-width: 768px) {
+        .video-section h2 {
+            font-size: 1.8rem;
+        }
+    }
+
+
     /* Hero Section */
     .history-hero {
         background-color: var(--color-primary-dark);
@@ -205,12 +242,6 @@
 
     .call-to-action .button:hover {
         background-color: var(--color-secondary-dark);
-    }
-
-    /* Video Section */
-    .video-section {
-        text-align: center;
-        padding: 60px 0;
     }
 
     /* Media Queries */

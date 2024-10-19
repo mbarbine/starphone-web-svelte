@@ -1,4 +1,5 @@
 <script>
+    import { fade } from 'svelte/transition';
     export let title = "Starphone";
     let menuOpen = false;
 
@@ -23,7 +24,6 @@
             <a href="/history">Roadmap</a>
             <a href="/contact">Contact</a>
             <a href="/press">Press</a>
-            
         </nav>
     </div>
 </header>
