@@ -175,7 +175,7 @@
 
     .technology-item p, .booth-item p, .phone-box-item p {
         font-size: 1rem;
-        color: var(--color-text-light);
+        color: var(--color-text-dark);
     }
 
     /* Call to Action Section */

@@ -174,7 +174,7 @@
 
     .timeline-item p {
         font-size: 1.1rem;
-        color: var(--color-text-light);
+        color: var(--color-text-dark);
     }
 
     /* Technology Section */
@@ -220,7 +220,7 @@
         display: block;
         margin-top: 10px;
         font-size: 1rem;
-        color: var(--color-text-light);
+        color: var(--color-text-dark);
     }
 
     /* Call to Action Section */

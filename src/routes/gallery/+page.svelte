@@ -1,47 +1,42 @@
 <script>
-    // PDF and images in the gallery
-    const pdfFile = "/making-of-starphone/Starphone-Design-Drawings.pdf";
-
     // Images to display in the gallery
     const imageFiles = [
+        "bus-garden.jpg",
+        "first-day-Public-Phone.JPG",
+        "first-day-public-phone(1).jpg",
         "Public-Phone-First-Calls-October-23.JPG",
         "Public-Phone-Standing-Oct-2023.JPG",
         "Public-phone-day-5.JPG",
+        "public-phone-end-of-day-2.JPG",
         "Starphone-Original-Booth-Drawing2.JPG",
         "Starphone-Original-Drawing.JPG",
-        "Starphone-Sensors.PNG",
-        "Starphone-Sensors.jpg",
-        "public-phone-end-of-day-2.JPG",
+        "Completed-Prototype-Michael-Phone.jpg",
         "And-they-kept-coming-october2023.JPG",
         "Booth-Design-Sketches(1).jpg",
-        "Cardboard-Assembly-12.JPG",
-        "Cardboard-Assembly1.JPG",
-        "Cardboard-Build-22(1).JPG",
-        "Cardboard-Build-22.JPG",
-        "Completed-Prototype-Michael-Phone-June2024.jpg",
-        "Completed-Prototype-Michael-Phone.jpg",
-        "FEMA-June-2024.JPG",
         "First-day-Darwin-from-canada-public-phone.JPG",
-        "John-calling-his-son-from-publicphone.PNG",
-        "Laser-Cut-Panels.JPG",
         "Post-IFT3-We-didn_t-think-it-would-survive.JPG",
         "Public-Phone-Build-11-October-2023.JPG",
         "Public-Phone-as-of-october-2024.JPEG",
         "Public-phone-day-5.JPG",
-        "iot-environment-sensor-for-booth.jpg",
-        "john-calling-from-publicphone-november-2023.PNG",
+        "Cardboard-Assembly1.JPG",
+        "Cardboard-Build-22.JPG",
+        "Laser-Cut-Panels.JPG",
+        "FEMA-June-2024.JPG",
         "more-people-november-2023.JPG",
         "october-2024-publicphone.JPEG",
         "october-2024-publicphone(1).JPEG",
         "public-phone-end-of-day-2.JPG",
         "Starphone-Team-NPS-Shendandoah-Public-Phone.JPG",
-        "bus-garden.jpg",
         "day-2-darwin.JPG",
+        "john-calling-from-publicphone-november-2023.PNG",
+        "iot-environment-sensor-for-booth.jpg",
         "environment-sensors.JPG",
-        "first-day-Public-Phone.JPG",
-        "first-day-public-phone(1).jpg",
-        "john-calling-from-publicphone-november-2023.PNG"
+        "Starphone-Sensors.PNG",
+        "Starphone-Sensors.jpg",
     ];
+
+   // PDF and images in the gallery
+    const pdfFile = "/making-of-starphone/Starphone-Design-Drawings.pdf";
 
     // Videos to display in the gallery
     const videoFiles = [

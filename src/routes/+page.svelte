@@ -13,39 +13,12 @@
 <!-- Enhanced Hero Section -->
 <section class="history-hero">
     <div class="hero-content">
-        <h1>Welcome to Starphone</h1>
+        <h1>Introducing Starphone</h1>
         <p>Starphone is designed to provide secure, reliable communication even in the harshest environments. This is more than just a phone—it’s a new era of public communication.</p>
     </div>
     <div class="givebutter-donate">
         <givebutter-widget id="LYxbKj"></givebutter-widget>
         <script async src="https://widgets.givebutter.com/latest.umd.cjs?acct=dOQ0XbCHnxsv4qWo&p=other"></script>
-    </div>
-</section>
-
-<!-- Video Section -->
-<section class="video-section">
-    <div class="container">
-        <h2>Introducing Starphone</h2>
-        <video autoplay muted loop playsinline width="100%" poster="/images/starphone-big-black.png" class="no-border-bg">
-            <source src="/images/starphone-intro.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>
-</section>
-
-<!-- Enhanced Origin Section -->
-<section class="history-timeline section">
-    <div class="container">
-        <h2>Our Journey: From PH3AR to Starphone</h2>
-        <p>Starphone was born from PH3AR, a community-driven initiative focused on pushing the boundaries of technology. Our mission? To develop solutions that enhance human communication in the most challenging environments.</p>
-        <div class="timeline">
-            {#each timeline as event}
-                <div class="timeline-item">
-                    <h3>{event.date}</h3>
-                    <p>{event.description}</p>
-                </div>
-            {/each}
-        </div>
     </div>
 </section>
 
@@ -70,6 +43,21 @@
     </div>
 </section>
 
+<!-- Enhanced Origin Section -->
+<section class="history-timeline section">
+    <div class="container">
+        <h2>Our Journey: From PH3AR to Starphone</h2>
+        <p>Starphone was born from PH3AR, a community-driven initiative focused on pushing the boundaries of technology. Our mission? To develop solutions that enhance human communication in the most challenging environments.</p>
+        <div class="timeline">
+            {#each timeline as event}
+                <div class="timeline-item">
+                    <h3>{event.date}</h3>
+                    <p>{event.description}</p>
+                </div>
+            {/each}
+        </div>
+    </div>
+</section>
 <!-- Enhanced Team Section -->
 <section class="about-community section">
     <div class="container">
@@ -85,7 +73,7 @@
 <!-- Video Embed Section -->
 <section class="video-section">
     <div class="container">
-        <h2>Learn About the PH3AR community</h2>
+        <h2>PH3AR</h2>
         <VideoEmbed videoUrl="https://www.youtube.com/embed/Srobkj3P7EQ" />
     </div>
 </section>
@@ -100,22 +88,16 @@
 </section>
 
 <style>
-
     /* Remove background, borders, and padding */
-    .video-section {
-        text-align: center;
-        padding: 60px 0;
-    }
-
     .video-section video.no-border-bg {
         border: none;
         background: none;
         box-shadow: none;
     }
 
-    .video-section h2 {
-        font-size: 2rem;
-        margin-bottom: 20px;
+    /* Fix for mirrored video */
+    .flip-video {
+        transform: rotate(180deg);
     }
 
     /* For mobile devices, adjust as necessary */
