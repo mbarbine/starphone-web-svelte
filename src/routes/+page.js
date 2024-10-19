@@ -49,6 +49,11 @@ export function load() {
                 description: 'Design and prototyping for the Starphone booth kicks off.'
             },
             {
+                date: '2024 Q2',
+                title: 'T-Mobile & Starphone',
+                description: 'T-Mobile APPROVES application to provide Starphone with access to edge service APIs.'
+            },
+            {
                 date: '2024 Q3',
                 title: 'Prototyping Continues',
                 description: 'The Starphone advances with completed first revision and a full size cardboard prototype.'
@@ -57,6 +62,16 @@ export function load() {
                 date: '2024 Q4',
                 title: 'Starship Flight Test #5',
                 description: 'Starship’s fifth flight test is a success, booster caught in mid air!'
+            },
+            {
+                date: '2024 Q4',
+                title: 'Starlink & Starphone',
+                description: 'SpaceX & Starlink release the Starlink Mini.'
+            },
+            {
+                date: '2024 Q4',
+                title: 'T-Mobile Announces 5G Edge',
+                description: 'T-Mobile announces 5G Edge, an additional layer of services. Application submitted for Starphone to be a part of the 5G Edge.'
             },
             {
                 date: '2024 Q4',

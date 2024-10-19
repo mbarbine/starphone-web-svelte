@@ -46,8 +46,8 @@
 <!-- Enhanced Origin Section -->
 <section class="history-timeline section">
     <div class="container">
-        <h2>Our Journey: From PH3AR to Starphone</h2>
-        <p>Starphone was born from PH3AR, a community-driven initiative focused on pushing the boundaries of technology. Our mission? To develop solutions that enhance human communication in the most challenging environments.</p>
+        <h2>Our Journey: Starphone</h2>
+        <p>Starphone was born from PH3AR, a community-driven initiative focused gaming, making, art'ing, and technology. Our mission? To develop solutions that enhance human communication in the most challenging environments.</p>
         <div class="timeline">
             {#each timeline as event}
                 <div class="timeline-item">
