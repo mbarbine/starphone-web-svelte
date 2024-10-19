@@ -8,18 +8,23 @@
         <p>
             Starphone is shaping the future of secure public communication for everyone, from cities to space. PH3AR is empowering creators and building impactful projects. Join us in making these visions a reality!
         </p>
-
+         <div class="givebutter-donate">
+            <givebutter-widget id="LYxbKj"></givebutter-widget>
+            <script async src="https://widgets.givebutter.com/latest.umd.cjs?acct=dOQ0XbCHnxsv4qWo&p=other"></script>
+        </div>
         <!-- Support Options -->
         <div class="support-options">
             <h2>How You Can Support</h2>
             <p>
                 You can support **PH3AR** to do more, build more, and host more events by becoming a **Patreon** or **GitHub Sponsor**. You can support **Starphone directly** by donating through Givebutter. Your contributions will drive innovation and help us achieve these ambitious goals.
             </p>
+                The proof of concept phone is still standing. We've worked hard, learned a lot, and we have had a lot of help! And we need a lot more.
+            </p>
             <div class="support-list">
                 <!-- Patreon Support -->
                 <div class="support-item">
                     <h3>Become a PH3AR Patron</h3>
-                    <p>Help us run more events and projects within the community.</p>
+                    <p>Help us bring more people together, in new and improved ways, in more places, more often!</p>
                     <a href="https://www.patreon.com/bePatron?u=25616382" class="button primary">Join on Patreon</a>
                 </div>
                 <!-- GitHub Sponsor -->

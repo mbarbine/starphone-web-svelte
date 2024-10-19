@@ -9,6 +9,10 @@
         <h1>How Starphone Works</h1>
         <p>Explore the cutting-edge technology that powers Starphone, ensuring reliable communication in the most remote and extreme environments.</p>
     </div>
+ <div class="givebutter-donate">
+            <givebutter-widget id="LYxbKj"></givebutter-widget>
+            <script async src="https://widgets.givebutter.com/latest.umd.cjs?acct=dOQ0XbCHnxsv4qWo&p=other"></script>
+        </div>
 </section>
 
 <!-- How It Works Section -->
