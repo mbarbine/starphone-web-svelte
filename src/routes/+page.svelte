@@ -70,14 +70,6 @@
     </div>
 </section>
 
-<!-- Video Embed Section -->
-<section class="video-section">
-    <div class="container">
-        <h2>PH3AR</h2>
-        <VideoEmbed videoUrl="https://www.youtube.com/embed/Srobkj3P7EQ" />
-    </div>
-</section>
-
 <!-- Call to Action Section -->
 <section class="call-to-action section">
     <div class="container">
