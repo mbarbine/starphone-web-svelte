@@ -4,9 +4,9 @@
 
 <section class="support-page">
     <div class="container">
-        <h1>Support Starphone and PH3AR</h1>
+        <h1>Support Starphone & PH3AR</h1>
         <p>
-            Starphone is shaping the future of secure public communication for everyone, from cities to space. PH3AR is empowering creators and building impactful projects. Join us in making these visions a reality!
+            Starphone is revolutionizing public communication, making it secure and accessible for all—whether in cities or space. PH3AR, meanwhile, is empowering creators and driving impactful projects. Your support is essential in turning these visions into reality.
         </p>
          <div class="givebutter-donate">
             <givebutter-widget id="LYxbKj"></givebutter-widget>
@@ -14,29 +14,33 @@
         </div>
         <!-- Support Options -->
         <div class="support-options">
-            <h2>How You Can Support</h2>
+            <h2>How You Can Help</h2>
             <p>
-                You can support **PH3AR** to do more, build more, and host more events by becoming a **Patreon** or **GitHub Sponsor**. You can support **Starphone directly** by donating through Givebutter. Your contributions will drive innovation and help us achieve these ambitious goals.
+                You can support **PH3AR** by becoming a **Patreon** or **GitHub Sponsor** to help us grow and bring people together. Alternatively, you can directly support **Starphone** via Givebutter. Your contributions drive innovation and help us achieve ambitious goals.
             </p>
-                The proof of concept phone is still standing. We've worked hard, learned a lot, and we have had a lot of help! And we need a lot more.
+            <p>
+                We've hit a wall. The costs to build a full-size prototype, assemble it, deliver it to Starbase, and test are expensive. We are using this opportunity to drive down the cost of producing a fully functional, free-standing public phone booth.
+            </p>
+            <p>
+                We will learn a lot and make critical improvements. Everything is open-sourced, from designs to software, and we’re sharing what we do and how we do it along the way. Follow us on social media to track our progress!
             </p>
             <div class="support-list">
                 <!-- Patreon Support -->
                 <div class="support-item">
                     <h3>Become a PH3AR Patron</h3>
-                    <p>Help us bring more people together, in new and improved ways, in more places, more often!</p>
+                    <p>Help us connect more people, in more places, more often through our events and projects.</p>
                     <a href="https://www.patreon.com/bePatron?u=25616382" class="button primary">Join on Patreon</a>
                 </div>
                 <!-- GitHub Sponsor -->
                 <div class="support-item">
-                    <h3>Sponsor PH3AR Projects</h3>
-                    <p>Directly support PH3AR's growth by sponsoring development.</p>
+                    <h3>Sponsor PH3AR on GitHub</h3>
+                    <p>Support the growth of PH3AR by sponsoring development projects directly on GitHub.</p>
                     <a href="https://github.com/sponsors/ph3ar" target="_blank" class="button secondary">Sponsor on GitHub</a>
                 </div>
                 <!-- Givebutter Donation for Starphone -->
                 <div class="support-item givebutter">
-                    <h3>Make a Donation</h3>
-                    <p>Support Starphone’s development with a one-time or recurring donation.</p>
+                    <h3>Donate to Starphone</h3>
+                    <p>Contribute to the future of public communication with a one-time or recurring donation through Givebutter.</p>
                     <givebutter-widget id="LxxMGL"></givebutter-widget>
                     <script async src="https://widgets.givebutter.com/latest.umd.cjs?acct=dOQ0XbCHnxsv4qWo&p=other"></script>
                     <a href="https://givebutter.com/PH3AR" class="button final-cta">Donate Now</a>
@@ -46,10 +50,11 @@
 
         <!-- Final Call to Action -->
         <div class="final-appeal">
-            <h2>Help Shape the Future</h2>
+            <h2>Help Us Build the Future</h2>
             <p>
-                Your support is crucial in building a future where public phones are not relics of the past, but essential tools for global communication.
+                Your support is crucial to bringing Starphone’s mission to life. With your help, we can reduce the cost of creating a full-sized, free-standing booth and make significant improvements along the way.
             </p>
+            <p>Follow us on social media for updates, as we open-source our progress and share our learnings in real-time!</p>
             <a href="https://givebutter.com/PH3AR" class="button final-cta">Donate Now</a>
         </div>
     </div>
@@ -75,7 +80,7 @@
         max-width: 800px;
         margin: 0 auto 40px;
         line-height: 1.6;
-        color: #333; /* Adjusted for readability */
+        color: #333;
         font-family: 'Roboto', sans-serif;
     }
 
@@ -150,7 +155,7 @@
     }
 
     .button.final-cta {
-        background-color: #0070f3;
+        background-color: #ffb30f;
         color: white;
     }
 
