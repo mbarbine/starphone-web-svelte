@@ -25,6 +25,8 @@
 		"eslint": "^8.57.1",
 		"eslint-config-prettier": "^8.10.0",
 		"eslint-plugin-svelte": "^2.45.1",
+		"husky": "^9.1.6",
+		"lint-staged": "^15.2.10",
 		"postcss": "^8.4.47",
 		"postcss-import": "^16.1.0",
 		"postcss-load-config": "^6.0.1",
@@ -32,7 +34,7 @@
 		"postcss-preset-env": "^10.0.7",
 		"prettier": "^2.8.8",
 		"prettier-plugin-svelte": "^2.10.1",
-		"sass": "^1.80.2",
+		"sass": "^1.80.3",
 		"scss": "^0.2.4",
 		"svelte": "^3.59.2",
 		"svelte-check": "^3.8.6",
@@ -57,7 +59,7 @@
 		"svelte-meta-tags": "^3.1.4",
 		"svelte-navigator": "^3.2.2",
 		"ts": "^0.2.2",
-		"vercel": "^37.9.0",
+		"vercel": "^37.11.0",
 		"xlsx": "^0.18.5"
 	}
 }

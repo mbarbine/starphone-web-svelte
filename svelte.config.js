@@ -25,6 +25,7 @@ const config = {
       entries: ['*'],
       concurrency: 5,
     },
+    // Remove trailingSlash and vite options
   }
 };
 

@@ -2,11 +2,16 @@
     import VideoEmbed from '$lib/components/VideoEmbed.svelte';
     import TeamMemberCard from '$lib/components/TeamMemberCard.svelte';
     import '../lib/styles/global.css';
-    export let pageData;
+    
+    // Data loaded from +page.js
+    export let data;
+    
+    // Ensure timeline and team are initialized with default values to avoid undefined errors
+    const { timeline = [], team = [] } = data;
 </script>
 
 <!-- Enhanced Hero Section -->
-<section class="about-hero">
+<section class="history-hero">
     <div class="hero-content">
         <h1>Welcome to Starphone</h1>
         <p>Starphone is designed to provide secure, reliable communication even in the harshest environments. This is more than just a phone—it’s a new era of public communication.</p>
@@ -18,41 +23,23 @@
 </section>
 
 <!-- Enhanced Origin Section -->
-<section class="about-origin section">
+<section class="history-timeline section">
     <div class="container">
         <h2>Our Journey: From PH3AR to Starphone</h2>
         <p>Starphone was born from PH3AR, a community-driven initiative focused on pushing the boundaries of technology. Our mission? To develop solutions that enhance human communication in the most challenging environments.</p>
         <div class="timeline">
-            <div class="timeline-item">
-                <h3>2021</h3>
-                <p>PH3AR Visits Starbase for the first time.</p>
-            </div>
-            <div class="timeline-item">
-                <h3>2022</h3>
-                <p>Proof of Concept Public Phone at Starbase, TX. Does not survive Starship launch IFT2.</p>
-            </div>
-            <div class="timeline-item">
-                <h3>2023</h3>
-                <p>Proof of Concept Public Phone at Starbase, TX. Does not survive Starship launch IFT2.</p>
-            </div>
-            <div class="timeline-item">
-                <h3>2024 Q1</h3>
-                <p>Concept for Starphone begins, focused on developing a public communication device for extreme conditions.</p>
-            </div>
-            <div class="timeline-item">
-                <h3>2024 Q2</h3>
-                <p>Phone booth design and prototyping begins, focused on building a custom enclosure "booth" for extreme conditions.</p>
-            </div>
-            <div class="timeline-item">
-                <h3>2024 Q3</h3>
-                <p>Prototyping continues, improving the Starphone design.</p>
-            </div>
+            {#each timeline as event}
+                <div class="timeline-item">
+                    <h3>{event.date}</h3>
+                    <p>{event.description}</p>
+                </div>
+            {/each}
         </div>
     </div>
 </section>
 
 <!-- Enhanced Technology Section -->
-<section class="about-technology section">
+<section class="technology-section section">
     <div class="container">
         <h2>The Technology Behind Starphone</h2>
         <div class="tech-features">
@@ -73,24 +60,14 @@
 </section>
 
 <!-- Enhanced Team Section -->
-<section class="about-team section">
+<section class="about-community section">
     <div class="container">
         <h2>The Team Behind Starphone</h2>
-       <div class="team-grid">
-    <TeamMemberCard name="Michael B." role="Lead Engineer" description="Leads the development and strategic vision of Starphone technology." />
-    <TeamMemberCard name="Patrick M." role="Resident Genius" description="Blends retro charm with modern innovation in Starphone's design." />
-    <TeamMemberCard name="Rashid A." role="Manufacturing" description="Heads production to ensure top-tier craftsmanship in every Starphone." />
-    <TeamMemberCard name="Stuart D." role="Rapid Prototype Elite" description="Spearheads operations to keep prototyping fast and efficient." />
-    <TeamMemberCard name="John M." role="Marketing" description="Builds awareness and fosters relationships with key communities." />
-    <TeamMemberCard name="Kelly S." role="Treasurer" description="Manages financial planning for sustainable growth and innovation." />
-    <TeamMemberCard name="Darwin" role="Canadian Operations" description="Leads Starphone's expansion into the Canadian market." />
-    <TeamMemberCard name="Kyle T." role="Internetworking Master" description="Architects Starphone's secure and reliable global network infrastructure." />
-    <TeamMemberCard name="Kacee" role="Quality Assurance" description="Ensures product quality and reliability at every stage of development." />
-    <TeamMemberCard name="John A." role="Security" description="Oversees security protocols to ensure data protection and system integrity." />
-    <TeamMemberCard name="Amber" role="Artist" description="Creates visually stunning artwork and design elements for Starphone." />
-    <TeamMemberCard name="Michelle" role="Moral Support" description="Provides ongoing encouragement and motivation to the entire team." />
-</div>
-
+        <div class="team-grid">
+            {#each team as member}
+                <TeamMemberCard name={member.name} role={member.role} description={member.description} />
+            {/each}
+        </div>
     </div>
 </section>
 
@@ -112,8 +89,8 @@
 </section>
 
 <style>
-    /* General Styling */
-    .about-hero {
+    /* Hero Section */
+    .history-hero {
         background-color: var(--color-primary-dark);
         color: var(--color-button-text);
         text-align: center;
@@ -137,55 +114,74 @@
         font-size: 1.2rem;
     }
 
+    /* Section Spacing */
     .section {
         padding: 60px 0;
     }
 
-    .about-origin, .about-technology, .about-team, .call-to-action, .video-section {
+    /* Timeline Section */
+    .history-timeline {
         background-color: var(--color-background);
         color: var(--color-text);
     }
 
-    .tech-features, .team-grid {
-        display: flex;
-        justify-content: space-between;
-        gap: 30px;
-        flex-wrap: wrap;
-    }
-
-    .tech-item, .timeline-item {
-        flex: 1;
-        background-color: var(--color-secondary);
-        padding: 20px;
-        border-radius: 8px;
-        text-align: center;
-        box-shadow: var(--box-shadow);
-        margin-bottom: 20px;
-    }
-
-    /* Team Section */
-    .team-grid {
+    .timeline {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
         gap: 20px;
     }
 
-    .team-grid > * {
+    .timeline-item {
         background-color: var(--color-secondary);
         padding: 20px;
-        border-radius: 8px;
-        box-shadow: var(--box-shadow);
         text-align: center;
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+    }
+
+    .timeline-item h3 {
+        color: var(--color-primary-dark);
+        margin-bottom: 10px;
+    }
+
+    .timeline-item p {
+        font-size: 1.1rem;
+        color: var(--color-text-dark);
+    }
+
+    /* Technology Section */
+    .technology-section .tech-features {
         display: flex;
-        flex-direction: column;
         justify-content: space-between;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .tech-item {
+        flex: 1;
+        text-align: center;
+        background-color: var(--color-secondary);
+        padding: 20px;
+        border-radius: var(--border-radius);
+        min-width: 220px;
+    }
+
+    .tech-item h3 {
+        color: var(--color-primary-dark);
+    }
+
+    /* Community Section */
+    .about-community .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
     }
 
     /* Call to Action Section */
     .call-to-action {
-        text-align: center;
         background-color: var(--color-primary);
-        color: white;
+        text-align: center;
+        color: var(--color-button-text);
     }
 
     .call-to-action h2, .video-section h2 {
@@ -194,23 +190,24 @@
     }
 
     .call-to-action p {
-        font-size: 1.1rem;
+        font-size: 1rem;
         margin-bottom: 30px;
     }
 
     .call-to-action .button {
         background-color: var(--color-secondary);
-        color: white;
+        color: var(--color-button-text);
         padding: 12px 24px;
         border-radius: 8px;
         text-decoration: none;
-        transition: background-color 0.3s ease;
+        transition: background-color var(--transition-speed) ease;
     }
 
     .call-to-action .button:hover {
         background-color: var(--color-secondary-dark);
     }
 
+    /* Video Section */
     .video-section {
         text-align: center;
         padding: 60px 0;
@@ -226,16 +223,12 @@
             font-size: 1rem;
         }
 
-        .team-grid, .tech-features, .timeline {
+        .timeline {
+            grid-template-columns: 1fr;
+        }
+
+        .tech-features {
             flex-direction: column;
-        }
-
-        .team-grid > * {
-            max-width: 100%;
-        }
-
-        .call-to-action, .video-section {
-            padding: 40px 0;
         }
     }
 

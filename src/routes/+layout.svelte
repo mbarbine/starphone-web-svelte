@@ -1,5 +1,3 @@
-<!-- src/routes/+layout.svelte -->
-
 <script>
     import Header from '$lib/components/Header.svelte';
     import Footer from '$lib/components/Footer.svelte';
@@ -11,8 +9,14 @@
     // Import global CSS
     import '/src/lib/styles/global.css';  // Adjust path if necessary
 
-    // Inject Vercel Analytics only in the browser
-    if (browser) inject();
+    // Inject Vercel Analytics only in the browser with error handling
+    if (browser) {
+        try {
+            inject({ debug: process.env.NODE_ENV === 'development' });
+        } catch (err) {
+            console.error('Vercel Analytics injection failed:', err);
+        }
+    }
 </script>
 
 <head>
