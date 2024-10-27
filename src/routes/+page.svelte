@@ -14,7 +14,7 @@
 <section class="history-hero">
     <div class="hero-content">
         <h1>Introducing Starphone</h1>
-        <p>Starphone is designed to provide secure, reliable communication even in the harshest environments. This is more than just a phone—it’s a new era of public communication.</p>
+        <p>Starphone is designed to provide secure, reliable communication even in the harshest environments. Our mission is to connect business, people and things by connecting people in an innovative way and to help mobile dead zones due to blackout, network overload or inaccessibility in the hardest to reach places and harshest environments on earth, space and beyond. </p>
     </div>
     <div class="givebutter-donate">
         <givebutter-widget id="LYxbKj"></givebutter-widget>
