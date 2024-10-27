@@ -14,14 +14,20 @@
 <section class="history-hero">
     <div class="hero-content">
         <h1>Introducing Starphone</h1>
-        <p>Starphone is designed to provide secure, reliable communication even in the harshest environments. Our mission is to connect business, people and things by connecting people in an innovative way and to help mobile dead zones due to blackout, network overload or inaccessibility in the hardest to reach places and harshest environments on earth, space and beyond. </p>
-    </div>
-    <div class="givebutter-donate">
-        <givebutter-widget id="LYxbKj"></givebutter-widget>
-        <script async src="https://widgets.givebutter.com/latest.umd.cjs?acct=dOQ0XbCHnxsv4qWo&p=other"></script>
+        <p>Starphone is designed to provide secure, reliable communication even in the harshest environments where other systems fall short or fail. Our mission is to connect business, people and things by connecting people in an innovative way and to help mobile dead zones due to blackout, network overload or inaccessibility in the hardest to reach places and harshest environments on earth, space and beyond. </p>
     </div>
 </section>
-
+<section class="history-hero">
+    <div class="hero-content">
+        <h1>What is it?</h1>
+        <p>Think of it as an evolution to the public telephone booth. That is a also a free standing, self sustaining cell tower & satellite receiver. Starphones can be deployed anywhere and used for:
+            - Permanent out door installations
+            - Connecting people at large events
+            - construction, mining and marine operations 
+            - Schools, parks, beaches, train stations, air ports, space ports
+            - Campgrounds, rural communities, highways, parking lots, farms or in your backyard. </p>
+    </div>
+</section>
 <!-- Enhanced Technology Section -->
 <section class="technology-section section">
     <div class="container">
