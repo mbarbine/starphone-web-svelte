@@ -45,7 +45,7 @@
 <section class="download-section">
     <h2>Access Starphone Presentation</h2>
     <p>Click the button below to open or download the Starphone presentation.</p>
-    <a href="/api/open-pptx" class="button">Open Presentation</a>
+    <a href="/Starphone-readonly.pptx" class="button">Open Presentation</a>
 </section>
 
 <section class="history-hero">
