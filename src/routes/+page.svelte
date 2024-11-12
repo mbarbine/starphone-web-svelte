@@ -2,32 +2,54 @@
     import VideoEmbed from '$lib/components/VideoEmbed.svelte';
     import TeamMemberCard from '$lib/components/TeamMemberCard.svelte';
     import '../lib/styles/global.css';
-    
-    // Data loaded from +page.js
+
     export let data;
-    
-    // Ensure timeline and team are initialized with default values to avoid undefined errors
     const { timeline = [], team = [] } = data;
+
+    // Function to attempt autoplay on the Beautiful.ai iframe
+    function startAutoplay() {
+        const iframe = document.getElementById("beautiful-ai-frame");
+        iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'playVideo' }), '*');
+    }
 </script>
 
 <!-- Enhanced Hero Section -->
 <section class="history-hero">
     <div class="hero-content">
         <h1>Introducing Starphone</h1>
-        <p>Starphone is designed to provide secure, reliable communication even in the harshest environments where other systems fall short or fail. Our mission is to connect business, people and things by connecting people in an innovative way and to help mobile dead zones due to blackout, network overload or inaccessibility in the hardest to reach places and harshest environments on earth, space and beyond. </p>
+        <p>Starphone is designed to provide secure, reliable communication even in the harshest environments where other systems fall short or fail. Our mission is to connect business, people, and things innovatively, overcoming mobile dead zones due to blackouts, network overloads, or inaccessibility. From Earth to space, we aim to redefine communication. 
+
+            Click the play button below for the slide deck!
+        </p>
+    </div>
+
+    <!-- Beautiful.ai Embedded Frame with Autoplay Attempt -->
+    <div class="video-frame">
+        <iframe
+            id="beautiful-ai-frame"
+            allow="autoplay; clipboard-write"
+            allowfullscreen
+            src="https://www.beautiful.ai/embed/-OBWOCKdNj9Kk9FPSGW0?utm_source=beautiful_player&utm_medium=embed&utm_campaign=-OBNOsmZdY0sGRDNXD5H"
+            style="border: 1px solid #333; width: 100%; height: 100%;"
+            onload="startAutoplay()"
+        ></iframe>
     </div>
 </section>
+
 <section class="history-hero">
     <div class="hero-content">
         <h1>What is it?</h1>
-        <p>Think of it as an evolution to the public telephone booth. That is a also a free standing, self sustaining cell tower & satellite receiver. Starphones can be deployed anywhere and used for:
-            - Permanent out door installations
-            - Connecting people at large events
-            - construction, mining and marine operations 
-            - Schools, parks, beaches, train stations, air ports, space ports
-            - Campgrounds, rural communities, highways, parking lots, farms or in your backyard. </p>
+        <p>Think of it as an evolution of the public telephone booth—a free-standing, self-sustaining cell tower and satellite receiver. Starphones can be deployed anywhere and serve various purposes:</p>
+        <ul>
+            <li>Permanent outdoor installations</li>
+            <li>Large events</li>
+            <li>Construction, mining, and marine operations</li>
+            <li>Schools, parks, beaches, train stations, airports, and spaceports</li>
+            <li>Rural areas, campgrounds, highways, parking lots, and farms</li>
+        </ul>
     </div>
 </section>
+
 <!-- Enhanced Technology Section -->
 <section class="technology-section section">
     <div class="container">
@@ -35,11 +57,11 @@
         <div class="tech-features">
             <div class="tech-item">
                 <h3>Faraday Cage Protection</h3>
-                <p>Starphone's outer shell blocks electromagnetic interference, ensuring secure communication in high-EMI environments.</p>
+                <p>Starphone’s outer shell blocks electromagnetic interference, ensuring secure communication in high-EMI environments.</p>
             </div>
             <div class="tech-item">
                 <h3>Hybrid Network System</h3>
-                <p>Switch between satellite, cellular, and VoIP networks for constant connectivity.</p>
+                <p>Switch seamlessly between satellite, cellular, and VoIP networks for constant connectivity.</p>
             </div>
             <div class="tech-item">
                 <h3>Space-Grade Engineering</h3>
@@ -53,7 +75,7 @@
 <section class="history-timeline section">
     <div class="container">
         <h2>Our Journey: Starphone</h2>
-        <p>Starphone was born from PH3AR, a community-driven initiative focused gaming, making, art'ing, and technology. Our mission? To develop solutions that enhance human communication in the most challenging environments.</p>
+        <p>Starphone was born from PH3AR, a community-driven initiative focused on gaming, making, art’ing, and technology. Our mission? To develop solutions that enhance human communication in the most challenging environments.</p>
         <div class="timeline">
             {#each timeline as event}
                 <div class="timeline-item">
@@ -64,6 +86,7 @@
         </div>
     </div>
 </section>
+
 <!-- Enhanced Team Section -->
 <section class="about-community section">
     <div class="container">
@@ -86,26 +109,6 @@
 </section>
 
 <style>
-    /* Remove background, borders, and padding */
-    .video-section video.no-border-bg {
-        border: none;
-        background: none;
-        box-shadow: none;
-    }
-
-    /* Fix for mirrored video */
-    .flip-video {
-        transform: rotate(180deg);
-    }
-
-    /* For mobile devices, adjust as necessary */
-    @media (max-width: 768px) {
-        .video-section h2 {
-            font-size: 1.8rem;
-        }
-    }
-
-
     /* Hero Section */
     .history-hero {
         background-color: var(--color-primary-dark);
@@ -117,9 +120,9 @@
     .hero-content {
         max-width: 800px;
         margin: 0 auto;
-        background: rgba(0, 0, 0, 0.6);
         padding: 20px;
         border-radius: 8px;
+        background: rgba(0, 0, 0, 0.6);
     }
 
     .hero-content h1 {
@@ -129,6 +132,36 @@
 
     .hero-content p {
         font-size: 1.2rem;
+    }
+
+    /* Video Frame Styling */
+    .video-frame {
+        position: relative;
+        width: 100%;
+        max-width: 800px;
+        height: 450px;
+        margin: 20px auto;
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .video-frame iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    /* List Styling */
+    .hero-content ul {
+        list-style: inside disc;
+        padding-left: 0;
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin: 20px 0;
+        text-align: left;
     }
 
     /* Section Spacing */
