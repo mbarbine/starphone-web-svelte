@@ -1,5 +1,5 @@
 <script>
-    import VideoEmbed from '$lib/components/VideoEmbed.svelte';
+    import { onMount } from 'svelte';
     import TeamMemberCard from '$lib/components/TeamMemberCard.svelte';
     import '../lib/styles/global.css';
 
@@ -9,18 +9,24 @@
     // Function to attempt autoplay on the Beautiful.ai iframe
     function startAutoplay() {
         const iframe = document.getElementById("beautiful-ai-frame");
-        iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'playVideo' }), '*');
+        if (iframe && iframe.contentWindow) {
+            iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'playVideo' }), '*');
+        }
     }
+
+    onMount(() => {
+        startAutoplay();
+    });
 </script>
 
 <!-- Enhanced Hero Section -->
 <section class="history-hero">
     <div class="hero-content">
         <h1>Introducing Starphone</h1>
-        <p>Starphone is designed to provide secure, reliable communication even in the harshest environments where other systems fall short or fail. Our mission is to connect business, people, and things innovatively, overcoming mobile dead zones due to blackouts, network overloads, or inaccessibility. From Earth to space, we aim to redefine communication. 
-
-            Click the play button below for the slide deck!
+        <p>
+            Starphone is designed to provide secure, reliable communication even in the harshest environments where other systems fall short or fail. Our mission is to connect business, people, and things innovatively, overcoming mobile dead zones due to blackouts, network overloads, or inaccessibility. From Earth to space, we aim to redefine communication.
         </p>
+        <p>Click the play button below for the slide deck!</p>
     </div>
 
     <!-- Beautiful.ai Embedded Frame with Autoplay Attempt -->
@@ -31,9 +37,15 @@
             allowfullscreen
             src="https://www.beautiful.ai/embed/-OBWOCKdNj9Kk9FPSGW0?utm_source=beautiful_player&utm_medium=embed&utm_campaign=-OBNOsmZdY0sGRDNXD5H"
             style="border: 1px solid #333; width: 100%; height: 100%;"
-            onload="startAutoplay()"
         ></iframe>
     </div>
+</section>
+
+<!-- Download Section for Starphone Presentation -->
+<section class="download-section">
+    <h2>Access Starphone Presentation</h2>
+    <p>Click the button below to open or download the Starphone presentation.</p>
+    <a href="/api/open-pptx" class="button">Open Presentation</a>
 </section>
 
 <section class="history-hero">
@@ -152,6 +164,25 @@
         left: 0;
         width: 100%;
         height: 100%;
+    }
+
+    /* Download Section */
+    .download-section {
+        text-align: center;
+        margin-top: 40px;
+    }
+
+    .download-section .button {
+        padding: 12px 24px;
+        background-color: var(--color-secondary);
+        color: var(--color-button-text);
+        text-decoration: none;
+        border-radius: 8px;
+        transition: background-color 0.3s;
+    }
+
+    .download-section .button:hover {
+        background-color: var(--color-secondary-dark);
     }
 
     /* List Styling */
