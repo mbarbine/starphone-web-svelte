@@ -1,3 +1,4 @@
+<!-- src/routes/page.svelte -->
 <script>
     import { onMount } from 'svelte';
     import TeamMemberCard from '$lib/components/TeamMemberCard.svelte';
@@ -6,16 +7,25 @@
     export let data;
     const { timeline = [], team = [] } = data;
 
-    // Function to attempt autoplay on the Beautiful.ai iframe
-    function startAutoplay() {
+    // Autoplay function triggered on iframe load
+    function setupIframeAutoplay() {
         const iframe = document.getElementById("beautiful-ai-frame");
-        if (iframe && iframe.contentWindow) {
-            iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'playVideo' }), '*');
+        if (iframe) {
+            iframe.addEventListener("load", () => {
+                try {
+                    iframe.contentWindow?.postMessage(
+                        JSON.stringify({ event: 'command', func: 'playVideo' }),
+                        '*'
+                    );
+                } catch (err) {
+                    console.error("iframe postMessage failed:", err);
+                }
+            });
         }
     }
 
     onMount(() => {
-        startAutoplay();
+        setupIframeAutoplay();
     });
 </script>
 
