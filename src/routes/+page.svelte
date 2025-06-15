@@ -35,27 +35,7 @@
         <h1>Introducing Starphone</h1>
         <p>
             Starphone is designed to provide secure, reliable communication even in the harshest environments where other systems fall short or fail. Our mission is to connect business, people, and things innovatively, overcoming mobile dead zones due to blackouts, network overloads, or inaccessibility. From Earth to space, we aim to redefine communication.
-        </p>
-        <p>Click the play button below for the slide deck!</p>
     </div>
-
-    <!-- Beautiful.ai Embedded Frame with Autoplay Attempt -->
-    <div class="video-frame">
-        <iframe
-            id="beautiful-ai-frame"
-            allow="autoplay; clipboard-write"
-            allowfullscreen
-            src="https://www.beautiful.ai/embed/-OBWOCKdNj9Kk9FPSGW0?utm_source=beautiful_player&utm_medium=embed&utm_campaign=-OBNOsmZdY0sGRDNXD5H"
-            style="border: 1px solid #333; width: 100%; height: 100%;"
-        ></iframe>
-    </div>
-</section>
-
-<!-- Download Section for Starphone Presentation -->
-<section class="download-section">
-    <h2>Access Starphone Presentation</h2>
-    <p>Click the button below to open or download the Starphone presentation.</p>
-    <a href="/Starphone-readonly.pptx" class="button">Open Presentation</a>
 </section>
 
 <section class="history-hero">
