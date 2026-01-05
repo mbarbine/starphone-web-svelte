@@ -114,6 +114,47 @@
   transform: translateY(-2px);
 }
 
+/* Hero Video Section */
+.heroVideo {
+  padding: 4rem 2rem;
+  background: #ffffff;
+}
+
+.videoWrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.featuredVideo {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: #000;
+}
+
+.videoCaption {
+  background: linear-gradient(135deg, #000494 0%, #006494 100%);
+  padding: 2rem;
+  text-align: center;
+  color: white;
+}
+
+.videoCaption h3 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.videoCaption p {
+  font-size: 1.1rem;
+  opacity: 0.95;
+  margin: 0;
+}
+
 /* Features Section */
 .features {
   padding: 6rem 2rem;
@@ -347,6 +388,18 @@
 
   .heroOverlay {
     padding: 3rem 1.5rem;
+  }
+
+  .heroVideo {
+    padding: 3rem 1.5rem;
+  }
+
+  .videoCaption h3 {
+    font-size: 1.5rem;
+  }
+
+  .videoCaption p {
+    font-size: 1rem;
   }
 
   .features,

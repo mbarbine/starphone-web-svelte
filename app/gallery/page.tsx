@@ -79,7 +79,9 @@ export default function GalleryPage() {
                   controls 
                   className={styles.video}
                   preload="metadata"
+                  playsInline
                 >
+                  <source src={basePath + item.file} type={item.file.toLowerCase().endsWith('.mov') ? 'video/quicktime' : 'video/mp4'} />
                   <source src={basePath + item.file} type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>

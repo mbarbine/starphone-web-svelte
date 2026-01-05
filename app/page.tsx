@@ -40,6 +40,30 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Hero Video Section */}
+      <section className={styles.heroVideo}>
+        <div className={styles.container}>
+          <div className={styles.videoWrapper}>
+            <video 
+              autoPlay 
+              loop 
+              muted 
+              playsInline
+              className={styles.featuredVideo}
+              poster="/images/starphone-hero-square.png"
+            >
+              <source src="/making-of-starphone/itsringing.mov" type="video/quicktime" />
+              <source src="/making-of-starphone/itsringing.mov" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <div className={styles.videoCaption}>
+              <h3>📞 It&apos;s Ringing!</h3>
+              <p>Watch our first successful call at Starbase</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Features Section */}
       <section className={styles.features}>
         <div className={styles.container}>
