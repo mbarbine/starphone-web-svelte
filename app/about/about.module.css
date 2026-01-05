@@ -59,6 +59,24 @@
   margin-bottom: 1.5rem;
 }
 
+.ph3arMention {
+  margin-top: 2rem !important;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #f5f6fa 0%, #e8eaf0 100%);
+  border-radius: 8px;
+  border-left: 4px solid #FFB30F;
+}
+
+.ph3arMention a {
+  color: #000494;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.ph3arMention a:hover {
+  color: #FFB30F;
+}
+
 .missionImage {
   display: flex;
   justify-content: center;

@@ -32,6 +32,22 @@
   line-height: 1.6;
 }
 
+.ph3arBrand {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.ph3arBrand a {
+  color: var(--color-link-hover);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.ph3arBrand a:hover {
+  color: #FFB30F;
+}
+
 .links {
   display: flex;
   flex-direction: column;
@@ -66,6 +82,14 @@
   background: var(--color-link-hover);
   color: var(--color-header-footer-bg);
   transform: translateY(-2px);
+}
+
+.patreonLink {
+  background: #FF424D !important;
+}
+
+.patreonLink:hover {
+  background: #FFB30F !important;
 }
 
 .bottom {

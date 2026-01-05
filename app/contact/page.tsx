@@ -37,7 +37,7 @@ export default function ContactPage() {
                 <div className={styles.icon}>✉️</div>
                 <div>
                   <h3>Email</h3>
-                  <a href="mailto:info@thestarphone.com">info@thestarphone.com</a>
+                  <a href="mailto:michael@barbineworldwide.com">michael@barbineworldwide.com</a>
                 </div>
               </div>
             </div>

@@ -1,0 +1,232 @@
+/* Press Page Styles */
+
+.pressPage {
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.hero {
+  background: linear-gradient(135deg, #000494 0%, #006494 100%);
+  color: #ffffff;
+  padding: 6rem 2rem 4rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.heroSubtitle {
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.content {
+  padding: 6rem 2rem;
+  background: #ffffff;
+}
+
+.pressSection {
+  margin-bottom: 5rem;
+}
+
+.pressSection h2 {
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  color: #000494;
+  margin-bottom: 3rem;
+  font-weight: 800;
+}
+
+.pressItem {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  padding: 2.5rem;
+  background: #f5f6fa;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  border-left: 4px solid #FFB30F;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pressItem:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.pressImage {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.articleImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.pressContent h3 {
+  font-size: 1.8rem;
+  color: #000494;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.pressDate {
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.pressContent p {
+  color: #5a5a5a;
+  line-height: 1.7;
+  font-size: 1.05rem;
+  margin-bottom: 1.5rem;
+}
+
+.pressLink {
+  display: inline-block;
+  color: #006494;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.pressLink:hover {
+  color: #FFB30F;
+}
+
+.mediaKit {
+  background: linear-gradient(135deg, #f5f6fa 0%, #e8eaf0 100%);
+  padding: 3rem;
+  border-radius: 12px;
+  margin-bottom: 4rem;
+}
+
+.mediaKit h2 {
+  font-size: clamp(1.8rem, 2.5vw, 2.2rem);
+  color: #000494;
+  margin-bottom: 1rem;
+  font-weight: 800;
+}
+
+.mediaKit p {
+  color: #5a5a5a;
+  margin-bottom: 2rem;
+  font-size: 1.05rem;
+}
+
+.mediaLinks {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.downloadButton {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: #000494;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.downloadButton:hover {
+  background: #FFB30F;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.contactSection {
+  background: #ffffff;
+  padding: 3rem;
+  border-radius: 12px;
+  border: 2px solid #e8eaf0;
+}
+
+.contactSection h2 {
+  font-size: clamp(1.8rem, 2.5vw, 2.2rem);
+  color: #000494;
+  margin-bottom: 1rem;
+  font-weight: 800;
+}
+
+.contactSection > p {
+  color: #5a5a5a;
+  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.contactInfo p {
+  font-size: 1.05rem;
+  color: #333;
+}
+
+.contactInfo a {
+  color: #006494;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.contactInfo a:hover {
+  color: #FFB30F;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .pressItem {
+    grid-template-columns: 400px 1fr;
+    align-items: start;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 4rem 1.5rem 3rem;
+  }
+
+  .content {
+    padding: 4rem 1.5rem;
+  }
+
+  .pressItem {
+    padding: 2rem;
+  }
+
+  .mediaKit {
+    padding: 2rem;
+  }
+
+  .contactSection {
+    padding: 2rem;
+  }
+
+  .mediaLinks {
+    flex-direction: column;
+  }
+
+  .downloadButton {
+    text-align: center;
+  }
+}

@@ -38,6 +38,9 @@ export default function AboutPage() {
               <p>
                 We believe that connectivity is a fundamental need, especially in critical situations. Whether it&apos;s during natural disasters, in remote wilderness areas, or even in future space settlements, Starphone ensures you can always reach who you need to reach.
               </p>
+              <p className={styles.ph3arMention}>
+                Starphone is a <a href="https://www.ph3ar.com/about" target="_blank" rel="noopener noreferrer"><strong>PH3AR</strong></a> project, part of our mission to build resilient technology for extreme environments and emerging frontiers.
+              </p>
             </div>
             <div className={styles.missionImage}>
               <Image
