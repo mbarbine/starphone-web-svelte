@@ -2,11 +2,7 @@ import type { Metadata } from 'next';
 import Script from 'next/script';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import FloatingDonateButton from '@/components/FloatingDonateButton';
-import ThemeToggle from '@/components/ThemeToggle';
-import { ThemeProvider } from './contexts/ThemeContext';
+import ClientLayout from './ClientLayout';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -100,15 +96,9 @@ export default function RootLayout({
           src="https://givebutter.com/js/widget.js" 
           strategy="lazyOnload"
         />
-        <ThemeProvider>
-          <div className="app">
-            <Header />
-            <main>{children}</main>
-            <Footer />
-            <FloatingDonateButton />
-            <ThemeToggle />
-          </div>
-        </ThemeProvider>
+        <ClientLayout>
+          {children}
+        </ClientLayout>
         <Analytics />
         <SpeedInsights />
       </body>

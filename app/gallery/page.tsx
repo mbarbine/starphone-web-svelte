@@ -26,11 +26,11 @@ const imageFiles = [
   { file: "Completed-Prototype-Michael-Phone-June2024.jpg", caption: "June 2024 Prototype" },
 ];
 
-const videoFiles = [
-  { file: "Public-Phone-1.MP4", caption: "Starphone in Action" },
-  { file: "itsringing.mov", caption: "It's Ringing!" },
-  { file: "later-on-people-are-fascinated.MP4", caption: "People Fascinated" },
-];
+const videoEmbed = {
+  url: "https://www.youtube.com/embed/vApSEgEnqQY",
+  title: "Starphone - It's Ringing!",
+  caption: "Watch our first successful call at Starbase"
+};
 
 const basePath = "/making-of-starphone/";
 const pdfFile = "/making-of-starphone/Starphone-Design-Drawings.pdf";
@@ -83,24 +83,19 @@ export default function GalleryPage() {
         </div>
 
         <section className={styles.videoSection}>
-          <h2>📹 Video Highlights</h2>
-          <div className={styles.videoGrid}>
-            {videoFiles.map((item) => (
-              <div key={item.file} className={styles.videoCard}>
-                <video 
-                  controls 
-                  className={styles.video}
-                  preload="metadata"
-                  playsInline
-                  poster="/images/starphone-hero-square.png"
-                >
-                  <source src={basePath + item.file} type={item.file.toLowerCase().endsWith('.mov') ? 'video/mp4' : 'video/mp4'} />
-                  <track kind="captions" />
-                  Your browser does not support the video tag.
-                </video>
-                <p className={styles.mediaCaption}>{item.caption}</p>
-              </div>
-            ))}
+          <h2>📹 Featured Video</h2>
+          <p className={styles.videoDescription}>{videoEmbed.caption}</p>
+          <div className={styles.youtubeContainer}>
+            <iframe
+              width="100%"
+              height="100%"
+              src={videoEmbed.url}
+              title={videoEmbed.title}
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              className={styles.youtubeEmbed}
+            ></iframe>
           </div>
         </section>
 

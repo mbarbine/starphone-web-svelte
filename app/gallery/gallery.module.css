@@ -75,6 +75,49 @@
   text-align: center;
 }
 
+.videoDescription {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--color-text-secondary, #5a5a5a);
+  margin-bottom: 2.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.youtubeContainer {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: var(--box-shadow-elevated, 0 8px 40px rgba(0, 0, 0, 0.12));
+  border: 3px solid var(--border-color, #e8eaf0);
+  transition: var(--transition-smooth, all 0.3s ease);
+}
+
+[data-theme="future"] .youtubeContainer {
+  border-color: var(--color-primary);
+  box-shadow: var(--box-shadow-elevated), var(--glow-primary);
+}
+
+[data-theme="future"] .youtubeContainer:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--glow-primary), 0 16px 56px rgba(0, 212, 255, 0.4);
+}
+
+.youtubeEmbed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+}
+
 .pdfDescription {
   text-align: center;
   font-size: 1.2rem;
