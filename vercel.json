@@ -1,7 +1,7 @@
 {
   "version": 2,
   "framework": "nextjs",
-  "buildCommand": "next build",
+  "buildCommand": "corepack enable && next build",
   "devCommand": "next dev",
-  "installCommand": "pnpm install"
+  "installCommand": "corepack enable && pnpm install"
 }
