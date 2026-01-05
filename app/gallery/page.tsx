@@ -111,11 +111,12 @@ export default function GalleryPage() {
                 <Image
                   src={basePath + item.file}
                   alt={item.caption}
-                  width={400}
-                  height={300}
+                  width={300}
+                  height={400}
                   loading={index < 8 ? 'eager' : 'lazy'}
                   className={styles.galleryImage}
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  style={{ objectFit: 'cover', aspectRatio: '3/4' }}
                 />
                 <div className={styles.imageOverlay}>
                   <p>{item.caption}</p>

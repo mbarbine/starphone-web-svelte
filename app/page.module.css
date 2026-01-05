@@ -39,11 +39,11 @@
   position: absolute;
   inset: 0;
   z-index: 0;
-  opacity: 0.15;
+  opacity: 0.35;
 }
 
 .heroImage {
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
 }
 

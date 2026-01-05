@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" fill="none">
+  <!-- Background grid pattern -->
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(0,212,255,0.1)" stroke-width="0.5"/>
+    </pattern>
+    <linearGradient id="boothGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:0.3" />
+    </linearGradient>
+    <linearGradient id="glowGradient" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" style="stop-color:#00ffff;stop-opacity:0.5" />
+      <stop offset="100%" style="stop-color:#0066ff;stop-opacity:0.2" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="800" height="1000" fill="url(#grid)"/>
+  
+  <!-- Starphone Booth Variant - Isometric Style -->
+  <g transform="translate(400,150)">
+    <!-- Top hexagonal canopy -->
+    <polygon points="0,-50 100,-20 100,30 0,60 -100,30 -100,-20" 
+             fill="url(#boothGradient)" stroke="#00d4ff" stroke-width="2"/>
+    <polygon points="0,-50 100,-20 100,-10 0,-40 -100,-10 -100,-20" 
+             fill="rgba(0,212,255,0.4)" stroke="#00d4ff" stroke-width="1.5"/>
+    
+    <!-- Solar panel on top -->
+    <rect x="-30" y="-80" width="60" height="25" rx="3"
+          fill="rgba(0,100,148,0.6)" stroke="#00d4ff" stroke-width="2"/>
+    <line x1="-25" y1="-70" x2="25" y2="-70" stroke="#00d4ff" stroke-width="1" opacity="0.5"/>
+    <line x1="-25" y1="-62" x2="25" y2="-62" stroke="#00d4ff" stroke-width="1" opacity="0.5"/>
+    
+    <!-- Antenna -->
+    <line x1="0" y1="-80" x2="0" y2="-120" stroke="#00d4ff" stroke-width="3"/>
+    <circle cx="0" cy="-125" r="8" fill="url(#glowGradient)" stroke="#00d4ff" stroke-width="2"/>
+    <circle cx="0" cy="-125" r="4" fill="#00ffff"/>
+    
+    <!-- Main body - hexagonal prism -->
+    <g transform="translate(0,60)">
+      <!-- Front-left face -->
+      <polygon points="-100,0 0,50 0,350 -100,300" 
+               fill="rgba(20,30,50,0.8)" stroke="#00d4ff" stroke-width="2"/>
+      
+      <!-- Front-right face -->
+      <polygon points="0,50 100,0 100,300 0,350" 
+               fill="rgba(30,40,60,0.8)" stroke="#00d4ff" stroke-width="2"/>
+      
+      <!-- Display screen - left face -->
+      <rect x="-85" y="60" width="70" height="120" rx="5" transform="skewY(26.5)"
+            fill="rgba(0,50,80,0.9)" stroke="#00d4ff" stroke-width="2"/>
+      <rect x="-80" y="70" width="60" height="100" rx="3" transform="skewY(26.5)"
+            fill="rgba(0,100,150,0.3)" stroke="#00ffff" stroke-width="1"/>
+      
+      <!-- Phone handset area - right face -->
+      <rect x="15" y="80" width="70" height="100" rx="5" transform="skewY(-26.5)"
+            fill="rgba(0,50,80,0.9)" stroke="#00d4ff" stroke-width="2"/>
+      
+      <!-- Door/opening indicator -->
+      <rect x="-80" y="200" width="60" height="80" rx="3" transform="skewY(26.5)"
+            fill="rgba(0,100,148,0.2)" stroke="#00d4ff" stroke-width="1" stroke-dasharray="5,5"/>
+      
+      <!-- Ventilation slots -->
+      <g transform="translate(15, 220) skewY(-26.5)">
+        <rect x="0" y="0" width="60" height="8" fill="rgba(0,212,255,0.3)"/>
+        <rect x="0" y="15" width="60" height="8" fill="rgba(0,212,255,0.3)"/>
+        <rect x="0" y="30" width="60" height="8" fill="rgba(0,212,255,0.3)"/>
+      </g>
+    </g>
+    
+    <!-- Base/legs - tripod style -->
+    <g transform="translate(0,410)">
+      <!-- Left leg -->
+      <polygon points="-100,0 -80,0 -120,180 -140,180" 
+               fill="rgba(40,50,70,0.9)" stroke="#00d4ff" stroke-width="2"/>
+      
+      <!-- Right leg -->
+      <polygon points="100,0 80,0 120,180 140,180" 
+               fill="rgba(40,50,70,0.9)" stroke="#00d4ff" stroke-width="2"/>
+      
+      <!-- Center/back leg -->
+      <polygon points="-10,30 10,30 10,180 -10,180" 
+               fill="rgba(30,40,60,0.9)" stroke="#00d4ff" stroke-width="2"/>
+      
+      <!-- Foot pads -->
+      <ellipse cx="-130" cy="185" rx="20" ry="8" fill="rgba(0,212,255,0.4)" stroke="#00d4ff"/>
+      <ellipse cx="130" cy="185" rx="20" ry="8" fill="rgba(0,212,255,0.4)" stroke="#00d4ff"/>
+      <ellipse cx="0" cy="185" rx="15" ry="6" fill="rgba(0,212,255,0.4)" stroke="#00d4ff"/>
+    </g>
+    
+    <!-- NPS Logo area on leg -->
+    <g transform="translate(-130,500)">
+      <path d="M0,0 L15,-10 L30,0 L30,25 L15,35 L0,25 Z" 
+            fill="rgba(0,100,50,0.7)" stroke="#00ff88" stroke-width="1.5"/>
+      <text x="15" y="18" text-anchor="middle" fill="#00ff88" font-size="8" font-weight="bold">NPS</text>
+    </g>
+  </g>
+  
+  <!-- Title text -->
+  <text x="400" y="750" text-anchor="middle" fill="#00d4ff" font-family="monospace" font-size="42" font-weight="bold" letter-spacing="8">
+    STARPHONE
+  </text>
+  <text x="400" y="790" text-anchor="middle" fill="rgba(0,212,255,0.7)" font-family="monospace" font-size="18" letter-spacing="4">
+    BOOTH VARIANT
+  </text>
+  
+  <!-- Copyright -->
+  <text x="400" y="850" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-family="monospace" font-size="10">
+    © Logmicra Innovations Corp • © Merchant Astronaut, LLC
+  </text>
+  
+  <!-- Decorative elements -->
+  <circle cx="100" cy="100" r="50" fill="none" stroke="rgba(0,212,255,0.2)" stroke-width="1"/>
+  <circle cx="100" cy="100" r="70" fill="none" stroke="rgba(0,212,255,0.1)" stroke-width="1"/>
+  <circle cx="700" cy="900" r="80" fill="none" stroke="rgba(124,58,237,0.2)" stroke-width="1"/>
+  <circle cx="700" cy="900" r="100" fill="none" stroke="rgba(124,58,237,0.1)" stroke-width="1"/>
+</svg>

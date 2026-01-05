@@ -30,8 +30,8 @@ export default function HomePage() {
         </div>
         <div className={styles.heroImageWrapper}>
           <Image
-            src="/images/starphone-hero-square.png"
-            alt="Starphone communication booth"
+            src="/images/starphone-booth-sketch.svg"
+            alt="Starphone booth variant isometric design"
             fill
             priority
             className={styles.heroImage}

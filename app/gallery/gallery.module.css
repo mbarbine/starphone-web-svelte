@@ -413,6 +413,8 @@
   height: auto;
   display: block;
   transition: transform 0.3s ease;
+  aspect-ratio: 3/4;
+  object-fit: cover;
 }
 
 .galleryItem:hover .galleryImage {
