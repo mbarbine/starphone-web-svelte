@@ -9,20 +9,21 @@ export default function HomePage() {
       <section className={styles.hero}>
         <div className={styles.heroOverlay}>
           <div className={styles.heroContent}>
+            <div className={styles.heroBadge}>🛸 BUILDING THE FUTURE</div>
             <h1 className={styles.heroTitle}>
-              Secure Communication
+              The Phone Booth
               <br />
-              <span className={styles.heroAccent}>Anywhere, Anytime</span>
+              <span className={styles.heroAccent}>of Tomorrow</span>
             </h1>
             <p className={styles.heroSubtitle}>
-              Built for the edge of civilization and beyond—Starphone keeps the line open when networks fail, power drops, and conditions get extreme.
+              Imagine a phone that works ANYWHERE—in the desert, on a mountain, even in SPACE! 🚀 We&apos;re building super-powered communication booths that use satellites, mesh networks, AI, and solar power. When everything else fails, Starphone stays connected.
             </p>
             <div className={styles.heroActions}>
               <Link href="/gallery" className={styles.ctaPrimary}>
-                See Our Journey
+                🎬 See It In Action
               </Link>
-              <Link href="/contact" className={styles.ctaSecondary}>
-                Get In Touch
+              <Link href="/how-it-works" className={styles.ctaSecondary}>
+                🔧 How It Works
               </Link>
             </div>
           </div>
@@ -43,30 +44,30 @@ export default function HomePage() {
       {/* Features Section */}
       <section className={styles.features}>
         <div className={styles.container}>
-          <h2 className={styles.sectionTitle}>Why Starphone?</h2>
+          <h2 className={styles.sectionTitle}>⚡ Super Powers ⚡</h2>
           <p className={styles.sectionSubtitle}>
-            Built for reliability when you need it most
+            What makes Starphone awesome?
           </p>
           <div className={styles.featureGrid}>
             <div className={styles.featureCard}>
-              <div className={styles.featureIcon}>🌐</div>
-              <h3>Global Coverage</h3>
-              <p>Connect anywhere, from urban environments to the most remote locations on Earth and beyond.</p>
+              <div className={styles.featureIcon}>🛰️</div>
+              <h3>Satellite Link</h3>
+              <p>Connects to satellites orbiting Earth! When cell towers fail, we bounce signals off SPACE. 🌍→🛰️→📱</p>
             </div>
             <div className={styles.featureCard}>
-              <div className={styles.featureIcon}>🔒</div>
-              <h3>Secure Communication</h3>
-              <p>End-to-end encryption ensures your conversations remain private and protected at all times.</p>
+              <div className={styles.featureIcon}>🕸️</div>
+              <h3>Mesh Network Magic</h3>
+              <p>Booths talk to each other like a web! Data hops from booth to booth until it reaches you. No towers needed!</p>
             </div>
             <div className={styles.featureCard}>
-              <div className={styles.featureIcon}>⚡</div>
-              <h3>Always Reliable</h3>
-              <p>Built to withstand extreme conditions, network overloads, and disruptions that stop other systems.</p>
+              <div className={styles.featureIcon}>🤖</div>
+              <h3>AI Brain Inside</h3>
+              <p>Machine learning picks the best signal path in milliseconds. Smarter than your average phone booth!</p>
             </div>
             <div className={styles.featureCard}>
-              <div className={styles.featureIcon}>🚀</div>
-              <h3>Future-Ready</h3>
-              <p>Designed for both terrestrial and space-based communication networks of tomorrow.</p>
+              <div className={styles.featureIcon}>☀️</div>
+              <h3>Solar Powered</h3>
+              <p>Runs on sunlight! No plugs, no wires—just pure solar energy keeping you connected anywhere.</p>
             </div>
           </div>
         </div>
@@ -77,16 +78,20 @@ export default function HomePage() {
         <div className={styles.container}>
           <div className={styles.statsGrid}>
             <div className={styles.statItem}>
-              <div className={styles.statNumber}>24/7</div>
-              <div className={styles.statLabel}>Availability</div>
+              <div className={styles.statNumber}>6G</div>
+              <div className={styles.statLabel}>Ready 📡</div>
             </div>
             <div className={styles.statItem}>
-              <div className={styles.statNumber}>100%</div>
-              <div className={styles.statLabel}>Encrypted</div>
+              <div className={styles.statNumber}>☢️</div>
+              <div className={styles.statLabel}>Backup Power</div>
             </div>
             <div className={styles.statItem}>
-              <div className={styles.statNumber}>∞</div>
-              <div className={styles.statLabel}>Possibilities</div>
+              <div className={styles.statNumber}>🧠</div>
+              <div className={styles.statLabel}>ML Powered</div>
+            </div>
+            <div className={styles.statItem}>
+              <div className={styles.statNumber}>🌌</div>
+              <div className={styles.statLabel}>Space Ready</div>
             </div>
           </div>
         </div>
@@ -108,18 +113,18 @@ export default function HomePage() {
               />
             </div>
             <div className={styles.showcaseContent}>
-              <h2>Tested in Extreme Conditions</h2>
+              <h2>🔥 Battle-Tested Tech</h2>
               <p>
-                Our communication booths have been deployed and tested in some of the most challenging environments imaginable. From the windy conditions near SpaceX Starbase to remote national parks, Starphone proves reliable when traditional systems fail.
+                We&apos;ve tested Starphone in WILD places—next to SpaceX rockets, in dusty deserts, through crazy storms! When other phones say &quot;No Signal,&quot; ours keeps working.
               </p>
               <ul className={styles.showcaseList}>
-                <li>✓ Weather-resistant design</li>
-                <li>✓ Network redundancy</li>
-                <li>✓ Solar-powered options</li>
-                <li>✓ Real-time environmental monitoring</li>
+                <li>🌪️ Survives any weather</li>
+                <li>🔄 Multiple backup connections</li>
+                <li>☀️ Powers itself with the sun</li>
+                <li>📊 Sensors track everything</li>
               </ul>
               <Link href="/how-it-works" className={styles.ctaLink}>
-                Learn How It Works →
+                🔬 Nerd Out On The Tech →
               </Link>
             </div>
           </div>
@@ -129,16 +134,16 @@ export default function HomePage() {
       {/* Call to Action */}
       <section className={styles.cta}>
         <div className={styles.container}>
-          <h2>Help Build the Future Infrastructure</h2>
+          <h2>🚀 Join the Mission!</h2>
           <p>
-            Starphone is a long-term mission. Your support keeps prototypes shipping, field tests running, and the system evolving year after year.
+            We&apos;re building something BIG. Starphone isn&apos;t just a project—it&apos;s a mission to connect EVERYONE, EVERYWHERE. Help us make it real!
           </p>
           <div className={styles.ctaActions}>
             <Link href="/support" className={styles.ctaPrimary}>
-              Support Our Mission
+              💪 Help Us Build It
             </Link>
             <Link href="/about" className={styles.ctaSecondary}>
-              Learn More About Us
+              👥 Meet The Team
             </Link>
           </div>
         </div>
