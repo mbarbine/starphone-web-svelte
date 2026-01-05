@@ -15,7 +15,7 @@ export default function HomePage() {
               <span className={styles.heroAccent}>Anywhere, Anytime</span>
             </h1>
             <p className={styles.heroSubtitle}>
-              From Earth to space, Starphone delivers reliable public communication in the most extreme environments where traditional systems fail.
+              Built for the edge of civilization and beyond—Starphone keeps the line open when networks fail, power drops, and conditions get extreme.
             </p>
             <div className={styles.heroActions}>
               <Link href="/gallery" className={styles.ctaPrimary}>
@@ -37,31 +37,6 @@ export default function HomePage() {
             sizes="100vw"
             quality={90}
           />
-        </div>
-      </section>
-
-      {/* Hero Video Section */}
-      <section className={styles.heroVideo}>
-        <div className={styles.container}>
-          <div className={styles.videoWrapper}>
-            <video 
-              autoPlay 
-              loop 
-              muted 
-              playsInline
-              className={styles.featuredVideo}
-              poster="/images/starphone-hero-square.png"
-            >
-              <source src="/making-of-starphone/itsringing.mov" type="video/quicktime" />
-              <source src="/making-of-starphone/itsringing.mov" type="video/mp4" />
-              <track kind="captions" />
-              Your browser does not support the video tag.
-            </video>
-            <div className={styles.videoCaption}>
-              <h3>📞 It&apos;s Ringing!</h3>
-              <p>Watch our first successful call at Starbase</p>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -154,8 +129,10 @@ export default function HomePage() {
       {/* Call to Action */}
       <section className={styles.cta}>
         <div className={styles.container}>
-          <h2>Join the Communication Revolution</h2>
-          <p>Be part of the future of secure, reliable public communication infrastructure.</p>
+          <h2>Help Build the Future Infrastructure</h2>
+          <p>
+            Starphone is a long-term mission. Your support keeps prototypes shipping, field tests running, and the system evolving year after year.
+          </p>
           <div className={styles.ctaActions}>
             <Link href="/support" className={styles.ctaPrimary}>
               Support Our Mission

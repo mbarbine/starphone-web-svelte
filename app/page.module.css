@@ -106,10 +106,24 @@
 }
 
 [data-theme="future"] .heroAccent {
-  background: var(--gradient-accent);
+  background: linear-gradient(135deg, #00d4ff 0%, #00ffcc 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+.heroSubtitle {
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2.5rem;
+  line-height: 1.7;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+[data-theme="future"] .heroSubtitle {
+  color: var(--color-text-secondary);
 }
 
 .ctaPrimary {
@@ -169,24 +183,6 @@
   flex-wrap: wrap;
 }
 
-.ctaPrimary {
-  background: #FFB30F;
-  color: #000494;
-  padding: 1rem 2.5rem;
-  border-radius: 50px;
-  font-weight: 700;
-  font-size: 1.1rem;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(255, 179, 15, 0.3);
-  display: inline-block;
-}
-
-.ctaPrimary:hover {
-  background: #ffc640;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 179, 15, 0.4);
-}
-
 .ctaSecondary {
   background: transparent;
   color: #ffffff;
@@ -195,13 +191,23 @@
   font-weight: 700;
   font-size: 1.1rem;
   border: 2px solid #ffffff;
-  transition: all 0.3s ease;
+  transition: var(--transition-smooth, all 0.3s ease);
   display: inline-block;
+}
+
+[data-theme="future"] .ctaSecondary {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
 }
 
 .ctaSecondary:hover {
   background: rgba(255, 255, 255, 0.1);
   transform: translateY(-2px);
+}
+
+[data-theme="future"] .ctaSecondary:hover {
+  background: rgba(0, 212, 255, 0.15);
+  box-shadow: var(--glow-primary);
 }
 
 /* Hero Video Section */
@@ -248,7 +254,12 @@
 /* Features Section */
 .features {
   padding: 6rem 2rem;
-  background: #f5f6fa;
+  background: var(--color-background, #f5f6fa);
+  transition: var(--transition-smooth);
+}
+
+[data-theme="future"] .features {
+  background: var(--color-surface);
 }
 
 .container {
@@ -259,14 +270,19 @@
 .sectionTitle {
   font-size: clamp(2rem, 4vw, 3rem);
   text-align: center;
-  color: #000494;
+  color: var(--color-primary-dark, #000494);
   margin-bottom: 1rem;
   font-weight: 800;
 }
 
+[data-theme="future"] .sectionTitle {
+  color: var(--color-text);
+  text-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+}
+
 .sectionSubtitle {
   text-align: center;
-  color: #5a5a5a;
+  color: var(--color-text-secondary, #5a5a5a);
   font-size: 1.2rem;
   margin-bottom: 4rem;
 }
@@ -279,36 +295,50 @@
 }
 
 .featureCard {
-  background: #ffffff;
+  background: var(--color-surface, #ffffff);
   padding: 2.5rem 2rem;
   border-radius: 16px;
   text-align: center;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(0, 100, 148, 0.1);
+  transition: var(--transition-smooth, all 0.3s ease);
+  box-shadow: var(--box-shadow, 0 4px 12px rgba(0, 0, 0, 0.05));
+  border: 1px solid var(--border-color, rgba(0, 100, 148, 0.1));
+}
+
+[data-theme="future"] .featureCard {
+  background: var(--color-surface-elevated);
+  border-color: var(--border-color);
 }
 
 .featureCard:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 24px rgba(0, 100, 148, 0.15);
-  border-color: #FFB30F;
+  box-shadow: var(--box-shadow-elevated, 0 12px 24px rgba(0, 100, 148, 0.15));
+  border-color: var(--color-secondary, #FFB30F);
+}
+
+[data-theme="future"] .featureCard:hover {
+  border-color: var(--color-primary);
+  box-shadow: var(--glow-primary);
 }
 
 .featureIcon {
   font-size: 3.5rem;
   margin-bottom: 1.5rem;
-  filter: grayscale(0.2);
+  filter: grayscale(0);
 }
 
 .featureCard h3 {
   font-size: 1.5rem;
-  color: #000494;
+  color: var(--color-primary-dark, #000494);
   margin-bottom: 1rem;
   font-weight: 700;
 }
 
+[data-theme="future"] .featureCard h3 {
+  color: var(--color-text);
+}
+
 .featureCard p {
-  color: #5a5a5a;
+  color: var(--color-text-secondary, #5a5a5a);
   line-height: 1.7;
   font-size: 1.05rem;
 }
@@ -316,8 +346,14 @@
 /* Stats Section */
 .stats {
   padding: 5rem 2rem;
-  background: linear-gradient(135deg, #000494 0%, #006494 100%);
+  background: var(--gradient-primary, linear-gradient(135deg, #000494 0%, #006494 100%));
   color: #ffffff;
+}
+
+[data-theme="future"] .stats {
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .statsGrid {
