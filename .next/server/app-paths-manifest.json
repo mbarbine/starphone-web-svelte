@@ -1,14 +1,14 @@
 {
-  "/api/parrot/route": "app/api/parrot/route.js",
-  "/api/analytics/route": "app/api/analytics/route.js",
-  "/api/sensor-data/route": "app/api/sensor-data/route.js",
   "/_not-found/page": "app/_not-found/page.js",
-  "/page": "app/page.js",
-  "/how-it-works/page": "app/how-it-works/page.js",
-  "/history/page": "app/history/page.js",
+  "/api/analytics/route": "app/api/analytics/route.js",
+  "/api/parrot/route": "app/api/parrot/route.js",
+  "/api/sensor-data/route": "app/api/sensor-data/route.js",
   "/contact/page": "app/contact/page.js",
   "/about/page": "app/about/page.js",
   "/press/page": "app/press/page.js",
+  "/history/page": "app/history/page.js",
+  "/how-it-works/page": "app/how-it-works/page.js",
+  "/page": "app/page.js",
   "/gallery/page": "app/gallery/page.js",
   "/support/page": "app/support/page.js"
 }
