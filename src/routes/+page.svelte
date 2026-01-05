@@ -35,6 +35,7 @@
         <h1>Introducing Starphone</h1>
         <p>
             Starphone is designed to provide secure, reliable communication even in the harshest environments where other systems fall short or fail. Our mission is to connect business, people, and things innovatively, overcoming mobile dead zones due to blackouts, network overloads, or inaccessibility. From Earth to space, we aim to redefine communication.
+        </p>
     </div>
 </section>
 
