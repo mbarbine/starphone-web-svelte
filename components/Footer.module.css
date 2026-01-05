@@ -109,7 +109,34 @@
 }
 
 @media (max-width: 768px) {
+  .footer {
+    padding: 2rem 1.25rem 1rem;
+  }
+
   .container {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .section h3 {
+    font-size: 1.25rem;
+  }
+
+  .section h4 {
+    font-size: 1.1rem;
+  }
+
+  .social {
+    flex-wrap: wrap;
+  }
+
+  .social a {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .bottom {
+    padding-top: 1.5rem;
+    font-size: 0.9rem;
   }
 }

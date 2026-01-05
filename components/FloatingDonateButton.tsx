@@ -6,7 +6,7 @@ export default function FloatingDonateButton() {
   return (
     <div className={styles.floatingButton}>
       <a 
-        href="https://givebutter.com/ph3ar"
+        href="https://www.givebutter.com/ph3ar"
         target="_blank"
         rel="noopener noreferrer"
         className={styles.donateButton}

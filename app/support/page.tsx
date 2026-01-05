@@ -34,7 +34,7 @@ export default function SupportPage() {
             Your contribution helps us build and deploy secure communication infrastructure for communities everywhere.
           </p>
           <a 
-            href="https://givebutter.com/ph3ar"
+            href="https://www.givebutter.com/ph3ar"
             target="_blank"
             rel="noopener noreferrer"
             style={{

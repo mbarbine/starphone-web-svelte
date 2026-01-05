@@ -5,7 +5,18 @@
   z-index: 9999;
 }
 
+/* Mobile: smaller button, better placement */
+@media (max-width: 768px) {
+  .floatingButton {
+    bottom: 16px;
+    right: 16px;
+  }
+}
+
 .donateButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   background: var(--gradient-accent, linear-gradient(135deg, #FF424D 0%, #e74c3c 100%));
   color: white;
   border: none;
@@ -19,6 +30,15 @@
   animation: pulse 2s infinite;
   backdrop-filter: blur(10px);
   border: 2px solid transparent;
+  text-decoration: none;
+}
+
+/* Mobile: slightly smaller */
+@media (max-width: 768px) {
+  .donateButton {
+    padding: 12px 20px;
+    font-size: 1rem;
+  }
 }
 
 [data-theme="future"] .donateButton {
