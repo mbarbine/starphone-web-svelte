@@ -5,25 +5,26 @@ import Script from 'next/script';
 import { useState, useEffect } from 'react';
 import styles from './gallery.module.css';
 
+// Images that need 90-degree rotation (taken in portrait but stored as landscape)
 const imageFiles = [
-  { file: "First-day-Darwin-from-canada-public-phone.JPG", caption: "First Day - Darwin from Canada" },
-  { file: "Post-IFT3-We-didn_t-think-it-would-survive.JPG", caption: "Post IFT3 - We Didn't Think It Would Survive" },
-  { file: "Public-Phone-First-Calls-October-23.JPG", caption: "First Calls - October 2023" },
-  { file: "And-they-kept-coming-october2023.JPG", caption: "People Kept Coming" },
-  { file: "FEMA-June-2024.JPG", caption: "FEMA Visit - June 2024" },
-  { file: "Starphone-Team-NPS-Shendandoah-Public-Phone.JPG", caption: "Team at Shenandoah NPS" },
-  { file: "Public-Phone-Standing-Oct-2023.JPG", caption: "Standing Proud - October 2023" },
-  { file: "Public-Phone-Build-11-October-2023.JPG", caption: "Build Day 11" },
-  { file: "Completed-Prototype-Michael-Phone.jpg", caption: "Completed Prototype" },
-  { file: "Public-Phone-as-of-october-2024.JPEG", caption: "Latest Version - October 2024" },
-  { file: "Cardboard-Build-22.JPG", caption: "Cardboard Prototyping" },
-  { file: "Laser-Cut-Panels.JPG", caption: "Precision Laser Cut Panels" },
-  { file: "environment-sensors.JPG", caption: "Environmental Sensors" },
-  { file: "Starphone-Sensors.jpg", caption: "IoT Sensor Array" },
-  { file: "day-2-darwin.JPG", caption: "Day 2 with Darwin" },
-  { file: "more-people-november-2023.JPG", caption: "Growing Interest" },
-  { file: "first-day-Public-Phone.JPG", caption: "First Public Phone Day" },
-  { file: "Completed-Prototype-Michael-Phone-June2024.jpg", caption: "June 2024 Prototype" },
+  { file: "First-day-Darwin-from-canada-public-phone.JPG", caption: "First Day - Darwin from Canada", rotate: true },
+  { file: "Post-IFT3-We-didn_t-think-it-would-survive.JPG", caption: "Post IFT3 - We Didn't Think It Would Survive", rotate: true },
+  { file: "Public-Phone-First-Calls-October-23.JPG", caption: "First Calls - October 2023", rotate: true },
+  { file: "And-they-kept-coming-october2023.JPG", caption: "People Kept Coming", rotate: true },
+  { file: "FEMA-June-2024.JPG", caption: "FEMA Visit - June 2024", rotate: true },
+  { file: "Starphone-Team-NPS-Shendandoah-Public-Phone.JPG", caption: "Team at Shenandoah NPS", rotate: true },
+  { file: "Public-Phone-Standing-Oct-2023.JPG", caption: "Standing Proud - October 2023", rotate: true },
+  { file: "Public-Phone-Build-11-October-2023.JPG", caption: "Build Day 11", rotate: true },
+  { file: "Completed-Prototype-Michael-Phone.jpg", caption: "Completed Prototype", rotate: true },
+  { file: "Public-Phone-as-of-october-2024.JPEG", caption: "Latest Version - October 2024", rotate: true },
+  { file: "Cardboard-Build-22.JPG", caption: "Cardboard Prototyping", rotate: true },
+  { file: "Laser-Cut-Panels.JPG", caption: "Precision Laser Cut Panels", rotate: true },
+  { file: "environment-sensors.JPG", caption: "Environmental Sensors", rotate: true },
+  { file: "Starphone-Sensors.jpg", caption: "IoT Sensor Array", rotate: true },
+  { file: "day-2-darwin.JPG", caption: "Day 2 with Darwin", rotate: true },
+  { file: "more-people-november-2023.JPG", caption: "Growing Interest", rotate: true },
+  { file: "first-day-Public-Phone.JPG", caption: "First Public Phone Day", rotate: true },
+  { file: "Completed-Prototype-Michael-Phone-June2024.jpg", caption: "June 2024 Prototype", rotate: false },
 ];
 
 const videoEmbed = {
@@ -105,19 +106,21 @@ export default function GalleryPage() {
             {imageFiles.map((item, index) => (
               <div 
                 key={item.file} 
-                className={styles.galleryItem}
+                className={`${styles.galleryItem} ${item.rotate ? styles.rotatedContainer : ''}`}
                 onClick={() => setLightboxImage(basePath + item.file)}
+                data-rotate={item.rotate}
               >
-                <Image
-                  src={basePath + item.file}
-                  alt={item.caption}
-                  width={300}
-                  height={400}
-                  loading={index < 8 ? 'eager' : 'lazy'}
-                  className={styles.galleryImage}
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  style={{ objectFit: 'cover', aspectRatio: '3/4' }}
-                />
+                <div className={styles.imageWrapper}>
+                  <Image
+                    src={basePath + item.file}
+                    alt={item.caption}
+                    width={item.rotate ? 400 : 300}
+                    height={item.rotate ? 300 : 400}
+                    loading={index < 8 ? 'eager' : 'lazy'}
+                    className={`${styles.galleryImage} ${item.rotate ? styles.rotatedImage : ''}`}
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                </div>
                 <div className={styles.imageOverlay}>
                   <p>{item.caption}</p>
                 </div>
@@ -129,51 +132,79 @@ export default function GalleryPage() {
         <section className={styles.pdfSection}>
           <h2>📐 Technical Drawings</h2>
           <p className={styles.pdfDescription}>Detailed design specifications and technical documentation</p>
-          {!isMobile ? (
-            <div className={styles.pdfWrapper}>
-              <div className={styles.pdfControls}>
-                <a 
-                  href={pdfFile} 
-                  download="Starphone-Design-Drawings.pdf"
-                  className={styles.downloadButton}
-                >
-                  📥 Download PDF
-                </a>
-                <a 
-                  href={pdfFile} 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.openButton}
-                >
-                  🔗 Open in New Tab
-                </a>
-              </div>
-              <div className={styles.pdfContainer}>
-                <object
-                  data={pdfFile}
-                  type="application/pdf"
-                  width="100%"
-                  height="800px"
-                  title="Starphone Design Drawings"
-                  className={styles.pdfViewer}
-                >
-                  <div className={styles.pdfFallback}>
-                    <p>Unable to display PDF in browser.</p>
-                    <a href={pdfFile} download className={styles.downloadLink}>
-                      📥 Download PDF to view
-                    </a>
-                  </div>
-                </object>
-              </div>
-            </div>
-          ) : (
-            <div className={styles.pdfMobile}>
-              <p>View the complete design documentation</p>
-              <button className={styles.pdfButton} onClick={openPDF}>
-                📄 Open Design Drawings
+          
+          <div className={styles.pdfWrapper}>
+            <div className={styles.pdfControls}>
+              <a 
+                href={pdfFile} 
+                download="Starphone-Design-Drawings.pdf"
+                className={styles.downloadButton}
+              >
+                📥 Download PDF
+              </a>
+              <a 
+                href={pdfFile} 
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.openButton}
+              >
+                🔗 Open Full Screen
+              </a>
+              <button 
+                className={styles.zoomButton}
+                onClick={() => {
+                  const viewer = document.getElementById('pdf-viewer');
+                  if (viewer) {
+                    viewer.requestFullscreen?.();
+                  }
+                }}
+              >
+                🔍 Fullscreen View
               </button>
             </div>
-          )}
+            
+            <div className={styles.pdfViewerWrapper} id="pdf-viewer">
+              <div className={styles.pdfToolbar}>
+                <span className={styles.pdfTitle}>📄 Starphone Design Drawings</span>
+                <span className={styles.pdfHint}>Scroll to navigate • Pinch to zoom</span>
+              </div>
+              <div className={styles.pdfContainer}>
+                {!isMobile ? (
+                  <iframe
+                    src={`${pdfFile}#view=FitH&toolbar=1&navpanes=1`}
+                    width="100%"
+                    height="900"
+                    title="Starphone Design Drawings"
+                    className={styles.pdfFrame}
+                    style={{ border: 'none' }}
+                  />
+                ) : (
+                  <div className={styles.pdfMobileView}>
+                    <div className={styles.pdfMobileIcon}>📄</div>
+                    <h3>Technical Drawings</h3>
+                    <p>For the best viewing experience on mobile, download the PDF or open in a new tab.</p>
+                    <div className={styles.pdfMobileActions}>
+                      <a 
+                        href={pdfFile} 
+                        download="Starphone-Design-Drawings.pdf"
+                        className={styles.pdfMobileButton}
+                      >
+                        📥 Download
+                      </a>
+                      <a 
+                        href={pdfFile} 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.pdfMobileButton}
+                      >
+                        🔗 Open PDF
+                      </a>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
         </section>
 
       <section className={styles.donateSection}>

@@ -129,7 +129,7 @@
 }
 
 .pdfWrapper {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
@@ -137,12 +137,13 @@
   display: flex;
   gap: 1rem;
   justify-content: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   flex-wrap: wrap;
 }
 
 .downloadButton,
-.openButton {
+.openButton,
+.zoomButton {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -156,6 +157,7 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   position: relative;
   overflow: hidden;
+  border: none;
 }
 
 [data-theme="future"] .downloadButton::before,
@@ -223,23 +225,159 @@
   box-shadow: var(--glow-accent), 0 8px 32px rgba(124, 58, 237, 0.5);
 }
 
+.zoomButton {
+  background: #2d3748;
+  color: white;
+}
+
+.zoomButton:hover {
+  background: #4a5568;
+  transform: translateY(-2px);
+}
+
+[data-theme="future"] .zoomButton {
+  background: rgba(0, 212, 255, 0.2);
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+}
+
+[data-theme="future"] .zoomButton:hover {
+  background: rgba(0, 212, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.pdfViewerWrapper {
+  background: #1a1a2e;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
+}
+
+.pdfViewerWrapper:fullscreen {
+  background: #0a0a15;
+  padding: 0;
+  border-radius: 0;
+}
+
+.pdfViewerWrapper:fullscreen .pdfContainer {
+  height: calc(100vh - 50px);
+  max-width: 100%;
+  border-radius: 0;
+}
+
+.pdfViewerWrapper:fullscreen .pdfFrame {
+  height: 100%;
+}
+
+.pdfToolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #000494 0%, #006494 100%);
+  color: white;
+}
+
+[data-theme="future"] .pdfToolbar {
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.2) 0%, rgba(124, 58, 237, 0.2) 100%);
+  border-bottom: 1px solid rgba(0, 212, 255, 0.3);
+}
+
+.pdfTitle {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.pdfHint {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
 .pdfContainer {
   position: relative;
   width: 100%;
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto;
-  border-radius: 16px;
   overflow: hidden;
-  box-shadow: var(--box-shadow-elevated, 0 8px 40px rgba(0, 0, 0, 0.12));
-  background: var(--color-surface-elevated, #fff);
-  border: 3px solid var(--border-color, #e8eaf0);
+  background: #f5f5f5;
   transition: var(--transition-smooth, all 0.3s ease);
+}
+
+.pdfFrame {
+  display: block;
+  width: 100%;
+  min-height: 900px;
+  background: white;
 }
 
 [data-theme="future"] .pdfContainer {
   background: var(--color-surface);
-  border-color: var(--color-primary);
-  box-shadow: var(--box-shadow-elevated), var(--glow-primary);
+}
+
+.pdfMobileView {
+  padding: 3rem 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+[data-theme="future"] .pdfMobileView {
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.05) 0%, rgba(124, 58, 237, 0.05) 100%);
+}
+
+.pdfMobileIcon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.pdfMobileView h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.5rem;
+  color: #000494;
+}
+
+[data-theme="future"] .pdfMobileView h3 {
+  color: var(--color-primary);
+}
+
+.pdfMobileView p {
+  color: #666;
+  margin-bottom: 1.5rem;
+  max-width: 300px;
+}
+
+.pdfMobileActions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pdfMobileButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  background: #000494;
+  color: white;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.pdfMobileButton:hover {
+  background: #006494;
+  transform: translateY(-2px);
+}
+
+[data-theme="future"] .pdfMobileButton {
+  background: var(--gradient-primary);
+  box-shadow: var(--glow-primary);
 }
 
 .pdfContainer iframe,
@@ -392,11 +530,21 @@
   background: white;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
+  aspect-ratio: 3/4;
 }
 
-.galleryItem:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+/* Container for rotated images - needs portrait aspect ratio */
+.rotatedContainer {
+  aspect-ratio: 3/4;
+}
+
+.imageWrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .galleryItem:hover {
@@ -410,15 +558,26 @@
 
 .galleryImage {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
   transition: transform 0.3s ease;
-  aspect-ratio: 3/4;
+  object-fit: cover;
+}
+
+/* Rotated image styling - rotate 90 degrees clockwise */
+.rotatedImage {
+  transform: rotate(90deg);
+  width: 133.33%; /* Compensate for aspect ratio change */
+  height: 133.33%;
   object-fit: cover;
 }
 
 .galleryItem:hover .galleryImage {
   transform: scale(1.05);
+}
+
+.galleryItem:hover .rotatedImage {
+  transform: rotate(90deg) scale(1.05);
 }
 
 .imageOverlay {
