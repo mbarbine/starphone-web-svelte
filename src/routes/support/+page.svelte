@@ -1,6 +1,15 @@
 <script>
+    import SEO from '$lib/components/SEO.svelte';
+    import SensorDashboard from '$lib/components/SensorDashboard.svelte';
     export let pageData;
 </script>
+
+<SEO 
+    title="Support Starphone - Help Us Build the Future"
+    description="Support Starphone and PH3AR in revolutionizing public communication. Become a patron, sponsor, or donate to help us connect people everywhere."
+    keywords="support starphone, donate starphone, patreon ph3ar, github sponsors, starphone funding"
+    image="https://www.thestarphone.com/images/starphone-bg-color.png"
+/>
 
 <section class="support-page">
     <div class="container">
@@ -8,6 +17,10 @@
         <p>
             Starphone is revolutionizing public communication, making it secure and accessible for all—whether in cities or space. PH3AR, meanwhile, is empowering creators and driving impactful projects. Your support is essential in turning these visions into reality.
         </p>
+        
+        <!-- Sensor Dashboard -->
+        <SensorDashboard />
+        
          <div class="givebutter-donate">
             <givebutter-widget id="LYxbKj"></givebutter-widget>
             <script async src="https://widgets.givebutter.com/latest.umd.cjs?acct=dOQ0XbCHnxsv4qWo&p=other"></script>

@@ -12,3 +12,11 @@ pnpm-lock.yaml
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .env*.local
+
+# Large media files - host externally
+*.MOV
+*.mov
+*.MP4
+*.mp4
+*.pptx
+*.ppt
