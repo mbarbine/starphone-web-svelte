@@ -6,7 +6,7 @@ const INGEST_TOKEN = process.env.ja4_ingest_token || process.env.JA4DB_INGEST_TO
 const SENSOR_NAME = process.env.JA4DB_SENSOR_NAME || 'starphone-web'
 const SAMPLE_RATE = parseFloat(process.env.JA4DB_SAMPLE_RATE || '1.0')
 
-export async function proxy(request: NextRequest) {
+export async function middleware(request: NextRequest) {
   // Sample rate filtering
   if (Math.random() > SAMPLE_RATE) {
     return NextResponse.next()
