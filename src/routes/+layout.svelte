@@ -3,12 +3,13 @@
     import Footer from '$lib/components/Footer.svelte';
     import PWAInstaller from '$lib/components/PWAInstaller.svelte';
     import PerformanceMonitor from '$lib/components/PerformanceMonitor.svelte';
+    import PageTransition from '$lib/components/PageTransition.svelte';
     import { browser, dev } from '$app/environment';
     import { inject } from '@vercel/analytics';
     import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
     import { MetaTags } from 'svelte-meta-tags';
     import { analytics } from '$lib/services/analytics.js';
-    import { fade, slide } from 'svelte/transition';
+    import { navigating } from '$app/stores';
 
     // Import global CSS
     import '/src/lib/styles/global.css';  // Adjust path if necessary
