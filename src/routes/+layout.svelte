@@ -1,9 +1,13 @@
 <script>
     import Header from '$lib/components/Header.svelte';
     import Footer from '$lib/components/Footer.svelte';
-    import { browser } from '$app/environment';
+    import PWAInstaller from '$lib/components/PWAInstaller.svelte';
+    import PerformanceMonitor from '$lib/components/PerformanceMonitor.svelte';
+    import { browser, dev } from '$app/environment';
     import { inject } from '@vercel/analytics';
+    import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
     import { MetaTags } from 'svelte-meta-tags';
+    import { analytics } from '$lib/services/analytics.js';
     import { fade, slide } from 'svelte/transition';
 
     // Import global CSS
@@ -12,12 +16,19 @@
     // Inject Vercel Analytics only in the browser with error handling
     if (browser) {
         try {
-            inject({ debug: process.env.NODE_ENV === 'development' });
+            inject({ debug: dev });
+            injectSpeedInsights();
+            analytics.init();
         } catch (err) {
-            console.error('Vercel Analytics injection failed:', err);
+            console.error('Analytics initialization failed:', err);
         }
     }
 </script>
+
+<PWAInstaller />
+{#if dev}
+  <PerformanceMonitor />
+{/if}
 
 <head>
     <!-- SEO Meta Tags -->

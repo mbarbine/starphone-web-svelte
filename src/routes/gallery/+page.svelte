@@ -66,7 +66,7 @@
     <div class="media-grid">
         {#each imageFiles as image}
             <div class="media-item">
-                <img src={basePath + image} alt={image} loading="lazy" onclick="window.open(this.src, '_blank')" />
+                <img src={basePath + image} alt={image} loading="lazy" onclick={(e) => window.open(e.target.src, '_blank')} />
             </div>
         {/each}
     </div>
@@ -78,7 +78,7 @@
     <div class="media-grid">
         {#each videoFiles as video}
             <div class="media-item">
-                <video controls onclick="this.requestFullscreen()">
+                <video controls onclick={(e) => e.target.requestFullscreen()}>
                     <source src={basePath + video} type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
