@@ -100,10 +100,19 @@
     <Header title="Starphone" />
 
     <main>
+        <!-- Loading indicator during navigation -->
+        {#if $navigating}
+            <div class="loading-indicator" aria-label="Loading">
+                <div class="loading-bar"></div>
+            </div>
+        {/if}
+        
         <!-- Add smooth transitions between pages -->
-        <div in:fade={{ duration: 300 }} out:slide={{ duration: 500 }}>
-            <slot />
-        </div>
+        {#key $navigating}
+            <PageTransition>
+                <slot />
+            </PageTransition>
+        {/key}
     </main>
 
     <Footer />
@@ -119,15 +128,43 @@
     main {
         flex: 1;
         display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 2rem;
+        flex-direction: column;
+        position: relative;
+    }
+    
+    .loading-indicator {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        z-index: 9999;
+        background-color: transparent;
+    }
+    
+    .loading-bar {
+        height: 100%;
+        background: linear-gradient(90deg, 
+            var(--color-primary) 0%, 
+            var(--color-secondary) 50%, 
+            var(--color-primary) 100%);
+        animation: loading 1.5s ease-in-out infinite;
+        width: 100%;
+    }
+    
+    @keyframes loading {
+        0% {
+            transform: translateX(-100%);
+        }
+        100% {
+            transform: translateX(100%);
+        }
     }
 
     /* Media query for better responsiveness */
     @media (max-width: 768px) {
         main {
-            padding: 1rem;
+            padding: 0;
         }
     }
 </style>
