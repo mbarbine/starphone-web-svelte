@@ -142,7 +142,7 @@
     </div>
   </div>
 {:else}
-  <button class="monitor-toggle" on:click={toggleVisibility} title="Show Performance Monitor (Ctrl+Shift+P)">
+  <button class="monitor-toggle" onclick={toggleVisibility} title="Show Performance Monitor (Ctrl+Shift+P)">
     ⚡
   </button>
 {/if}
