@@ -337,6 +337,58 @@
   margin: 0 auto;
 }
 
+.volunteersGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.volunteerCard {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.volunteerCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  border-color: #FFB30F;
+}
+
+.volunteerAvatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #000494 0%, #006494 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  margin: 0 auto 1.5rem;
+  box-shadow: 0 6px 20px rgba(0, 100, 148, 0.25);
+}
+
+.volunteerCard h4 {
+  font-size: 1.3rem;
+  color: #000494;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.volunteerCard p {
+  color: #FFB30F;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
 .contributor {
   text-align: center;
   padding: 1.5rem;

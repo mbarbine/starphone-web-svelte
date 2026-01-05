@@ -132,15 +132,37 @@ export default function GalleryPage() {
 
         <section className={styles.pdfSection}>
           <h2>📐 Technical Drawings</h2>
+          <p className={styles.pdfDescription}>Detailed design specifications and technical documentation</p>
           {!isMobile ? (
-            <div className={styles.pdfContainer}>
-              <iframe
-                src={`${pdfFile}#view=FitH`}
-                width="100%"
-                height="700px"
-                title="Starphone Design Drawings"
-                loading="lazy"
-              />
+            <div className={styles.pdfWrapper}>
+              <div className={styles.pdfControls}>
+                <a 
+                  href={pdfFile} 
+                  download="Starphone-Design-Drawings.pdf"
+                  className={styles.downloadButton}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  📥 Download PDF
+                </a>
+                <a 
+                  href={pdfFile} 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.openButton}
+                >
+                  🔗 Open in New Tab
+                </a>
+              </div>
+              <div className={styles.pdfContainer}>
+                <iframe
+                  src={`${pdfFile}#view=FitH&toolbar=1&navpanes=1`}
+                  width="100%"
+                  height="800px"
+                  title="Starphone Design Drawings"
+                  loading="lazy"
+                />
+              </div>
             </div>
           ) : (
             <div className={styles.pdfMobile}>

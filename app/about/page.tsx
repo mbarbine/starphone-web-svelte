@@ -138,24 +138,29 @@ export default function AboutPage() {
           <p className={styles.contributorsIntro}>
             Dedicated volunteers who help make Starphone possible
           </p>
-          <div className={styles.contributorsList}>
-            <div className={styles.contributor}>
+          <div className={styles.volunteersGrid}>
+            <div className={styles.volunteerCard}>
+              <div className={styles.volunteerAvatar}>👤</div>
               <h4>Aurora Borealis</h4>
               <p>Lead Engineer</p>
             </div>
-            <div className={styles.contributor}>
+            <div className={styles.volunteerCard}>
+              <div className={styles.volunteerAvatar}>👤</div>
               <h4>Thundercat 1</h4>
               <p>Creative Director</p>
             </div>
-            <div className={styles.contributor}>
+            <div className={styles.volunteerCard}>
+              <div className={styles.volunteerAvatar}>👤</div>
               <h4>Thundercat 2</h4>
               <p>UX Designer</p>
             </div>
-            <div className={styles.contributor}>
+            <div className={styles.volunteerCard}>
+              <div className={styles.volunteerAvatar}>👤</div>
               <h4>Grannie May</h4>
               <p>Operations Manager</p>
             </div>
-            <div className={styles.contributor}>
+            <div className={styles.volunteerCard}>
+              <div className={styles.volunteerAvatar}>👤</div>
               <h4>Kelly</h4>
               <p>Marketing Lead</p>
             </div>
