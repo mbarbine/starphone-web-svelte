@@ -115,6 +115,100 @@
   font-size: 1.1rem;
 }
 
+/* Community Section */
+.community {
+  padding: 6rem 2rem;
+  background: linear-gradient(135deg, #f5f6fa 0%, #e8eaf0 100%);
+  text-align: center;
+}
+
+.community h2 {
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  color: #000494;
+  margin-bottom: 2rem;
+  font-weight: 800;
+}
+
+.communityIntro {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #5a5a5a;
+}
+
+.communityQuote {
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  padding: 2.5rem;
+  background: #ffffff;
+  border-radius: 12px;
+  border-left: 4px solid #FFB30F;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.communityQuote blockquote {
+  font-size: 1.3rem;
+  font-style: italic;
+  color: #000494;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.communityQuote cite {
+  display: block;
+  font-size: 1rem;
+  color: #666;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.ctaActions {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.ctaButton {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background: #000494;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 4, 148, 0.3);
+}
+
+.ctaButton:hover {
+  background: #FFB30F;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(255, 179, 15, 0.4);
+}
+
+.ctaButtonSecondary {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background: transparent;
+  color: #000494;
+  text-decoration: none;
+  border-radius: 8px;
+  border: 2px solid #000494;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.ctaButtonSecondary:hover {
+  background: #000494;
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 4, 148, 0.2);
+}
+
 @media (max-width: 768px) {
   .hero {
     padding: 4rem 1.5rem 3rem;
@@ -140,5 +234,28 @@
 
   .timelineContent {
     padding: 2rem 1.5rem;
+  }
+
+  .community {
+    padding: 4rem 1.5rem;
+  }
+
+  .communityQuote {
+    padding: 2rem 1.5rem;
+  }
+
+  .communityQuote blockquote {
+    font-size: 1.1rem;
+  }
+
+  .ctaActions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .ctaButton,
+  .ctaButtonSecondary {
+    width: 100%;
+    text-align: center;
   }
 }

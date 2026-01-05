@@ -16,16 +16,16 @@ export default function HowItWorksPage() {
     <div className={styles.howItWorksPage}>
       <section className={styles.hero}>
         <div className={styles.container}>
-          <h1>How It Works</h1>
-          <p className={styles.heroSubtitle}>The technology behind reliable communication</p>
+          <h1>How Starphone Works</h1>
+          <p className={styles.heroSubtitle}>Explore the cutting-edge technology that powers Starphone, ensuring reliable communication in the most remote and extreme environments.</p>
         </div>
       </section>
 
       <section className={styles.overview}>
         <div className={styles.container}>
-          <h2>Technology Overview</h2>
+          <h2>Core Technologies</h2>
           <p className={styles.leadText}>
-            Starphone utilizes cutting-edge technology to provide secure, reliable communication in the most challenging environments where traditional systems fail.
+            Starphone combines multiple cutting-edge technologies to create a resilient, always-available communication system.
           </p>
         </div>
       </section>
@@ -34,39 +34,39 @@ export default function HowItWorksPage() {
         <div className={styles.container}>
           <div className={styles.featureGrid}>
             <div className={styles.featureCard}>
-              <div className={styles.featureIcon}>🔐</div>
-              <h3>End-to-End Encryption</h3>
-              <p>All communications are secured with industry-leading encryption protocols, ensuring your conversations remain private and protected from unauthorized access.</p>
-            </div>
-            
-            <div className={styles.featureCard}>
-              <div className={styles.featureIcon}>🔄</div>
-              <h3>Network Redundancy</h3>
-              <p>Multiple network paths and failover systems ensure connectivity even when primary networks fail or become overloaded.</p>
-            </div>
-            
-            <div className={styles.featureCard}>
-              <div className={styles.featureIcon}>🌦️</div>
-              <h3>Weather Resistant</h3>
-              <p>Designed and tested to withstand extreme weather conditions including high winds, rain, and temperature extremes.</p>
-            </div>
-            
-            <div className={styles.featureCard}>
               <div className={styles.featureIcon}>📡</div>
-              <h3>Satellite Connectivity</h3>
-              <p>Low-latency satellite links provide coverage in areas where terrestrial networks are unavailable or unreliable.</p>
+              <h3>Starlink for Satellite Connectivity</h3>
+              <p>Starphone uses Starlink&apos;s satellite network to provide fast, reliable internet in remote locations, ensuring constant communication no matter where you are.</p>
+            </div>
+            
+            <div className={styles.featureCard}>
+              <div className={styles.featureIcon}>📱</div>
+              <h3>LTE & 5G Cellular Networks</h3>
+              <p>Switch between LTE, 5G, and T-Mobile&apos;s edge networks for seamless coverage and data access when satellite isn&apos;t available.</p>
             </div>
             
             <div className={styles.featureCard}>
               <div className={styles.featureIcon}>☀️</div>
-              <h3>Solar Powered</h3>
-              <p>Self-sufficient solar power systems with battery backup ensure 24/7 operation without grid dependence.</p>
+              <h3>Solar Power & Battery Management</h3>
+              <p>With solar panels powering Starphone, it remains operational in remote locations. The battery management system ensures efficient power storage and use.</p>
+            </div>
+            
+            <div className={styles.featureCard}>
+              <div className={styles.featureIcon}>⚡</div>
+              <h3>Transfer Switch for Power Cutover</h3>
+              <p>Our automatic transfer switch seamlessly switches between power systems, ensuring that Starphone stays online even if one power source fails.</p>
             </div>
             
             <div className={styles.featureCard}>
               <div className={styles.featureIcon}>📊</div>
-              <h3>Real-time Monitoring</h3>
-              <p>IoT sensors monitor environmental conditions, system health, and usage patterns for optimal performance.</p>
+              <h3>IoT Sensors for Monitoring</h3>
+              <p>Starphone includes IoT sensors to monitor system health, environmental conditions, and power usage, enabling remote monitoring and management.</p>
+            </div>
+            
+            <div className={styles.featureCard}>
+              <div className={styles.featureIcon}>🔔</div>
+              <h3>Remote Monitoring & Alerts</h3>
+              <p>Receive alerts and system status updates via SMS or cellular network, ensuring you always stay informed about Starphone&apos;s operational state.</p>
             </div>
           </div>
         </div>
@@ -74,23 +74,29 @@ export default function HowItWorksPage() {
 
       <section className={styles.architecture}>
         <div className={styles.container}>
-          <h2>System Architecture</h2>
+          <h2>The Starphone Booth</h2>
+          <p className={styles.leadText}>
+            The Starphone booth is built for durability and extreme environments. Taking inspiration from the Cybertruck, the booth is constructed from 12-gauge stainless steel using advanced manufacturing processes.
+          </p>
           <div className={styles.archContent}>
             <div className={styles.archItem}>
-              <h3>1. User Interface</h3>
-              <p>Intuitive touchscreen interface designed for ease of use even in stressful situations or harsh conditions.</p>
+              <h3>Material & Design</h3>
+              <p>The booth is made from 12-gauge stainless steel for strength and weather resistance, drawing design inspiration from the Cybertruck&apos;s advanced manufacturing techniques.</p>
             </div>
+            
             <div className={styles.archItem}>
-              <h3>2. Communication Layer</h3>
-              <p>Multi-protocol support including VoIP, traditional telephony, and data transmission with automatic failover.</p>
+              <h3>Interior Cooling</h3>
+              <p>We use Dynamat and reflective barriers inside the booth to maintain a cool interior. A vent system with a HEPA filter ensures clean air circulation, keeping the booth cool and dust-free.</p>
             </div>
+            
             <div className={styles.archItem}>
-              <h3>3. Network Infrastructure</h3>
-              <p>Hybrid network architecture leveraging cellular, satellite, and mesh networking for maximum reliability.</p>
+              <h3>Faraday Cage Protection</h3>
+              <p>Starphone&apos;s outer shell blocks electromagnetic interference, ensuring secure communication in high-EMI environments.</p>
             </div>
+            
             <div className={styles.archItem}>
-              <h3>4. Power Management</h3>
-              <p>Intelligent power distribution system optimizing solar generation, battery storage, and consumption.</p>
+              <h3>Waterproof Phone Box</h3>
+              <p>The interior phone box is designed to be waterproof, protecting the phone and other sensitive components from environmental elements. The phone box is engineered with water-tight seals to keep it completely waterproof, ensuring durability and protection in the harshest conditions.</p>
             </div>
           </div>
         </div>
