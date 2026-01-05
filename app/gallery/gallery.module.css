@@ -76,6 +76,28 @@
 .donateSection {
   margin-top: 4rem;
   text-align: center;
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, #f5f6fa 0%, #e8eaf0 100%);
+  border-radius: 16px;
+}
+
+.donateSection h2 {
+  color: #000494;
+  margin-bottom: 1rem;
+}
+
+.donateText {
+  font-size: 1.1rem;
+  color: #5a5a5a;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.donateWidget {
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .mediaGrid {

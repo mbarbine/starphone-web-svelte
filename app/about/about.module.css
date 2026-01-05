@@ -306,7 +306,15 @@
   border-radius: 50px;
   font-weight: 700;
   font-size: 1.1rem;
- 
+  border: 2px solid #000494;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.ctaButtonSecondary:hover {
+  background: rgba(0, 4, 148, 0.1);
+  transform: translateY(-2px);
+}
 
 /* Contributors Section */
 .contributors {
@@ -335,14 +343,9 @@
   background: white;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  transitio,
-  .foundersGrid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
 
-  .contributorsList {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr))
 .contributor:hover {
   transform: translateY(-3px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
@@ -358,14 +361,6 @@
   font-size: 0.95rem;
   color: var(--color-text-light);
   margin: 0;
-} border: 2px solid #000494;
-  transition: all 0.3s ease;
-  display: inline-block;
-}
-
-.ctaButtonSecondary:hover {
-  background: rgba(0, 4, 148, 0.1);
-  transform: translateY(-2px);
 }
 
 /* Responsive Design */
@@ -387,9 +382,14 @@
   }
 
   .valuesGrid,
-  .teamGrid {
+  .teamGrid,
+  .foundersGrid {
     grid-template-columns: 1fr;
     gap: 2rem;
+  }
+
+  .contributorsList {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
 
   .ctaActions {
