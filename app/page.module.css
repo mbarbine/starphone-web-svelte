@@ -196,8 +196,9 @@
 }
 
 [data-theme="future"] .ctaSecondary {
-  color: var(--color-primary);
-  border-color: var(--color-primary);
+  color: #ffffff;
+  border-color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .ctaSecondary:hover {
@@ -206,8 +207,8 @@
 }
 
 [data-theme="future"] .ctaSecondary:hover {
-  background: rgba(0, 212, 255, 0.15);
-  box-shadow: var(--glow-primary);
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
 }
 
 /* Hero Video Section */
