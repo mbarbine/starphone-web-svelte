@@ -52,6 +52,31 @@
 
     // Base path for the media files
     const basePath = "/making-of-starphone/";
+    
+    // Function to open image in new tab
+    function openImage(src) {
+        window.open(src, '_blank');
+    }
+    
+    // Function to toggle fullscreen on video
+    function toggleFullscreen(event) {
+        const video = event.target;
+        if (video.requestFullscreen) {
+            video.requestFullscreen();
+        } else if (video.webkitRequestFullscreen) {
+            video.webkitRequestFullscreen();
+        } else if (video.msRequestFullscreen) {
+            video.msRequestFullscreen();
+        }
+    }
+    
+    // Generate alt text from filename
+    function generateAltText(filename) {
+        return filename
+            .replace(/\.[^/.]+$/, '') // Remove extension
+            .replace(/[-_]/g, ' ')     // Replace dashes/underscores with spaces
+            .replace(/\b\w/g, l => l.toUpperCase()); // Capitalize words
+    }
 </script>
 
 <!-- PDF Viewer Section -->
@@ -63,10 +88,21 @@
 <!-- Image Gallery Section -->
 <section class="image-gallery">
     <h2>Image Gallery</h2>
-    <div class="media-grid">
+    <div class="media-grid" role="list">
         {#each imageFiles as image}
-            <div class="media-item">
-                <img src={basePath + image} alt={image} loading="lazy" onclick={(e) => window.open(e.target.src, '_blank')} />
+            <div class="media-item" role="listitem">
+                <button 
+                    class="image-button"
+                    onclick={() => openImage(basePath + image)}
+                    onkeydown={(e) => e.key === 'Enter' && openImage(basePath + image)}
+                    aria-label="Open {generateAltText(image)} in new window"
+                >
+                    <img 
+                        src={basePath + image} 
+                        alt={generateAltText(image)} 
+                        loading="lazy"
+                    />
+                </button>
             </div>
         {/each}
     </div>
@@ -75,13 +111,33 @@
 <!-- Video Gallery Section -->
 <section class="video-gallery">
     <h2>Video Gallery</h2>
-    <div class="media-grid">
+    <div class="media-grid" role="list">
         {#each videoFiles as video}
-            <div class="media-item">
-                <video controls onclick={(e) => e.target.requestFullscreen()}>
-                    <source src={basePath + video} type="video/mp4" />
-                    Your browser does not support the video tag.
-                </video>
+            <div class="media-item" role="listitem">
+                <button 
+                    class="video-button"
+                    onclick={(e) => {
+                        e.preventDefault();
+                        const videoEl = e.currentTarget.querySelector('video');
+                        toggleFullscreen({ target: videoEl });
+                    }}
+                    onkeydown={(e) => {
+                        if (e.key === 'Enter') {
+                            e.preventDefault();
+                            const videoEl = e.currentTarget.querySelector('video');
+                            toggleFullscreen({ target: videoEl });
+                        }
+                    }}
+                    aria-label="Play {generateAltText(video)} in fullscreen"
+                >
+                    <video 
+                        controls
+                        aria-label={generateAltText(video)}
+                    >
+                        <source src={basePath + video} type="video/mp4" />
+                        <p>Your browser does not support the video tag. <a href={basePath + video} download>Download the video</a> instead.</p>
+                    </video>
+                </button>
             </div>
         {/each}
     </div>
@@ -121,16 +177,73 @@
 
     .media-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 24px;
         justify-items: center;
+        padding: 20px 0;
+    }
+    
+    .media-item {
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        border-radius: var(--border-radius);
+        transition: var(--transition-smooth);
+    }
+    
+    .media-item:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--box-shadow-hover);
+    }
+    
+    .image-button,
+    .video-button {
+        all: unset;
+        display: block;
+        width: 100%;
+        cursor: pointer;
+        position: relative;
+        border-radius: var(--border-radius);
+        overflow: hidden;
+    }
+    
+    .image-button:focus,
+    .video-button:focus {
+        outline: 3px solid var(--color-link-hover);
+        outline-offset: 2px;
+    }
+    
+    .image-button::after {
+        content: '🔍';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2rem;
+        opacity: 0;
+        transition: var(--transition-smooth);
+        pointer-events: none;
+    }
+    
+    .image-button:hover::after,
+    .image-button:focus::after {
+        opacity: 1;
     }
 
     .media-item img, .media-item video {
         max-width: 100%;
+        width: 100%;
         height: auto;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: block;
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+        transition: var(--transition-smooth);
+    }
+    
+    .image-button:hover img,
+    .image-button:focus img {
+        filter: brightness(0.7);
+    }
         transition: transform 0.3s ease;
     }
 

@@ -75,10 +75,32 @@
 
 {#if visible}
   <div class="performance-monitor" class:expanded>
-    <div class="monitor-header" on:click={toggleExpanded}>
+    <button 
+      class="monitor-header" 
+      onclick={toggleExpanded}
+      onkeydown={(e) => e.key === 'Enter' && toggleExpanded()}
+      role="button"
+      aria-expanded={expanded}
+      aria-label="Toggle performance monitor details"
+    >
       <h4>⚡ Performance</h4>
-      <button on:click|stopPropagation={toggleVisibility} class="close-btn">×</button>
-    </div>
+      <button 
+        onclick={(e) => {
+          e.stopPropagation();
+          toggleVisibility();
+        }}
+        onkeydown={(e) => {
+          if (e.key === 'Enter') {
+            e.stopPropagation();
+            toggleVisibility();
+          }
+        }}
+        class="close-btn"
+        aria-label="Close performance monitor"
+      >
+        ×
+      </button>
+    </button>
     
     <div class="metrics">
       <div class="metric">
