@@ -3,17 +3,9 @@
 import { useEffect, useState } from 'react';
 import Script from 'next/script';
 
-// Declare custom element for TypeScript
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      'givebutter-widget': { id: string };
-    }
-  }
-}
-
 export default function SupportPage() {
   const [sensorData, setSensorData] = useState<any>(null);
+  const [scriptLoaded, setScriptLoaded] = useState(false);
 
   useEffect(() => {
     fetch('/api/sensor-data')
@@ -22,11 +14,23 @@ export default function SupportPage() {
       .catch(err => console.error('Failed to load sensor data:', err));
   }, []);
 
+  useEffect(() => {
+    if (scriptLoaded && typeof window !== 'undefined' && (window as any).givebutter) {
+      // Force Givebutter widgets to initialize
+      setTimeout(() => {
+        if ((window as any).givebutter) {
+          (window as any).givebutter.init();
+        }
+      }, 100);
+    }
+  }, [scriptLoaded]);
+
   return (
     <>
       <Script 
         src="https://givebutter.com/js/widget.js" 
         strategy="afterInteractive"
+        onLoad={() => setScriptLoaded(true)}
       />
       
       <div className="container" style={{ padding: '2rem', maxWidth: '1200px', margin: '0 auto' }}>

@@ -44,6 +44,7 @@ function generateAltText(filename: string) {
 
 export default function GalleryPage() {
   const [isMobile, setIsMobile] = useState(false);
+  const [scriptLoaded, setScriptLoaded] = useState(false);
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
@@ -51,6 +52,16 @@ export default function GalleryPage() {
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
+
+  useEffect(() => {
+    if (scriptLoaded && typeof window !== 'undefined' && (window as any).givebutter) {
+      setTimeout(() => {
+        if ((window as any).givebutter) {
+          (window as any).givebutter.init();
+        }
+      }, 100);
+    }
+  }, [scriptLoaded]);
 
   const [lightboxImage, setLightboxImage] = useState<string | null>(null);
 
@@ -62,7 +73,8 @@ export default function GalleryPage() {
     <>
       <Script 
         src="https://givebutter.com/js/widget.js" 
-        strategy="lazyOnload"
+        strategy="afterInteractive"
+        onLoad={() => setScriptLoaded(true)}
       />
       <div className={styles.container}>
         <div className={styles.header}>

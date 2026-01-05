@@ -131,12 +131,12 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Contributors Section */}
+      {/* Volunteer Team Section */}
       <section className={styles.contributors}>
         <div className={styles.container}>
-          <h2>Core Contributors</h2>
+          <h2>Volunteer Team</h2>
           <p className={styles.contributorsIntro}>
-            Talented individuals who help make Starphone possible
+            Dedicated volunteers who help make Starphone possible
           </p>
           <div className={styles.contributorsList}>
             <div className={styles.contributor}>

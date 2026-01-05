@@ -1,17 +1,33 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Script from 'next/script';
 import styles from './FloatingDonateButton.module.css';
 
 export default function FloatingDonateButton() {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [scriptLoaded, setScriptLoaded] = useState(false);
+
+  useEffect(() => {
+    if (isExpanded && scriptLoaded && typeof window !== 'undefined') {
+      // Force Givebutter widget to initialize
+      const loadGivebutterWidget = () => {
+        if ((window as any).givebutter) {
+          (window as any).givebutter.init();
+        }
+      };
+      
+      // Small delay to ensure DOM is ready
+      setTimeout(loadGivebutterWidget, 100);
+    }
+  }, [isExpanded, scriptLoaded]);
 
   return (
     <>
       <Script
         src="https://givebutter.com/js/widget.js"
-        strategy="lazyOnload"
+        strategy="afterInteractive"
+        onLoad={() => setScriptLoaded(true)}
       />
       
       <div className={styles.floatingButton}>
