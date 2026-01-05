@@ -1,0 +1,145 @@
+/* Contact Page Styles */
+
+.contactPage {
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.hero {
+  background: linear-gradient(135deg, #000494 0%, #006494 100%);
+  color: #ffffff;
+  padding: 6rem 2rem 4rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.heroSubtitle {
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.content {
+  padding: 6rem 2rem;
+  background: #f5f6fa;
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 4rem;
+}
+
+.contactInfo h2,
+.socialLinks h2 {
+  font-size: 2rem;
+  color: #000494;
+  margin-bottom: 2rem;
+  font-weight: 800;
+}
+
+.infoBlock {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.infoBlock:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 100, 148, 0.15);
+}
+
+.icon {
+  font-size: 2.5rem;
+}
+
+.infoBlock h3 {
+  font-size: 1.2rem;
+  color: #000494;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.infoBlock a {
+  color: #006494;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.infoBlock a:hover {
+  color: #FFB30F;
+}
+
+.socialLinks p {
+  color: #5a5a5a;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.socialGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+}
+
+.socialCard {
+  background: #ffffff;
+  padding: 2rem 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.socialCard:hover {
+  transform: translateY(-4px);
+  border-color: #FFB30F;
+  box-shadow: 0 8px 20px rgba(0, 100, 148, 0.15);
+}
+
+.socialIcon {
+  font-size: 2.5rem;
+}
+
+.socialCard span:last-child {
+  color: #000494;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 4rem 1.5rem 3rem;
+  }
+
+  .content {
+    padding: 4rem 1.5rem;
+  }
+
+  .contactGrid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
