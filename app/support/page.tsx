@@ -1,47 +1,15 @@
 'use client';
 
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function SupportPage() {
   const [sensorData, setSensorData] = useState<any>(null);
-  const widgetContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     fetch('/api/sensor-data')
       .then(res => res.json())
       .then(data => setSensorData(data))
       .catch(err => console.error('Failed to load sensor data:', err));
-  }, []);
-
-  // Load Givebutter script and initialize widgets
-  useEffect(() => {
-    // Create and append the Givebutter script
-    const existingScript = document.querySelector('script[src="https://givebutter.com/js/widget.js"]');
-    
-    if (!existingScript) {
-      const script = document.createElement('script');
-      script.src = 'https://givebutter.com/js/widget.js';
-      script.async = true;
-      document.body.appendChild(script);
-    }
-
-    // Poll for Givebutter to be ready and reinitialize
-    const initWidgets = () => {
-      const gb = (window as any).Givebutter;
-      if (gb && typeof gb.init === 'function') {
-        gb.init();
-      }
-    };
-
-    // Try multiple times to ensure widgets load
-    const timers = [
-      setTimeout(initWidgets, 500),
-      setTimeout(initWidgets, 1000),
-      setTimeout(initWidgets, 2000),
-      setTimeout(initWidgets, 3000),
-    ];
-
-    return () => timers.forEach(t => clearTimeout(t));
   }, []);
 
   return (
@@ -51,19 +19,40 @@ export default function SupportPage() {
         Help us build the future of secure, reliable public communication
       </p>
 
-      {/* Main Givebutter Campaign Widget */}
-      <section style={{ marginBottom: '4rem' }}>
+      {/* Main Donate CTA */}
+      <section style={{ marginBottom: '4rem', textAlign: 'center' }}>
         <div 
-          ref={widgetContainerRef}
           style={{ 
-            background: 'var(--color-surface, white)', 
-            padding: '2rem', 
-            borderRadius: '16px', 
-            boxShadow: 'var(--box-shadow, 0 4px 12px rgba(0,0,0,0.1))',
-            minHeight: '400px'
+            background: 'linear-gradient(135deg, var(--color-primary, #006494) 0%, var(--color-primary-dark, #000494) 100%)', 
+            padding: '4rem 2rem', 
+            borderRadius: '24px', 
+            boxShadow: 'var(--box-shadow-elevated, 0 12px 40px rgba(0,0,0,0.2))',
           }}
-          dangerouslySetInnerHTML={{ __html: '<givebutter-widget id="LYxbKj"></givebutter-widget>' }}
-        />
+        >
+          <h2 style={{ fontSize: '2.5rem', color: 'white', marginBottom: '1rem' }}>🚀 Support Our Mission</h2>
+          <p style={{ fontSize: '1.3rem', color: 'rgba(255,255,255,0.9)', marginBottom: '2rem', maxWidth: '600px', margin: '0 auto 2rem' }}>
+            Your contribution helps us build and deploy secure communication infrastructure for communities everywhere.
+          </p>
+          <a 
+            href="https://givebutter.com/ph3ar"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: 'inline-block',
+              background: '#FFB30F',
+              color: '#000494',
+              padding: '1.25rem 3rem',
+              borderRadius: '50px',
+              fontSize: '1.3rem',
+              fontWeight: '700',
+              textDecoration: 'none',
+              boxShadow: '0 4px 20px rgba(255, 179, 15, 0.4)',
+              transition: 'all 0.3s ease',
+            }}
+          >
+            💝 Donate Now
+          </a>
+        </div>
       </section>
 
       {/* Support Options */}
