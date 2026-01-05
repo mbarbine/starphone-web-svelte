@@ -17,7 +17,7 @@ export default function ContactPage() {
       <section className={styles.hero}>
         <div className={styles.container}>
           <h1>Get In Touch</h1>
-          <p className={styles.heroSubtitle}>We'd love to hear from you</p>
+          <p className={styles.heroSubtitle}>We&apos;d love to hear from you</p>
         </div>
       </section>
 
