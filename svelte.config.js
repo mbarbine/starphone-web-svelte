@@ -1,18 +1,13 @@
 import adapter from '@sveltejs/adapter-vercel';
-import preprocess from 'svelte-preprocess';
+import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
 const config = {
-  preprocess: preprocess({
-    typescript: true,  // Enable TypeScript support
-    postcss: true,     // Enable PostCSS for CSS transformations
-    scss: {
-      prependData: `@import 'src/lib/styles/variables.scss';` // Only if you have SCSS variables
-    },
-    sourceMap: true,   // Enable source maps for easier debugging
-  }),
+  preprocess: vitePreprocess(),
 
   kit: {
-    adapter: adapter(),
+    adapter: adapter({
+      runtime: 'nodejs20.x'
+    }),
     alias: {
       $lib: 'src/lib',
       $components: 'src/lib/components',
@@ -24,8 +19,7 @@ const config = {
     prerender: {
       entries: ['*'],
       concurrency: 5,
-    },
-    // Remove trailingSlash and vite options
+    }
   }
 };
 
