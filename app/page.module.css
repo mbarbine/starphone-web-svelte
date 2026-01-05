@@ -370,9 +370,14 @@
 .statNumber {
   font-size: clamp(3rem, 6vw, 5rem);
   font-weight: 900;
-  color: #FFB30F;
+  color: var(--color-secondary, #FFB30F);
   margin-bottom: 0.5rem;
   line-height: 1;
+}
+
+[data-theme="future"] .statNumber {
+  color: var(--color-primary);
+  text-shadow: var(--glow-primary);
 }
 
 .statLabel {
@@ -383,10 +388,18 @@
   font-weight: 600;
 }
 
+[data-theme="future"] .statLabel {
+  color: var(--color-text);
+}
+
 /* Showcase Section */
 .showcase {
   padding: 6rem 2rem;
-  background: #ffffff;
+  background: var(--color-surface, #ffffff);
+}
+
+[data-theme="future"] .showcase {
+  background: var(--color-background);
 }
 
 .showcaseGrid {
@@ -416,13 +429,17 @@
 
 .showcaseContent h2 {
   font-size: clamp(2rem, 3vw, 2.5rem);
-  color: #000494;
+  color: var(--color-primary-dark, #000494);
   margin-bottom: 1.5rem;
   font-weight: 800;
 }
 
+[data-theme="future"] .showcaseContent h2 {
+  color: var(--color-text);
+}
+
 .showcaseContent p {
-  color: #5a5a5a;
+  color: var(--color-text-secondary, #5a5a5a);
   line-height: 1.8;
   font-size: 1.1rem;
   margin-bottom: 2rem;
@@ -436,46 +453,65 @@
 
 .showcaseList li {
   padding: 0.75rem 0;
-  color: #2c3e50;
+  color: var(--color-text, #2c3e50);
   font-size: 1.1rem;
   font-weight: 500;
 }
 
 .ctaLink {
   display: inline-block;
-  color: #006494;
+  color: var(--color-primary, #006494);
   font-weight: 700;
   font-size: 1.1rem;
   margin-top: 1rem;
-  transition: all 0.3s ease;
+  transition: var(--transition-smooth, all 0.3s ease);
 }
 
 .ctaLink:hover {
-  color: #FFB30F;
+  color: var(--color-secondary, #FFB30F);
   transform: translateX(5px);
+}
+
+[data-theme="future"] .ctaLink:hover {
+  color: var(--color-primary-hover);
+  text-shadow: var(--glow-primary);
 }
 
 /* Call to Action Section */
 .cta {
   padding: 6rem 2rem;
-  background: linear-gradient(135deg, #FFB30F 0%, #ffc640 100%);
+  background: var(--gradient-accent, linear-gradient(135deg, #FFB30F 0%, #ffc640 100%));
   text-align: center;
+}
+
+[data-theme="future"] .cta {
+  background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-surface-elevated) 100%);
+  border-top: 2px solid var(--border-color);
 }
 
 .cta h2 {
   font-size: clamp(2rem, 4vw, 3rem);
-  color: #000494;
+  color: var(--color-primary-dark, #000494);
   margin-bottom: 1rem;
   font-weight: 800;
 }
 
+[data-theme="future"] .cta h2 {
+  color: var(--color-text);
+  text-shadow: 0 0 30px rgba(0, 212, 255, 0.4);
+}
+
 .cta p {
   font-size: 1.3rem;
-  color: #2c3e50;
+  color: var(--color-text, #2c3e50);
   margin-bottom: 3rem;
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
+}
+
+[data-theme="future"] .cta p {
+  color: var(--color-text-secondary);
 }
 
 .ctaActions {
@@ -486,24 +522,38 @@
 }
 
 .cta .ctaPrimary {
-  background: #000494;
+  background: var(--color-primary-dark, #000494);
   color: #ffffff;
   box-shadow: 0 4px 15px rgba(0, 4, 148, 0.3);
 }
 
+[data-theme="future"] .cta .ctaPrimary {
+  background: var(--gradient-primary);
+  box-shadow: var(--glow-primary);
+}
+
 .cta .ctaPrimary:hover {
-  background: #006494;
+  background: var(--color-primary, #006494);
   box-shadow: 0 6px 20px rgba(0, 4, 148, 0.4);
 }
 
 .cta .ctaSecondary {
   background: transparent;
-  color: #000494;
-  border-color: #000494;
+  color: var(--color-primary-dark, #000494);
+  border-color: var(--color-primary-dark, #000494);
+}
+
+[data-theme="future"] .cta .ctaSecondary {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
 }
 
 .cta .ctaSecondary:hover {
   background: rgba(0, 4, 148, 0.1);
+}
+
+[data-theme="future"] .cta .ctaSecondary:hover {
+  background: rgba(0, 212, 255, 0.1);
 }
 
 /* Responsive Design */
