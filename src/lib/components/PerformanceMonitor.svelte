@@ -75,11 +75,12 @@
 
 {#if visible}
   <div class="performance-monitor" class:expanded>
-    <button 
+    <div 
       class="monitor-header" 
       onclick={toggleExpanded}
       onkeydown={(e) => e.key === 'Enter' && toggleExpanded()}
       role="button"
+      tabindex="0"
       aria-expanded={expanded}
       aria-label="Toggle performance monitor details"
     >
@@ -100,7 +101,7 @@
       >
         ×
       </button>
-    </button>
+    </div>
     
     <div class="metrics">
       <div class="metric">
@@ -174,6 +175,16 @@
     margin-bottom: 10px;
     cursor: pointer;
     user-select: none;
+    background: none;
+    border: none;
+    width: 100%;
+    padding: 0;
+    text-align: left;
+  }
+  
+  .monitor-header:focus {
+    outline: 2px solid #0f0;
+    outline-offset: 2px;
   }
   
   .monitor-header h4 {
@@ -189,15 +200,19 @@
     font-size: 20px;
     cursor: pointer;
     padding: 0;
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
   }
   
-  .close-btn:hover {
+  .close-btn:hover,
+  .close-btn:focus {
     color: #f00;
+    outline: 2px solid #f00;
+    outline-offset: 2px;
   }
   
   .metrics {

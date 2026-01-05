@@ -244,13 +244,6 @@
     .image-button:focus img {
         filter: brightness(0.7);
     }
-        transition: transform 0.3s ease;
-    }
-
-    .media-item img:hover, .media-item video:hover {
-        transform: scale(1.05);
-        cursor: pointer;
-    }
 
     .media-item video {
         width: 100%;
