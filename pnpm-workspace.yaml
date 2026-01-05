@@ -2,4 +2,6 @@ onlyBuiltDependencies:
   - '@parcel/watcher'
   - '@sveltejs/kit'
   - esbuild
+  - sharp
   - svelte-preprocess
+  - unrs-resolver
