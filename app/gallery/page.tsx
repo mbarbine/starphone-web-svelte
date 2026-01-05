@@ -18,22 +18,18 @@ const imageFiles = [
   { file: "Public-Phone-as-of-october-2024.JPEG", caption: "Latest Version - October 2024" },
   { file: "Cardboard-Build-22.JPG", caption: "Cardboard Prototyping" },
   { file: "Laser-Cut-Panels.JPG", caption: "Precision Laser Cut Panels" },
-  { file: "Booth-Design-Sketches(1).jpg", caption: "Design Sketches" },
-  { file: "Starphone-Original-Drawing.JPG", caption: "Original Concept" },
-  { file: "Starphone-Original-Booth-Drawing2.JPG", caption: "Booth Design v2" },
   { file: "environment-sensors.JPG", caption: "Environmental Sensors" },
   { file: "Starphone-Sensors.jpg", caption: "IoT Sensor Array" },
   { file: "day-2-darwin.JPG", caption: "Day 2 with Darwin" },
   { file: "more-people-november-2023.JPG", caption: "Growing Interest" },
+  { file: "first-day-Public-Phone.JPG", caption: "First Public Phone Day" },
+  { file: "Completed-Prototype-Michael-Phone-June2024.jpg", caption: "June 2024 Prototype" },
 ];
 
 const videoFiles = [
   { file: "Public-Phone-1.MP4", caption: "Starphone in Action" },
   { file: "itsringing.mov", caption: "It's Ringing!" },
-  { file: "Windy-at-starbase.MP4", caption: "Windy Day at Starbase" },
   { file: "later-on-people-are-fascinated.MP4", caption: "People Fascinated" },
-  { file: "First-Piece-Of-Booth.MOV", caption: "First Booth Piece" },
-  { file: "Starphone-Booth-Piece-2.MOV", caption: "Assembly Progress" },
 ];
 
 const basePath = "/making-of-starphone/";
