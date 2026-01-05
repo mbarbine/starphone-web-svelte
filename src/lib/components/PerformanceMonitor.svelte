@@ -175,11 +175,7 @@
     margin-bottom: 10px;
     cursor: pointer;
     user-select: none;
-    background: none;
-    border: none;
-    width: 100%;
     padding: 0;
-    text-align: left;
   }
   
   .monitor-header:focus {
