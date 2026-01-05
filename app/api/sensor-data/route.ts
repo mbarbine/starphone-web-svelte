@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 
 const JA4_ATLAS_ENDPOINT = 'https://ja4-atlas.platphormnews.com/api/ingest';
+const GIVEBUTTER_API_KEY = '8910|KsQ53587r4iQZlfp8yxJSbcx3dRvItUWURJ0stDA';
 
 export async function GET() {
   // Mock sensor data
@@ -18,11 +19,13 @@ export async function POST(request: Request) {
   try {
     const data = await request.json();
     
-    // Send to JA4 Atlas
+    // Send to JA4 Atlas with authentication
     const ja4Response = await fetch(JA4_ATLAS_ENDPOINT, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'Authorization': `Bearer ${GIVEBUTTER_API_KEY}`,
+        'X-API-Key': GIVEBUTTER_API_KEY,
       },
       body: JSON.stringify({
         ...data,

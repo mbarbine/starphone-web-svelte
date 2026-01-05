@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import Header from '@/components/Header';
@@ -93,6 +94,10 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <Script 
+          src="https://givebutter.com/js/widget.js" 
+          strategy="lazyOnload"
+        />
         <div className="app">
           <Header />
           <main>{children}</main>

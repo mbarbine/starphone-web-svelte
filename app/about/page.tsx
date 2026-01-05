@@ -96,7 +96,7 @@ export default function AboutPage() {
             <div className={styles.teamMember}>
               <div className={styles.memberPhoto}>
                 <Image
-                  src="/images/team/michael-barbine.jpg"
+                  src="/images/team/michael.png"
                   alt="Michael Barbine"
                   width={300}
                   height={300}
@@ -113,7 +113,7 @@ export default function AboutPage() {
             <div className={styles.teamMember}>
               <div className={styles.memberPhoto}>
                 <Image
-                  src="/images/team/patrick-modin.jpg"
+                  src="/images/team/patrick.jpeg"
                   alt="Patrick Modin"
                   width={300}
                   height={300}

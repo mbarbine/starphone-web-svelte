@@ -6,47 +6,34 @@ import { useState, useEffect } from 'react';
 import styles from './gallery.module.css';
 
 const imageFiles = [
-  "bus-garden.jpg",
-  "first-day-Public-Phone.JPG",
-  "first-day-public-phone(1).jpg",
-  "Public-Phone-First-Calls-October-23.JPG",
-  "Public-Phone-Standing-Oct-2023.JPG",
-  "Public-phone-day-5.JPG",
-  "public-phone-end-of-day-2.JPG",
-  "Starphone-Original-Booth-Drawing2.JPG",
-  "Starphone-Original-Drawing.JPG",
-  "Completed-Prototype-Michael-Phone.jpg",
-  "And-they-kept-coming-october2023.JPG",
-  "Booth-Design-Sketches(1).jpg",
-  "First-day-Darwin-from-canada-public-phone.JPG",
-  "Post-IFT3-We-didn_t-think-it-would-survive.JPG",
-  "Public-Phone-Build-11-October-2023.JPG",
-  "Public-Phone-as-of-october-2024.JPEG",
-  "Cardboard-Assembly1.JPG",
-  "Cardboard-Build-22.JPG",
-  "Laser-Cut-Panels.JPG",
-  "FEMA-June-2024.JPG",
-  "more-people-november-2023.JPG",
-  "october-2024-publicphone.JPEG",
-  "october-2024-publicphone(1).JPEG",
-  "Starphone-Team-NPS-Shendandoah-Public-Phone.JPG",
-  "day-2-darwin.JPG",
-  "john-calling-from-publicphone-november-2023.PNG",
-  "iot-environment-sensor-for-booth.jpg",
-  "environment-sensors.JPG",
-  "Starphone-Sensors.PNG",
-  "Starphone-Sensors.jpg",
+  { file: "First-day-Darwin-from-canada-public-phone.JPG", caption: "First Day - Darwin from Canada" },
+  { file: "Post-IFT3-We-didn_t-think-it-would-survive.JPG", caption: "Post IFT3 - We Didn't Think It Would Survive" },
+  { file: "Public-Phone-First-Calls-October-23.JPG", caption: "First Calls - October 2023" },
+  { file: "And-they-kept-coming-october2023.JPG", caption: "People Kept Coming" },
+  { file: "FEMA-June-2024.JPG", caption: "FEMA Visit - June 2024" },
+  { file: "Starphone-Team-NPS-Shendandoah-Public-Phone.JPG", caption: "Team at Shenandoah NPS" },
+  { file: "Public-Phone-Standing-Oct-2023.JPG", caption: "Standing Proud - October 2023" },
+  { file: "Public-Phone-Build-11-October-2023.JPG", caption: "Build Day 11" },
+  { file: "Completed-Prototype-Michael-Phone.jpg", caption: "Completed Prototype" },
+  { file: "Public-Phone-as-of-october-2024.JPEG", caption: "Latest Version - October 2024" },
+  { file: "Cardboard-Build-22.JPG", caption: "Cardboard Prototyping" },
+  { file: "Laser-Cut-Panels.JPG", caption: "Precision Laser Cut Panels" },
+  { file: "Booth-Design-Sketches(1).jpg", caption: "Design Sketches" },
+  { file: "Starphone-Original-Drawing.JPG", caption: "Original Concept" },
+  { file: "Starphone-Original-Booth-Drawing2.JPG", caption: "Booth Design v2" },
+  { file: "environment-sensors.JPG", caption: "Environmental Sensors" },
+  { file: "Starphone-Sensors.jpg", caption: "IoT Sensor Array" },
+  { file: "day-2-darwin.JPG", caption: "Day 2 with Darwin" },
+  { file: "more-people-november-2023.JPG", caption: "Growing Interest" },
 ];
 
 const videoFiles = [
-  "Cardboard-Build-2.MOV",
-  "itsringing.mov",
-  "Public-Phone-1.MP4",
-  "Windy-at-starbase.MP4",
-  "First-Piece-Of-Booth.MOV",
-  "Starphone-Booth-Piece-2.MOV",
-  "Tmobile-Carrior-Device.MOV",
-  "later-on-people-are-fascinated.MP4"
+  { file: "Public-Phone-1.MP4", caption: "Starphone in Action" },
+  { file: "itsringing.mov", caption: "It's Ringing!" },
+  { file: "Windy-at-starbase.MP4", caption: "Windy Day at Starbase" },
+  { file: "later-on-people-are-fascinated.MP4", caption: "People Fascinated" },
+  { file: "First-Piece-Of-Booth.MOV", caption: "First Booth Piece" },
+  { file: "Starphone-Booth-Piece-2.MOV", caption: "Assembly Progress" },
 ];
 
 const basePath = "/making-of-starphone/";
@@ -69,9 +56,7 @@ export default function GalleryPage() {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  const openImage = (src: string) => {
-    window.open(src, '_blank');
-  };
+  const [lightboxImage, setLightboxImage] = useState<string | null>(null);
 
   const openPDF = () => {
     window.open(pdfFile, '_blank');
@@ -84,89 +69,107 @@ export default function GalleryPage() {
         strategy="lazyOnload"
       />
       <div className={styles.container}>
-      <section className={styles.pdfSection}>
-        <h2>Starphone Design Drawings</h2>
-        {!isMobile ? (
-          <div className={styles.pdfContainer}>
-            <iframe
-              src={`${pdfFile}#view=FitH`}
-              width="100%"
-              height="600px"
-              title="Starphone Design Drawings"
-              loading="lazy"
-            />
-          </div>
-        ) : (
-          <div className={styles.pdfMobile}>
-            <p>View the design drawings on your device</p>
-            <button className={styles.pdfButton} onClick={openPDF}>
-              📄 Open Design Drawings
-            </button>
-            <a href={pdfFile} download className={styles.pdfDownload}>
-              ⬇️ Download PDF
-            </a>
-          </div>
-        )}
-      </section>
+        <div className={styles.header}>
+          <h1>Starphone Gallery</h1>
+          <p className={styles.subtitle}>Journey from concept to reality</p>
+        </div>
 
-      <section className={styles.imageGallery}>
-        <h2>Image Gallery</h2>
-        <div className={styles.mediaGrid}>
-          {imageFiles.map((image, index) => (
-            <div key={image} className={styles.mediaItem}>
-              <button
-                className={styles.imageButton}
-                onClick={() => openImage(basePath + image)}
-                aria-label={`Open ${generateAltText(image)} in new window`}
+        <section className={styles.videoSection}>
+          <h2>📹 Video Highlights</h2>
+          <div className={styles.videoGrid}>
+            {videoFiles.map((item) => (
+              <div key={item.file} className={styles.videoCard}>
+                <video 
+                  controls 
+                  className={styles.video}
+                  preload="metadata"
+                >
+                  <source src={basePath + item.file} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+                <p className={styles.mediaCaption}>{item.caption}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className={styles.imageGallery}>
+          <h2>📸 Photo Gallery</h2>
+          <div className={styles.masonryGrid}>
+            {imageFiles.map((item, index) => (
+              <div 
+                key={item.file} 
+                className={styles.galleryItem}
+                onClick={() => setLightboxImage(basePath + item.file)}
               >
                 <Image
-                  src={basePath + image}
-                  alt={generateAltText(image)}
+                  src={basePath + item.file}
+                  alt={item.caption}
                   width={400}
                   height={300}
-                  loading={index < 6 ? 'eager' : 'lazy'}
+                  loading={index < 8 ? 'eager' : 'lazy'}
                   className={styles.galleryImage}
-                  sizes="(max-width: 480px) 140px, (max-width: 768px) 180px, (max-width: 1024px) 240px, 280px"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
                 <div className={styles.imageOverlay}>
-                  <span className={styles.zoomIcon}>🔍</span>
+                  <p>{item.caption}</p>
                 </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className={styles.pdfSection}>
+          <h2>📐 Technical Drawings</h2>
+          {!isMobile ? (
+            <div className={styles.pdfContainer}>
+              <iframe
+                src={`${pdfFile}#view=FitH`}
+                width="100%"
+                height="700px"
+                title="Starphone Design Drawings"
+                loading="lazy"
+              />
+            </div>
+          ) : (
+            <div className={styles.pdfMobile}>
+              <p>View the complete design documentation</p>
+              <button className={styles.pdfButton} onClick={openPDF}>
+                📄 Open Design Drawings
               </button>
             </div>
-          ))}
-        </div>
-      </section>
-
-      <section className={styles.videoGallery}>
-        <h2>Video Gallery</h2>
-        <div className={styles.mediaGrid}>
-          {videoFiles.map((video) => (
-            <div key={video} className={styles.mediaItem}>
-              <video controls className={styles.video}>
-                <source src={basePath + video} type="video/mp4" />
-                <p>
-                  Your browser does not support the video tag.{' '}
-                  <a href={basePath + video} download>
-                    Download the video
-                  </a>
-                </p>
-              </video>
-            </div>
-          ))}
-        </div>
-      </section>
+          )}
+        </section>
 
       <section className={styles.donateSection}>
-        <h2>Support Starphone Project</h2>
-        <p className={styles.donateText}>Help us continue developing resilient communication technology</p>
-        <div 
-          className={styles.donateWidget}
-          dangerouslySetInnerHTML={{
-            __html: '<givebutter-widget id="LYxbKj"></givebutter-widget>'
-          }} 
-        />
-      </section>
+          <h2>💝 Support Our Mission</h2>
+          <p className={styles.donateText}>Help us build resilient communication for extreme environments</p>
+          <div 
+            className={styles.donateWidget}
+            dangerouslySetInnerHTML={{
+              __html: '<givebutter-widget id="LYxbKj"></givebutter-widget>'
+            }} 
+          />
+        </section>
       </div>
+
+      {lightboxImage && (
+        <div className={styles.lightbox} onClick={() => setLightboxImage(null)}>
+          <div className={styles.lightboxContent}>
+            <button className={styles.closeButton} onClick={() => setLightboxImage(null)}>
+              ✕
+            </button>
+            <Image
+              src={lightboxImage}
+              alt="Gallery image"
+              width={1200}
+              height={900}
+              className={styles.lightboxImage}
+              sizes="100vw"
+            />
+          </div>
+        </div>
+      )}
     </>
   );
 }
