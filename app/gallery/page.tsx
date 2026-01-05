@@ -1,7 +1,8 @@
 'use client';
 
 import Image from 'next/image';
-import { useState, useEffect, useRef } from 'react';
+import Script from 'next/script';
+import { useState, useEffect } from 'react';
 import styles from './gallery.module.css';
 
 const imageFiles = [
@@ -77,7 +78,12 @@ export default function GalleryPage() {
   };
 
   return (
-    <div className={styles.container}>
+    <>
+      <Script 
+        src="https://givebutter.com/js/widget.js" 
+        strategy="lazyOnload"
+      />
+      <div className={styles.container}>
       <section className={styles.pdfSection}>
         <h2>Starphone Design Drawings</h2>
         {!isMobile ? (
@@ -152,13 +158,15 @@ export default function GalleryPage() {
 
       <section className={styles.donateSection}>
         <h2>Support Starphone Project</h2>
-        <div id="givebutter-widget" dangerouslySetInnerHTML={{
-          __html: `
-            <givebutter-widget id="LYxbKj"></givebutter-widget>
-            <script async src="https://widgets.givebutter.com/latest.umd.cjs?acct=dOQ0XbCHnxsv4qWo&p=other"></script>
-          `
-        }} />
+        <p className={styles.donateText}>Help us continue developing resilient communication technology</p>
+        <div 
+          className={styles.donateWidget}
+          dangerouslySetInnerHTML={{
+            __html: '<givebutter-widget id="LYxbKj"></givebutter-widget>'
+          }} 
+        />
       </section>
-    </div>
+      </div>
+    </>
   );
 }

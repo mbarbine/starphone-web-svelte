@@ -25,7 +25,7 @@ export default function SupportPage() {
   return (
     <>
       <Script 
-        src="https://widgets.givebutter.com/latest.umd.cjs" 
+        src="https://givebutter.com/js/widget.js" 
         strategy="afterInteractive"
       />
       

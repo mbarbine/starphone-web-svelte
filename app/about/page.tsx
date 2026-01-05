@@ -85,17 +85,24 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team Section */}
+      {/* Founders Section */}
       <section className={styles.team}>
         <div className={styles.container}>
-          <h2>Meet the Team</h2>
+          <h2>Meet the Founders</h2>
           <p className={styles.teamIntro}>
-            The innovators and problem-solvers making Starphone a reality
+            The visionaries leading Starphone&apos;s mission
           </p>
-          <div className={styles.teamGrid}>
+          <div className={styles.foundersGrid}>
             <div className={styles.teamMember}>
               <div className={styles.memberPhoto}>
-                <div className={styles.placeholderAvatar}>MB</div>
+                <Image
+                  src="/images/team/michael-barbine.jpg"
+                  alt="Michael Barbine"
+                  width={300}
+                  height={300}
+                  className={styles.profilePhoto}
+                  sizes="(max-width: 768px) 150px, 300px"
+                />
               </div>
               <h3>Michael Barbine</h3>
               <p className={styles.memberRole}>Co-Founder & CEO</p>
@@ -105,13 +112,52 @@ export default function AboutPage() {
             </div>
             <div className={styles.teamMember}>
               <div className={styles.memberPhoto}>
-                <div className={styles.placeholderAvatar}>PM</div>
+                <Image
+                  src="/images/team/patrick-modin.jpg"
+                  alt="Patrick Modin"
+                  width={300}
+                  height={300}
+                  className={styles.profilePhoto}
+                  sizes="(max-width: 768px) 150px, 300px"
+                />
               </div>
               <h3>Patrick Modin</h3>
               <p className={styles.memberRole}>Co-Founder & CTO</p>
               <p className={styles.memberBio}>
                 Technical expert ensuring reliability and security across all Starphone systems with deep expertise in communication infrastructure.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contributors Section */}
+      <section className={styles.contributors}>
+        <div className={styles.container}>
+          <h2>Core Contributors</h2>
+          <p className={styles.contributorsIntro}>
+            Talented individuals who help make Starphone possible
+          </p>
+          <div className={styles.contributorsList}>
+            <div className={styles.contributor}>
+              <h4>Aurora Borealis</h4>
+              <p>Lead Engineer</p>
+            </div>
+            <div className={styles.contributor}>
+              <h4>Thundercat 1</h4>
+              <p>Creative Director</p>
+            </div>
+            <div className={styles.contributor}>
+              <h4>Thundercat 2</h4>
+              <p>UX Designer</p>
+            </div>
+            <div className={styles.contributor}>
+              <h4>Grannie May</h4>
+              <p>Operations Manager</p>
+            </div>
+            <div className={styles.contributor}>
+              <h4>Kelly</h4>
+              <p>Marketing Lead</p>
             </div>
           </div>
         </div>

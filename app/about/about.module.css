@@ -176,6 +176,16 @@
   margin: 0 auto;
 }
 
+.foundersGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 3rem;
+  margin-top: 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .teamMember {
   background: #f5f6fa;
   padding: 3rem 2.5rem;
@@ -209,6 +219,14 @@
   font-weight: 800;
   color: #ffffff;
   box-shadow: 0 10px 30px rgba(0, 100, 148, 0.3);
+}
+
+.profilePhoto {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 10px 30px rgba(0, 100, 148, 0.2);
 }
 
 .teamMember h3 {
@@ -288,7 +306,59 @@
   border-radius: 50px;
   font-weight: 700;
   font-size: 1.1rem;
-  border: 2px solid #000494;
+ 
+
+/* Contributors Section */
+.contributors {
+  background-color: #f8f9fa;
+  padding: 4rem 2rem;
+}
+
+.contributorsIntro {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--color-text-light);
+  margin-bottom: 2rem;
+}
+
+.contributorsList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.contributor {
+  text-align: center;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transitio,
+  .foundersGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .contributorsList {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr))
+.contributor:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.contributor h4 {
+  font-size: 1.1rem;
+  color: var(--color-primary-dark);
+  margin-bottom: 0.5rem;
+}
+
+.contributor p {
+  font-size: 0.95rem;
+  color: var(--color-text-light);
+  margin: 0;
+} border: 2px solid #000494;
   transition: all 0.3s ease;
   display: inline-block;
 }

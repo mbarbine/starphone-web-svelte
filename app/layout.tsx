@@ -3,6 +3,7 @@ import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import FloatingDonateButton from '@/components/FloatingDonateButton';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -96,6 +97,7 @@ export default function RootLayout({
           <Header />
           <main>{children}</main>
           <Footer />
+          <FloatingDonateButton />
         </div>
         <Analytics />
         <SpeedInsights />
