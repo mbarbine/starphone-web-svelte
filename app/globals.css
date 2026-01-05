@@ -1,10 +1,96 @@
 /* globals.css */
 
+/* =========================
+   FUTURISTIC 2026 THEME SYSTEM
+   ========================= */
+
+/* Future Theme (Default 2026 Look) */
+[data-theme="future"] {
+  /* Futuristic Color Palette */
+  --color-background: #0a0e1a;
+  --color-surface: #131824;
+  --color-surface-elevated: #1a2030;
+  
+  /* Text Colors */
+  --color-text: #e4e8f0;
+  --color-text-secondary: #9ca3af;
+  --color-text-muted: #6b7280;
+  
+  /* Primary & Accent Colors */
+  --color-primary: #00d4ff;
+  --color-primary-hover: #00e5ff;
+  --color-primary-dark: #0066ff;
+  --color-secondary: #7c3aed;
+  --color-accent: #ff00ff;
+  --color-accent-glow: rgba(255, 0, 255, 0.5);
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #00d4ff 0%, #0066ff 50%, #7c3aed 100%);
+  --gradient-accent: linear-gradient(135deg, #ff00ff 0%, #7c3aed 100%);
+  --gradient-surface: linear-gradient(180deg, #131824 0%, #0a0e1a 100%);
+  
+  /* Glow Effects */
+  --glow-primary: 0 0 20px rgba(0, 212, 255, 0.5), 0 0 40px rgba(0, 212, 255, 0.3);
+  --glow-accent: 0 0 20px rgba(124, 58, 237, 0.5), 0 0 40px rgba(124, 58, 237, 0.3);
+  
+  /* Borders & Shadows */
+  --border-color: rgba(0, 212, 255, 0.3);
+  --box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 0 8px rgba(0, 212, 255, 0.2);
+  --box-shadow-elevated: 0 12px 48px rgba(0, 0, 0, 0.7), 0 0 16px rgba(0, 212, 255, 0.3);
+  
+  /* Header & Navigation */
+  --color-header-bg: rgba(10, 14, 26, 0.95);
+  --color-header-text: #e4e8f0;
+  --color-link: #00d4ff;
+  --color-link-hover: #00e5ff;
+  
+  /* Animations */
+  --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Legacy Theme (Classic 2024 Look) */
+[data-theme="legacy"] {
+  --color-background: #f5f6fa;
+  --color-surface: #ffffff;
+  --color-surface-elevated: #ffffff;
+  
+  --color-text: #2c3e50;
+  --color-text-secondary: #5a5a5a;
+  --color-text-muted: #7a7a7a;
+  
+  --color-primary: #006494;
+  --color-primary-hover: #0077aa;
+  --color-primary-dark: #000494;
+  --color-secondary: #FFB30F;
+  --color-accent: #e74c3c;
+  
+  --gradient-primary: linear-gradient(135deg, #006494 0%, #000494 100%);
+  --gradient-accent: linear-gradient(135deg, #FFB30F 0%, #d88b00 100%);
+  --gradient-surface: linear-gradient(180deg, #ffffff 0%, #f5f6fa 100%);
+  
+  --glow-primary: none;
+  --glow-accent: none;
+  
+  --border-color: #e0e0e0;
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --box-shadow-elevated: 0 8px 24px rgba(0, 0, 0, 0.15);
+  
+  --color-header-bg: #000494;
+  --color-header-text: #ffffff;
+  --color-link: #006494;
+  --color-link-hover: #FFB30F;
+  
+  --transition-smooth: all 0.3s ease;
+  --transition-fast: all 0.15s ease;
+}
+
 /* CSS Variables for Consistency and Easy Maintenance */
 :root {
     /* Font Families */
-    --font-primary: 'Roboto', sans-serif;
-    --font-secondary: 'Montserrat', sans-serif;
+    --font-primary: 'Inter', 'Roboto', sans-serif;
+    --font-secondary: 'Space Grotesk', 'Montserrat', sans-serif;
+    --font-mono: 'JetBrains Mono', 'Courier New', monospace;
 
     /* Font Sizes */
     --font-size-base: 1rem;
@@ -68,6 +154,15 @@ body {
     line-height: var(--line-height-base);
     overflow-x: hidden;
     font-size: var(--font-size-base);
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Future theme specific body enhancements */
+[data-theme="future"] body {
+    background: radial-gradient(circle at 20% 50%, rgba(0, 102, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(124, 58, 237, 0.1) 0%, transparent 50%),
+                var(--color-background);
+    background-attachment: fixed;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -75,6 +170,18 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--color-text);
     margin-bottom: 0.5rem;
     line-height: 1.2;
+    transition: var(--transition-smooth);
+}
+
+/* Future theme heading enhancements */
+[data-theme="future"] h1,
+[data-theme="future"] h2 {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 800;
+    letter-spacing: -0.02em;
 }
 
 h1 { font-size: var(--font-size-heading1); }

@@ -1,0 +1,74 @@
+.themeToggle {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  z-index: 9998;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.5rem;
+  background: var(--theme-toggle-bg, rgba(0, 4, 148, 0.95));
+  color: var(--theme-toggle-text, white);
+  border: 2px solid var(--theme-toggle-border, rgba(255, 255, 255, 0.2));
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.themeToggle:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  background: var(--theme-toggle-hover-bg, rgba(0, 100, 148, 0.95));
+}
+
+.toggleIcon {
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  animation: float 3s ease-in-out infinite;
+}
+
+.toggleText {
+  font-family: 'Courier New', monospace;
+  letter-spacing: 1px;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@media (max-width: 768px) {
+  .themeToggle {
+    bottom: 1rem;
+    left: 1rem;
+    padding: 0.75rem 1.25rem;
+    font-size: 0.9rem;
+  }
+
+  .toggleIcon {
+    font-size: 1.25rem;
+  }
+}
+
+/* Future theme specific */
+[data-theme="future"] .themeToggle {
+  --theme-toggle-bg: linear-gradient(135deg, #00d4ff 0%, #0066ff 100%);
+  --theme-toggle-border: rgba(0, 212, 255, 0.5);
+  --theme-toggle-hover-bg: linear-gradient(135deg, #00e5ff 0%, #0077ff 100%);
+}
+
+/* Legacy theme specific */
+[data-theme="legacy"] .themeToggle {
+  --theme-toggle-bg: rgba(0, 4, 148, 0.95);
+  --theme-toggle-border: rgba(255, 179, 15, 0.5);
+  --theme-toggle-hover-bg: rgba(0, 100, 148, 0.95);
+}

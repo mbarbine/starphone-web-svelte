@@ -5,6 +5,8 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import FloatingDonateButton from '@/components/FloatingDonateButton';
+import ThemeToggle from '@/components/ThemeToggle';
+import { ThemeProvider } from './contexts/ThemeContext';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -98,12 +100,15 @@ export default function RootLayout({
           src="https://givebutter.com/js/widget.js" 
           strategy="lazyOnload"
         />
-        <div className="app">
-          <Header />
-          <main>{children}</main>
-          <Footer />
-          <FloatingDonateButton />
-        </div>
+        <ThemeProvider>
+          <div className="app">
+            <Header />
+            <main>{children}</main>
+            <Footer />
+            <FloatingDonateButton />
+            <ThemeToggle />
+          </div>
+        </ThemeProvider>
         <Analytics />
         <SpeedInsights />
       </body>

@@ -140,8 +140,6 @@ export default function GalleryPage() {
                   href={pdfFile} 
                   download="Starphone-Design-Drawings.pdf"
                   className={styles.downloadButton}
-                  target="_blank"
-                  rel="noopener noreferrer"
                 >
                   📥 Download PDF
                 </a>
@@ -155,13 +153,21 @@ export default function GalleryPage() {
                 </a>
               </div>
               <div className={styles.pdfContainer}>
-                <iframe
-                  src={`${pdfFile}#view=FitH&toolbar=1&navpanes=1`}
+                <object
+                  data={pdfFile}
+                  type="application/pdf"
                   width="100%"
                   height="800px"
                   title="Starphone Design Drawings"
-                  loading="lazy"
-                />
+                  className={styles.pdfViewer}
+                >
+                  <div className={styles.pdfFallback}>
+                    <p>Unable to display PDF in browser.</p>
+                    <a href={pdfFile} download className={styles.downloadLink}>
+                      📥 Download PDF to view
+                    </a>
+                  </div>
+                </object>
               </div>
             </div>
           ) : (
