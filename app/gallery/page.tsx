@@ -92,9 +92,10 @@ export default function GalleryPage() {
                   className={styles.video}
                   preload="metadata"
                   playsInline
+                  poster="/images/starphone-hero-square.png"
                 >
-                  <source src={basePath + item.file} type={item.file.toLowerCase().endsWith('.mov') ? 'video/quicktime' : 'video/mp4'} />
-                  <source src={basePath + item.file} type="video/mp4" />
+                  <source src={basePath + item.file} type={item.file.toLowerCase().endsWith('.mov') ? 'video/mp4' : 'video/mp4'} />
+                  <track kind="captions" />
                   Your browser does not support the video tag.
                 </video>
                 <p className={styles.mediaCaption}>{item.caption}</p>

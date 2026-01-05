@@ -54,6 +54,7 @@ export default function HomePage() {
             >
               <source src="/making-of-starphone/itsringing.mov" type="video/quicktime" />
               <source src="/making-of-starphone/itsringing.mov" type="video/mp4" />
+              <track kind="captions" />
               Your browser does not support the video tag.
             </video>
             <div className={styles.videoCaption}>

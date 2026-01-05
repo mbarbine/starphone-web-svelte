@@ -15,13 +15,13 @@ export default function SupportPage() {
   }, []);
 
   useEffect(() => {
-    if (scriptLoaded && typeof window !== 'undefined' && (window as any).givebutter) {
+    if (scriptLoaded && typeof window !== 'undefined' && (window as any).Givebutter) {
       // Force Givebutter widgets to initialize
       setTimeout(() => {
-        if ((window as any).givebutter) {
-          (window as any).givebutter.init();
+        if ((window as any).Givebutter && (window as any).Givebutter.init) {
+          (window as any).Givebutter.init();
         }
-      }, 100);
+      }, 500);
     }
   }, [scriptLoaded]);
 
