@@ -9,7 +9,7 @@ export default function AboutPage() {
       <section className="mission">
         <h2>Our Mission</h2>
         <p>
-          Starphone is on a mission to provide secure, reliable communication in environments where traditional systems fail. From remote locations on Earth to the challenging conditions of space, we're building the next generation of public communication infrastructure.
+          Starphone is on a mission to provide secure, reliable communication in environments where traditional systems fail. From remote locations on Earth to the challenging conditions of space, we&apos;re building the next generation of public communication infrastructure.
         </p>
       </section>
 
