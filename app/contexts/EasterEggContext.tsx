@@ -1,6 +1,6 @@
 'use client';
 
-import { createContext, useContext, useState, useEffect, useCallback, ReactNode } from 'react';
+import { createContext, useContext, useState, useEffect, useCallback, useRef, ReactNode } from 'react';
 
 interface EasterEggContextType {
   isDialerOpen: boolean;
@@ -17,9 +17,10 @@ const TAP_TIMEOUT = 2000; // Reset tap count after 2 seconds of inactivity
 
 export function EasterEggProvider({ children }: { children: ReactNode }) {
   const [isDialerOpen, setIsDialerOpen] = useState(false);
-  const [keySequence, setKeySequence] = useState('');
   const [tapCount, setTapCount] = useState(0);
   const [lastTapTime, setLastTapTime] = useState(0);
+  const keySequenceRef = useRef('');
+  const resetTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   // Keyboard listener for "PH3AR"
   useEffect(() => {
@@ -29,41 +30,47 @@ export function EasterEggProvider({ children }: { children: ReactNode }) {
         return;
       }
 
+      // Clear any existing reset timeout
+      if (resetTimeoutRef.current) {
+        clearTimeout(resetTimeoutRef.current);
+      }
+
       const key = e.key.toUpperCase();
-      const newSequence = keySequence + key;
+      const currentSequence = keySequenceRef.current;
+      const newSequence = currentSequence + key;
       
       // Check if the new sequence could be the start of SECRET_CODE
       if (SECRET_CODE.startsWith(newSequence)) {
-        setKeySequence(newSequence);
+        keySequenceRef.current = newSequence;
         
         // Check if complete
         if (newSequence === SECRET_CODE) {
           setIsDialerOpen(true);
-          setKeySequence('');
+          keySequenceRef.current = '';
         }
       } else {
         // Reset and check if this key starts the sequence
         if (SECRET_CODE.startsWith(key)) {
-          setKeySequence(key);
+          keySequenceRef.current = key;
         } else {
-          setKeySequence('');
+          keySequenceRef.current = '';
         }
       }
+
+      // Set timeout to reset sequence after 2 seconds of inactivity
+      resetTimeoutRef.current = setTimeout(() => {
+        keySequenceRef.current = '';
+      }, 2000);
     };
 
     window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [keySequence]);
-
-  // Reset key sequence after timeout
-  useEffect(() => {
-    if (keySequence) {
-      const timeout = setTimeout(() => {
-        setKeySequence('');
-      }, 2000);
-      return () => clearTimeout(timeout);
-    }
-  }, [keySequence]);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      if (resetTimeoutRef.current) {
+        clearTimeout(resetTimeoutRef.current);
+      }
+    };
+  }, []);
 
   // Register theme toggle tap (for mobile)
   const registerThemeToggleTap = useCallback(() => {
