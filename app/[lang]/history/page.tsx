@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import styles from './history.module.css';
 
 export const metadata: Metadata = {
@@ -165,9 +166,9 @@ export default function HistoryPage() {
             <a href="https://www.ph3ar.com/about" target="_blank" rel="noopener noreferrer" className={styles.ctaButton}>
               Learn About PH3AR
             </a>
-            <a href="/support" className={styles.ctaButtonSecondary}>
+            <Link href="/support" className={styles.ctaButtonSecondary}>
               Support the Mission
-            </a>
+            </Link>
           </div>
         </div>
       </section>

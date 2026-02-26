@@ -1,0 +1,71 @@
+{
+  "home": {
+    "hero": {
+      "badge": "🛸 BUILDING THE FUTURE",
+      "title": "The Phone Booth of Tomorrow",
+      "subtitle": "Imagine a phone that works ANYWHERE—in the desert, on a mountain, even in SPACE! 🚀 Were building super-powered communication booths that use satellites, mesh networks, AI, and solar power. When everything else fails, Starphone stays connected.",
+      "ctaPrimary": "🎬 See It In Action",
+      "ctaSecondary": "🔧 How It Works"
+    },
+    "features": {
+      "title": "⚡ Super Powers ⚡",
+      "subtitle": "What makes Starphone awesome?",
+      "items": [
+        {
+          "title": "Satellite Link",
+          "description": "Connects to satellites orbiting Earth! When cell towers fail, we bounce signals off SPACE. 🌍→🛰️→📱"
+        },
+        {
+          "title": "Mesh Network Magic",
+          "description": "Booths talk to each other like a web! Data hops from booth to booth until it reaches you. No towers needed!"
+        },
+        {
+          "title": "AI Brain Inside",
+          "description": "Machine learning picks the best signal path in milliseconds. Smarter than your average phone booth!"
+        },
+        {
+          "title": "Solar Powered",
+          "description": "Runs on sunlight! No plugs, no wires—just pure solar energy keeping you connected anywhere."
+        }
+      ]
+    },
+    "stats": {
+      "ready": "Ready 📡",
+      "backup": "Backup Power",
+      "ml": "ML Powered",
+      "space": "Space Ready"
+    },
+    "showcase": {
+      "title": "🔥 Battle-Tested Tech",
+      "description": "Weve tested Starphone in WILD places—next to SpaceX rockets, in dusty deserts, through crazy storms! When other phones say \"No Signal,\" ours keeps working.",
+      "list": [
+        "🌪️ Survives any weather",
+        "🔄 Multiple backup connections",
+        "☀️ Powers itself with the sun",
+        "📊 Sensors track everything"
+      ],
+      "cta": "🔬 Nerd Out On The Tech →"
+    },
+    "cta": {
+      "title": "🚀 Join the Mission!",
+      "description": "Were building something BIG. Starphone isnt just a project—its a mission to connect EVERYONE, EVERYWHERE. Help us make it real!",
+      "primary": "💪 Help Us Build It",
+      "secondary": "👥 Meet The Team"
+    }
+  },
+  "about": {
+    "title": "About Us",
+    "intro": "Meet the team building the future of communication.",
+    "team": {
+        "title": "Core Team"
+    },
+    "volunteers": {
+        "title": "Volunteer Team",
+        "intro": "Dedicated volunteers who help make Starphone possible"
+    }
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Something went wrong"
+  }
+}

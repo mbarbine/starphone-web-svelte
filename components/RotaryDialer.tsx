@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useEffect, useRef, useState, useCallback } from 'react';
 import styles from './RotaryDialer.module.css';
 
 interface RotaryDialerProps {
@@ -8,30 +8,33 @@ interface RotaryDialerProps {
   onClose: () => void;
 }
 
-const DIAL_SOUNDS = [
-  { freq: 941, freq2: 1336 }, // 0
-  { freq: 697, freq2: 1209 }, // 1
-  { freq: 697, freq2: 1336 }, // 2
-  { freq: 697, freq2: 1477 }, // 3
-  { freq: 770, freq2: 1209 }, // 4
-  { freq: 770, freq2: 1336 }, // 5
-  { freq: 770, freq2: 1477 }, // 6
-  { freq: 852, freq2: 1209 }, // 7
-  { freq: 852, freq2: 1336 }, // 8
-  { freq: 852, freq2: 1477 }, // 9
-];
+// Sound effects map
+const DIAL_SOUNDS: { [key: number]: { freq: number; freq2: number } } = {
+  1: { freq: 697, freq2: 1209 },
+  2: { freq: 697, freq2: 1336 },
+  3: { freq: 697, freq2: 1477 },
+  4: { freq: 770, freq2: 1209 },
+  5: { freq: 770, freq2: 1336 },
+  6: { freq: 770, freq2: 1477 },
+  7: { freq: 852, freq2: 1209 },
+  8: { freq: 852, freq2: 1336 },
+  9: { freq: 852, freq2: 1477 },
+  0: { freq: 941, freq2: 1336 },
+};
 
+// Fun responses
 const RESPONSES = [
-  { number: '911', response: '🚨 "This is Starphone Emergency. How may we help you today, Space Cadet?"', voice: 'serious' },
-  { number: '411', response: '📞 "Starphone Directory Assistance. The nearest phone booth is... RIGHT HERE! 😄"', voice: 'friendly' },
-  { number: '666', response: '👹 "Sorry, that line is busy. The Devil is on another call."', voice: 'spooky' },
-  { number: '420', response: '🌿 "Duuude... you have reached the Chill Zone. Far out, man."', voice: 'chill' },
-  { number: '007', response: '🕵️ "Bond. James Bond. The name is... wait, who is this?"', voice: 'suave' },
-  { number: '123', response: '🔢 "Easy as 1-2-3! You win a prize: THIS PHONE CALL! 🎉"', voice: 'excited' },
-  { number: '000', response: '🌌 "Welcome to the void. It\'s very quiet here. Too quiet..."', voice: 'mysterious' },
-  { number: '1337', response: '💻 "L33T H4X0R D3T3CT3D. Initiating ultra-secure mode..."', voice: 'hacker' },
   { number: '8675309', response: '🎵 "Jenny? Is that you? I got your number!"', voice: 'singing' },
   { number: '42', response: '🌌 "The answer to life, the universe, and everything. You\'re welcome."', voice: 'wise' },
+  { number: '911', response: '🚑 "Emergency Services here. Just kidding, this is a phone booth in space!"', voice: 'urgent' },
+  { number: '411', response: 'ℹ️ "Directory Assistance. Who you gonna call? Ghostbusters!"', voice: 'helpful' },
+  { number: '007', response: '🔫 "Bond. James Bond. Shaken, not stirred."', voice: 'suave' },
+  { number: '1337', response: '💻 "H4CK THE PL4N3T! PH3AR is watching."', voice: 'hacker' },
+  { number: '666', response: '🔥 "Hello? Is it me you\'re looking for?" - Satan', voice: 'evil' },
+  { number: '420', response: '🌿 "Duuuude. Space is like... really big."', voice: 'chill' },
+  // 1-800-CHATGPT (18002428478)
+  { number: '18002428478', response: '🤖 "Hello! I am ChatGPT. Ask me anything about the universe!"', voice: 'ai' },
+  { number: '18002428', response: '🤖 "Hello! I am ChatGPT. Ask me anything about the universe!"', voice: 'ai' }, // Shortened version
 ];
 
 const DEFAULT_RESPONSES = [
@@ -49,6 +52,8 @@ export default function RotaryDialer({ isOpen, onClose }: RotaryDialerProps) {
   const [response, setResponse] = useState<string | null>(null);
   const [isListening, setIsListening] = useState(false);
   const [callStatus, setCallStatus] = useState<'idle' | 'ringing' | 'connected' | 'ended'>('idle');
+  const [chatGptMode, setChatGptMode] = useState(false);
+
   const audioContextRef = useRef<AudioContext | null>(null);
   const mediaStreamRef = useRef<MediaStream | null>(null);
   const analyserRef = useRef<AnalyserNode | null>(null);
@@ -79,8 +84,10 @@ export default function RotaryDialer({ isOpen, onClose }: RotaryDialerProps) {
     const osc2 = ctx.createOscillator();
     const gain = ctx.createGain();
     
-    osc1.frequency.value = DIAL_SOUNDS[digit].freq;
-    osc2.frequency.value = DIAL_SOUNDS[digit].freq2;
+    const sound = DIAL_SOUNDS[digit] || DIAL_SOUNDS[0];
+
+    osc1.frequency.value = sound.freq;
+    osc2.frequency.value = sound.freq2;
     
     gain.gain.value = 0.1;
     
@@ -91,12 +98,12 @@ export default function RotaryDialer({ isOpen, onClose }: RotaryDialerProps) {
     osc1.start();
     osc2.start();
     
+    gain.gain.setValueAtTime(0.1, ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.1);
+
     setTimeout(() => {
-      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.1);
-      setTimeout(() => {
-        osc1.stop();
-        osc2.stop();
-      }, 100);
+      osc1.stop();
+      osc2.stop();
     }, 150);
   }, []);
 
@@ -105,27 +112,27 @@ export default function RotaryDialer({ isOpen, onClose }: RotaryDialerProps) {
     if (!audioContextRef.current) return;
     const ctx = audioContextRef.current;
     
-    const playRingCycle = () => {
-      const osc = ctx.createOscillator();
-      const gain = ctx.createGain();
-      osc.frequency.value = 440;
-      gain.gain.value = 0.1;
-      osc.connect(gain);
-      gain.connect(ctx.destination);
-      osc.start();
-      
-      setTimeout(() => {
-        osc.frequency.value = 480;
-      }, 500);
-      
-      setTimeout(() => {
-        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.1);
-        setTimeout(() => osc.stop(), 100);
-      }, 1000);
-    };
+    const osc1 = ctx.createOscillator();
+    const osc2 = ctx.createOscillator();
+    const gain = ctx.createGain();
+
+    osc1.frequency.value = 440;
+    osc2.frequency.value = 480;
     
-    playRingCycle();
-    setTimeout(playRingCycle, 2000);
+    gain.gain.value = 0.05;
+
+    osc1.connect(gain);
+    osc2.connect(gain);
+    gain.connect(ctx.destination);
+
+    osc1.start();
+    osc2.start();
+
+    setTimeout(() => {
+        gain.gain.linearRampToValueAtTime(0, ctx.currentTime + 0.1);
+        osc1.stop();
+        osc2.stop();
+    }, 2000); // 2 second ring
   }, []);
 
   // Handle dial
@@ -136,63 +143,19 @@ export default function RotaryDialer({ isOpen, onClose }: RotaryDialerProps) {
     playTone(digit);
     
     // Animate rotary dial
-    const targetRotation = (digit === 0 ? 10 : digit) * 36;
-    setRotation(targetRotation);
+    const rotationDegrees = (digit === 0 ? 10 : digit) * 30; // 30 degrees per number approx
+
+    setRotation(rotationDegrees);
     
     setTimeout(() => {
       setRotation(0);
-      setDialedNumber(prev => prev + digit);
+      setDialedNumber(prev => prev + digit.toString());
       setIsDialing(false);
-    }, 500);
+    }, 500); // Wait for "dial back"
   }, [isDialing, callStatus, playTone]);
 
-  // Make call
-  const makeCall = useCallback(() => {
-    if (!dialedNumber) return;
-    
-    setCallStatus('ringing');
-    playRinging();
-    
-    setTimeout(() => {
-      setCallStatus('connected');
-      
-      // Find matching response
-      const match = RESPONSES.find(r => r.number === dialedNumber);
-      if (match) {
-        setResponse(match.response);
-      } else {
-        setResponse(DEFAULT_RESPONSES[Math.floor(Math.random() * DEFAULT_RESPONSES.length)]);
-      }
-      
-      // Start microphone visualization
-      startMicrophoneCapture();
-    }, 3000);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [dialedNumber, playRinging]);
-
-  // Start microphone
-  const startMicrophoneCapture = async () => {
-    try {
-      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-      mediaStreamRef.current = stream;
-      
-      if (audioContextRef.current) {
-        const source = audioContextRef.current.createMediaStreamSource(stream);
-        const analyser = audioContextRef.current.createAnalyser();
-        analyser.fftSize = 256;
-        source.connect(analyser);
-        analyserRef.current = analyser;
-        setIsListening(true);
-        visualize();
-      }
-    } catch {
-      console.log('Microphone access denied - that\'s okay!');
-      setIsListening(false);
-    }
-  };
-
   // Visualize audio
-  const visualize = () => {
+  const visualize = useCallback(() => {
     if (!analyserRef.current || !canvasRef.current) return;
     
     const canvas = canvasRef.current;
@@ -204,12 +167,16 @@ export default function RotaryDialer({ isOpen, onClose }: RotaryDialerProps) {
     const dataArray = new Uint8Array(bufferLength);
     
     const draw = () => {
-      if (!isListening) return;
-      animationRef.current = requestAnimationFrame(draw);
+      // Using ref to check latest state inside loop
+      // We can't rely on closure state for loop termination easily without refs or cancellation
+      // But animationRef cancellation handles the stop
       
+      if (!canvasRef.current) return;
+
+      animationRef.current = requestAnimationFrame(draw);
       analyser.getByteFrequencyData(dataArray);
       
-      ctx.fillStyle = 'rgba(0, 20, 40, 0.3)';
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.5)'; // Dark background
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       
       const barWidth = (canvas.width / bufferLength) * 2.5;
@@ -217,22 +184,90 @@ export default function RotaryDialer({ isOpen, onClose }: RotaryDialerProps) {
       
       for (let i = 0; i < bufferLength; i++) {
         const barHeight = (dataArray[i] / 255) * canvas.height;
-        
-        const hue = (i / bufferLength) * 60 + 180;
+        const hue = i * 2 + 100;
         ctx.fillStyle = `hsl(${hue}, 100%, 50%)`;
         ctx.fillRect(x, canvas.height - barHeight, barWidth, barHeight);
-        
         x += barWidth + 1;
       }
     };
     
     draw();
+  }, []); // Dependencies: empty as refs are stable
+
+  // Start microphone
+  const startMicrophoneCapture = useCallback(async () => {
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      mediaStreamRef.current = stream;
+
+      if (audioContextRef.current) {
+        const source = audioContextRef.current.createMediaStreamSource(stream);
+        const analyser = audioContextRef.current.createAnalyser();
+        analyser.fftSize = 256;
+        source.connect(analyser);
+        analyserRef.current = analyser;
+        setIsListening(true);
+        visualize();
+      }
+    } catch {
+      console.log('Microphone access denied - visualization disabled');
+      setIsListening(false);
+    }
+  }, [visualize]);
+
+  // Make call
+  const makeCall = useCallback(() => {
+    if (!dialedNumber) return;
+
+    setCallStatus('ringing');
+    playRinging();
+
+    setTimeout(() => {
+      setCallStatus('connected');
+
+      // Check for 1-800-CHATGPT or variants
+      const normalizedNumber = dialedNumber.replace(/[^0-9]/g, '');
+      if (normalizedNumber.includes('18002428478') || normalizedNumber.includes('18002428')) {
+          setChatGptMode(true);
+          setResponse('🤖 "Hello! I am a simulated ChatGPT. Ask me anything!"');
+          startMicrophoneCapture();
+          return;
+      }
+
+      // Find matching response
+      const match = RESPONSES.find(r => r.number === dialedNumber);
+      if (match) {
+        setResponse(match.response);
+      } else {
+        setResponse(DEFAULT_RESPONSES[Math.floor(Math.random() * DEFAULT_RESPONSES.length)]);
+      }
+
+      // Start microphone visualization for effect
+      startMicrophoneCapture();
+    }, 3000); // 3 second ring delay
+  }, [dialedNumber, playRinging, startMicrophoneCapture]);
+
+  // Simulated Chat Functionality
+  const handleSimulatedChat = () => {
+      if (!chatGptMode) return;
+      setTimeout(() => {
+          const responses = [
+              "That is a fascinating question about the cosmos.",
+              "I calculate a 99.9% probability of success.",
+              "The stars are aligning for you.",
+              "Please hold while I download the internet...",
+              "My neural networks suggest you should buy a Starphone."
+          ];
+          const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+          setResponse(`🤖 "${randomResponse}"`);
+      }, 2000);
   };
 
   // Hang up
   const hangUp = () => {
     setCallStatus('ended');
     setIsListening(false);
+    setChatGptMode(false);
     
     if (mediaStreamRef.current) {
       mediaStreamRef.current.getTracks().forEach(track => track.stop());
@@ -241,6 +276,7 @@ export default function RotaryDialer({ isOpen, onClose }: RotaryDialerProps) {
     
     if (animationRef.current) {
       cancelAnimationFrame(animationRef.current);
+      animationRef.current = null;
     }
     
     setTimeout(() => {
@@ -257,8 +293,12 @@ export default function RotaryDialer({ isOpen, onClose }: RotaryDialerProps) {
 
   // Close handler
   const handleClose = () => {
-    hangUp();
-    setTimeout(onClose, 100);
+      if (callStatus !== 'idle') {
+          hangUp();
+          setTimeout(onClose, 500);
+      } else {
+          onClose();
+      }
   };
 
   if (!isOpen) return null;
@@ -291,42 +331,52 @@ export default function RotaryDialer({ isOpen, onClose }: RotaryDialerProps) {
           </div>
         )}
 
-        {isListening && (
-          <div className={styles.visualizer}>
-            <canvas ref={canvasRef} width={280} height={60} />
-            <p className={styles.speakPrompt}>🎤 Speak into your mic!</p>
-          </div>
-        )}
+        <div className={styles.visualizerContainer}>
+            {isListening ? (
+                <>
+                    <canvas ref={canvasRef} width={280} height={60} className={styles.canvas} />
+                    <p className={styles.speakPrompt}>
+                        {chatGptMode ? "🤖 AI Listening..." : "🎤 Speak into your mic!"}
+                    </p>
+                </>
+            ) : (
+                <div className={styles.placeholderVisualizer} />
+            )}
+        </div>
 
         <div className={styles.dialPad}>
-          <div 
-            className={styles.rotaryDial}
-            style={{ transform: `rotate(-${rotation}deg)` }}
-          >
-            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 0].map((digit, index) => {
-              const angle = (index * 36 - 90) * (Math.PI / 180);
-              const radius = 90;
-              const x = Math.cos(angle) * radius;
-              const y = Math.sin(angle) * radius;
-              
-              return (
-                <button
-                  key={digit}
-                  className={styles.dialButton}
-                  style={{
-                    transform: `translate(${x}px, ${y}px)`,
-                  }}
-                  onClick={() => handleDial(digit)}
-                  disabled={isDialing || callStatus !== 'idle'}
-                >
-                  {digit}
-                </button>
-              );
-            })}
-            <div className={styles.dialCenter}>
-              <span>☎️</span>
-            </div>
-          </div>
+           <div className={styles.rotaryContainer}>
+              <div
+                className={styles.rotaryDial}
+                style={{ transform: `rotate(-${rotation}deg)`, transition: isDialing ? 'transform 0.5s ease-out' : 'none' }}
+              >
+                {[1, 2, 3, 4, 5, 6, 7, 8, 9, 0].map((digit, index) => {
+                  const angleDeg = (index * 30) - 120;
+                  const angleRad = angleDeg * (Math.PI / 180);
+                  const radius = 100;
+                  const x = Math.cos(angleRad) * radius + 120;
+                  const y = Math.sin(angleRad) * radius + 120;
+
+                  return (
+                    <button
+                      key={digit}
+                      className={styles.dialButton}
+                      style={{
+                        left: `${x}px`,
+                        top: `${y}px`,
+                      }}
+                      onClick={() => handleDial(digit)}
+                      disabled={isDialing || callStatus !== 'idle'}
+                    >
+                      {digit}
+                    </button>
+                  );
+                })}
+              </div>
+              <div className={styles.dialCenter}>
+                <span>☎️</span>
+              </div>
+           </div>
         </div>
 
         <div className={styles.controls}>
@@ -357,7 +407,7 @@ export default function RotaryDialer({ isOpen, onClose }: RotaryDialerProps) {
         </div>
 
         <p className={styles.hint}>
-          💡 Try: 911, 411, 007, 42, 420, 666, 1337, 8675309
+          💡 Try: 1-800-CHATGPT, 911, 42, 007
         </p>
       </div>
     </div>

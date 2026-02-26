@@ -2,8 +2,11 @@ import type { Metadata } from 'next';
 import Script from 'next/script';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import ClientLayout from './ClientLayout';
-import './globals.css';
+import ClientLayout from '../../ClientLayout';
+import '../globals.css';
+import { Inter } from 'next/font/google';
+
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Starphone - Secure Public Communication Solutions',
@@ -48,13 +51,19 @@ export const metadata: Metadata = {
   },
 };
 
+export async function generateStaticParams() {
+  return [{ lang: 'en' }];
+}
+
 export default function RootLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: { lang: string };
 }) {
   return (
-    <html lang="en">
+    <html lang={params.lang}>
       <head>
         <link rel="canonical" href="https://www.thestarphone.com/" />
         <link rel="icon" href="/favicon.ico" type="image/png" />
@@ -76,7 +85,7 @@ export default function RootLayout({
               ],
               contactPoint: {
                 '@type': 'ContactPoint',
-                telephone: '+1-540-671-1261',
+                email: 'michael@barbvineworldwide.com',
                 contactType: 'Customer Support',
                 areaServed: 'Global',
                 availableLanguage: ['English'],
@@ -91,7 +100,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body>
+      <body className={inter.className}>
         <Script 
           src="https://givebutter.com/js/widget.js" 
           strategy="lazyOnload"

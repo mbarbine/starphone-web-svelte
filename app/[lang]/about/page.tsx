@@ -13,6 +13,24 @@ export const metadata: Metadata = {
   },
 };
 
+const volunteers = [
+  { name: 'Aurora Borealis', role: 'Lead Engineer' },
+  { name: 'Thundercat 1', role: 'Creative Director' },
+  { name: 'Thundercat 2', role: 'UX Designer' },
+  { name: 'Grannie May', role: 'Operations Manager' },
+  { name: 'Stuart Dana', role: 'Volunteer' },
+  { name: 'Rashid', role: 'Volunteer' },
+  { name: 'Kacee', role: 'Volunteer' },
+  { name: 'Darwin', role: 'Volunteer' },
+  { name: 'Rodney', role: 'Volunteer' },
+  { name: 'Felix', role: 'Volunteer' },
+  { name: 'Sam', role: 'Volunteer' },
+  { name: 'Kelly', role: 'Marketing Lead' },
+  { name: 'John', role: 'Volunteer' },
+  { name: 'Kelsea', role: 'Volunteer' },
+  { name: 'And everyone else', role: 'Community' },
+];
+
 export default function AboutPage() {
   return (
     <div className={styles.aboutPage}>
@@ -139,31 +157,13 @@ export default function AboutPage() {
             Dedicated volunteers who help make Starphone possible
           </p>
           <div className={styles.volunteersGrid}>
-            <div className={styles.volunteerCard}>
-              <div className={styles.volunteerAvatar}>👤</div>
-              <h4>Aurora Borealis</h4>
-              <p>Lead Engineer</p>
-            </div>
-            <div className={styles.volunteerCard}>
-              <div className={styles.volunteerAvatar}>👤</div>
-              <h4>Thundercat 1</h4>
-              <p>Creative Director</p>
-            </div>
-            <div className={styles.volunteerCard}>
-              <div className={styles.volunteerAvatar}>👤</div>
-              <h4>Thundercat 2</h4>
-              <p>UX Designer</p>
-            </div>
-            <div className={styles.volunteerCard}>
-              <div className={styles.volunteerAvatar}>👤</div>
-              <h4>Grannie May</h4>
-              <p>Operations Manager</p>
-            </div>
-            <div className={styles.volunteerCard}>
-              <div className={styles.volunteerAvatar}>👤</div>
-              <h4>Kelly</h4>
-              <p>Marketing Lead</p>
-            </div>
+            {volunteers.map((member, index) => (
+              <div key={index} className={styles.volunteerCard}>
+                <div className={styles.volunteerAvatar}>👤</div>
+                <h4>{member.name}</h4>
+                <p>{member.role}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -189,4 +189,3 @@ export default function AboutPage() {
     </div>
   );
 }
-

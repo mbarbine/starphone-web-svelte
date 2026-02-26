@@ -1,0 +1,60 @@
+# Starphone Project Full Documentation
+# https://www.thestarphone.com
+
+## Mission
+Starphone isn't just a phone booth; it's a lifeline. Designed for the harshest environments on Earth and beyond, Starphone ensures that communication is always available, regardless of infrastructure failures.
+
+## Technology Stack
+- **Frontend**: Next.js, React, CSS Modules.
+- **Backend**: Next.js API Routes.
+- **Database**: JA4 Atlas (Analytics), Vercel Storage.
+- **Infrastructure**: Vercel, Satellite Uplinks (Mocked), Mesh Networking.
+
+## Features Detail
+
+### Satellite Connectivity
+Starphone booths are equipped with high-gain phased array antennas capable of tracking Low Earth Orbit (LEO) constellations. This provides high-bandwidth, low-latency connectivity even in the absence of terrestrial cell towers.
+
+### Mesh Networking
+Each booth acts as a node in a self-healing mesh network. If one booth loses its uplink, it can route traffic through neighboring booths. This resilience makes the network robust against localized failures.
+
+### AI Signal Optimization
+An onboard neural network analyzes signal strength, latency, and packet loss across available channels (Satellite, Mesh, Cellular if available) to dynamically route traffic for the best user experience.
+
+### Power Systems
+- Primary: High-efficiency photovoltaic panels.
+- Storage: LiFePO4 battery banks.
+- Backup: Radioactive Isotope Thermoelectric Generator (RTG) for deep space/arctic deployment (Conceptual).
+
+## API Reference
+
+### Health Check
+GET /api/health
+Returns the current status of the service.
+Response:
+{
+  "status": "ok",
+  "uptime": 1234.56,
+  "timestamp": "2023-10-27T10:00:00Z",
+  "version": "1.0.0"
+}
+
+### Party Parrot
+GET /api/parrot?frame=<index>
+Returns a specific frame of the party parrot animation.
+Used for testing low-bandwidth text-only displays.
+
+### Sensor Data Ingest
+POST /api/sensor-data
+Ingests telemetry from booth sensors (temperature, humidity, power levels).
+Payload:
+{
+  "temperature": 25.5,
+  "battery_level": 98,
+  "solar_input": 120
+}
+
+## Contact
+- Website: https://www.thestarphone.com
+- Support: support@thestarphone.com
+- Twitter: @barbinary
