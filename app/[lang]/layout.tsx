@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Script from 'next/script';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import ClientLayout from '../../ClientLayout';
+import ClientLayout from '../ClientLayout';
 import '../globals.css';
 import { Inter } from 'next/font/google';
 
