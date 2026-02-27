@@ -73,6 +73,58 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Manufacturing & Story Section */}
+      <section className={styles.showcase}>
+        <div className={styles.container}>
+          <div className={styles.showcaseGrid}>
+            <div className={styles.showcaseContent}>
+              <h2>🏗️ Manufacturing & Story</h2>
+              <p>
+                From humble sketches to industrial-grade manufacturing, the Starphone journey is one of relentless innovation.
+                Our booths are designed for modularity and durability, capable of withstanding extreme temperatures and radiation.
+              </p>
+              <p>
+                We leverage <a href="https://gridnet.ai" target="_blank" rel="noopener noreferrer" className={styles.link}>Gridnet.ai</a> for decentralized connectivity optimization and <a href="https://npaas.platphormnews.com" target="_blank" rel="noopener noreferrer" className={styles.link}>NPaaS</a> (News Platform as a Service) for real-time information dissemination in crisis zones.
+              </p>
+            </div>
+            <div className={styles.showcaseImage}>
+               <Image
+                src="/images/starphone-booth-sketch.svg"
+                alt="Starphone booth manufacturing sketch"
+                width={600}
+                height={450}
+                className={styles.showcaseImg}
+                sizes="(max-width: 768px) 100vw, 50vw"
+                quality={85}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Space Data Centers Section */}
+      <section className={styles.features}>
+        <div className={styles.container}>
+            <h2 className={styles.sectionTitle}>🚀 Data Centers in Space</h2>
+            <p className={styles.sectionSubtitle}>The Next Frontier of Computing</p>
+            <div className={styles.featureGrid}>
+                <div className={styles.featureCard}>
+                    <div className={styles.featureIcon}>🌌</div>
+                    <h3>Orbital Computing</h3>
+                    <p>
+                        Processing data in orbit reduces latency for satellite communications and Earth observation.
+                        Read more about <a href="https://www.datacenterknowledge.com/edge-computing/data-centers-in-space-the-next-frontier" target="_blank" rel="noopener noreferrer" className={styles.link}>Data Centers in Space</a>.
+                    </p>
+                </div>
+                <div className={styles.featureCard}>
+                    <div className={styles.featureIcon}>❄️</div>
+                    <h3>Natural Cooling</h3>
+                    <p>The vacuum of space provides infinite cooling capacity, reducing the energy footprint of high-performance computing clusters.</p>
+                </div>
+            </div>
+        </div>
+      </section>
+
       {/* Stats Section */}
       <section className={styles.stats}>
         <div className={styles.container}>
@@ -151,4 +203,3 @@ export default function HomePage() {
     </>
   );
 }
-

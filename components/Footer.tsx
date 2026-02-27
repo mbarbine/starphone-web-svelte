@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styles from './Footer.module.css';
 
 export default function Footer() {
@@ -15,10 +16,10 @@ export default function Footer() {
         <div className={styles.section}>
           <h4>Quick Links</h4>
           <nav className={styles.links}>
-            <a href="/about">About</a>
-            <a href="/gallery">Gallery</a>
-            <a href="/contact">Contact</a>
-            <a href="/support">Support</a>
+            <Link href="/about">About</Link>
+            <Link href="/gallery">Gallery</Link>
+            <Link href="/contact">Contact</Link>
+            <Link href="/support">Support</Link>
           </nav>
         </div>
         

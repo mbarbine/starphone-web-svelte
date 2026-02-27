@@ -1,0 +1,20 @@
+# Starphone Project Context
+# https://www.thestarphone.com
+
+Starphone provides secure, reliable public communication solutions for extreme environments, from cities to space.
+It leverages satellite uplinks, mesh networking, and AI-driven signal optimization to ensure connectivity where others fail.
+
+## Core Features
+- Satellite Link: Direct connection to LEO/GEO satellites.
+- Mesh Network: Peer-to-peer booth connectivity.
+- AI Optimization: Machine learning for best signal path.
+- Solar Powered: Fully autonomous power system.
+
+## API Endpoints
+- /api/health: Service status and uptime.
+- /api/parrot: Fun animation endpoint.
+- /api/sensor-data: (Internal) Mock sensor data ingest.
+
+## Documentation
+- /docs: API documentation and integration guides.
+- /how-it-works: Technical deep dive.
