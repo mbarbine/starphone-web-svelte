@@ -2,7 +2,30 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from '../page.module.css';
 
-export default function HomePage() {
+async function getMovies() {
+  const apiKey = 'e54de2e0';
+  const movies = ['The Martian', 'Interstellar', 'Contact'];
+
+  const movieData = await Promise.all(
+    movies.map(async (title) => {
+      try {
+        const res = await fetch(`http://www.omdbapi.com/?t=${encodeURIComponent(title)}&apikey=${apiKey}`, {
+            next: { revalidate: 3600 }
+        });
+        return res.json();
+      } catch (error) {
+        console.error(`Failed to fetch movie ${title}`, error);
+        return null;
+      }
+    })
+  );
+
+  return movieData.filter(m => m && m.Response === 'True');
+}
+
+export default async function HomePage() {
+  const movies = await getMovies();
+
   return (
     <>
       {/* Hero Section with Background Image */}
@@ -99,6 +122,33 @@ export default function HomePage() {
               />
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Sci-Fi Inspirations (OMDb API) */}
+      <section className={styles.features} style={{ background: 'var(--color-surface-elevated, #f0f0f0)' }}>
+        <div className={styles.container}>
+            <h2 className={styles.sectionTitle}>🎬 Sci-Fi Inspirations</h2>
+            <p className={styles.sectionSubtitle}>Stories that inspire our vision for space communication</p>
+            <div className={styles.featureGrid} style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))' }}>
+                {movies.map((movie) => (
+                    <div key={movie.imdbID} className={styles.featureCard}>
+                        {movie.Poster !== 'N/A' && (
+                            <div style={{ position: 'relative', width: '100%', height: '300px', marginBottom: '1rem' }}>
+                                <Image
+                                    src={movie.Poster}
+                                    alt={movie.Title}
+                                    fill
+                                    style={{ objectFit: 'cover', borderRadius: '8px' }}
+                                />
+                            </div>
+                        )}
+                        <h3>{movie.Title} ({movie.Year})</h3>
+                        <p>{movie.Plot.substring(0, 100)}...</p>
+                        <span style={{ fontSize: '0.9rem', color: '#666' }}>⭐ {movie.imdbRating}</span>
+                    </div>
+                ))}
+            </div>
         </div>
       </section>
 

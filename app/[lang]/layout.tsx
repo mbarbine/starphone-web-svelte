@@ -55,15 +55,17 @@ export async function generateStaticParams() {
   return [{ lang: 'en' }];
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
   params,
 }: {
   children: React.ReactNode;
-  params: { lang: string };
+  params: Promise<{ lang: string }>;
 }) {
+  const { lang } = await params;
+
   return (
-    <html lang={params.lang}>
+    <html lang={lang}>
       <head>
         <link rel="canonical" href="https://www.thestarphone.com/" />
         <link rel="icon" href="/favicon.ico" type="image/png" />

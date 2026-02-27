@@ -1,3 +1,16 @@
 {
-  "/page": "app/page.js"
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/analytics/route": "app/api/analytics/route.js",
+  "/api/health/route": "app/api/health/route.js",
+  "/api/parrot/route": "app/api/parrot/route.js",
+  "/api/sensor-data/route": "app/api/sensor-data/route.js",
+  "/[lang]/page": "app/[lang]/page.js",
+  "/[lang]/docs/page": "app/[lang]/docs/page.js",
+  "/[lang]/about/page": "app/[lang]/about/page.js",
+  "/[lang]/contact/page": "app/[lang]/contact/page.js",
+  "/[lang]/how-it-works/page": "app/[lang]/how-it-works/page.js",
+  "/[lang]/history/page": "app/[lang]/history/page.js",
+  "/[lang]/press/page": "app/[lang]/press/page.js",
+  "/[lang]/gallery/page": "app/[lang]/gallery/page.js",
+  "/[lang]/support/page": "app/[lang]/support/page.js"
 }
