@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Script from 'next/script';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import ClientLayout from '../../ClientLayout';
+import ClientLayout from '@/app/ClientLayout';
 import '../globals.css';
 import { Inter } from 'next/font/google';
 
@@ -55,15 +55,17 @@ export async function generateStaticParams() {
   return [{ lang: 'en' }];
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
   params,
 }: {
   children: React.ReactNode;
-  params: { lang: string };
+  params: Promise<{ lang: string }>;
 }) {
+  const { lang } = await params;
+
   return (
-    <html lang={params.lang}>
+    <html lang={lang}>
       <head>
         <link rel="canonical" href="https://www.thestarphone.com/" />
         <link rel="icon" href="/favicon.ico" type="image/png" />
