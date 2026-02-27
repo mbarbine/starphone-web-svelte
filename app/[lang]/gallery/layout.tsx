@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Gallery | Starphone Journey & Behind the Scenes',
     description: 'Behind the scenes photos and videos of Starphone\'s development journey.',
-    url: 'https://www.thestarphone.com/gallery',
+    url: 'https://starphone.platphormnews.com/gallery',
   },
 };
 
