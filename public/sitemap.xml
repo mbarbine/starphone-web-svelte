@@ -2,64 +2,73 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <!-- Homepage -->
     <url>
-        <loc>https://www.thestarphone.com/</loc>
-        <lastmod>2024-10-17</lastmod>
+        <loc>https://starphone.platphormnews.com/</loc>
+        <lastmod>2026-02-27</lastmod>
+        <changefreq>weekly</changefreq>
         <priority>1.00</priority>
     </url>
 
-    <!-- Support Page -->
+    <!-- How It Works Page -->
     <url>
-        <loc>https://www.thestarphone.com/support</loc>
-        <lastmod>2024-10-17</lastmod>
-        <priority>0.80</priority>
-    </url>
-
-    <!-- Press Page -->
-    <url>
-        <loc>https://www.thestarphone.com/press</loc>
-        <lastmod>2024-10-17</lastmod>
-        <priority>0.70</priority>
+        <loc>https://starphone.platphormnews.com/how-it-works</loc>
+        <lastmod>2026-02-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.90</priority>
     </url>
 
     <!-- History Page -->
     <url>
-        <loc>https://www.thestarphone.com/history</loc>
-        <lastmod>2024-10-17</lastmod>
+        <loc>https://starphone.platphormnews.com/history</loc>
+        <lastmod>2026-02-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+    </url>
+
+    <!-- Support Page -->
+    <url>
+        <loc>https://starphone.platphormnews.com/support</loc>
+        <lastmod>2026-02-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+    </url>
+
+    <!-- About Page -->
+    <url>
+        <loc>https://starphone.platphormnews.com/about</loc>
+        <lastmod>2026-02-27</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.75</priority>
     </url>
 
-    <!-- Team Page -->
+    <!-- Press Page -->
     <url>
-        <loc>https://www.thestarphone.com/about</loc>
-        <lastmod>2024-10-17</lastmod>
+        <loc>https://starphone.platphormnews.com/press</loc>
+        <lastmod>2026-02-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.70</priority>
+    </url>
+
+    <!-- Gallery Page -->
+    <url>
+        <loc>https://starphone.platphormnews.com/gallery</loc>
+        <lastmod>2026-02-27</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.70</priority>
     </url>
 
     <!-- Contact Page -->
     <url>
-        <loc>https://www.thestarphone.com/contact</loc>
-        <lastmod>2024-10-17</lastmod>
+        <loc>https://starphone.platphormnews.com/contact</loc>
+        <lastmod>2026-02-27</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.65</priority>
     </url>
 
-    <!-- Gallery Page -->
+    <!-- Docs Page -->
     <url>
-        <loc>https://www.thestarphone.com/gallery</loc>
-        <lastmod>2024-10-17</lastmod>
+        <loc>https://starphone.platphormnews.com/docs</loc>
+        <lastmod>2026-02-27</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.65</priority>
-    </url>
-
-    <!-- How It Works Page -->
-    <url>
-        <loc>https://www.thestarphone.com/how-it-works</loc>
-        <lastmod>2024-10-17</lastmod>
-        <priority>0.75</priority>
-    </url>
-
-    <!-- API Health -->
-    <url>
-        <loc>https://www.thestarphone.com/api/health</loc>
-        <lastmod>2024-10-17</lastmod>
-        <priority>0.50</priority>
     </url>
 </urlset>

@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Support Starphone | Donate & Contribute',
     description: 'Help us build resilient communication infrastructure for everyone.',
-    url: 'https://www.thestarphone.com/support',
+    url: 'https://starphone.platphormnews.com/support',
   },
 };
 

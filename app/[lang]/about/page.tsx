@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'About Starphone | Mission, Team & Vision',
     description: 'Discover the team and vision behind Starphone\'s innovative communication solutions.',
-    url: 'https://www.thestarphone.com/about',
+    url: 'https://starphone.platphormnews.com/about',
   },
 };
 

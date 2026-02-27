@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'History | Starphone Development Journey',
     description: 'The story of Starphone\'s journey from concept to reality.',
-    url: 'https://www.thestarphone.com/history',
+    url: 'https://starphone.platphormnews.com/history',
   },
 };
 

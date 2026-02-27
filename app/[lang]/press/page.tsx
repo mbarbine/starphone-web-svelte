@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Press & Media | Starphone in the News',
     description: 'Starphone press coverage and media resources.',
-    url: 'https://www.thestarphone.com/press',
+    url: 'https://starphone.platphormnews.com/press',
   },
 };
 

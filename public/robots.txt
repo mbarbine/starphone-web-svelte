@@ -11,5 +11,6 @@ Allow: /api/parrot
 User-agent: BadBot
 Disallow: /
 
-# Sitemap location
+# Sitemap locations
+Sitemap: https://starphone.platphormnews.com/sitemap.xml
 Sitemap: https://www.thestarphone.com/sitemap.xml

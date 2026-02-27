@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'How It Works | Starphone Technology',
     description: 'The technology and innovation powering Starphone communication systems.',
-    url: 'https://www.thestarphone.com/how-it-works',
+    url: 'https://starphone.platphormnews.com/how-it-works',
   },
 };
 
