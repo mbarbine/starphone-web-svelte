@@ -91,15 +91,15 @@
   font-size: 0.9rem;
 }
 
-.section ul {
+.container ul {
   line-height: 1.8;
 }
 
-.section a {
+.container a {
   color: #3b82f6;
   text-decoration: none;
 }
 
-.section a:hover {
+.container a:hover {
   text-decoration: underline;
 }
