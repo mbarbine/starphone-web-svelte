@@ -1,0 +1,197 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://platphormnews.com/schemas/realm.schema.json",
+  "title": "PlatPhorm Realm Schema",
+  "description": "Realm and Universe definitions for the PlatPhorm Universal Schema Pack.",
+  "type": "object",
+  "properties": {
+    "$defs": {
+      "universe": {
+        "type": "object",
+        "required": [
+          "id",
+          "slug",
+          "name",
+          "environment",
+          "visibility",
+          "trust_level",
+          "feature_tags",
+          "environment_tags",
+          "governance_tags"
+        ],
+        "properties": {
+          "id": { "type": "integer", "minimum": 1 },
+          "slug": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+          "name": { "type": "string", "minLength": 1 },
+          "description": { "type": ["string", "null"], "default": null },
+          "owner_org": { "type": ["string", "null"], "default": null },
+          "environment": {
+            "type": "string",
+            "enum": ["production", "staging", "development", "preview", "sandbox", "internal", "partner", "customer"],
+            "default": "production"
+          },
+          "visibility": {
+            "type": "string",
+            "enum": ["public", "private", "unlisted", "network-internal", "agent-only", "partner-shared", "customer-isolated"],
+            "default": "public"
+          },
+          "trust_level": {
+            "type": "string",
+            "enum": ["low", "standard", "elevated", "high", "verified", "restricted", "network-observable"],
+            "default": "network-observable"
+          },
+          "feature_tags": { "type": "array", "items": { "type": "string" }, "uniqueItems": true, "default": [] },
+          "environment_tags": { "type": "array", "items": { "type": "string" }, "uniqueItems": true, "default": [] },
+          "governance_tags": { "type": "array", "items": { "type": "string" }, "uniqueItems": true, "default": [] },
+          "defaults": {
+            "type": "object",
+            "properties": {
+              "trace_capture": { "type": "boolean", "default": true },
+              "fingerprint_capture": { "type": "boolean", "default": true },
+              "agent_execution_capture": { "type": "boolean", "default": true },
+              "network_visible": { "type": "boolean", "default": true }
+            },
+            "additionalProperties": false,
+            "default": {}
+          }
+        },
+        "additionalProperties": false
+      },
+      "realm": {
+        "type": "object",
+        "required": [
+          "id",
+          "universe_id",
+          "slug",
+          "name",
+          "realm_type",
+          "primary_domain",
+          "canonical_url",
+          "environment",
+          "visibility",
+          "feature_tags",
+          "environment_tags",
+          "governance_tags"
+        ],
+        "properties": {
+          "id": { "type": "integer", "minimum": 1 },
+          "universe_id": { "type": "integer", "minimum": 1 },
+          "slug": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+          "name": { "type": "string", "minLength": 1 },
+          "realm_type": {
+            "type": "string",
+            "enum": [
+              "content-platform",
+              "documentation-platform",
+              "observability-platform",
+              "evaluation-platform",
+              "data-platform",
+              "search-platform",
+              "network-platform",
+              "application-platform",
+              "experiment-platform",
+              "utility-platform"
+            ]
+          },
+          "primary_domain": { "type": "string", "minLength": 1 },
+          "canonical_url": { "type": "string", "format": "uri" },
+          "network_manifest_url": { "anyOf": [{ "type": "string", "format": "uri" }, { "type": "null" }], "default": null },
+          "llms_url": { "anyOf": [{ "type": "string", "format": "uri" }, { "type": "null" }], "default": null },
+          "mcp_url": { "anyOf": [{ "type": "string", "format": "uri" }, { "type": "null" }], "default": null },
+          "docs_url": { "anyOf": [{ "type": "string", "format": "uri" }, { "type": "null" }], "default": null },
+          "health_url": { "anyOf": [{ "type": "string", "format": "uri" }, { "type": "null" }], "default": null },
+          "environment": {
+            "type": "string",
+            "enum": ["production", "staging", "development", "preview", "sandbox", "internal", "partner", "customer"],
+            "default": "production"
+          },
+          "visibility": {
+            "type": "string",
+            "enum": ["public", "private", "unlisted", "network-internal", "agent-only", "partner-shared", "customer-isolated"],
+            "default": "public"
+          },
+          "status": {
+            "type": "string",
+            "enum": ["active", "inactive", "draft", "queued", "running", "succeeded", "failed", "archived", "deleted"],
+            "default": "active"
+          },
+          "feature_tags": { "type": "array", "items": { "type": "string" }, "uniqueItems": true, "default": [] },
+          "environment_tags": { "type": "array", "items": { "type": "string" }, "uniqueItems": true, "default": [] },
+          "governance_tags": { "type": "array", "items": { "type": "string" }, "uniqueItems": true, "default": [] },
+          "capabilities": {
+            "type": "object",
+            "properties": {
+              "content_types": {
+                "type": "array",
+                "items": { "type": "string" },
+                "uniqueItems": true
+              }
+            },
+            "additionalProperties": true,
+            "default": {}
+          },
+          "policy_profile": {
+            "type": "object",
+            "properties": {
+              "private_feed_handling": { "type": "string", "default": "vaulted" },
+              "transcript_exposure": { "type": "string", "default": "inherit-visibility" },
+              "fingerprint_capture": { "type": "string", "default": "enabled" },
+              "agent_write_policy": { "type": "string", "default": "restricted-write" },
+              "cross_realm_sharing": { "type": "string", "default": "allow-with-policy" },
+              "search_indexing": { "type": "string", "default": "enabled-if-public" }
+            },
+            "additionalProperties": true,
+            "default": {}
+          },
+          "observability_profile": {
+            "type": "string",
+            "default": "platphorm-default"
+          },
+          "fingerprint_profile": {
+            "type": "string",
+            "default": "platphorm-default"
+          }
+        },
+        "additionalProperties": false
+      },
+      "namespace": {
+        "type": "object",
+        "required": [
+          "id",
+          "realm_id",
+          "slug",
+          "name",
+          "namespace_type",
+          "version"
+        ],
+        "properties": {
+          "id": { "type": "integer", "minimum": 1 },
+          "realm_id": { "type": "integer", "minimum": 1 },
+          "slug": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+          "name": { "type": "string", "minLength": 1 },
+          "namespace_type": {
+            "type": "string",
+            "enum": [
+              "api",
+              "mcp",
+              "observability",
+              "content",
+              "search",
+              "ingest",
+              "transcripts",
+              "collections",
+              "admin",
+              "network",
+              "evals"
+            ]
+          },
+          "version": { "type": "string", "minLength": 1 },
+          "api_prefix": { "type": ["string", "null"], "default": null },
+          "mcp_resource_prefix": { "type": ["string", "null"], "default": null },
+          "active": { "type": "boolean", "default": true }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

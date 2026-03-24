@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://platphormnews.com/schemas/observability.schema.json",
+  "title": "PlatPhorm Observability Schema",
+  "description": "Trace and Observability definitions for the PlatPhorm Universal Schema Pack.",
+  "type": "object",
+  "properties": {
+    "$defs": {
+      "trace": {
+        "type": "object",
+        "required": ["type", "status", "id", "public_id"],
+        "properties": {
+          "type": { "const": "trace" },
+          "id": { "type": "integer", "minimum": 1 },
+          "public_id": { "type": "string" },
+          "status": { "type": "string" },
+          "root_request_id": { "type": ["string", "null"], "default": null },
+          "root_event_id": { "anyOf": [{ "type": "integer", "minimum": 1 }, { "type": "null" }], "default": null },
+          "started_at": { "anyOf": [{ "type": "string", "format": "date-time" }, { "type": "null" }], "default": null },
+          "completed_at": { "anyOf": [{ "type": "string", "format": "date-time" }, { "type": "null" }], "default": null },
+          "duration_ms": { "type": ["integer", "null"], "minimum": 0, "default": null },
+          "agent_run_ids": { "type": "array", "items": { "type": "integer" }, "default": [] },
+          "event_ids": { "type": "array", "items": { "type": "integer" }, "default": [] },
+          "observation_ids": { "type": "array", "items": { "type": "integer" }, "default": [] }
+        },
+        "additionalProperties": true
+      },
+      "event": {
+        "type": "object",
+        "required": ["id", "event_type", "time"],
+        "properties": {
+          "id": { "type": "integer", "minimum": 1 },
+          "universe_id": { "anyOf": [{ "type": "integer", "minimum": 1 }, { "type": "null" }], "default": null },
+          "realm_id": { "anyOf": [{ "type": "integer", "minimum": 1 }, { "type": "null" }], "default": null },
+          "event_type": { "type": "string", "minLength": 1 },
+          "severity": { "type": "string", "default": "info" },
+          "status": { "type": ["string", "null"], "default": null },
+          "trace_id": { "type": ["string", "null"], "default": null },
+          "correlation_id": { "type": ["string", "null"], "default": null },
+          "request_id": { "type": ["string", "null"], "default": null },
+          "actor_type": { "type": ["string", "null"], "default": null },
+          "actor_id": { "type": ["string", "null"], "default": null },
+          "target_type": { "type": ["string", "null"], "default": null },
+          "target_id": { "type": ["string", "null"], "default": null },
+          "message": { "type": ["string", "null"], "default": null },
+          "payload": { "type": "object", "default": {} },
+          "time": { "type": "string", "format": "date-time" }
+        },
+        "additionalProperties": false
+      },
+      "requestObservation": {
+        "type": "object",
+        "required": ["id", "request_id", "observed_at"],
+        "properties": {
+          "id": { "type": "integer", "minimum": 1 },
+          "universe_id": { "anyOf": [{ "type": "integer", "minimum": 1 }, { "type": "null" }], "default": null },
+          "realm_id": { "anyOf": [{ "type": "integer", "minimum": 1 }, { "type": "null" }], "default": null },
+          "request_id": { "type": "string", "minLength": 1 },
+          "trace_id": { "type": ["string", "null"], "default": null },
+          "correlation_id": { "type": ["string", "null"], "default": null },
+          "fingerprint_id": { "anyOf": [{ "type": "integer", "minimum": 1 }, { "type": "null" }], "default": null },
+          "method": { "type": ["string", "null"], "default": null },
+          "path": { "type": ["string", "null"], "default": null },
+          "host": { "type": ["string", "null"], "default": null },
+          "edge_region": { "type": ["string", "null"], "default": null },
+          "runtime": { "type": ["string", "null"], "default": null },
+          "latency_ms": { "type": ["integer", "null"], "minimum": 0, "default": null },
+          "status_code": { "type": ["integer", "null"], "minimum": 100, "maximum": 599, "default": null },
+          "cache_status": { "type": ["string", "null"], "default": null },
+          "bot_score": { "type": ["number", "null"], "default": null },
+          "trust_score": { "type": ["number", "null"], "default": null },
+          "observed_at": { "type": "string", "format": "date-time" },
+          "metadata": { "type": "object", "default": {} }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}
