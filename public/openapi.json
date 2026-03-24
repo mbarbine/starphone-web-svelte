@@ -1,0 +1,88 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "PlatPhorm Universal API",
+    "version": "1.0.0",
+    "description": "Base OpenApi specification for PlatPhorm Network including schemas, docs, mcp, and history tracing."
+  },
+  "servers": [
+    {
+      "url": "https://api.platphormnews.com",
+      "description": "Production Server"
+    }
+  ],
+  "paths": {
+    "/api/docs": {
+      "get": {
+        "summary": "Get aggregate API documentation feed",
+        "description": "Returns documentation feeds across the network.",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/api/mcp": {
+      "get": {
+        "summary": "Get MCP resources feed",
+        "description": "Returns MCP integration feeds and definitions.",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/history": {
+      "get": {
+        "summary": "Retrieve session span history",
+        "description": "Retrieves the distributed span history based on tracing headers.",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "x-session-id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "The session ID for the sequence of interactions."
+          },
+          {
+            "in": "header",
+            "name": "x-trace-id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "The trace ID for distributed span tracking."
+          },
+          {
+            "in": "header",
+            "name": "x-span-id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "The current span ID in the trace."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful retrieval of history spans."
+          }
+        }
+      }
+    },
+    "/api/network/graph": {
+      "get": {
+        "summary": "Get Network Graph representation",
+        "responses": {
+          "200": {
+            "description": "Network Graph object"
+          }
+        }
+      }
+    }
+  }
+}

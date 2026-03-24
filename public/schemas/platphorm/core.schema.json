@@ -1,0 +1,559 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://platphormnews.com/schemas/core.schema.json",
+  "title": "PlatPhorm Core Schema",
+  "description": "Core definitions for the PlatPhorm Universal Schema Pack.",
+  "type": "object",
+  "required": ["model", "enums", "defaults", "contracts"],
+  "properties": {
+    "model": {
+      "type": "object",
+      "required": ["id", "name", "version"],
+      "properties": {
+        "id": { "const": "platphorm-universal-model" },
+        "name": { "const": "PlatPhorm Universal Model" },
+        "version": { "type": "string", "const": "1.0.0" },
+        "description": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "enums": {
+      "type": "object",
+      "required": [
+        "environment",
+        "visibility",
+        "status",
+        "trust_level",
+        "feature_tags",
+        "environment_tags",
+        "governance_tags",
+        "realm_type",
+        "namespace_type",
+        "item_type",
+        "fingerprint_type",
+        "edge_type"
+      ],
+      "properties": {
+        "environment": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "production",
+              "staging",
+              "development",
+              "preview",
+              "sandbox",
+              "internal",
+              "partner",
+              "customer"
+            ]
+          }
+        },
+        "visibility": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "public",
+              "private",
+              "unlisted",
+              "network-internal",
+              "agent-only",
+              "partner-shared",
+              "customer-isolated"
+            ]
+          }
+        },
+        "status": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "active",
+              "inactive",
+              "draft",
+              "queued",
+              "running",
+              "succeeded",
+              "failed",
+              "archived",
+              "deleted"
+            ]
+          }
+        },
+        "trust_level": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "low",
+              "standard",
+              "elevated",
+              "high",
+              "verified",
+              "restricted",
+              "network-observable"
+            ]
+          }
+        },
+        "feature_tags": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "api",
+              "mcp",
+              "llms",
+              "rss",
+              "sitemap",
+              "search",
+              "submissions",
+              "traces",
+              "observability",
+              "agents",
+              "graph",
+              "json",
+              "docs",
+              "podcasts",
+              "feeds",
+              "transcripts",
+              "collections",
+              "evals",
+              "network",
+              "status",
+              "health",
+              "jobs",
+              "fingerprinting",
+              "governance",
+              "privacy",
+              "analytics",
+              "edge",
+              "vercel"
+            ]
+          }
+        },
+        "environment_tags": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "production",
+              "staging",
+              "development",
+              "preview",
+              "sandbox",
+              "internal",
+              "partner",
+              "customer"
+            ]
+          }
+        },
+        "governance_tags": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "public",
+              "private",
+              "unlisted",
+              "network-internal",
+              "agent-only",
+              "partner-shared",
+              "customer-isolated",
+              "open-source",
+              "copyright-restricted",
+              "human-led",
+              "ai-first",
+              "human-in-the-loop",
+              "trace-required",
+              "fingerprint-aware",
+              "retention-controlled"
+            ]
+          }
+        },
+        "realm_type": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "content-platform",
+              "documentation-platform",
+              "observability-platform",
+              "evaluation-platform",
+              "data-platform",
+              "search-platform",
+              "network-platform",
+              "application-platform",
+              "experiment-platform",
+              "utility-platform"
+            ]
+          }
+        },
+        "namespace_type": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "api",
+              "mcp",
+              "observability",
+              "content",
+              "search",
+              "ingest",
+              "transcripts",
+              "collections",
+              "admin",
+              "network",
+              "evals"
+            ]
+          }
+        },
+        "item_type": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "item",
+              "document",
+              "page",
+              "resource",
+              "submission",
+              "source",
+              "podcast",
+              "episode",
+              "feed",
+              "transcript",
+              "chapter",
+              "person",
+              "collection",
+              "snapshot",
+              "job",
+              "event",
+              "observation",
+              "trace",
+              "fingerprint",
+              "request_observation",
+              "edge_trace",
+              "agent",
+              "agent_run",
+              "tool_call",
+              "resource_touch",
+              "agent_output",
+              "eval_suite",
+              "eval_run",
+              "eval_case",
+              "metric",
+              "scorecard",
+              "artifact",
+              "dataset",
+              "report",
+              "status_report",
+              "network_node"
+            ]
+          }
+        },
+        "fingerprint_type": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "ja4",
+              "ja4h",
+              "ja4s",
+              "ua_hash",
+              "route_digest",
+              "vercel_digest",
+              "tool_signature",
+              "agent_signature"
+            ]
+          }
+        },
+        "edge_type": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "references",
+              "derived_from",
+              "mirrors",
+              "routes_to",
+              "curated_into",
+              "observes",
+              "alerts_on",
+              "scores",
+              "indexes",
+              "summarizes"
+            ]
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "defaults": {
+      "type": "object",
+      "required": [
+        "environment",
+        "visibility",
+        "status",
+        "trust_level",
+        "governance_profile",
+        "observability_profile",
+        "trace_capture",
+        "fingerprint_capture",
+        "provenance_capture",
+        "agent_execution_capture",
+        "search_indexing",
+        "api_enabled",
+        "mcp_enabled",
+        "llms_enabled",
+        "sitemap_enabled",
+        "health_enabled",
+        "docs_enabled",
+        "network_visible",
+        "feature_tags",
+        "environment_tags",
+        "governance_tags"
+      ],
+      "properties": {
+        "environment": { "const": "production" },
+        "visibility": { "const": "public" },
+        "status": { "const": "active" },
+        "trust_level": { "const": "standard" },
+        "governance_profile": { "type": "string", "const": "open-network" },
+        "observability_profile": { "type": "string", "const": "platphorm-default" },
+        "trace_capture": { "type": "boolean", "const": true },
+        "fingerprint_capture": { "type": "boolean", "const": true },
+        "provenance_capture": { "type": "boolean", "const": true },
+        "agent_execution_capture": { "type": "boolean", "const": true },
+        "search_indexing": { "type": "boolean", "const": true },
+        "api_enabled": { "type": "boolean", "const": true },
+        "mcp_enabled": { "type": "boolean", "const": true },
+        "llms_enabled": { "type": "boolean", "const": true },
+        "sitemap_enabled": { "type": "boolean", "const": true },
+        "health_enabled": { "type": "boolean", "const": true },
+        "docs_enabled": { "type": "boolean", "const": true },
+        "network_visible": { "type": "boolean", "const": true },
+        "feature_tags": { "type": "array", "items": { "type": "string" }, "default": [] },
+        "environment_tags": { "type": "array", "items": { "type": "string" }, "default": [] },
+        "governance_tags": { "type": "array", "items": { "type": "string" }, "default": [] }
+      },
+      "additionalProperties": false
+    },
+    "contracts": {
+      "type": "object",
+      "required": [
+        "site_contract",
+        "api_contract",
+        "mcp_contract",
+        "discovery_contract"
+      ],
+      "properties": {
+        "site_contract": {
+          "type": "object",
+          "required": [
+            "required_routes",
+            "required_capabilities"
+          ],
+          "properties": {
+            "required_routes": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "/",
+                  "/api/health",
+                  "/api/docs",
+                  "/api/mcp",
+                  "/llms.txt",
+                  "/llms-full.txt",
+                  "/llms-index.json",
+                  "/robots.txt",
+                  "/sitemap.xml",
+                  "/manifest.webmanifest"
+                ]
+              }
+            },
+            "recommended_routes": {
+              "type": "array",
+              "items": { "type": "string" },
+              "default": ["/about", "/search", "/explore", "/status", "/network", "/history"]
+            },
+            "required_capabilities": {
+              "type": "object",
+              "required": ["api", "mcp", "health", "llms", "sitemap", "robots"],
+              "properties": {
+                "api": { "type": "boolean", "const": true },
+                "mcp": { "type": "boolean", "const": true },
+                "health": { "type": "boolean", "const": true },
+                "llms": { "type": "boolean", "const": true },
+                "sitemap": { "type": "boolean", "const": true },
+                "robots": { "type": "boolean", "const": true }
+              },
+              "additionalProperties": false
+            }
+          },
+          "additionalProperties": false
+        },
+        "api_contract": {
+          "type": "object",
+          "required": ["global_endpoints", "universe_endpoints", "realm_endpoints"],
+          "properties": {
+            "global_endpoints": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "/v0/maxitem",
+                  "/v0/updates",
+                  "/v0/item/{id}",
+                  "/v0/items?ids=1,2,3",
+                  "/v0/search?q={query}"
+                ]
+              }
+            },
+            "universe_endpoints": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "/v0/universes",
+                  "/v0/universe/{id}",
+                  "/v0/universe/{id}/realms"
+                ]
+              }
+            },
+            "realm_endpoints": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "/v0/realms",
+                  "/v0/realm/{id}",
+                  "/v0/realm/{id}/items",
+                  "/v0/realm/{id}/updates",
+                  "/v0/realm/{id}/agents",
+                  "/v0/realm/{id}/events",
+                  "/v0/realm/{id}/observations"
+                ]
+              }
+            },
+            "trace_endpoints": {
+              "type": "array",
+              "items": { "type": "string" },
+              "default": [
+                "/v0/trace/{traceId}",
+                "/v0/request/{requestId}",
+                "/v0/event/{id}",
+                "/v0/observation/{id}",
+                "/v0/provenance/{itemId}",
+                "/history"
+              ]
+            },
+            "fingerprint_endpoints": {
+              "type": "array",
+              "items": { "type": "string" },
+              "default": [
+                "/v0/fingerprint/{id}",
+                "/v0/fingerprint/{id}/requests",
+                "/v0/request/{requestId}/fingerprints"
+              ]
+            },
+            "agent_endpoints": {
+              "type": "array",
+              "items": { "type": "string" },
+              "default": [
+                "/v0/agent/{id}",
+                "/v0/agent-run/{id}",
+                "/v0/agent-run/{id}/tool-calls",
+                "/v0/agent-run/{id}/resources",
+                "/v0/agent-run/{id}/outputs"
+              ]
+            }
+          },
+          "additionalProperties": false
+        },
+        "mcp_contract": {
+          "type": "object",
+          "required": ["required_server_route", "required_tools", "required_resources"],
+          "properties": {
+            "required_server_route": { "type": "string", "const": "/api/mcp" },
+            "required_tools": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "network.get_universe",
+                  "network.list_realms",
+                  "network.get_realm",
+                  "network.get_trace",
+                  "network.get_request",
+                  "network.get_provenance",
+                  "network.get_fingerprint",
+                  "network.get_agent_run",
+                  "content.get_item",
+                  "content.search"
+                ]
+              }
+            },
+            "required_resources": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "resource://universes/{id}",
+                  "resource://realms/{id}",
+                  "resource://items/{id}",
+                  "resource://traces/{traceId}",
+                  "resource://requests/{requestId}",
+                  "resource://provenance/{itemId}",
+                  "resource://fingerprints/{id}",
+                  "resource://agent-runs/{id}"
+                ]
+              }
+            },
+            "required_prompts": {
+              "type": "array",
+              "items": { "type": "string" },
+              "default": [
+                "trace-item-lineage",
+                "summarize-agent-execution",
+                "explain-cross-realm-relationships",
+                "assess-fingerprint-trust",
+                "build-topic-brief"
+              ]
+            }
+          },
+          "additionalProperties": false
+        },
+        "discovery_contract": {
+          "type": "object",
+          "required": ["required_files"],
+          "properties": {
+            "required_files": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "/llms.txt",
+                  "/llms-full.txt",
+                  "/llms-index.json",
+                  "/robots.txt",
+                  "/sitemap.xml",
+                  "/manifest.webmanifest"
+                ]
+              }
+            },
+            "recommended_files": {
+              "type": "array",
+              "items": { "type": "string" },
+              "default": ["/rss.xml", "/openapi.json", "/api/docs"]
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://platphormnews.com/schemas/item.schema.json",
+  "title": "PlatPhorm Item Schema",
+  "description": "Item definitions for the PlatPhorm Universal Schema Pack.",
+  "type": "object",
+  "properties": {
+    "$defs": {
+      "baseItem": {
+        "type": "object",
+        "required": [
+          "id",
+          "public_id",
+          "fqid",
+          "graph_uri",
+          "type",
+          "universe_id",
+          "realm_id",
+          "namespace_id",
+          "time",
+          "canonical_url",
+          "environment",
+          "visibility",
+          "status",
+          "feature_tags",
+          "environment_tags",
+          "governance_tags",
+          "dead",
+          "deleted",
+          "metadata"
+        ],
+        "properties": {
+          "id": { "type": "integer", "minimum": 1 },
+          "public_id": { "type": "string", "pattern": "^[a-z]+_[0-9]+$" },
+          "fqid": { "type": "string", "pattern": "^[a-z0-9-]+\\.[a-z0-9-]+\\.[a-z0-9-]+\\.[a-z0-9_]+\\.[0-9]+$" },
+          "graph_uri": { "type": "string", "pattern": "^graph:\\/\\/[a-z0-9-]+\\/[a-z0-9-]+\\/[a-z0-9-]+\\/[a-z0-9_]+\\/[0-9]+$" },
+          "type": { "type": "string" },
+          "title": { "type": ["string", "null"], "default": null },
+          "description": { "type": ["string", "null"], "default": null },
+          "universe_id": { "type": "integer", "minimum": 1 },
+          "realm_id": { "type": "integer", "minimum": 1 },
+          "namespace_id": { "type": "integer", "minimum": 1 },
+          "time": { "type": "integer", "minimum": 0 },
+          "observed_at": { "anyOf": [{ "type": "string", "format": "date-time" }, { "type": "null" }], "default": null },
+          "canonical_url": { "type": "string", "format": "uri" },
+          "environment": {
+            "type": "string",
+            "enum": ["production", "staging", "development", "preview", "sandbox", "internal", "partner", "customer"],
+            "default": "production"
+          },
+          "visibility": {
+            "type": "string",
+            "enum": ["public", "private", "unlisted", "network-internal", "agent-only", "partner-shared", "customer-isolated"],
+            "default": "public"
+          },
+          "status": {
+            "type": "string",
+            "enum": ["active", "inactive", "draft", "queued", "running", "succeeded", "failed", "archived", "deleted"],
+            "default": "active"
+          },
+          "feature_tags": { "type": "array", "items": { "type": "string" }, "uniqueItems": true, "default": [] },
+          "environment_tags": { "type": "array", "items": { "type": "string" }, "uniqueItems": true, "default": [] },
+          "governance_tags": { "type": "array", "items": { "type": "string" }, "uniqueItems": true, "default": [] },
+          "trace_id": { "type": ["string", "null"], "default": null },
+          "correlation_id": { "type": ["string", "null"], "default": null },
+          "request_id": { "type": ["string", "null"], "default": null },
+          "fingerprint_id": { "anyOf": [{ "type": "integer", "minimum": 1 }, { "type": "null" }], "default": null },
+          "source_event_id": { "anyOf": [{ "type": "integer", "minimum": 1 }, { "type": "null" }], "default": null },
+          "ingest_job_id": { "anyOf": [{ "type": "integer", "minimum": 1 }, { "type": "null" }], "default": null },
+          "parser_version": { "type": ["string", "null"], "default": null },
+          "schema_version": { "type": ["string", "null"], "default": null },
+          "provenance_status": { "type": ["string", "null"], "default": null },
+          "score": { "type": ["number", "null"], "default": null },
+          "dead": { "type": "boolean", "default": false },
+          "deleted": { "type": "boolean", "default": false },
+          "metadata": { "type": "object", "default": {} }
+        },
+        "additionalProperties": false
+      },
+      "document": {
+        "allOf": [
+          { "$ref": "#/$defs/baseItem" },
+          {
+            "type": "object",
+            "required": ["type", "slug"],
+            "properties": {
+              "type": { "const": "document" },
+              "slug": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+              "source_url": { "anyOf": [{ "type": "string", "format": "uri" }, { "type": "null" }], "default": null },
+              "content_type": { "type": ["string", "null"], "default": null },
+              "version_label": { "type": ["string", "null"], "default": null },
+              "author": { "type": ["string", "null"], "default": null },
+              "published_at": { "anyOf": [{ "type": "string", "format": "date-time" }, { "type": "null" }], "default": null },
+              "updated_at": { "anyOf": [{ "type": "string", "format": "date-time" }, { "type": "null" }], "default": null }
+            },
+            "additionalProperties": false
+          }
+        ]
+      }
+    }
+  }
+}
