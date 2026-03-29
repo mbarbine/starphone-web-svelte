@@ -1,7 +1,6 @@
 'use client';
 
 import Image from 'next/image';
-import Script from 'next/script';
 import { useState, useEffect } from 'react';
 import styles from './gallery.module.css';
 
@@ -45,7 +44,6 @@ function generateAltText(filename: string) {
 
 export default function GalleryPage() {
   const [isMobile, setIsMobile] = useState(false);
-  const [scriptLoaded, setScriptLoaded] = useState(false);
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
@@ -55,14 +53,16 @@ export default function GalleryPage() {
   }, []);
 
   useEffect(() => {
-    if (scriptLoaded && typeof window !== 'undefined' && (window as any).givebutter) {
-      setTimeout(() => {
-        if ((window as any).givebutter) {
-          (window as any).givebutter.init();
-        }
-      }, 100);
-    }
-  }, [scriptLoaded]);
+    // Rely on global script from layout.tsx
+    const checkGivebutter = setInterval(() => {
+      if (typeof window !== 'undefined' && (window as any).givebutter) {
+        (window as any).givebutter.init();
+        clearInterval(checkGivebutter);
+      }
+    }, 500);
+
+    return () => clearInterval(checkGivebutter);
+  }, []);
 
   const [lightboxImage, setLightboxImage] = useState<string | null>(null);
 
@@ -72,11 +72,6 @@ export default function GalleryPage() {
 
   return (
     <>
-      <Script 
-        src="https://givebutter.com/js/widget.js" 
-        strategy="afterInteractive"
-        onLoad={() => setScriptLoaded(true)}
-      />
       <div className={styles.container}>
         <div className={styles.header}>
           <h1>Starphone Gallery</h1>
@@ -116,7 +111,8 @@ export default function GalleryPage() {
                     alt={item.caption}
                     width={item.rotate ? 400 : 300}
                     height={item.rotate ? 300 : 400}
-                    loading={index < 8 ? 'eager' : 'lazy'}
+                    priority={index < 4}
+                    loading={index < 4 ? 'eager' : 'lazy'}
                     className={`${styles.galleryImage} ${item.rotate ? styles.rotatedImage : ''}`}
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
