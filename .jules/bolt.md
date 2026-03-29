@@ -1,4 +1,3 @@
-
-## 2025-02-17 - Always Lazy Load Third-Party Iframes
-**Learning:** Third-party iframes (like YouTube video embeds and PDF viewers) can significantly delay the initial page render and waste bandwidth.
-**Action:** Always add `loading="lazy"` to third-party iframes so they don't block the main thread and defer their resource loading until the user scrolls them into view.
+## 2024-03-29 - [Script Loading Optimization]
+**Learning:** The Givebutter widget script was being loaded twice: once eagerly in a component via `next/script` (`strategy="afterInteractive"`) and once globally in the layout with `strategy="lazyOnload"`. This is an architecture-specific pattern where global scripts should be relied upon rather than duplicated within individual routes to prevent unnecessary fetching and parsing.
+**Action:** When working with third-party widgets in Next.js, verify if they are already loaded globally in `layout.tsx` or `ClientLayout.tsx` before adding new `<Script />` tags in specific pages. If they are global, use polling or listeners to await initialization.
