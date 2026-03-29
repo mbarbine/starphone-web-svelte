@@ -82,6 +82,7 @@ export default function GalleryPage() {
           <h2>📹 Featured Video</h2>
           <p className={styles.videoDescription}>{videoEmbed.caption}</p>
           <div className={styles.youtubeContainer}>
+            {/* ⚡ Bolt Performance Optimization: Lazy load YouTube iframe to prevent blocking initial render */}
             <iframe
               width="100%"
               height="100%"
@@ -90,6 +91,7 @@ export default function GalleryPage() {
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
+              loading="lazy"
               className={styles.youtubeEmbed}
             ></iframe>
           </div>
@@ -166,14 +168,18 @@ export default function GalleryPage() {
               </div>
               <div className={styles.pdfContainer}>
                 {!isMobile ? (
-                  <iframe
-                    src={`${pdfFile}#view=FitH&toolbar=1&navpanes=1`}
-                    width="100%"
-                    height="900"
-                    title="Starphone Design Drawings"
-                    className={styles.pdfFrame}
-                    style={{ border: 'none' }}
-                  />
+                  <>
+                    {/* ⚡ Bolt Performance Optimization: Lazy load PDF iframe to save bandwidth and main thread time */}
+                    <iframe
+                      src={`${pdfFile}#view=FitH&toolbar=1&navpanes=1`}
+                      width="100%"
+                      height="900"
+                      title="Starphone Design Drawings"
+                      className={styles.pdfFrame}
+                      style={{ border: 'none' }}
+                      loading="lazy"
+                    />
+                  </>
                 ) : (
                   <div className={styles.pdfMobileView}>
                     <div className={styles.pdfMobileIcon}>📄</div>
