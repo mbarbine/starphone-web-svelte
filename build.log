@@ -1,0 +1,60 @@
+
+> TheStarphone@0.0.1 build /app
+> next build
+
+   ▲ Next.js 15.5.14
+   - Experiments (use with caution):
+     · optimizePackageImports
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 4.3s
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/20) ...
+   Generating static pages (5/20)
+   Generating static pages (10/20)
+   Generating static pages (15/20)
+ ✓ Generating static pages (20/20)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                 Size  First Load JS  Revalidate  Expire
+┌ ○ /_not-found                            987 B         103 kB
+├ ● /[lang]                                805 B         112 kB          1h      1y
+├   └ /en                                                                1h      1y
+├ ● /[lang]/about                          706 B         112 kB
+├   └ /en/about
+├ ● /[lang]/contact                        383 B         103 kB
+├   └ /en/contact
+├ ● /[lang]/docs                           333 B         106 kB
+├   └ /en/docs
+├ ● /[lang]/gallery                      3.66 kB         111 kB
+├   └ /en/gallery
+├ ● /[lang]/history                        453 B         106 kB
+├   └ /en/history
+├ ● /[lang]/how-it-works                   399 B         103 kB
+├   └ /en/how-it-works
+├ ● /[lang]/press                          771 B         108 kB
+├   └ /en/press
+├ ● /[lang]/support                      1.73 kB         104 kB
+├   └ /en/support
+├ ƒ /api/analytics                         148 B         103 kB
+├ ƒ /api/docs                              148 B         103 kB
+├ ƒ /api/health                            148 B         103 kB
+├ ƒ /api/history                           148 B         103 kB
+├ ƒ /api/mcp                               148 B         103 kB
+├ ƒ /api/network/graph                     148 B         103 kB
+├ ƒ /api/parrot                            148 B         103 kB
+├ ƒ /api/sensor-data                       148 B         103 kB
+└ ƒ /sitemap.xml                           148 B         103 kB
++ First Load JS shared by all             102 kB
+  ├ chunks/29517610-c23aab7831750eb3.js  54.2 kB
+  ├ chunks/379-feaa3efc336bfd16.js       45.7 kB
+  └ other shared chunks (total)          2.55 kB
+
+
+ƒ Middleware                             34.4 kB
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand

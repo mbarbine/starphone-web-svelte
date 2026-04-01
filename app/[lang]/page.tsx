@@ -135,10 +135,12 @@ export default async function HomePage() {
                     <div key={movie.imdbID} className={styles.featureCard}>
                         {movie.Poster !== 'N/A' && (
                             <div style={{ position: 'relative', width: '100%', height: '300px', marginBottom: '1rem' }}>
+                                {/* ⚡ Bolt Performance Optimization: Added sizes attribute to Next.js Image with fill property to prevent downloading oversized images */}
                                 <Image
                                     src={movie.Poster}
                                     alt={movie.Title}
                                     fill
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                     style={{ objectFit: 'cover', borderRadius: '8px' }}
                                 />
                             </div>
