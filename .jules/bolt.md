@@ -1,3 +1,3 @@
-## 2024-03-29 - [Script Loading Optimization]
-**Learning:** The Givebutter widget script was being loaded twice: once eagerly in a component via `next/script` (`strategy="afterInteractive"`) and once globally in the layout with `strategy="lazyOnload"`. This is an architecture-specific pattern where global scripts should be relied upon rather than duplicated within individual routes to prevent unnecessary fetching and parsing.
-**Action:** When working with third-party widgets in Next.js, verify if they are already loaded globally in `layout.tsx` or `ClientLayout.tsx` before adding new `<Script />` tags in specific pages. If they are global, use polling or listeners to await initialization.
+## 2025-05-20 - Adding `sizes` to `next/image`
+**Learning:** Adding the `sizes` attribute is required when `next/image` is used with `fill`, otherwise Next.js assumes a `100vw` size, unnecessarily creating oversized images.
+**Action:** Always check the sizes property of `Next.js` images that use `fill` when exploring frontend page performance bottlenecks.
