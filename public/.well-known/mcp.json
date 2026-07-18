@@ -1,0 +1,7 @@
+﻿{
+  "name": ""starphone-web-svelte",
+  "version": ""1.0.0"",
+  "description": ""MCP discovery manifest for starphone-web-svelte",
+  "apiUrl": ""https://starphone-web-svelte.platphormnews.com/api/mcp"",
+  "protocol": ""json-rpc-2.0"
+}

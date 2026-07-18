@@ -1,0 +1,14 @@
+﻿<?xml version=""1.0"" encoding=""UTF-8"" ?>
+<rss version=""2.0">
+  <channel>
+    <title>starphone-web-svelte</title>
+    <link>https://starphone-web-svelte.platphormnews.com</link>
+    <description>Feed for the starphone-web-svelte service</description>
+    <lastBuildDate>2026-07-18T19:04:19.130-04:00</lastBuildDate>
+    <item>
+      <title>starphone-web-svelte service status</title>
+      <link>https://starphone-web-svelte.platphormnews.com/status</link>
+      <description>Current status and discovery summary.</description>
+    </item>
+  </channel>
+</rss>
