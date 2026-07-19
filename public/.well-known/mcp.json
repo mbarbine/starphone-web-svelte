@@ -1,7 +1,9 @@
-﻿{
-  "name": ""starphone-web-svelte",
-  "version": ""1.0.0"",
-  "description": ""MCP discovery manifest for starphone-web-svelte",
-  "apiUrl": ""https://starphone-web-svelte.platphormnews.com/api/mcp"",
-  "protocol": ""json-rpc-2.0"
+{
+  ""name"": "starphone-web-svelte",
+  ""version"": ""1.1.0"",
+  ""description"": ""MCP discovery manifest for starphone-web-svelte"",
+  ""apiUrl"": "https://starphone-web-svelte.platphormnews.com/api/mcp",
+  ""protocol"": ""json-rpc-2.0"",
+  ""contact"": ""https://starphone-web-svelte.platphormnews.com/support"",
+  ""updatedAt"": "2026-07-18T21:28:47.714Z"
 }

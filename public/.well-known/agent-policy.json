@@ -1,0 +1,10 @@
+{
+  ""version"": ""1.1.0"",
+  ""service"": "starphone-web-svelte",
+  ""website"": "https://starphone-web-svelte.platphormnews.com",
+  ""mode"": ""allow-indexing"",
+  ""updatedAt"": "2026-07-18T21:28:47.714Z",
+  ""aiUsagePolicy"": ""Public pages and APIs are available for discovery and indexing with attribution."",
+  ""allowedCrawlers"": [""OpenAI"", ""Anthropic"", ""Google"", ""Perplexity"", ""Microsoft Bing"", ""Apple Siri"", ""Grok""],
+  ""disallow"": [""/api/admin"", ""/admin"", ""/private"", ""/api/private"", ""/internal"", ""/debug"", ""/_next""]
+}

@@ -1,16 +1,28 @@
-# Allow all search engines to crawl the entire site
 User-agent: *
-Disallow: /api/
-Disallow: /admin/
-Disallow: /private/
 Allow: /
-Allow: /api/health
-Allow: /api/parrot
 
-# Block specific bots
-User-agent: BadBot
-Disallow: /
+Sitemap: https://starphone-web-svelte.platphormnews.com/sitemap.xml
 
-# Sitemap locations
-Sitemap: https://starphone.platphormnews.com/sitemap.xml
-Sitemap: https://www.thestarphone.com/sitemap.xml
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: PerplexityUser
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Copilot-User
+Allow: /
+
+User-agent: Bingbot
+Allow: /

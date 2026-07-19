@@ -1,10 +1,8 @@
-﻿{
-  "generated": ""2026-07-18T19:04:19.130-04:00"",
-  "version": ""1.0.0"",
-  "site": ""System.Management.Automation.Internal.Host.InternalHost"",
-  "primary": [
-    { "url": ""https://starphone-web-svelte.platphormnews.com/"", "title": ""starphone-web-svelte"", "description": ""Primary service landing page."" },
-    { "url": ""https://starphone-web-svelte.platphormnews.com/status/contracts"", "title": ""Service contracts"", "description": ""Contracts and support status."" },
-    { "url": ""https://starphone-web-svelte.platphormnews.com/faq"", "title": ""FAQ"", "description": ""Frequently asked questions."" }
+{
+  ""generated"": "2026-07-18T21:28:47.714Z",
+  ""version"": ""1.1.0"",
+  ""site"": "starphone-web-svelte",
+  ""primary"": [
+    { ""url"": "https://starphone-web-svelte.platphormnews.com/", ""title"": "starphone-web-svelte", ""description"": ""Primary landing page"" }
   ]
 }
