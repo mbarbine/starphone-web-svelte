@@ -114,13 +114,14 @@ pnpm check
 
 ## 🚢 Deployment
 
-Optimized for Vercel deployment with edge runtime:
+Optimized for platform deployment with edge runtime:
 
 ```bash
-vercel --prod
+platform --prod
 ```
 
 ---
 
 **Last updated**: January 4, 2026  
 **Built with**: SvelteKit 2, Svelte 5, Vite 6
+
