@@ -1,27 +1,83 @@
 {
-  ""openapi"": ""3.1.0"",
-  ""info"": { ""title"": "starphone-web-svelte API" , ""version"": ""1.1.0"", ""description"": ""Public API surface for starphone-web-svelte."" },
-  ""servers"": [ { ""url"": "https://starphone-web-svelte.platphormnews.com" } ],
-  ""paths"": {
-    ""/api/health"": {
-      ""get"": {
-        ""summary"": ""Health check"",
-        ""operationId"": ""getHealth"",
-        ""responses"": { ""200"": { ""description"": ""ok"" } }
+  "openapi": "3.1.0",
+  "info": {
+    "title": "PlatPhorm Starphone API",
+    "version": "0.3.0",
+    "description": "Starphone product and platform discovery endpoints."
+  },
+  "servers": [
+    {
+      "url": "https://starphone.platphormnews.com"
+    }
+  ],
+  "paths": {
+    "/api/health": {
+      "get": {
+        "operationId": "getHealth",
+        "summary": "Health check",
+        "responses": {
+          "200": {
+            "description": "Service health"
+          }
+        }
       }
     },
-    ""/api/v1/health"": {
-      ""get"": {
-        ""summary"": ""Health check"",
-        ""operationId"": ""getHealthV1"",
-        ""responses"": { ""200"": { ""description"": ""ok"" } }
+    "/api/v1/health": {
+      "get": {
+        "operationId": "getHealthV1",
+        "summary": "Versioned health check",
+        "responses": {
+          "200": {
+            "description": "Service health"
+          }
+        }
       }
     },
-    ""/api/mcp"": {
-      ""get"": {
-        ""summary"": ""MCP manifest"",
-        ""operationId"": ""getMcpManifest"",
-        ""responses"": { ""200"": { ""description"": ""ok"" } }
+    "/api/docs": {
+      "get": {
+        "operationId": "getDocs",
+        "summary": "Public docs payload",
+        "responses": {
+          "200": {
+            "description": "Public docs"
+          }
+        }
+      }
+    },
+    "/api/mcp": {
+      "get": {
+        "operationId": "getMcpMetadata",
+        "summary": "MCP discovery metadata",
+        "responses": {
+          "200": {
+            "description": "MCP metadata"
+          }
+        }
+      },
+      "post": {
+        "operationId": "postMcp",
+        "summary": "MCP JSON-RPC control",
+        "responses": {
+          "200": {
+            "description": "JSON-RPC 2.0 response"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "PLATPHORM_API_KEY",
+        "description": "Authorization: Bearer $PLATPHORM_API_KEY"
+      },
+      "xPlatPhormApiKey": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-PlatPhorm-API-Key",
+        "description": "X-PlatPhorm-API-Key: $PLATPHORM_API_KEY"
       }
     }
   }

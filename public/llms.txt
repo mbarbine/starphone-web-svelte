@@ -1,12 +1,8 @@
-# starphone-web-svelte
-https://starphone-web-svelte.platphormnews.com/
-https://starphone-web-svelte.platphormnews.com/support
-https://starphone-web-svelte.platphormnews.com/status
-https://starphone-web-svelte.platphormnews.com/api/health
-https://starphone-web-svelte.platphormnews.com/api/v1/health
-https://starphone-web-svelte.platphormnews.com/api/docs
-https://starphone-web-svelte.platphormnews.com/openapi.json
-https://starphone-web-svelte.platphormnews.com/openapi.yaml
-https://starphone-web-svelte.platphormnews.com/.well-known/mcp.json
-https://starphone-web-svelte.platphormnews.com/.well-known/agents.json
-https://starphone-web-svelte.platphormnews.com/.well-known/agent-policy.json
+# starphone
+https://starphone.platphormnews.com/
+https://starphone.platphormnews.com/api/health
+https://starphone.platphormnews.com/api/v1/health
+https://starphone.platphormnews.com/api/docs
+https://starphone.platphormnews.com/openapi.yaml
+https://starphone.platphormnews.com/.well-known/trust.json
+https://starphone.platphormnews.com/.well-known/mcp.json

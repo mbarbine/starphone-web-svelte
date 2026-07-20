@@ -3,7 +3,7 @@
   "framework": "nextjs",
   "buildCommand": "corepack enable && next build",
   "devCommand": "next dev",
-  "installCommand": "corepack enable && pnpm install",
+  "installCommand": "corepack enable && pnpm install --include=dev",
   "build": {
     "env": {
       "ENABLE_EXPERIMENTAL_COREPACK": "1"

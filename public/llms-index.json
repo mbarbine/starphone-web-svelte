@@ -1,8 +1,22 @@
 {
-  ""generated"": "2026-07-18T21:28:47.714Z",
-  ""version"": ""1.1.0"",
-  ""site"": "starphone-web-svelte",
-  ""primary"": [
-    { ""url"": "https://starphone-web-svelte.platphormnews.com/", ""title"": "starphone-web-svelte", ""description"": ""Primary landing page"" }
+  "generated": "2026-07-20T00:00:00Z",
+  "version": "0.3.0",
+  "site": "starphone.platphormnews.com",
+  "primary": [
+    {
+      "url": "https://starphone.platphormnews.com/",
+      "title": "Starphone",
+      "description": "Primary landing page"
+    },
+    {
+      "url": "https://starphone.platphormnews.com/api/health",
+      "title": "Starphone health",
+      "description": "Primary health and operational contract endpoint"
+    },
+    {
+      "url": "https://starphone.platphormnews.com/api/mcp",
+      "title": "Starphone MCP",
+      "description": "JSON-RPC MCP transport and tool surface"
+    }
   ]
 }

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Starphone</title>
-  <link href="https://ja4-atlas.platphormnews.com/api/ingest/atom.xml" rel="self"/>
+  <link href="https://starphone.platphormnews.com/atom.xml" rel="self"/>
   <updated>2026-07-19T01:53:51.5512142Z</updated>
   <author><name>Platphorm</name></author>
-  <id>https://ja4-atlas.platphormnews.com/api/ingest</id>
+  <id>https://starphone.platphormnews.com</id>
   <entry>
     <title>Starphone status</title>
-    <id>https://ja4-atlas.platphormnews.com/api/ingest/status</id>
+    <id>https://starphone.platphormnews.com/status</id>
     <updated>2026-07-19T01:53:51.5512142Z</updated>
     <content type="html">Service discovery and feed entry.</content>
   </entry>

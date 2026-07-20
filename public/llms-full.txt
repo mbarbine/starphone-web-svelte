@@ -1,15 +1,16 @@
-# starphone-web-svelte service discovery
-Primary domain: https://starphone-web-svelte.platphormnews.com
+starphone
 
-Useful endpoints:
-- https://starphone-web-svelte.platphormnews.com/
-- https://starphone-web-svelte.platphormnews.com/support
-- https://starphone-web-svelte.platphormnews.com/status
-- https://starphone-web-svelte.platphormnews.com/faq
-- https://starphone-web-svelte.platphormnews.com/api/health
-- https://starphone-web-svelte.platphormnews.com/api/v1/health
-- https://starphone-web-svelte.platphormnews.com/api/docs
-- https://starphone-web-svelte.platphormnews.com/openapi.json
-- https://starphone-web-svelte.platphormnews.com/.well-known/mcp.json
-- https://starphone-web-svelte.platphormnews.com/.well-known/agents.json
-- https://starphone-web-svelte.platphormnews.com/.well-known/agent-policy.json
+Primary URL: https://starphone.platphormnews.com
+
+Key endpoints:
+  - /api/health
+  - /api/v1/health
+  - /api/docs
+  - /api/mcp
+  - /openapi.yaml
+  - /.well-known/trust.json
+  - /.well-known/mcp.json
+  - /llms.txt
+
+Purpose:
+Starphone is the communications and messaging landing surface for the PlatPhorm network and supports standard platform discovery, MCP interoperability, and route compliance telemetry.

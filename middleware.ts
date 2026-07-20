@@ -1,14 +1,37 @@
-import { NextResponse } from 'next/server'
-import type { NextRequest } from 'next/server'
+import { NextResponse } from "next/server"
+import type { NextRequest } from "next/server"
 
-const INGEST_URL = process.env.JA4DB_INGEST_URL || 'https://ja4-atlas.platphormnews.com'
+const INGEST_URL = process.env.JA4DB_INGEST_URL || "https://ja4-atlas.platphormnews.com"
 const INGEST_TOKEN = process.env.ja4_ingest_token || process.env.JA4DB_INGEST_TOKEN
-const SENSOR_NAME = process.env.JA4DB_SENSOR_NAME || 'starphone-web'
-const SAMPLE_RATE = parseFloat(process.env.JA4DB_SAMPLE_RATE || '1.0')
+const SENSOR_NAME = process.env.JA4DB_SENSOR_NAME || "starphone-web"
+const SAMPLE_RATE = parseFloat(process.env.JA4DB_SAMPLE_RATE || "1.0")
 
 // Supported locales
-const locales = ['en']
-const defaultLocale = 'en'
+const locales = ["en"]
+const defaultLocale = "en"
+
+const PLATFORM_PASSTHROUGH_PATHS = new Set([
+  "/api/health",
+  "/api/v1/health",
+  "/api/docs",
+  "/api/v1/route-compliance",
+  "/api/mcp",
+  "/api/v1/mcp",
+  "/openapi.yaml",
+  "/llms.txt",
+  "/llms-full.txt",
+  "/llms-index.json",
+  "/robots.txt",
+  "/sitemap.xml",
+  "/sitemap-index.xml",
+  "/rss.xml",
+  "/feed.xml",
+  "/atom.xml",
+  "/manifest.webmanifest",
+  "/api/health/route-compliance",
+])
+
+const STATIC_EXTENSION_REGEX = /\.[a-z0-9]+$/i;
 
 function getLocale(request: NextRequest) {
   // Logic to determine locale, e.g., from headers or cookie
@@ -31,7 +54,7 @@ export async function middleware(request: NextRequest) {
     if (ja4 || ja4h || ja4s || ja4x) {
       const observation = {
         fingerprint: ja4 || ja4h || ja4s || ja4x,
-        fingerprint_type: ja4 ? 'ja4' : ja4h ? 'ja4h' : ja4s ? 'ja4s' : 'ja4x',
+        fingerprint_type: ja4 ? "ja4" : ja4h ? "ja4h" : ja4s ? "ja4s" : "ja4x",
         ja4: ja4 || null,
         ja4h: ja4h || null,
         ja4s: ja4s || null,
@@ -75,7 +98,20 @@ export async function middleware(request: NextRequest) {
     }
   }
 
+  if (pathname.startsWith("/.well-known/")) {
+    return NextResponse.next()
+  }
+
+  if (STATIC_EXTENSION_REGEX.test(pathname)) {
+    return NextResponse.next()
+  }
+
+  if (PLATFORM_PASSTHROUGH_PATHS.has(pathname)) {
+    return NextResponse.next()
+  }
+
   // Locale Routing Logic
+  if (pathname === "/") return NextResponse.next()
 
   // Check if pathname starts with a locale
   const pathnameHasLocale = locales.some(
@@ -95,6 +131,6 @@ export async function middleware(request: NextRequest) {
 export const config = {
   matcher: [
     // Skip all internal paths (_next, api, static assets)
-    '/((?!api|_next/static|_next/image|favicon.ico|icons|images|making-of-starphone|robots.txt|sitemap.xml|llms.txt|llms-full.txt).*)',
+    "/((?!api|_next/static|_next/image|favicon.ico|icons|images|making-of-starphone|robots.txt|sitemap.xml|llms.txt|llms-full.txt).*)",
   ],
 }

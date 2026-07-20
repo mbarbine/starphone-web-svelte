@@ -12,10 +12,12 @@ test('/api/docs endpoint returns valid feed sources and tracks span correctly', 
   expect(response.status()).toBe(200);
   const json = await response.json();
 
-  expect(json.status).toBe('ok');
-  expect(json.trace.sessionId).toBe('session-123');
-  expect(json.trace.traceId).toBe('trace-456');
-  expect(json.trace.spanId).toBe('span-789');
-  expect(json.sources.length).toBeGreaterThan(0);
-  expect(json.sources).toContain('https://platphormnews.com/api/network/graph');
+  expect(json.ok).toBe(true);
+  expect(json.data).toHaveProperty('service', 'starphone');
+  expect(json.data).toHaveProperty('version');
+  expect(json.data.endpoints).toMatchObject({
+    health: '/api/health',
+    healthV1: '/api/v1/health',
+    mcp: '/api/mcp',
+  });
 });

@@ -1,6 +1,0 @@
-openapi: 3.0.3
-info:
-  title: -starphone API
-  version: 1.0.0
-servers:
-  - url: https://-starphone.platphormnews.com

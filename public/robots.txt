@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://starphone-web-svelte.platphormnews.com/sitemap.xml
+Sitemap: https://starphone.platphormnews.com/sitemap.xml
 
 User-agent: GPTBot
 Allow: /

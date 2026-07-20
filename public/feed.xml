@@ -2,12 +2,12 @@
 <rss version="2.0">
   <channel>
     <title>Starphone</title>
-    <link>https://ja4-atlas.platphormnews.com/api/ingest</link>
+    <link>https://starphone.platphormnews.com</link>
     <description>Feed for the starphone service</description>
     <lastBuildDate>Sun, 19 Jul 2026 01:53:51 GMT</lastBuildDate>
     <item>
       <title>Starphone service status</title>
-      <link>https://ja4-atlas.platphormnews.com/api/ingest/status</link>
+      <link>https://starphone.platphormnews.com/status</link>
       <description>Current status and discovery summary.</description>
     </item>
   </channel>

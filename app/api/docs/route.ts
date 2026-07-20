@@ -1,39 +1,24 @@
-import { NextResponse, NextRequest } from 'next/server';
+import { NextResponse } from "next/server"
 
-export async function GET(req: NextRequest) {
-  const sessionId = req.headers.get('x-session-id') || 'unknown-session';
-  const traceId = req.headers.get('x-trace-id') || 'unknown-trace';
-  const spanId = req.headers.get('x-span-id') || 'unknown-span';
-
-  const feedSources = [
-    'https://platphormnews.com/api/network/graph',
-    'https://docs.platphormnews.com',
-    'https://trace.platphormnews.com',
-    'https://codex.platphormnews.com',
-    'https://kanban.platphormnews.com/api/v1/openapi.json',
-    'https://claws.platphormnews.com'
-  ];
+export async function GET() {
+  const version = process.env.npm_package_version || "1.1.0"
 
   return NextResponse.json({
-    status: 'ok',
-    message: 'Docs API feed',
-    trace: {
-      sessionId,
-      traceId,
-      spanId,
-      timestamp: new Date().toISOString()
+    ok: true,
+    data: {
+      service: "starphone",
+      version,
+      endpoints: {
+        health: "/api/health",
+        healthV1: "/api/v1/health",
+        mcp: "/api/mcp",
+        docs: "/api/docs",
+        networkGraph: "/api/network/graph",
+      },
+      openapi: "https://starphone.platphormnews.com/openapi.yaml",
+      trust: "https://starphone.platphormnews.com/.well-known/trust.json",
+      mcpManifest: "https://starphone.platphormnews.com/.well-known/mcp.json",
+      lastUpdated: new Date().toISOString(),
     },
-    sources: feedSources,
-    docs: {
-      type: 'rss_aggregate',
-      count: feedSources.length,
-      items: [
-        {
-          id: 'doc_1',
-          title: 'Universal Schema Pack Documentation',
-          url: 'https://docs.platphormnews.com/schemas/universal'
-        }
-      ]
-    }
-  });
+  })
 }

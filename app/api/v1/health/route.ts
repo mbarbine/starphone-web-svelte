@@ -22,16 +22,11 @@ function traceState(request: NextRequest) {
     traceContextAccepted: Boolean(traceParent),
     traceContextPropagated: Boolean(traceId || spanId),
     vercelMetadataCaptured: vercelHeaders.some((header) => request.headers.get(header)),
-    traceContext: {
-      traceId,
-      spanId,
-    },
   }
 }
 
 export async function GET(request: NextRequest) {
-  const { traceContextAccepted, traceContextPropagated, vercelMetadataCaptured, traceContext } =
-    traceState(request)
+  const { traceContextAccepted, traceContextPropagated, vercelMetadataCaptured } = traceState(request)
   const version = process.env.npm_package_version || "1.1.0"
 
   return NextResponse.json({
@@ -52,7 +47,6 @@ export async function GET(request: NextRequest) {
       trace: {
         traceContextAccepted,
         traceContextPropagated,
-        ...traceContext,
       },
       vercelMetadataCaptured,
     },
