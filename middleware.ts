@@ -111,7 +111,10 @@ export async function middleware(request: NextRequest) {
   }
 
   // Locale Routing Logic
-  if (pathname === "/") return NextResponse.next()
+  if (pathname === "/") {
+    request.nextUrl.pathname = `/${defaultLocale}`
+    return NextResponse.redirect(request.nextUrl)
+  }
 
   // Check if pathname starts with a locale
   const pathnameHasLocale = locales.some(
