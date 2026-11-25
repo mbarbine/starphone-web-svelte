@@ -1,11 +1,11 @@
-import type { Metadata } from 'next';
+import { pageMetadata } from '../../site-urls';
 import Link from 'next/link';
 import styles from './docs.module.css';
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata('docs', {
   title: 'Starphone API Documentation',
   description: 'Developer documentation for the Starphone API, including health checks, parrot mode, and sensor data ingest.',
-};
+});
 
 export default function DocsPage() {
   return (

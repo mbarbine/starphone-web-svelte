@@ -1,16 +1,15 @@
-import type { Metadata } from 'next';
+import { pageMetadata } from '../../site-urls';
 import Image from 'next/image';
 import styles from './press.module.css';
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata('press', {
   title: 'Press & Media | Starphone in the News',
   description: 'Starphone press coverage, media appearances, and news articles. See where Starphone has been featured and get press resources.',
   openGraph: {
     title: 'Press & Media | Starphone in the News',
     description: 'Starphone press coverage and media resources.',
-    url: 'https://starphone.platphormnews.com/press',
   },
-};
+});
 
 export default function PressPage() {
   return (

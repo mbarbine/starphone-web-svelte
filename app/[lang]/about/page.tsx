@@ -1,17 +1,16 @@
-import type { Metadata } from 'next';
+import { pageMetadata } from '../../site-urls';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './about.module.css';
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata('about', {
   title: 'About Starphone | Mission, Team & Vision',
   description: 'Learn about Starphone\'s mission to revolutionize public communication in extreme environments. Meet our team of innovators building the future of secure, reliable connectivity.',
   openGraph: {
     title: 'About Starphone | Mission, Team & Vision',
     description: 'Discover the team and vision behind Starphone\'s innovative communication solutions.',
-    url: 'https://starphone.platphormnews.com/about',
   },
-};
+});
 
 const volunteers = [
   { name: 'Aurora Borealis', role: 'Lead Engineer' },

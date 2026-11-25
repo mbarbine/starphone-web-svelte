@@ -1,7 +1,5 @@
-import { headers } from 'next/headers';
 import type { MetadataRoute } from 'next';
-
-export const dynamic = 'force-dynamic';
+import { siteUrl } from './site-urls';
 
 // Sitemap-only: real per-page last-modified dates (git commit dates of the
 // app/[lang]/… pages), refreshed 2026-11-21. Bare paths 307-redirect to /en/*,
@@ -19,7 +17,7 @@ const SITEMAP_LASTMOD: Record<string, string> = {
   "/en/support": "2026-02-26T23:11:32Z",
 };
 
-const SITEMAP_PAGES: Array<{ path: string; changeFrequency: 'weekly' | 'monthly'; priority: number }> = [
+const SITEMAP_PAGES: Array<{ path: `/${string}`; changeFrequency: 'weekly' | 'monthly'; priority: number }> = [
   { path: '/en', changeFrequency: 'weekly', priority: 1 },
   { path: '/en/how-it-works', changeFrequency: 'monthly', priority: 0.9 },
   { path: '/en/history', changeFrequency: 'monthly', priority: 0.8 },
@@ -32,13 +30,9 @@ const SITEMAP_PAGES: Array<{ path: string; changeFrequency: 'weekly' | 'monthly'
   { path: '/api/docs', changeFrequency: 'weekly', priority: 0.6 },
 ];
 
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const headersList = await headers();
-  const host = headersList.get('host') ?? 'starphone.platphormnews.com';
-  const baseUrl = host.startsWith('localhost') ? `http://${host}` : `https://${host}`;
-
+export default function sitemap(): MetadataRoute.Sitemap {
   return SITEMAP_PAGES.map((page) => ({
-    url: `${baseUrl}${page.path}`,
+    url: siteUrl(page.path),
     lastModified: new Date(SITEMAP_LASTMOD[page.path]),
     changeFrequency: page.changeFrequency,
     priority: page.priority,

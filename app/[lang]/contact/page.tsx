@@ -1,15 +1,14 @@
-import type { Metadata } from 'next';
+import { pageMetadata } from '../../site-urls';
 import styles from './contact.module.css';
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata('contact', {
   title: 'Contact Starphone | Get In Touch',
   description: 'Get in touch with the Starphone team. Reach out for partnerships, inquiries, or to learn more about our secure communication solutions.',
   openGraph: {
     title: 'Contact Starphone | Get In Touch',
     description: 'Connect with the Starphone team for inquiries and partnerships.',
-    url: 'https://starphone.platphormnews.com/contact',
   },
-};
+});
 
 export default function ContactPage() {
   return (
