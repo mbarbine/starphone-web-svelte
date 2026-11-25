@@ -1,16 +1,15 @@
-import type { Metadata } from 'next';
+import { pageMetadata } from '../../site-urls';
 import Link from 'next/link';
 import styles from './history.module.css';
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata('history', {
   title: 'History | Starphone Development Journey',
   description: 'Discover the history and evolution of Starphone from initial concept to deployed communication systems. See our milestones and achievements.',
   openGraph: {
     title: 'History | Starphone Development Journey',
     description: 'The story of Starphone\'s journey from concept to reality.',
-    url: 'https://starphone.platphormnews.com/history',
   },
-};
+});
 
 export default function HistoryPage() {
   return (

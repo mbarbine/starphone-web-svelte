@@ -1,6 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './page.module.css';
+import { pageMetadata } from '../site-urls';
+
+export const metadata = pageMetadata();
 
 async function getMovies() {
   const apiKey = 'e54de2e0';

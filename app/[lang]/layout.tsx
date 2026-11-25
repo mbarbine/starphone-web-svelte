@@ -5,6 +5,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import ClientLayout from '../ClientLayout';
 import '../globals.css';
 import { Inter } from 'next/font/google';
+import { SITE_LOCALE, SITE_ORIGIN } from '../site-urls';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -26,26 +27,7 @@ export const metadata: Metadata = {
   ],
   creator: 'Starphone',
   publisher: 'Starphone',
-  metadataBase: new URL('https://starphone.platphormnews.com'),
-  alternates: {
-    canonical: 'https://starphone.platphormnews.com/',
-  },
-  openGraph: {
-    title: 'Starphone - Secure Public Communication Solutions',
-    description: 'Solar-powered, satellite-connected phone booths for extreme environments. When everything else fails, Starphone stays connected.',
-    url: 'https://starphone.platphormnews.com/',
-    siteName: 'Starphone',
-    images: [
-      {
-        url: '/images/starphone-black-small.png',
-        width: 1200,
-        height: 630,
-        alt: 'Starphone - The Phone Booth of Tomorrow',
-      },
-    ],
-    locale: 'en_US',
-    type: 'website',
-  },
+  metadataBase: new URL(SITE_ORIGIN),
   twitter: {
     card: 'summary_large_image',
     title: 'Starphone - Secure Public Communication Solutions',
@@ -68,7 +50,7 @@ export const metadata: Metadata = {
 };
 
 export async function generateStaticParams() {
-  return [{ lang: 'en' }];
+  return [{ lang: SITE_LOCALE }];
 }
 
 export default async function RootLayout({
@@ -83,8 +65,6 @@ export default async function RootLayout({
   return (
     <html lang={lang}>
       <head>
-        <link rel="canonical" href="https://starphone.platphormnews.com/" />
-        <link rel="alternate" href="https://www.thestarphone.com/" hrefLang="en" />
         <link rel="icon" href="/favicon.ico" type="image/png" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#2563eb" />

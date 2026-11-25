@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server"
+import { siteUrl } from "../../site-urls"
 
 export async function GET() {
   const version = process.env.npm_package_version || "1.1.0"
@@ -20,5 +21,5 @@ export async function GET() {
       mcpManifest: "https://starphone.platphormnews.com/.well-known/mcp.json",
       lastUpdated: new Date().toISOString(),
     },
-  })
+  }, { headers: { Link: `<${siteUrl("/api/docs")}>; rel="canonical"` } })
 }

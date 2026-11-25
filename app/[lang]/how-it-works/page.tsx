@@ -1,15 +1,14 @@
-import type { Metadata } from 'next';
+import { pageMetadata } from '../../site-urls';
 import styles from './how-it-works.module.css';
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata('how-it-works', {
   title: 'How It Works | Starphone Technology',
   description: 'Learn about the technology behind Starphone. Discover our secure communication systems, network architecture, and innovative features.',
   openGraph: {
     title: 'How It Works | Starphone Technology',
     description: 'The technology and innovation powering Starphone communication systems.',
-    url: 'https://starphone.platphormnews.com/how-it-works',
   },
-};
+});
 
 export default function HowItWorksPage() {
   return (
